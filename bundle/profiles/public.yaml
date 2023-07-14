@@ -1,0 +1,5 @@
+name: public
+permissionSets:
+  - uesio/web.public
+  - uesio/core.public
+  - uesio/crm.public

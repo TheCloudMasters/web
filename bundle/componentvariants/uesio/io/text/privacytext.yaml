@@ -1,0 +1,10 @@
+name: privacytext
+label: Callout
+definition:
+  uesio.styleTokens:
+    root:
+      - text-sm
+      - text-slate-700
+      - my-6
+      - text-justify
+  element: div
