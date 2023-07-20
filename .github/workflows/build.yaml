@@ -26,8 +26,7 @@ jobs:
         shell: bash
         run: |
           # Symlink the Uesio CLI for subsequent use
-          mkdir -p dist/cli
-          wget https://docs.ues.io/site/files/uesio/docs/8272e59f/clilinux
+          wget -q https://docs.ues.io/site/files/uesio/docs/8272e59f/clilinux
           chmod +x clilinux
           sudo ln -s $PWD/clilinux /usr/local/bin/uesio
       - name: Build and lint
