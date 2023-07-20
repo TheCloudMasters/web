@@ -6,7 +6,19 @@
 	"plugins": ["@typescript-eslint", "react", "react-hooks"],
 	"overrides": [
 		{
-			"files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+			"files": ["bundle/bots/**/bot.ts"],
+			"env": {
+				"browser": false
+			},
+			"rules": {
+				"@typescript-eslint/no-unused-vars": [
+					"off",
+					{ "ignoreRestSiblings": true }
+				]
+			}
+		},
+		{
+			"files": ["bundle/componentpacks/src/**/*.{ts,tsx,js,jsx}"],
 			"env": {
 				"browser": true
 			},
