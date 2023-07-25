@@ -1,27 +1,15 @@
 #!/usr/bin/env bash
 
-# uesio login
-# uesio work
-# npm run push
-# echo "Seeding workspace with data..."
-# ./seed.sh
-# echo "Creating new patch bundle..."
-# patchResult=$(uesio bundle create -t=patch)
-patchResult="Successfully created new bundle version: 1.0.3"
-echo "patch result is $patchResult"
-# echo "foobar 1.2.3" | grep -oE "\d\+.\d\+.\d\+" -
-
-
+uesio login
+uesio work
+npm run push
+echo "Seeding workspace with data..."
+./seed.sh
+echo "Creating new patch bundle..."
+patchResult=$(uesio bundle create -t=patch)
 
 # Extract version number from patchResult variable using grep
-version_number=$(echo "$patchResult" | grep -oE '[0-9]+\.[0-9]+\.[0-9]+')
-echo "version number is $version_number"
-
-
-#version=$(echo "$patchResult" | grep -Eo '\d+.\d+.\d+' -)
-#echo "version is $version"
-
-exit 1
+version=$(echo "$patchResult" | grep -oE '[0-9]+\.[0-9]+\.[0-9]+')
 
 echo "Created bundle with version = $version"
 echo "Deploying patch bundle to site 'prod'..."
