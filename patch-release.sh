@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-set -e
-
 # uesio login
 # uesio work
 # npm run push
@@ -11,10 +9,7 @@ set -e
 # patchResult=$(uesio bundle create -t=patch)
 patchResult="Successfully created new bundle version: 1.0.3"
 echo "patch result is $patchResult"
-#version=$(echo "$patchResult" | grep -o "\d\+.\d\+.\d\+")
-# grep --help
-echo "$patchResult"
-# echo "foobar 1.2.3" | grep -o "\d\+.\d\+.\d\+" - 
+# echo "foobar 1.2.3" | grep -oE "\d\+.\d\+.\d\+" -
 version=$(echo "$patchResult" | grep -o "\d\+.\d\+.\d\+" -)
 echo "version is $version"
 
