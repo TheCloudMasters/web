@@ -49,7 +49,8 @@ jobs:
           uesio login
           uesio deploy
           ./seed.sh
-          version=$(uesio bundle create -t=patch | grep -po "\d\+.\d\+.\d\+")
+          version=$(uesio bundle create -t=patch | grep -o "\d\+.\d\+.\d\+")
+          echo "Created bundle with version = $version"
           uesio siteadmin -n=prod
           uesio site use -b=$version
           ./seedprod.sh
