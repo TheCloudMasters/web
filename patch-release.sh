@@ -10,7 +10,7 @@
 patchResult="Successfully created new bundle version: 1.0.3"
 echo "patch result is $patchResult"
 # echo "foobar 1.2.3" | grep -oE "\d\+.\d\+.\d\+" -
-version=$(echo "$patchResult" | grep -Eo "\d\+.\d\+.\d\+" -)
+version=$(echo "$patchResult" | grep -Eo '\d+.\d+.\d+' -)
 echo "version is $version"
 
 exit 1
