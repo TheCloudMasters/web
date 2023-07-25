@@ -15,6 +15,6 @@ echo "Created bundle with version = $version"
 echo "Deploying patch bundle to site 'prod'..."
 uesio siteadmin -n=prod
 uesio site use -b=$version
-echo "Uploading latest docs to site 'prod'..."
+echo "Uploading latest blog posts to site 'prod'..."
 ./seedprod.sh
-echo "Successfully released latest docs!"
+echo "Successfully released latest blog posts!"
