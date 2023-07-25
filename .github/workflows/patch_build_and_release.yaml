@@ -44,6 +44,7 @@ jobs:
           UESIO_CLI_USERNAME: ${{ secrets.UESIO_CLI_USERNAME }}
           UESIO_CLI_PASSWORD: ${{ secrets.UESIO_CLI_PASSWORD }}
           UESIO_CLI_HOST: ${{ vars.UESIO_CLI_HOST }}
+          UESIO_CLI_LOGIN_METHOD: uesio/core.platform
         run: |
           uesio login
           uesio deploy
