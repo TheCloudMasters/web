@@ -12,6 +12,7 @@ set -e
 patchResult="patch result is Successfully created new bundle version: 1.0.3"
 echo "patch result is $patchResult"
 #version=$(echo "$patchResult" | grep -o "\d\+.\d\+.\d\+")
+grep --help
 version=$(grep -o "\d\+.\d\+.\d\+" <<< $patchResult)
 echo "version is $version"
 exit 1
