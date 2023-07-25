@@ -12,7 +12,7 @@ set -e
 patchResult="Successfully created new bundle version: 1.0.3"
 echo "patch result is $patchResult"
 #version=$(echo "$patchResult" | grep -o "\d\+.\d\+.\d\+")
-# grep --help
+grep --help
 echo "$patchResult"
 grep -o "\d\+.\d\+.\d\+" - "foobar 1.2.3"
 version=$(echo "$patchResult" | grep -o "\d\+.\d\+.\d\+" -)
