@@ -1,0 +1,21 @@
+name: Manual Patch release
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Deployment Environment"
+        required: true
+        default: "dev"
+        type: choice
+        options:
+          - dev
+          - prod
+
+jobs:
+  deploy:
+    name: Build and release to ${{ inputs.environment }}
+    uses: ./.github/workflows/patch_build_and_release.yaml
+    with:
+      environment: ${{ inputs.environment }}
+    secrets: inherit

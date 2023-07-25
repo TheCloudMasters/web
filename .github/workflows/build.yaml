@@ -1,14 +1,8 @@
 name: Main Branch Build
 on:
   push:
-    # branches:
-    #   - main
-    #   - *
-    # secrets:
-    #   UESIO_CLI_USERNAME:
-    #     required: true
-    #   UESIO_CLI_PASSWORD:
-    #     required: true
+    branches-ignore:
+      - main
 
 jobs:
   build:
@@ -35,16 +29,3 @@ jobs:
           npm ci
           npm run lint
           uesio pack
-      # - name: Deploy and package
-      #   shell: bash
-      #   env:
-      #     UESIO_CLI_USERNAME: ${{ secrets.UESIO_CLI_USERNAME }}
-      #     UESIO_CLI_PASSWORD: ${{ secrets.UESIO_CLI_PASSWORD }}
-      #   run: |
-      #     uesio login
-      #     uesio deploy
-      #     ./seed.sh
-      #     version=$(uesio bundle create -t=patch | grep -po "\d\+.\d\+.\d\+")
-      #     uesio siteadmin -n=uat
-      #     uesio site use -b=$version
-      #     ./seedprod.sh
