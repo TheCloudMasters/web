@@ -40,8 +40,10 @@ Hit enter to select the `main` component pack.
 
 ## Continuous integration
 
-The `main` branch will automatically be built and deployed to the `uat` site (`https://www-uat.ues.io`)
+The `main` branch will automatically be built and deployed to the `prod` site in the Uesio dev environment (`https://www.ues-dev.io`)
+
+You can also manually initiate this using the ["Manual patch release"](<(./github/workflows/manual_patch_release.yaml)>) workflow, selecting "dev" as the environment
 
 ## Release to prod
 
-Use the ["Release to Prod"](./github/workflows/release.yaml) Github Action to initiate a Prod deployment to the `prod` site (accessible at `https://www.ues.io`)
+Use the ["Manual patch release"](./github/workflows/manual_patch_release.yaml) workflow to initiate a Prod deployment to the `prod` site in the Uesio "prod" environment (accessible at `https://www.ues.io`). Select "prod" as the environment target.
