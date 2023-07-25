@@ -1,0 +1,13 @@
+name: Main Branch Build
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Build and release to dev
+    uses: ./.github/workflows/patch_build_and_release.yaml
+    with:
+      environment: dev
+    secrets: inherit

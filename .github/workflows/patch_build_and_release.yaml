@@ -1,0 +1,56 @@
+name: Patch build and release
+
+on:
+  workflow_call:
+    inputs:
+      environment:
+        type: string
+        required: true
+    secrets:
+      UESIO_CLI_USERNAME:
+        required: true
+      UESIO_CLI_PASSWORD:
+        required: true
+      UESIO_CLI_HOST:
+        required: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.15.0
+          cache: "npm"
+      - name: Setup Uesio CLI Symlink
+        shell: bash
+        run: |
+          # Symlink the Uesio CLI for subsequent use
+          wget -q https://docs.ues.io/site/files/uesio/docs/8272e59f/clilinux
+          chmod +x clilinux
+          sudo ln -s $PWD/clilinux /usr/local/bin/uesio
+      - name: Build and lint
+        shell: bash
+        run: |
+          npm ci
+          npm run lint
+          uesio pack
+      - name: Deploy and package
+        shell: bash
+        env:
+          UESIO_CLI_USERNAME: ${{ secrets.UESIO_CLI_USERNAME }}
+          UESIO_CLI_PASSWORD: ${{ secrets.UESIO_CLI_PASSWORD }}
+          UESIO_CLI_HOST: ${{ secrets.UESIO_CLI_HOST }}
+        run: |
+          uesio login
+          uesio deploy
+          ./seed.sh
+          version=$(uesio bundle create -t=patch | grep -po "\d\+.\d\+.\d\+")
+          uesio siteadmin -n=prod
+          uesio site use -b=$version
+          ./seedprod.sh
