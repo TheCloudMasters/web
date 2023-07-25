@@ -11,8 +11,6 @@ on:
         required: true
       UESIO_CLI_PASSWORD:
         required: true
-      UESIO_CLI_HOST:
-        required: true
 
 jobs:
   build:
@@ -45,7 +43,7 @@ jobs:
         env:
           UESIO_CLI_USERNAME: ${{ secrets.UESIO_CLI_USERNAME }}
           UESIO_CLI_PASSWORD: ${{ secrets.UESIO_CLI_PASSWORD }}
-          UESIO_CLI_HOST: ${{ secrets.UESIO_CLI_HOST }}
+          UESIO_CLI_HOST: ${{ vars.UESIO_CLI_HOST }}
         run: |
           uesio login
           uesio deploy
