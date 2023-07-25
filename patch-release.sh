@@ -9,10 +9,11 @@ set -e
 # ./seed.sh
 # echo "Creating new patch bundle..."
 # patchResult=$(uesio bundle create -t=patch)
-patchResult="patch result is Successfully created new bundle version: 1.0.3"
+patchResult="Successfully created new bundle version: 1.0.3"
 echo "patch result is $patchResult"
 #version=$(echo "$patchResult" | grep -o "\d\+.\d\+.\d\+")
 # grep --help
+echo "$patchResult" | grep -o "\d\+.\d\+.\d\+" -
 version=$(echo "$patchResult" | grep -o "\d\+.\d\+.\d\+" -)
 echo "version is $version"
 exit 1
