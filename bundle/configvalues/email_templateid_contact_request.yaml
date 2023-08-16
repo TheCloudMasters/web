@@ -1,0 +1,4 @@
+name: email_templateid_contact_request
+public: true
+store: platform
+managedBy: site

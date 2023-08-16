@@ -1,0 +1,33 @@
+name: pricing
+definition:
+  # Wires are how we pull in data
+  wires:
+  # Components are how we describe the layout of our view
+  components:
+    - uesio/io.grid:
+        uesio.styleTokens:
+          root:
+            - grid
+            - grid-rows
+            - h-screen
+            - w-screen
+        items:
+          - uesio/core.view:
+              view: uesio/web.topbar
+          - uesio/io.grid:
+              uesio.styleTokens:
+                root:
+                  - w-full
+                  - h-full
+                  - grid
+                  - justify-items-center
+                  - bg-[#151515]
+              items:
+                - uesio/io.image:
+                    uesio.styleTokens:
+                      root:
+                        - h-[80%]
+                    file: uesio/web.pricing
+                    loading: eager
+          - uesio/core.view:
+              view: uesio/web.footer

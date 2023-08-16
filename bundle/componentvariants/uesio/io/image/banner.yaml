@@ -1,0 +1,10 @@
+name: banner
+label: Banner
+definition:
+  uesio.styleTokens:
+    root:
+      - p-5
+      - border-4
+      - drop-shadow-md
+      - rounded-3xl
+      - bg-slate-900

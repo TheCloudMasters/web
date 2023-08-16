@@ -1,0 +1,5 @@
+name: enablement
+path: enablement
+view: uesio/web.enablement
+theme: uesio/core.default
+title: $Site{title} Enablement

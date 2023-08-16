@@ -1,0 +1,9 @@
+name: campaign_callout_sub_small
+label: Campaign Callout Subtitle Small
+extends: uesio/web.campaign_callout_sub
+definition:
+  uesio.styleTokens:
+    root:
+      - text-sm
+      - md:text-sm
+  element: div

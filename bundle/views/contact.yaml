@@ -1,0 +1,208 @@
+name: contact
+definition:
+  # Wires are how we pull in data
+  wires:
+    newContactRequest:
+      viewOnly: true
+      init:
+        create: true
+      fields:
+        uesio/crm.title:
+          label: Title
+          type: SELECT
+          selectlist:
+            options:
+              - label: Select Title
+                value: ""
+              - label: Sir
+                value: Sir
+              - label: Madam
+                value: Madam
+              - label: Mr
+                value: Mr
+              - label: Mrs
+                value: Mrs
+              - label: Miss
+                value: Miss
+        uesio/crm.firstname:
+          label: First Name
+          type: TEXT
+        uesio/crm.lastname:
+          label: Last Name
+          type: TEXT
+        uesio/crm.account:
+          label: Company
+          type: TEXT
+        uesio/crm.no_employees:
+          label: No. Employees
+          type: NUMBER
+          number:
+            decimals: 0
+        uesio/crm.location:
+          label: Country
+          type: TEXT
+        uesio/crm.email:
+          label: Email
+          type: EMAIL
+        uesio/crm.description:
+          label: Description
+          type: TEXT
+        uesio/crm.status:
+          label: Status
+          type: TEXT
+      defaults:
+        - field: uesio/crm.status
+          valueSource: VALUE
+          value: OPEN
+  # Components are how we describe the layout of our view
+  components:
+    - uesio/core.view:
+        view: uesio/web.topbar
+    - uesio/io.grid:
+        uesio.variant: uesio/web.campaign_mainlayout_dark
+        items:
+          - uesio/io.grid:
+              uesio.variant: uesio/web.callout_douple_large
+              items:
+                - uesio/io.grid:
+                    uesio.styleTokens:
+                      root:
+                        - flex
+                        - flex-col
+                        - items-start
+                    items:
+                      - uesio/io.text:
+                          uesio.variant: uesio/web.callout_white
+                          text: Contact us
+                      - uesio/io.text:
+                          uesio.variant: uesio/web.campaign_callout_sub
+                          uesio.styleTokens:
+                            root:
+                              - my-4
+                          text: ues.io AG
+                      - uesio/io.box:
+                          uesio.styleTokens:
+                            root:
+                              - mb-4
+                              - cursor-pointer
+                          signals:
+                            - signal: route/REDIRECT
+                              path: "https://goo.gl/maps/6rLhVcQrfqGNeKAZ6?coh=178572&entry=tt"
+                          components:
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.calloutsmalldark
+                                uesio.styleTokens:
+                                  root:
+                                    - block
+                                text: Technopark, Technoparkstrasse 1
+                                align: start
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.calloutsmalldark
+                                text: 8005 Zurich, Switzerland
+                                align: start
+                      - uesio/io.button:
+                          uesio.variant: uesio/web.contact_link
+                          text: "T: +41 44 511 22 88"
+                          signals:
+                            - signal: route/REDIRECT
+                              path: "tel:00415512288"
+                      - uesio/io.button:
+                          uesio.variant: uesio/web.contact_link
+                          uesio.styleTokens:
+                            root:
+                              - mb-4
+                          text: "info[@]thecloudmasters[.]com"
+                          signals:
+                            - signal: route/REDIRECT
+                              path: "mailto:info@thecloudmasters.com"
+                      - uesio/io.button:
+                          uesio.variant: uesio/web.contact_link
+                          text: "linkedIn"
+                          signals:
+                            - signal: route/REDIRECT
+                              path: "https://www.linkedin.com/company/the-cloud-masters/mycompany/"
+                - uesio/io.grid:
+                    uesio.variant: uesio/web.campaign_contact_form
+                    items:
+                      - uesio/io.grid:
+                          uesio.styleTokens:
+                            root:
+                              - grid
+                              - md:grid-cols-3
+                              - md:gap-x-8
+                              - gap-2
+                              - justify-items-stretch
+                          items:
+                            - uesio/io.list:
+                                wire: newContactRequest
+                                mode: EDIT
+                                components:
+                                  - uesio/io.field:
+                                      uesio.variant: uesio/io.fieldwrapper:uesio/web.contact_form
+                                      wrapperVariant: uesio/web.contact_form
+                                      fieldId: uesio/crm.title
+                                  - uesio/io.field:
+                                      uesio.variant: uesio/io.fieldwrapper:uesio/web.contact_form
+                                      wrapperVariant: uesio/web.contact_form
+                                      fieldId: uesio/crm.firstname
+                                  - uesio/io.field:
+                                      uesio.variant: uesio/io.fieldwrapper:uesio/web.contact_form
+                                      wrapperVariant: uesio/web.contact_form
+                                      fieldId: uesio/crm.lastname
+                      - uesio/io.grid:
+                          uesio.styleTokens:
+                            root:
+                              - grid
+                              - gap-4
+                              - mt-4
+                          items:
+                            - uesio/io.list:
+                                wire: newContactRequest
+                                mode: EDIT
+                                components:
+                                  - uesio/io.field:
+                                      uesio.variant: uesio/io.fieldwrapper:uesio/web.contact_form
+                                      wrapperVariant: uesio/web.contact_form
+                                      fieldId: uesio/crm.account
+                                  - uesio/io.field:
+                                      uesio.variant: uesio/io.fieldwrapper:uesio/web.contact_form
+                                      wrapperVariant: uesio/web.contact_form
+                                      fieldId: uesio/crm.no_employees
+                                  - uesio/io.field:
+                                      uesio.variant: uesio/io.fieldwrapper:uesio/web.contact_form
+                                      wrapperVariant: uesio/web.contact_form
+                                      fieldId: uesio/crm.location
+                                  - uesio/io.field:
+                                      uesio.variant: uesio/io.fieldwrapper:uesio/web.contact_form
+                                      wrapperVariant: uesio/web.contact_form
+                                      fieldId: uesio/crm.email
+                                  - uesio/io.field:
+                                      wrapperVariant: uesio/web.contact_form
+                                      uesio.variant: uesio/io.fieldwrapper:uesio/web.contact_form
+                                      label: "Tell us briefly the reason why you are contacting us."
+                                      fieldId: uesio/crm.description
+                                  - uesio/io.button:
+                                      uesio.variant: uesio/io.primary
+                                      uesio.styleTokens:
+                                        root:
+                                          - mt-4
+                                      text: Submit
+                                      signals:
+                                        - signal: bot/CALL
+                                          bot: uesio/web.addlead
+                                          params:
+                                            uesio/crm.firstname: $Record{newLead:uesio/crm.firstname}
+                                            uesio/crm.lastname: $Record{newLead:uesio/crm.lastname}
+                                            uesio/crm.account: $Record{newLead:uesio/crm.account}
+                                            uesio/crm.no_employees: $Record{newLead:uesio/crm.no_employees}
+                                            uesio/crm.location: $Record{newLead:uesio/crm.location}
+                                            uesio/crm.email: $Record{newLead:uesio/crm.email}
+                                            uesio/crm.description: $Record{newLead:uesio/crm.description}
+                                            uesio/crm.status: $Record{newLead:uesio/crm.status}
+                                            contact: true
+                                        - signal: notification/ADD
+                                          severity: success
+                                          text: Thank you for your message.
+                                          duration: "5"
+    - uesio/core.view:
+        view: uesio/web.footer

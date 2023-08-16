@@ -1,0 +1,10 @@
+name: callout_douple_large
+extends: uesio/web.callout_large
+label: Callout Douple Large
+definition:
+  uesio.styleTokens:
+    root:
+      - md:grid-cols-[1fr_700px]
+      - md:py-20
+      - md:px-0
+      - gap-4

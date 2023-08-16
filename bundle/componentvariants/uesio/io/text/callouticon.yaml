@@ -16,3 +16,5 @@ definition:
       - "md:[font-variation-settings:'FILL'_1,'wght'_700]"
       - relative
       - leading-none
+      - w-fit
+      - justify-self-center

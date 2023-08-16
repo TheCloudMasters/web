@@ -8,5 +8,5 @@ definition:
       - gap-4
       - md:gap-8
       - items-start
-      - justify-items-center
+      - justify-center
       - relative

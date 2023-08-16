@@ -1,0 +1,7 @@
+name: campaign_mainlayout_dark
+extends: uesio/web.campaign_mainlayout
+label: Main Layout Dark
+definition:
+  uesio.styleTokens:
+    root:
+      - bg-slate-900

@@ -1,9 +1,8 @@
-name: calloutsmall
+name: callout_white
+label: Callout White
 extends: uesio/web.callout
-label: Callout Small
 definition:
   uesio.styleTokens:
     root:
-      - text-xl
-      - md:text-2xl
+      - text-slate-100
   element: div

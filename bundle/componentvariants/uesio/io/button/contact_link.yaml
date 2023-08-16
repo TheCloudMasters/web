@@ -1,0 +1,8 @@
+name: contact_link
+label: Contact Link
+definition:
+  uesio.styleTokens:
+    root:
+      - text-slate-200
+      - text-xl
+      - md:text-2xl

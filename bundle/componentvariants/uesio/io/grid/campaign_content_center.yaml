@@ -1,0 +1,10 @@
+name: campaign_content_center
+label: Campaign Content Center
+definition:
+  uesio.styleTokens:
+    root:
+      - md:grid-cols-1
+      - justify-center
+      - grid-cols-1
+      - p-12
+      - md:p-0

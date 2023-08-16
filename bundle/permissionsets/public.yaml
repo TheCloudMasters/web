@@ -3,10 +3,13 @@ named: {}
 views:
   uesio/web.blog: true
   uesio/web.blogentry: true
+  uesio/web.contact: true
   uesio/web.earlyaccess: true
+  uesio/web.enablement: true
   uesio/web.footer: true
   uesio/web.home: true
   uesio/web.preview: true
+  uesio/web.pricing: true
   uesio/web.privacy: true
   uesio/web.terms: true
   uesio/web.topbar: true
@@ -23,19 +26,41 @@ collections:
     edit: false
     delete: false
     fields: {}
+  uesio/crm.lead:
+    read: false
+    create: true
+    edit: false
+    delete: false
+    fields:
+      uesio/crm.title:
+      uesio/crm.firstname:
+      uesio/crm.lastname:
+      uesio/crm.account:
+      uesio/crm.no_employees:
+      uesio/crm.location:
+      uesio/crm.email:
+      uesio/crm.description:
+      uesio/crm.status:
 routes:
   uesio/web.blog: true
   uesio/web.blogentry: true
+  uesio/web.contact: true
   uesio/web.earlyaccess: true
+  uesio/web.enablement: true
   uesio/web.home: true
   uesio/web.preview: true
+  uesio/web.pricing: true
   uesio/web.privacy: true
   uesio/web.signup: true
   uesio/web.terms: true
 files:
+  uesio/web.amazon: true
+  uesio/web.aws: true
+  uesio/web.dhl: true
+  uesio/web.axa: true
+  uesio/web.agco: true
   uesio/web.logo: true
   uesio/web.logowhite: true
-  uesio/web.swissmade: true
 allowallcollections: false
 allowallviews: false
 allowallroutes: false

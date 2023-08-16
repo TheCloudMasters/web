@@ -6,4 +6,4 @@ definition:
     root:
       - bg-[length:180%]
       - md:bg-cover
-      - bg-[url($File{uesio/core.splash})]
+      - bg-[url($File{uesio/core.splashfull})]

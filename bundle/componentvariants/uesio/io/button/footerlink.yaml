@@ -7,4 +7,4 @@ definition:
       - text-xs
       - font-light
       - whitespace-nowrap
-      - px-2
+      - px-1

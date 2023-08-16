@@ -1,0 +1,8 @@
+name: campaign_mainlayout
+label: Campaign Main Layout
+extends: uesio/web.mainlayout
+definition:
+  uesio.styleTokens:
+    root:
+      - lg:grid-cols-[1000px]
+      - xl:grid-cols-[1200px]

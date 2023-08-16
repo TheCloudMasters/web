@@ -1,0 +1,9 @@
+name: callout_large
+extends: uesio/web.callout
+label: Callout Large
+definition:
+  uesio.styleTokens:
+    root:
+      - md:grid-cols-[700px]
+      - md:py-20
+      - md:px-0

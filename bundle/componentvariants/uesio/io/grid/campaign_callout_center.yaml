@@ -1,0 +1,9 @@
+name: campaign_callout_center
+extends: uesio/web.callout_center
+label: Campaign Callout Center
+definition:
+  uesio.styleTokens:
+    root:
+      - md:grid-cols-1
+      - grid-cols-1
+      - mt-4

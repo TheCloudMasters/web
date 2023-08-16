@@ -1,0 +1,8 @@
+name: campaign_contact_form
+extends: uesio/web.callout_center
+label: Campaign Contact Form
+definition:
+  uesio.styleTokens:
+    root:
+      - grid-cols-1
+      - md:grid-cols-1

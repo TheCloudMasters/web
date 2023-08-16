@@ -1,0 +1,12 @@
+name: campaign_callout_sub
+label: Campaign Callout Subtitle
+definition:
+  uesio.styleTokens:
+    root:
+      - text-slate-200
+      - text-[16pt]
+      - md:text-[20pt]
+      - font-light
+      - font-[Gosha]
+      - inline
+  element: div

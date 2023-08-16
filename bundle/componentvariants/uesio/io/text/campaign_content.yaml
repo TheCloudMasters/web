@@ -1,0 +1,10 @@
+name: campaign_content
+label: Campaign Callout
+extends: uesio/web.campaign_callout_sub
+definition:
+  uesio.styleTokens:
+    root:
+      - text-[16pt]
+      - mt-4
+  element: p
+  align: center

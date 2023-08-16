@@ -2,7 +2,7 @@ name: home
 definition:
   # Wires are how we pull in data
   wires:
-  # Components are how we describe the layout of our view
+    # Components are how we describe the layout of our view
   components:
     - uesio/core.view:
         view: uesio/web.topbar
@@ -33,17 +33,6 @@ definition:
                             root:
                               - relative
                           components:
-                            - uesio/io.text:
-                                uesio.variant: uesio/web.callout
-                                uesio.styleTokens:
-                                  root:
-                                    - text-white
-                                    - mix-blend-color-burn
-                                    - md:mix-blend-overlay
-                                    - absolute
-                                    - top-1
-                                element: div
-                                text: The platform for platforms.
                             - uesio/io.text:
                                 uesio.variant: uesio/web.callout
                                 uesio.styleTokens:

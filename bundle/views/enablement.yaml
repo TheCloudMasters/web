@@ -1,0 +1,355 @@
+name: enablement
+definition:
+  # Wires are how we pull in data
+  wires:
+    newLead:
+      viewOnly: true
+      init:
+        create: true
+      fields:
+        uesio/crm.title:
+          label: Title
+          type: SELECT
+          selectlist:
+            options:
+              - label: Select Title
+                value: ""
+              - label: Sir
+                value: Sir
+              - label: Madam
+                value: Madam
+              - label: Mr
+                value: Mr
+              - label: Mrs
+                value: Mrs
+              - label: Miss
+                value: Miss
+        uesio/crm.firstname:
+          label: First Name
+          type: TEXT
+        uesio/crm.lastname:
+          label: Last Name
+          type: TEXT
+        uesio/crm.account:
+          label: Company
+          type: TEXT
+        uesio/crm.no_employees:
+          label: No. Employees
+          type: NUMBER
+          number:
+            decimals: 2
+        uesio/crm.location:
+          label: Country
+          type: TEXT
+        uesio/crm.email:
+          label: Email
+          type: EMAIL
+        uesio/crm.description:
+          label: Description
+          type: TEXT
+        uesio/crm.status:
+          label: Status
+          type: TEXT
+      defaults:
+        - field: uesio/crm.status
+          valueSource: VALUE
+          value: OPEN
+  # Components are how we describe the layout of our view
+  components:
+    - uesio/core.view:
+        view: uesio/web.topbar
+    - uesio/io.grid:
+        uesio.variant: uesio/web.campaign_mainlayout_dark
+        items:
+          - uesio/io.grid:
+              uesio.variant: uesio/web.campaign_callout_center
+              uesio.styleTokens:
+                root:
+                  - py-14
+              items:
+                - uesio/io.text:
+                    uesio.variant: uesio/web.callout_white
+                    text: Calling all enterprises with IT challenges.
+                    align: center
+    - uesio/io.grid:
+        uesio.variant: uesio/web.campaign_mainlayout_dark
+        items:
+          - uesio/io.grid:
+              uesio.variant: uesio/web.campaign_content_center
+              items:
+                - uesio/io.text:
+                    uesio.variant: uesio/web.campaign_callout_sub
+                    uesio.styleTokens:
+                      root:
+                        - block
+                    text: Are you struggling to find a fast and efficient solution to your software development needs?
+                    align: center
+                - uesio/io.box:
+                    uesio.styleTokens:
+                      root:
+                        - flex
+                        - justify-center
+                        - pb-14
+                        - md:pb-28
+                    components:
+                      - uesio/io.text:
+                          uesio.variant: uesio/web.campaign_callout_sub
+                          uesio.styleTokens:
+                            root:
+                              - font-extrabold
+                              - mr-2
+                          text: " App in a Box "
+                          align: center
+                      - uesio/io.text:
+                          uesio.variant: uesio/web.campaign_callout_sub
+                          text: is the answer!
+                          align: center
+    - uesio/io.grid:
+        uesio.variant: uesio/web.campaign_mainlayout
+        items:
+          - uesio/io.grid:
+              uesio.variant: uesio/web.callout_large
+              items:
+                - uesio/io.text:
+                    uesio.variant: uesio/web.calloutsmall
+                    text: Discover the power of our cutting-edge, no-code platform extensible with code and empowered by AI called ues.io. Say goodbye to traditional, time-consuming coding and let our full stack and fully tooled platform streamline your development process in a professional way!
+    - uesio/io.grid:
+        uesio.variant: uesio/web.campaign_mainlayout_dark
+        items:
+          - uesio/io.grid:
+              uesio.variant: uesio/web.callout_douple_large
+              items:
+                - uesio/io.grid:
+                    uesio.styleTokens:
+                      root:
+                        - order-1
+                        - md:order-0
+                    items:
+                      - uesio/io.grid:
+                          uesio.styleTokens:
+                            root:
+                              - pt-8
+                              - md:pt-0
+                          items:
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.campaign_callout_sub
+                                text: "PS Reference customers:"
+                                align: center
+                            - uesio/io.grid:
+                                uesio.styleTokens:
+                                  root:
+                                    - grid
+                                    - grid-cols-2
+                                    - grid-rows-2
+                                    - gap-2
+                                    - justify-items-center
+                                    - px-14
+                                    - mt-4
+                                    - md:mt-0
+                                items:
+                                  - uesio/io.image:
+                                      uesio.variant: uesio/web.banner
+                                      uesio.styleTokens:
+                                        root:
+                                          - bg-[#ffcc00]
+                                      loading: lacy
+                                      file: uesio/web.dhl
+                                      width: null
+                                      height: 80
+                                  - uesio/io.image:
+                                      uesio.variant: uesio/web.banner
+                                      loading: lacy
+                                      file: uesio/web.amazon
+                                      width: null
+                                      height: 80
+                                  - uesio/io.image:
+                                      uesio.styleTokens:
+                                        root:
+                                          - bg-white
+                                      uesio.variant: uesio/web.banner
+                                      loading: lacy
+                                      file: uesio/web.agco
+                                      width: null
+                                      height: 80
+                                  - uesio/io.image:
+                                      uesio.variant: uesio/web.banner
+                                      uesio.styleTokens:
+                                        root:
+                                          - bg-slate-900
+                                      loading: lacy
+                                      file: uesio/web.axa
+                                      width: null
+                                      height: 80
+                - uesio/io.grid:
+                    # uesio.variant: uesio/web.callout_large
+                    uesio.styleTokents:
+                      root:
+                        - grid
+                        - px-10
+                        - md:grid-cols-[600px]
+                        - grid-cols-1
+                    items:
+                      - uesio/io.text:
+                          uesio.variant: uesio/web.campaign_callout_sub
+                          text: Whether you're looking to build applications, automate tasks, or enhance existing systems, our professional services team is here to guide you every step of the way.
+    - uesio/io.grid:
+        uesio.variant: uesio/web.campaign_mainlayout
+        items:
+          - uesio/io.grid:
+              uesio.variant: uesio/web.callout_large
+              items:
+                - uesio/io.text:
+                    uesio.variant: uesio/web.calloutsmall
+                    text: Ready to transform your business? Don't wait another moment – reach out to us today and let's tackle your IT challenges together by providing you with our ‘App in a Box’.
+    - uesio/io.grid:
+        uesio.variant: uesio/web.campaign_mainlayout_dark
+        uesio.styleTokens:
+        items:
+          - uesio/io.grid:
+              uesio.variant: uesio/web.callout_double
+              items:
+                - uesio/io.grid:
+                    uesio.styleTokens:
+                      root:
+                        - gird
+                        - grid-flow-row-dense
+                        - gap-2
+                    items:
+                      - uesio/io.text:
+                          uesio.variant: uesio/web.campaign_callout_sub
+                          text: "What you get:"
+                          align: center
+                      - uesio/io.text:
+                          uesio.variant: uesio/web.campaign_callout_sub
+                          text: Custom fully functional business App
+                          align: center
+                      - uesio/io.text:
+                          uesio.variant: uesio/web.campaign_callout_sub
+                          text: Free one year ‘GO’ subscription to ues.io for your App
+                          align: center
+                      - uesio/io.text:
+                          uesio.variant: uesio/web.campaign_callout_sub
+                          text: Unlimited users
+                          align: center
+                - uesio/io.grid:
+                    uesio.styleTokens:
+                      root:
+                        - gird
+                        - grid-flow-row-dense
+                        - auto-rows-min
+                        - gap-2
+                    items:
+                      - uesio/io.text:
+                          uesio.variant: uesio/web.campaign_callout_sub
+                          text: "What it costs:"
+                          align: center
+                      - uesio/io.grid:
+                          uesio.styleTokens:
+                            root:
+                              - grid
+
+                              - auto-rows-min
+                          items:
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.campaign_callout_sub
+                                text: $20,000*
+                                align: center
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.campaign_callout_sub_small
+                                text: "*Including up to 100 hours development time."
+                                align: center
+                      - uesio/io.box:
+                          uesio.styleTokens:
+                            root: h-full
+                      - uesio/io.box:
+                          uesio.styleTokens:
+                            root: h-full
+    - uesio/io.grid:
+        uesio.variant: uesio/web.mainlayout
+        items:
+          - uesio/io.grid:
+              uesio.variant: uesio/web.campaign_contact_form
+              items:
+                - uesio/io.grid:
+                    uesio.variant: uesio/web.campaign_contact_form
+                    items:
+                      - uesio/io.grid:
+                          uesio.styleTokens:
+                            root:
+                              - grid
+                              - grid-flow-row
+                              - md:grid-flow-col
+                              - md:gap-x-8
+                              - justify-items-stretch
+                          items:
+                            - uesio/io.list:
+                                wire: newLead
+                                mode: EDIT
+                                components:
+                                  - uesio/io.field:
+                                      fieldId: uesio/crm.title
+                                  - uesio/io.field:
+                                      fieldId: uesio/crm.firstname
+                                  - uesio/io.field:
+                                      fieldId: uesio/crm.lastname
+                      - uesio/io.list:
+                          wire: newLead
+                          mode: EDIT
+                          components:
+                            - uesio/io.field:
+                                fieldId: uesio/crm.account
+                            - uesio/io.field:
+                                fieldId: uesio/crm.no_employees
+                            - uesio/io.field:
+                                fieldId: uesio/crm.location
+                            - uesio/io.field:
+                                fieldId: uesio/crm.email
+                            - uesio/io.field:
+                                fieldId: uesio/crm.description
+                                label: "Tell us briefly about your problem you need to solve:"
+                            - uesio/io.button:
+                                uesio.variant: uesio/io.primary
+                                uesio.styleTokens:
+                                  root:
+                                    - mt-4
+                                text: Submit
+                                signals:
+                                  - signal: bot/CALL
+                                    bot: uesio/web.addlead
+                                    params:
+                                      uesio/crm.title: $Record{newLead:uesio/crm.title}
+                                      uesio/crm.firstname: $Record{newLead:uesio/crm.firstname}
+                                      uesio/crm.lastname: $Record{newLead:uesio/crm.lastname}
+                                      uesio/crm.account: $Record{newLead:uesio/crm.account}
+                                      uesio/crm.no_employees: $Record{newLead:uesio/crm.no_employees}
+                                      uesio/crm.location: $Record{newLead:uesio/crm.location}
+                                      uesio/crm.email: $Record{newLead:uesio/crm.email}
+                                      uesio/crm.description: $Record{newLead:uesio/crm.description}
+                                      uesio/crm.status: $Record{newLead:uesio/crm.status}
+                                  - signal: notification/ADD
+                                    severity: success
+                                    text: Thank you for your message.
+                                    duration: "5"
+    - uesio/io.grid:
+        uesio.variant: uesio/web.mainlayout
+        items:
+          - uesio/io.grid:
+              uesio.variant: uesio/web.campaign_content_center
+              items:
+                - uesio/io.grid:
+                    uesio.styleTokens:
+                      root:
+                        - grid
+                        - grid-flow-row
+                        - md:grid-flow-col
+                        - justify-items-center
+                        - w-full
+                    items:
+                      - uesio/io.image:
+                          uesio.variant: uesio/web.banner
+                          loading: lacy
+                          file: uesio/web.aws
+                          width: null
+                          height: 80
+    - uesio/core.view:
+        view: uesio/web.footer
