@@ -1,0 +1,207 @@
+name: demo
+definition:
+  # Wires are how we pull in data
+  wires:
+    newDemo:
+      viewOnly: true
+      fields:
+        first_name:
+          type: TEXT
+          required: true
+          label: "First Name"
+        last_name:
+          type: TEXT
+          required: true
+          label: "Last Name"
+        email:
+          type: EMAIL
+          required: true
+          label: "Email"
+        company:
+          type: TEXT
+          label: "Company"
+        description:
+          type: LONGTEXT
+          label: "How did you hear about us?"
+      init:
+        create: true
+  # Components are how we describe the layout of our view
+  components:
+    - uesio/core.view:
+        view: uesio/web.topbar
+    - uesio/io.grid:
+        uesio.styleTokens:
+          root:
+            - grid
+            - grid-rows-2
+            - grid-cols-none
+            - md:grid-rows-none
+            - md:grid-cols-2
+            - mx-5
+        items:
+          - uesio/io.grid:
+              uesio.styleTokens:
+                root:
+                  - grid
+                  - grid-flow-row
+                  - m-5
+                  - md:m-20
+                  - px-3
+              items:
+                - uesio/io.text:
+                    uesio.variant: uesio/web.callout
+                    text: Book your free ues.io demo
+                - uesio/io.text:
+                    uesio.variant: uesio/web.calloutsub
+                    text: Experience ues.io in action! Schedule a personalised demo to learn how ues.io can help you with your digital transformation journey. Fill out the form and we'll get in touch to arrange a convenient time.
+                - uesio/io.grid:
+                    uesio.styleTokens:
+                      root:
+                        - grid
+                        - grid-flow-row-dense
+                        - text-[22px]
+                    items:
+                      - uesio/io.box:
+                          uesio.styleTokens:
+                            root:
+                              - grid
+                              - grid-cols-[20px_1fr]
+                              - items-center
+                              - gap-2
+                          components:
+                            - uesio/io.text:
+                                uesio.variant: uesio/io.icon
+                                text: check
+                                color: green
+                            - uesio/io.text:
+                                uesio.styleTokens:
+                                  root:
+                                    - m-0
+                                uesio.variant: uesio/web.calloutsub
+                                text: No-code extensible with code
+                      - uesio/io.box:
+                          uesio.styleTokens:
+                            root:
+                              - grid
+                              - grid-cols-[20px_1fr]
+                              - items-center
+                              - gap-2
+                          components:
+                            - uesio/io.text:
+                                uesio.variant: uesio/io.icon
+                                text: check
+                                color: green
+                            - uesio/io.text:
+                                uesio.styleTokens:
+                                  root:
+                                    - m-0
+                                uesio.variant: uesio/web.calloutsub
+                                text: AI included
+                      - uesio/io.box:
+                          uesio.styleTokens:
+                            root:
+                              - grid
+                              - grid-cols-[20px_1fr]
+                              - items-center
+                              - gap-2
+                          components:
+                            - uesio/io.text:
+                                uesio.variant: uesio/io.icon
+                                text: check
+                                color: green
+                            - uesio/io.text:
+                                uesio.styleTokens:
+                                  root:
+                                    - m-0
+                                uesio.variant: uesio/web.calloutsub
+                                text: All the components to build with
+                      - uesio/io.box:
+                          uesio.styleTokens:
+                            root:
+                              - grid
+                              - grid-cols-[20px_1fr]
+                              - items-center
+                              - gap-2
+                          components:
+                            - uesio/io.text:
+                                uesio.variant: uesio/io.icon
+                                text: check
+                                color: green
+                            - uesio/io.text:
+                                uesio.styleTokens:
+                                  root:
+                                    - m-0
+                                uesio.variant: uesio/web.calloutsub
+                                text: Team development
+                      - uesio/io.box:
+                          uesio.styleTokens:
+                            root:
+                              - grid
+                              - grid-cols-[20px_1fr]
+                              - items-center
+                              - gap-2
+                          components:
+                            - uesio/io.text:
+                                uesio.variant: uesio/io.icon
+                                text: check
+                                color: green
+                                align: center
+                            - uesio/io.text:
+                                uesio.styleTokens:
+                                  root:
+                                    - m-0
+                                uesio.variant: uesio/web.calloutsub
+                                text: Unlimited users
+          - uesio/io.grid:
+              uesio.styleTokens:
+                root:
+                  - grid
+                  - grid-flow-row
+                  - m-5
+                  - md:m-20
+                  - px-3
+              items:
+                - uesio/io.grid:
+                    uesio.styleTokens:
+                      root:
+                        - grid
+                        - grid-flow-row-dense
+                        - md:grid-flow-col-dense
+                        - gap-x-4
+                    items:
+                      - uesio/io.field:
+                          wire: newDemo
+                          fieldId: first_name
+                          mode: EDIT
+                      - uesio/io.field:
+                          wire: newDemo
+                          fieldId: last_name
+                          mode: EDIT
+                - uesio/io.grid:
+                    uesio.styleTokens:
+                      root:
+                        - grid
+                        - grid-flow-row-dense
+                        - md:grid-flow-col-dense
+                        - gap-x-4
+                    items:
+                      - uesio/io.field:
+                          wire: newDemo
+                          fieldId: email
+                          mode: EDIT
+                      - uesio/io.field:
+                          wire: newDemo
+                          fieldId: company
+                          mode: EDIT
+                - uesio/io.field:
+                    wire: newDemo
+                    fieldId: description
+                    mode: EDIT
+                - uesio/io.button:
+                    uesio.variant: uesio/web.calltoaction
+                    uesio.styleTokens:
+                      root:
+                        - w-fit
+                    text: Send now
+    - uesio/core.view:
+        view: uesio/web.footer

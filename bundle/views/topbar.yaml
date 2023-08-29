@@ -114,7 +114,9 @@ definition:
                                     path: https://studio.$Site{domain}
                             - uesio/io.button:
                                 uesio.variant: uesio/web.demo
-                                
+                                signals:
+                                  - signal: route/NAVIGATE
+                                    path: demo
   panels:
     navmenu:
       uesio.type: uesio/io.sidepanel

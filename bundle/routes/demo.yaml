@@ -1,0 +1,5 @@
+name: demo
+path: demo
+view: uesio/web.demo
+theme: uesio/core.default
+title: ues.io Demo
