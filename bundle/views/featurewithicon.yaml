@@ -1,0 +1,41 @@
+name: featurewithicon
+definition:
+  # Wires are how we pull in data
+  params:
+    icon:
+      type: TEXT
+      required: false
+    title:
+      type: TEXT
+      required: false
+    subtitle:
+      type: TEXT
+      required: false
+  components:
+    - uesio/io.box:
+        uesio.styleTokens:
+            root: 
+                - flex
+                - gap-4
+                - mb-8
+        components:
+            - uesio/io.box:
+                components:
+                  - uesio/io.text:
+                      uesio.variant: uesio/web.callouticon
+                      text: $Param{icon}
+                      uesio.styleTokens:
+                        root:
+                          - text-xs
+                          - md:text-xs
+            - uesio/io.box:
+                components:
+                    - uesio/io.text:
+                        uesio.variant: uesio/web.calloutsmalldark
+                        text: $Param{title}
+                        uesio.styleTokens:
+                          root:
+                            - mb-0
+                    - uesio/io.text:
+                        element: div
+                        text: $Param{subtitle}

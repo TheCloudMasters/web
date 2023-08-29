@@ -1,0 +1,11 @@
+name: calloutpre
+label: Callout Pretitle
+definition:
+  uesio.styleTokens:
+    root:
+      - text-[rgb(45,39,245)]
+      - font-bold
+      - mb-0
+      - uppercase
+      - text-xs
+  element: div

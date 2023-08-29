@@ -1,0 +1,7 @@
+name: section
+label: Section
+definition:
+  uesio.styleTokens:
+    root:
+      - border-transparent
+      - md:px-4

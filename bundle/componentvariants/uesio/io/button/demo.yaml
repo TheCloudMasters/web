@@ -1,0 +1,12 @@
+name: demo
+label: demo
+extends: uesio/web.calltoaction
+definition:
+  text: Book a demo 👉
+  uesio.styleTokens:
+    root:
+      - bg-[rgb(45,39,245)]
+      - text-white
+
+     
+      

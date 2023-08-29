@@ -5,6 +5,7 @@ definition:
     root:
       - grid-cols-[1fr]
       - lg:grid-cols-[900px]
-      - xl:grid-cols-[1080px]
+      - xl:grid-cols-[1280px]
       - justify-center
-      - bg-slate-50
+      - bg-[rgb(247,247,247)]
+      # - bg-slate-50
