@@ -14,7 +14,6 @@ definition:
         components:
           - uesio/io.grid:
               uesio.variant: uesio/web.mainlayout
-              
               items:
                 - uesio/io.grid:
                     uesio.styleTokens:
@@ -89,7 +88,9 @@ definition:
                                     path: https://studio.$Site{domain}
                             - uesio/io.button:
                                 uesio.variant: uesio/web.demo
-                                
+                                signals:
+                                  - signal: route/NAVIGATE
+                                    path: demo
   panels:
     navmenu:
       uesio.type: uesio/io.sidepanel
