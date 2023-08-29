@@ -19,10 +19,6 @@ definition:
                         uesio.variant: uesio/web.callout_double
                         uesio.styleTokens:
                             root:
-                                # - bg-[url($File{uesio/web.oner})]
-                                # - bg-contain
-                                # - bg-no-repeat
-                                # - bg-right
                                 - min-h-[70vh]
                         items:
                             - uesio/io.box:
@@ -59,7 +55,8 @@ definition:
                               - md:grid-cols-2
                               - px-10
                               - xl:px-20
-                              - py-28
+                              - pt-5
+                              - pb-10
                               - gap-10
                         items:
                             - uesio/io.box:
@@ -195,24 +192,29 @@ definition:
                                     root:
                                         - text-slate-500
                                 text: Low code no-code tools are not living up to their promise.
-                            - uesio/core.view:
-                                view: uesio/web.featurewithicon
-                                params:
-                                    title: 10% trap
-                                    icon: star
-                                    subtitle: No-Code and Low-Code platforms quickly achieve 80% of a build, struggle with the next 10%, and the last 10% can’t bypass the abstraction.
-                            - uesio/core.view:
-                                view: uesio/web.featurewithicon
-                                params:
-                                    title: Few native on-premise options
-                                    icon: star
-                                    subtitle: Easily move from cloud enabled to cloud native on a unified, secure and comprehensive platform of your own.
-                            - uesio/core.view:
-                                view: uesio/web.featurewithicon
-                                params:
-                                    title: Expensive per user pricing
-                                    icon: star
-                                    subtitle: Avoid unused per user licensing models and determine your own budget on a pay as you use basis.
+                            - uesio/io.box:
+                                uesio.styleTokens:
+                                    root:
+                                        - py-10
+                                components:
+                                    - uesio/core.view:
+                                        view: uesio/web.featurewithicon
+                                        params:
+                                            title: 10% trap
+                                            icon: star
+                                            subtitle: No-Code and Low-Code platforms quickly achieve 80% of a build, struggle with the next 10%, and the last 10% can’t bypass the abstraction.
+                                    - uesio/core.view:
+                                        view: uesio/web.featurewithicon
+                                        params:
+                                            title: Few native on-premise options
+                                            icon: star
+                                            subtitle: Easily move from cloud enabled to cloud native on a unified, secure and comprehensive platform of your own.
+                                    - uesio/core.view:
+                                        view: uesio/web.featurewithicon
+                                        params:
+                                            title: Expensive per user pricing
+                                            icon: star
+                                            subtitle: Avoid unused per user licensing models and determine your own budget on a pay as you use basis.
                    - uesio/io.box:
                         uesio.styleTokens:
                             root:
@@ -233,7 +235,7 @@ definition:
                 - uesio/io.text:
                     uesio.variant: uesio/web.calloutcenter
                     element: div
-                    text: Low code no-code tools are not living up to their promise.
+                    text: Uesio is all inclusive
                 - uesio/io.box:
                     uesio.styleTokens:
                         root:
@@ -243,6 +245,7 @@ definition:
                             - rounded-lg
                             - shadow-lg
                             - p-8
+                            - my-10
                     components:
                         - uesio/core.view:
                             view: uesio/web.allinclusiveitem

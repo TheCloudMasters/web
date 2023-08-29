@@ -13,8 +13,27 @@ definition:
             - z-10
         components:
           - uesio/io.grid:
+              uesio.variant: uesio/web.mainlayout_dark
+              uesio.styleTokens:
+                root:
+                  - text-right
+              items:
+               - uesio/io.box:
+                    uesio.styleTokens:
+                      root:
+                        - flex
+                        - gap-4
+                        - justify-end
+                        - text-sm
+                        - p-1
+                        - text-slate-400
+                    components:
+                      - uesio/io.text: 
+                         text: 🇺🇸 +41 123123123
+                      - uesio/io.text: 
+                          text: 🇨🇭 +41 123123123
+          - uesio/io.grid:
               uesio.variant: uesio/web.mainlayout
-              
               items:
                 - uesio/io.grid:
                     uesio.styleTokens:
@@ -26,7 +45,7 @@ definition:
                       - uesio/io.image:
                           uesio.styleTokens:
                             root:
-                              - m-4
+                              - mb-4
                           height: 55
                           file: uesio/web.logo
                           signals:
@@ -38,7 +57,7 @@ definition:
                               - grid
                               - md:hidden
                               - justify-right
-                              - m-5
+                              - mb-5
                           components:
                             - uesio/io.button:
                                 uesio.styleTokens:
@@ -55,29 +74,35 @@ definition:
                             root:
                               - hidden
                               - md:grid
-                              - m-5
+                              - mb-5
                               - gap-2
                               - md:gap-4
                               - justify-right
                           components:
+                            # - uesio/io.button:
+                            #     uesio.variant: uesio/web.borderless
+                            #     text: Docs
+                            #     signals:
+                            #       - signal: route/REDIRECT
+                            #         path: https://docs.$Site{domain}
                             - uesio/io.button:
                                 uesio.variant: uesio/web.borderless
-                                text: Docs
+                                text: Pricing
                                 signals:
-                                  - signal: route/REDIRECT
-                                    path: https://docs.$Site{domain}
+                                  - signal: route/NAVIGATE
+                                    path: pricing
                             - uesio/io.button:
                                 uesio.variant: uesio/web.borderless
                                 text: Community
                                 signals:
                                   - signal: route/REDIRECT
                                     path: https://community.ues.io
-                            - uesio/io.button:
-                                uesio.variant: uesio/web.borderless
-                                text: Blog
-                                signals:
-                                  - signal: route/NAVIGATE
-                                    path: blog
+                            # - uesio/io.button:
+                            #     uesio.variant: uesio/web.borderless
+                            #     text: Blog
+                            #     signals:
+                            #       - signal: route/NAVIGATE
+                            #         path: blog
                             - uesio/io.button:
                                 uesio.variant: uesio/web.calltoaction
                                 text: Login

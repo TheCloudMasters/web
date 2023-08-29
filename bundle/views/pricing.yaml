@@ -1,0 +1,188 @@
+name: pricing
+definition:
+  # Wires are how we pull in data
+  wires:
+  # Components are how we describe the layout of our view
+  components:
+    - uesio/core.view:
+        view: uesio/web.topbar
+
+    - uesio/io.box:
+        uesio.styleTokens:
+            root: 
+                - bg-[rgb(247,247,247)]
+                - pt-28
+        components:
+            - uesio/io.grid:
+                uesio.variant: uesio/web.mainlayout
+                items:
+                    - uesio/io.box:
+                        components:
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.calloutcenter
+                                element: div
+                                text: Developer Pricing
+                    - uesio/io.box:
+                        uesio.styleTokens:
+                            root:
+                                - flex
+                                - flex-wrap
+                                - text-center
+                                - gap-4
+                                - items-end
+                        components:
+                            - uesio/io.box:
+                                uesio.styleTokens:
+                                    root: 
+                                        - flex-[30%]
+                                components:
+                                    - uesio/core.view:
+                                        view: uesio/web.pricingcard
+                                        params:
+                                            title: Free
+                                            price: $0 /month
+                                            transactions: 20K
+                                            storage: 500MB
+                                            downloads: 500MB
+                                            
+                            - uesio/io.box:
+                                uesio.styleTokens:
+                                    root: 
+                                        - flex-[33%]
+                                components:
+                                    - uesio/core.view:
+                                        view: uesio/web.pricingcard
+                                        params:
+                                            title: Go
+                                            price: $149 /month
+                                            transactions: 20K
+                                            storage: 500MB
+                                            downloads: 500MB
+                                            subdomain: true
+                            - uesio/io.box:
+                                uesio.styleTokens:
+                                    root: 
+                                        - flex-[33%]
+                                components:
+                                    - uesio/core.view:
+                                        view: uesio/web.pricingcard
+                                        params:
+                                            title: Grow
+                                            price: $299 /month
+                                            transactions: 140K
+                                            storage: 4GB
+                                            downloads: 2GB
+                                            subdomain: true
+                                            github: true
+                                            sla: true
+                            
+                    - uesio/io.box:
+                        uesio.styleTokens:
+                            root: 
+                                - flex
+                                - gap-4
+                                - items-center
+                                - my-8
+                        components:
+                            - uesio/io.box:
+                                uesio.styleTokens:
+                                    root:
+                                        - h-0.5
+                                        - bg-slate-400
+                                        - flex-1
+                            - uesio/io.text:
+                                text: Unlimited Users
+                            - uesio/io.box:
+                                uesio.styleTokens:
+                                    root:
+                                        - h-0.5
+                                        - bg-slate-400
+                                        - flex-1
+            - uesio/io.grid:
+                uesio.variant: uesio/web.mainlayout
+                items:
+                    - uesio/io.box:
+                        components:
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.calloutcenter
+                                element: div
+                                text: Enterprise Pricing
+                    - uesio/io.box:
+                        uesio.styleTokens:
+                            root:
+                                - flex
+                                - flex-wrap
+                                - text-center
+                                - gap-4
+                                - items-end
+                        components:
+                            - uesio/io.box:
+                                uesio.styleTokens:
+                                    root: 
+                                        - flex-[30%]
+                                components:
+                                    - uesio/core.view:
+                                        view: uesio/web.pricingcard
+                                        params:
+                                            title: Small
+                                            price: $2795 /month
+                                            transactions: 20K
+                                            storage: 500MB
+                                            downloads: 500MB
+                                            
+                            - uesio/io.box:
+                                uesio.styleTokens:
+                                    root: 
+                                        - flex-[33%]
+                                components:
+                                    - uesio/core.view:
+                                        view: uesio/web.pricingcard
+                                        params:
+                                            title: Medium
+                                            price: $6990 /month
+                                            transactions: 1.5m
+                                            storage: 250GB
+                                            downloads: 60GB
+                                            subdomain: true
+                            - uesio/io.box:
+                                uesio.styleTokens:
+                                    root: 
+                                        - flex-[33%]
+                                components:
+                                    - uesio/core.view:
+                                        view: uesio/web.pricingcard
+                                        params:
+                                            title: Large
+                                            price: Contact us
+                                            transactions: ∞
+                                            storage: ∞
+                                            downloads: ∞
+                                            subdomain: true
+                                            github: true
+                                            sla: true
+                            
+                    - uesio/io.box:
+                        uesio.styleTokens:
+                            root: 
+                                - flex
+                                - gap-4
+                                - items-center
+                                - my-8
+                        components:
+                            - uesio/io.box:
+                                uesio.styleTokens:
+                                    root:
+                                        - h-0.5
+                                        - bg-slate-400
+                                        - flex-1
+                            - uesio/io.text:
+                                text: Unlimited Users
+                            - uesio/io.box:
+                                uesio.styleTokens:
+                                    root:
+                                        - h-0.5
+                                        - bg-slate-400
+                                        - flex-1
+
+    - uesio/core.view:
+        view: uesio/web.footer
