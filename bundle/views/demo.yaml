@@ -6,22 +6,21 @@ definition:
       viewOnly: true
       fields:
         first_name:
+          label: First Name
           type: TEXT
           required: true
-          label: "First Name"
         last_name:
+          label: Last Name
           type: TEXT
           required: true
-          label: "Last Name"
         email:
+          label: Email
           type: EMAIL
           required: true
-          label: "Email"
-        company:
-          type: TEXT
-          required: false
-          label: "Company"
-
+        description:
+          label: How did you hear about us?
+          type: LONGTEXT
+          required: true
       init:
         create: true
   # Components are how we describe the layout of our view
@@ -34,7 +33,6 @@ definition:
             - bg-[rgb(247,247,247)]
             - pt-28
             - min-h-[70vh]
-
         components:
           - uesio/io.grid:
               uesio.variant: uesio/web.mainlayout
@@ -159,11 +157,10 @@ definition:
                                                 - m-0
                                             uesio.variant: uesio/web.calloutsub
                                             text: Unlimited users
-
-                        # Form box
                       - uesio/io.list:
                           wire: newDemo
                           mode: EDIT
+                          uesio.id: demoForm
                           components:
                             - uesio/io.box:
                                 uesio.styleTokens:
@@ -180,8 +177,7 @@ definition:
                                   - uesio/io.field:
                                       fieldId: email
                                   - uesio/io.field:
-                                      fieldId: company
-
+                                      fieldId: description
                                   - uesio/io.box:
                                       components:
                                         - uesio/io.button:
@@ -192,11 +188,12 @@ definition:
                                             text: Send now
                                             signals:
                                               - signal: bot/CALL
-                                                bot: uesio/web.demorequest
+                                                bot: uesio/web.request
                                                 params:
                                                   first_name: ${first_name}
                                                   last_name: ${last_name}
                                                   email: ${email}
-                                                  company: ${company}
+                                                  description: ${description}
+                                                  source: "Demo Request"
     - uesio/core.view:
         view: uesio/web.footer
