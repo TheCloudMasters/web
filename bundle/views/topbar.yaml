@@ -18,7 +18,7 @@ definition:
                 root:
                   - text-right
               items:
-               - uesio/io.box:
+                - uesio/io.box:
                     uesio.styleTokens:
                       root:
                         - flex
@@ -28,9 +28,9 @@ definition:
                         - p-1
                         - text-slate-400
                     components:
-                      - uesio/io.text: 
-                         text: 🇺🇸 +41 123123123
-                      - uesio/io.text: 
+                      - uesio/io.text:
+                          text: 🇺🇸 +41 123123123
+                      - uesio/io.text:
                           text: 🇨🇭 +41 123123123
           - uesio/io.grid:
               uesio.variant: uesio/web.mainlayout
