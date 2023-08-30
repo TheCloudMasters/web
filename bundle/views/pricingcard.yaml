@@ -1,142 +1,140 @@
 name: pricingcard
-definition: 
+definition:
   params:
     downloads:
-        type: TEXT
-        required: false
+      type: TEXT
+      required: false
     transactions:
-        type: TEXT
-        required: false
+      type: TEXT
+      required: false
     storage:
-        type: TEXT
-        required: false
+      type: TEXT
+      required: false
     price:
-        type: TEXT
-        required: false
+      type: TEXT
+      required: false
     title:
-        type: TEXT
-        required: false
+      type: TEXT
+      required: false
     sla:
-        type: TEXT
-        required: false
+      type: TEXT
+      required: false
     github:
-        type: TEXT
-        required: false
+      type: TEXT
+      required: false
     subdomain:
-        type: TEXT
-        required: false
+      type: TEXT
+      required: false
   components:
     - uesio/io.box:
         uesio.styleTokens:
-            root:
-                - rounded-[1em]
-                - shadow-lg
-                - bg-white
-                - pb-8
-                - px-8
-                - max-w-[360px]
-                - mx-auto
+          root:
+            - rounded-[1em]
+            - shadow-lg
+            - bg-white
+            - pb-8
+            - px-8
+            - max-w-[360px]
+            - mx-auto
         components:
-            - uesio/io.text:
-                uesio.styleTokens:
-                    root:
-                        - bg-[rgb(45,39,245)]
-                        - text-white
-                        - rounded-bl-[1em]
-                        - rounded-br-[1em]
-                        - font-lg
-                        - p-1
-                        - inline-block
-                        - min-w-[33%]
-                text: $Param{title}
-                element: div
-            - uesio/io.text:
-                text: $Param{price}
-                element: div
-                uesio.styleTokens:
-                    root:
-                        - text-[#f76540]
-                        - my-8
-                        - mx-auto
-                        - text-xl
-                        - max-w-[1px]
-                        - flex
-                        - justify-center
-                        - font-bold
+          - uesio/io.text:
+              uesio.styleTokens:
+                root:
+                  - bg-[rgb(45,39,245)]
+                  - text-white
+                  - rounded-bl-[1em]
+                  - rounded-br-[1em]
+                  - font-lg
+                  - p-1
+                  - inline-block
+                  - min-w-[33%]
+              text: $Param{title}
+              element: div
+          - uesio/io.text:
+              text: $Param{price}
+              element: div
+              uesio.styleTokens:
+                root:
+                  - text-[#f76540]
+                  - my-8
+                  - mx-auto
+                  - text-xl
+                  - max-w-[1px]
+                  - flex
+                  - justify-center
+                  - font-bold
 
-            - uesio/io.box:
-                components:
-                    - uesio/io.text:
-                        text: $Param{transactions}
-                        uesio.styleTokens:
-                            root:
-                                - text-[rgb(45,39,245)]
-                    - uesio/io.text:
-                        text: " transactions"
-            # Downloads
-            - uesio/io.box:
-                components:
-                    - uesio/io.text:
-                        text: $Param{downloads}
-                        uesio.styleTokens:
-                            root:
-                                - text-[rgb(45,39,245)]
-                    - uesio/io.text:
-                        text: " File Downloads"
-            # Storage
-            - uesio/io.box:
-                components:
-                    - uesio/io.text:
-                        text: $Param{storage}
-                        uesio.styleTokens:
-                            root:
-                                - text-[rgb(45,39,245)]
-                    - uesio/io.text:
-                        text: " Storage"
-
-            - uesio/io.box:
-                uesio.styleTokens:
-                    root:
-                        - h-0.5
-                        - bg-slate-300
-                        - w-[4em]
-                        - mx-auto
-                        - my-4
-
-            
-            # features
-            - uesio/io.text:
-                element: div
-                text: 24h Support SLA
-                uesio.display:
-                    - type: paramIsSet
-                      param: sla
-                uesio.styleTokens:
-                    root:
+          - uesio/io.box:
+              components:
+                - uesio/io.text:
+                    text: $Param{transactions}
+                    uesio.styleTokens:
+                      root:
                         - text-[rgb(45,39,245)]
-            # Subdomain
-            - uesio/io.text:
-                element: div
-                uesio.display:
-                    - type: paramIsSet
-                      param: subdomain
-                text: Subdomain
-            # Github
-            - uesio/io.text:
-                element: div
-                uesio.display:
-                    - type: paramIsSet
-                      param: github
-                text: Github Sync
-            # Community
-            - uesio/io.text:
-                element: div
-                text: Community support
-                 
-            - uesio/io.button:
-                uesio.styleTokens:
-                    root:
-                        - mt-8
-                        - mb-2
-                uesio.variant: uesio/web.demo
-                
+                - uesio/io.text:
+                    text: " transactions"
+          # Downloads
+          - uesio/io.box:
+              components:
+                - uesio/io.text:
+                    text: $Param{downloads}
+                    uesio.styleTokens:
+                      root:
+                        - text-[rgb(45,39,245)]
+                - uesio/io.text:
+                    text: " File Downloads"
+          # Storage
+          - uesio/io.box:
+              components:
+                - uesio/io.text:
+                    text: $Param{storage}
+                    uesio.styleTokens:
+                      root:
+                        - text-[rgb(45,39,245)]
+                - uesio/io.text:
+                    text: " Storage"
+
+          - uesio/io.box:
+              uesio.styleTokens:
+                root:
+                  - h-0.5
+                  - bg-slate-300
+                  - w-[4em]
+                  - mx-auto
+                  - my-4
+
+          # features
+          - uesio/io.text:
+              element: div
+              text: 24h Support SLA
+              uesio.display:
+                - type: paramIsSet
+                  param: sla
+              uesio.styleTokens:
+                root:
+                  - text-[rgb(45,39,245)]
+          # Subdomain
+          - uesio/io.text:
+              element: div
+              uesio.display:
+                - type: paramIsSet
+                  param: subdomain
+              text: Subdomain
+          # Github
+          - uesio/io.text:
+              element: div
+              uesio.display:
+                - type: paramIsSet
+                  param: github
+              text: Github Sync
+          # Community
+          - uesio/io.text:
+              element: div
+              text: Community support
+
+          - uesio/io.button:
+              uesio.styleTokens:
+                root:
+                  - mt-8
+                  - mb-2
+              uesio.variant: uesio/web.demo
