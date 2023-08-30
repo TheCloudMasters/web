@@ -97,6 +97,12 @@ definition:
                                 signals:
                                   - signal: route/REDIRECT
                                     path: https://community.ues.io
+                            - uesio/io.button:
+                                uesio.variant: uesio/web.borderless
+                                text: Contact
+                                signals:
+                                  - signal: route/NAVIGATE
+                                    path: contact
                             # - uesio/io.button:
                             #     uesio.variant: uesio/web.borderless
                             #     text: Blog
