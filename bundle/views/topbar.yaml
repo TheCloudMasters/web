@@ -60,6 +60,8 @@ definition:
                               # - mb-5
                           components:
                             - uesio/io.button:
+                                uesio.variant: uesio/web.demo
+                            - uesio/io.button:
                                 uesio.styleTokens:
                                   root:
                                     - text-xl
@@ -120,11 +122,14 @@ definition:
   panels:
     navmenu:
       uesio.type: uesio/io.sidepanel
+
       components:
         - uesio/io.group:
             uesio.styleTokens:
               root:
                 - grid-flow-row
+                - bg-[rgb(247,247,247)]
+
             components:
               - uesio/io.button:
                   uesio.variant: uesio/web.borderless
