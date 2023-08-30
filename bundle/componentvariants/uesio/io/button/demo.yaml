@@ -4,12 +4,9 @@ extends: uesio/web.calltoaction
 definition:
   text: Book a demo 👉
   signals:
-    - signal: route/NAVIGATE
+    - signal: route/REDIRECT
       path: demo
   uesio.styleTokens:
     root:
       - bg-[rgb(45,39,245)]
       - text-white
-
-     
-      

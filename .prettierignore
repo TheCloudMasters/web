@@ -1,5 +1,5 @@
 # TEMPORARY - we need to fix bot function names treated as "unused" in TS eslint  errors!
-bundle/bots/**/bot.ts
+# bundle/bots/**/bot.ts
 /bundle/componentpacks/*/dist
 package-lock.json
 package.json

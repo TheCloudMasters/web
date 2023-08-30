@@ -9,264 +9,266 @@ definition:
 
     - uesio/io.box:
         uesio.styleTokens:
-            root: 
-                - bg-[rgb(247,247,247)]
+          root:
+            - bg-[rgb(247,247,247)]
         components:
-            - uesio/io.grid:
-                uesio.variant: uesio/web.mainlayout
-                items:
-                    - uesio/io.grid:
-                        uesio.variant: uesio/web.callout_double
-                        uesio.styleTokens:
+          - uesio/io.grid:
+              uesio.variant: uesio/web.mainlayout
+              items:
+                - uesio/io.grid:
+                    uesio.variant: uesio/web.callout_double
+                    uesio.styleTokens:
+                      root:
+                        - min-h-[70vh]
+                    items:
+                      - uesio/io.box:
+                          uesio.styleTokens:
                             root:
-                                - min-h-[70vh]
-                        items:
+                              - flex
+                              - items-center
+                          components:
                             - uesio/io.box:
-                                uesio.styleTokens:
-                                    root:
-                                        - flex
-                                        - items-center
                                 components:
-                                    - uesio/io.box:
-                                        components:
-                                            - uesio/io.text:
-                                                uesio.variant: uesio/web.calloutpre
-                                                text: the platforms for platforms
-                                            - uesio/io.text:
-                                                uesio.variant: uesio/web.callout
-                                                text: Discover the ROI of building apps with ues.io
-                                            - uesio/io.text:
-                                                uesio.variant: uesio/web.calloutsub
-                                                text: ues.io (User Experience Studio) is a comprehensive no-code AI enabled platform designed to simplify, secure and streamline the digital transformation process for enterprises.
-                                            - uesio/io.button:
-                                                uesio.variant: uesio/web.demo
-                            - uesio/io.box:
-                                uesio.styleTokens:
-                                    root:
-                                        - bg-[url($File{uesio/web.oner})]
-                                        - bg-contain
-                                        - bg-no-repeat
-                                        - bg-right
-                    - uesio/io.grid:
-                        # uesio.variant: uesio/web.callout_double
-                        uesio.styleTokens:
+                                  - uesio/io.text:
+                                      uesio.variant: uesio/web.calloutpre
+                                      text: the platforms for platforms
+                                  - uesio/io.text:
+                                      uesio.variant: uesio/web.callout
+                                      text: Discover the ROI of building apps with ues.io
+                                  - uesio/io.text:
+                                      uesio.variant: uesio/web.calloutsub
+                                      text: ues.io (User Experience Studio) is a comprehensive no-code AI enabled platform designed to simplify, secure and streamline the digital transformation process for enterprises.
+                                  - uesio/io.button:
+                                      uesio.variant: uesio/web.demo
+                      - uesio/io.box:
+                          uesio.styleTokens:
                             root:
-                              - grid-cols-1
-                              - md:grid-cols-2
-                              - px-10
-                              - xl:px-20
-                              - pt-5
-                              - pb-10
-                              - gap-10
-                        items:
-                            - uesio/io.box:
+                              - bg-[url($File{uesio/web.oner})]
+                              - bg-contain
+                              - bg-no-repeat
+                              - bg-center
+                              - md:bg-right
+                              - md:h-[initial]
+                              - h-[300px]
+                - uesio/io.grid:
+                    # uesio.variant: uesio/web.callout_double
+                    uesio.styleTokens:
+                      root:
+                        - grid-cols-1
+                        - md:grid-cols-2
+                        - px-10
+                        - xl:px-20
+                        - pt-5
+                        - pb-10
+                        - gap-10
+                    items:
+                      - uesio/io.box:
+                          uesio.styleTokens:
+                            root:
+                              - bg-white
+                              - rounded
+                              - max-w-sm
+                              - p-4
+                              - self-start
+                              - justify-self-end
+                              - w-full
+                          components:
+                            - uesio/io.text:
+                                element: p
+                                text: Problem
                                 uesio.styleTokens:
-                                    root:
-                                        - bg-white
-                                        - rounded
-                                        - max-w-sm
-                                        - p-4
-                                        - self-start	
-                                        - justify-self-end	
-                                        - w-full
-                                components:
-                                    - uesio/io.text: 
-                                        element: p
-                                        text: Problem
-                                        uesio.styleTokens:
-                                            root:
-                                                - font-bold
-                                    - uesio/io.text: 
-                                        element: p
-                                        text: Enterprise companies undergoing digital transformation face challenges when transitioning from legacy on-premise to cloud-enabled and ultimately cloud-native systems.
-                            - uesio/io.box:
-                                uesio.styleTokens:
-                                    root:
-                                        - rounded
-                                        - max-w-sm
-                                        - p-4
-                                        - bg-[#f76540]
-                                        - mt-20
-                                        - text-white
-                                        - shadow-lg
+                                  root:
+                                    - font-bold
+                            - uesio/io.text:
+                                element: p
+                                text: Enterprise companies undergoing digital transformation face challenges when transitioning from legacy on-premise to cloud-enabled and ultimately cloud-native systems.
+                      - uesio/io.box:
+                          uesio.styleTokens:
+                            root:
+                              - rounded
+                              - max-w-sm
+                              - p-4
+                              - bg-[#f76540]
+                              - mt-20
+                              - text-white
+                              - shadow-lg
 
-                                components:
-                                    - uesio/io.text: 
-                                        text: solution
-                                        uesio.styleTokens:
-                                            root:
-                                                - font-bold
-                                        element: p
-                                    - uesio/io.text: 
-                                        element: p
-                                        text: ues.io is a comprehensive no-code AI enabled platform designed to simplify, secure and streamline the digital transformation process for enterprises.
+                          components:
+                            - uesio/io.text:
+                                text: solution
+                                uesio.styleTokens:
+                                  root:
+                                    - font-bold
+                                element: p
+                            - uesio/io.text:
+                                element: p
+                                text: ues.io is a comprehensive no-code AI enabled platform designed to simplify, secure and streamline the digital transformation process for enterprises.
 
     # Dark section
     - uesio/io.grid:
         uesio.variant: uesio/web.mainlayout_dark
         items:
-            - uesio/io.text:
-                uesio.variant: uesio/web.calloutcenter
-                uesio.styleTokens:
-                  root:
-                    - pt-12
-                    - text-slate-500
-                element: div
-                text: Digital transformation solutions
-            - uesio/io.grid:
-                uesio.variant: uesio/web.callout_double
-                items:
-                    - uesio/io.grid:
-                        uesio.variant: uesio/web.icongrid
-                        items:
-                        - uesio/io.text:
-                            uesio.variant: uesio/web.callouticon
-                            text: monitoring
-                        - uesio/io.box:
-                            components:
-                                - uesio/io.text:
-                                    uesio.variant: uesio/web.calloutsmalldark
-                                    text: Managing monolithic sets of services.
-                                - uesio/io.text:
-                                    uesio.variant: uesio/web.calloutsmallsub
-                                    text: Build as much as you want. Only start paying for usage after publishing your app to your users.
-                    - uesio/io.grid:
-                        uesio.variant: uesio/web.icongridsoon
-                        items:
-                        - uesio/io.text:
-                            uesio.variant: uesio/web.callouticon
-                            text: snowmobile
-                        - uesio/io.box:
-                            components:
-                                - uesio/io.text:
-                                    uesio.variant: uesio/web.calloutsmalldark
-                                    text: Maintaining and acquiring security compliance.
-                                - uesio/io.text:
-                                    uesio.variant: uesio/web.calloutsmallsub
-                                    text: Run ues.io in your own infrastructure on premise with our Docker image and Helm chart.
-                    - uesio/io.grid:
-                        uesio.variant: uesio/web.icongrid
-                        items:
-                        - uesio/io.text:
-                            uesio.variant: uesio/web.callouticon
-                            text: eco
-                        - uesio/io.box:
-                            components:
-                                - uesio/io.text:
-                                    uesio.variant: uesio/web.calloutsmalldark
-                                    text: Refactoring and transitioning microservices.
-                                - uesio/io.text:
-                                    uesio.variant: uesio/web.calloutsmallsub
-                                    text: Package components, data models, user interfaces and more into bundles. Then reuse them in your other apps.
-                    - uesio/io.grid:
-                        uesio.variant: uesio/web.icongrid
-                        items:
-                        - uesio/io.text:
-                            uesio.variant: uesio/web.callouticon
-                            text: commit
-                        - uesio/io.box:
-                            components:
-                                - uesio/io.text:
-                                    uesio.variant: uesio/web.calloutsmalldark
-                                    text: Interdepartmental conflicts.
-                                - uesio/io.text:
-                                    uesio.variant: uesio/web.calloutsmallsub
-                                    text: Create custom components and backend logic in your favorite IDE. Manage all configuration as code. Integrate with Git for source control.
-
-    
-    - uesio/io.grid:
-        uesio.variant: uesio/web.mainlayout_dark                                    
-        items:
-            - uesio/io.grid:
-                uesio.variant: uesio/web.callout_double
-                items:
-                   - uesio/io.box:
-                        uesio.styleTokens:
-                            root:
-                                - text-slate-500
-                        components:
+          - uesio/io.text:
+              uesio.variant: uesio/web.calloutcenter
+              uesio.styleTokens:
+                root:
+                  - pt-12
+                  - text-slate-500
+              element: div
+              text: Digital transformation solutions
+          - uesio/io.grid:
+              uesio.variant: uesio/web.callout_double
+              items:
+                - uesio/io.grid:
+                    uesio.variant: uesio/web.icongrid
+                    items:
+                      - uesio/io.text:
+                          uesio.variant: uesio/web.callouticon
+                          text: monitoring
+                      - uesio/io.box:
+                          components:
                             - uesio/io.text:
-                                uesio.variant: uesio/web.callout
-                                element: div
-                                uesio.styleTokens:
-                                    root:
-                                        - text-slate-500
-                                text: Low code no-code tools are not living up to their promise.
-                            - uesio/io.box:
-                                uesio.styleTokens:
-                                    root:
-                                        - py-10
-                                components:
-                                    - uesio/core.view:
-                                        view: uesio/web.featurewithicon
-                                        params:
-                                            title: 10% trap
-                                            icon: star
-                                            subtitle: No-Code and Low-Code platforms quickly achieve 80% of a build, struggle with the next 10%, and the last 10% can’t bypass the abstraction.
-                                    - uesio/core.view:
-                                        view: uesio/web.featurewithicon
-                                        params:
-                                            title: Few native on-premise options
-                                            icon: star
-                                            subtitle: Easily move from cloud enabled to cloud native on a unified, secure and comprehensive platform of your own.
-                                    - uesio/core.view:
-                                        view: uesio/web.featurewithicon
-                                        params:
-                                            title: Expensive per user pricing
-                                            icon: star
-                                            subtitle: Avoid unused per user licensing models and determine your own budget on a pay as you use basis.
-                   - uesio/io.box:
-                        uesio.styleTokens:
+                                uesio.variant: uesio/web.calloutsmalldark
+                                text: Managing monolithic sets of services.
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.calloutsmallsub
+                                text: Build as much as you want. Only start paying for usage after publishing your app to your users.
+                - uesio/io.grid:
+                    uesio.variant: uesio/web.icongridsoon
+                    items:
+                      - uesio/io.text:
+                          uesio.variant: uesio/web.callouticon
+                          text: snowmobile
+                      - uesio/io.box:
+                          components:
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.calloutsmalldark
+                                text: Maintaining and acquiring security compliance.
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.calloutsmallsub
+                                text: Run ues.io in your own infrastructure on premise with our Docker image and Helm chart.
+                - uesio/io.grid:
+                    uesio.variant: uesio/web.icongrid
+                    items:
+                      - uesio/io.text:
+                          uesio.variant: uesio/web.callouticon
+                          text: eco
+                      - uesio/io.box:
+                          components:
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.calloutsmalldark
+                                text: Refactoring and transitioning microservices.
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.calloutsmallsub
+                                text: Package components, data models, user interfaces and more into bundles. Then reuse them in your other apps.
+                - uesio/io.grid:
+                    uesio.variant: uesio/web.icongrid
+                    items:
+                      - uesio/io.text:
+                          uesio.variant: uesio/web.callouticon
+                          text: commit
+                      - uesio/io.box:
+                          components:
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.calloutsmalldark
+                                text: Interdepartmental conflicts.
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.calloutsmallsub
+                                text: Create custom components and backend logic in your favorite IDE. Manage all configuration as code. Integrate with Git for source control.
+
+    - uesio/io.grid:
+        uesio.variant: uesio/web.mainlayout_dark
+        items:
+          - uesio/io.grid:
+              uesio.variant: uesio/web.callout_double
+              items:
+                - uesio/io.box:
+                    uesio.styleTokens:
+                      root:
+                        - text-slate-500
+                    components:
+                      - uesio/io.text:
+                          uesio.variant: uesio/web.callout
+                          element: div
+                          uesio.styleTokens:
                             root:
-                                - bg-[url($File{uesio/web.second_graphic})]
-                                - bg-contain
-                                - bg-no-repeat
-                                - bg-right
+                              - text-slate-500
+                          text: Low code no-code tools are not living up to their promise.
+                      - uesio/io.box:
+                          uesio.styleTokens:
+                            root:
+                              - py-10
+                          components:
+                            - uesio/core.view:
+                                view: uesio/web.featurewithicon
+                                params:
+                                  title: 10% trap
+                                  icon: star
+                                  subtitle: No-Code and Low-Code platforms quickly achieve 80% of a build, struggle with the next 10%, and the last 10% can’t bypass the abstraction.
+                            - uesio/core.view:
+                                view: uesio/web.featurewithicon
+                                params:
+                                  title: Few native on-premise options
+                                  icon: star
+                                  subtitle: Easily move from cloud enabled to cloud native on a unified, secure and comprehensive platform of your own.
+                            - uesio/core.view:
+                                view: uesio/web.featurewithicon
+                                params:
+                                  title: Expensive per user pricing
+                                  icon: star
+                                  subtitle: Avoid unused per user licensing models and determine your own budget on a pay as you use basis.
+                - uesio/io.box:
+                    uesio.styleTokens:
+                      root:
+                        - bg-[url($File{uesio/web.second_graphic})]
+                        - bg-contain
+                        - bg-no-repeat
+                        - bg-right
     - uesio/io.grid:
         uesio.variant: uesio/web.mainlayout
         uesio.styleTokens:
-            root:
-                - py-28
+          root:
+            - py-28
 
         items:
-            - uesio/io.grid:
-                uesio.variant: uesio/web.mainlayout
-                items:
+          - uesio/io.grid:
+              uesio.variant: uesio/web.mainlayout
+              items:
                 - uesio/io.text:
                     uesio.variant: uesio/web.calloutcenter
                     element: div
                     text: Uesio is all inclusive
                 - uesio/io.box:
                     uesio.styleTokens:
-                        root:
-                            - max-w-[800px]
-                            - m-auto
-                            - bg-white
-                            - rounded-lg
-                            - shadow-lg
-                            - p-8
-                            - my-10
+                      root:
+                        - max-w-[800px]
+                        - m-auto
+                        - bg-white
+                        - rounded-lg
+                        - shadow-lg
+                        - p-8
+                        - my-10
                     components:
-                        - uesio/core.view:
-                            view: uesio/web.allinclusiveitem
-                            params: 
-                                title: Cloud native capable platform to unify teams
-                                subtitle: Smoother transitioning
-                        - uesio/core.view:
-                            view: uesio/web.allinclusiveitem
-                            params: 
-                                title: Secure SOC2 pre-approved templates
-                                subtitle: Maintain your security compliance 
-                        - uesio/core.view:
-                            view: uesio/web.allinclusiveitem
-                            params: 
-                                title: Source control and fine grain management in a single environment
-                                subtitle: Catalogue and manage you array of services
-                        - uesio/core.view:
-                            view: uesio/web.allinclusiveitem
-                            params: 
-                                title: Source control and fine grain management in a single environment
-                                subtitle: Remove inter-departmental conflicts
+                      - uesio/core.view:
+                          view: uesio/web.allinclusiveitem
+                          params:
+                            title: Cloud native capable platform to unify teams
+                            subtitle: Smoother transitioning
+                      - uesio/core.view:
+                          view: uesio/web.allinclusiveitem
+                          params:
+                            title: Secure SOC2 pre-approved templates
+                            subtitle: Maintain your security compliance
+                      - uesio/core.view:
+                          view: uesio/web.allinclusiveitem
+                          params:
+                            title: Source control and fine grain management in a single environment
+                            subtitle: Catalogue and manage you array of services
+                      - uesio/core.view:
+                          view: uesio/web.allinclusiveitem
+                          params:
+                            title: Source control and fine grain management in a single environment
+                            subtitle: Remove inter-departmental conflicts
 
     - uesio/core.view:
         view: uesio/web.footer

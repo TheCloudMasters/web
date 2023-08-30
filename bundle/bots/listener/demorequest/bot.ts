@@ -1,11 +1,6 @@
 import { ListenerBotApi, Record as WireRecord } from "@uesio/bots"
 function demorequest(bot: ListenerBotApi) {
-	const fields = [
-		"first_name",
-		"last_name",
-		"email",
-		"company",
-	]
+	const fields = ["first_name", "last_name", "email", "company"]
 
 	const values = fields.reduce(
 		(prev, key) => ({
@@ -16,22 +11,24 @@ function demorequest(bot: ListenerBotApi) {
 	) as Record<string, string>
 
 	const labels = {
-		"first_name": "first name",
-		"last_name": "last name",
-		"email": "email",
-		"company": "company",
+		first_name: "first name",
+		last_name: "last name",
+		email: "email",
+		company: "company",
 	} as Record<string, string>
 	for (const key in values) {
 		if (!values[key]) throw new Error(`missing ${labels[key]}`)
 	}
 
 	// Save the lead in our leads collection
-	bot.asAdmin.save("uesio/crm.lead", [{
-		    "uesio/crm.firstname": values["first_name"],
+	bot.asAdmin.save("uesio/crm.lead", [
+		{
+			"uesio/crm.firstname": values["first_name"],
 			"uesio/crm.lastname": values["last_name"],
 			"uesio/crm.email": values["email"],
 			"uesio/crm.account": values["company"],
-	} as unknown as WireRecord])
+		} as unknown as WireRecord,
+	])
 
 	// Send an email to the user
 	const salesEmail = bot.asAdmin.getConfigValue("uesio/crm.sales_email")
