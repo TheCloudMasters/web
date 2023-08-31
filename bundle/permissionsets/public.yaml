@@ -1,24 +1,31 @@
 name: public
 named: {}
 views:
+  uesio/web.allinclusiveitem: true
   uesio/web.blog: true
   uesio/web.blogentry: true
+  uesio/web.contact: true
+  uesio/web.demo: true
   uesio/web.earlyaccess: true
+  uesio/web.featurewithicon: true
   uesio/web.footer: true
   uesio/web.home: true
   uesio/web.preview: true
+  uesio/web.pricing: true
+  uesio/web.pricingcard: true
   uesio/web.privacy: true
   uesio/web.terms: true
   uesio/web.topbar: true
-  uesio/web.featurewithicon: true
-  uesio/web.allinclusiveitem: true
-  uesio/web.pricing: true
-  uesio/web.demo: true
-  uesio/web.pricingcard: true
 collections:
   uesio/cms.article:
     read: true
     create: false
+    edit: false
+    delete: false
+    fields: {}
+  uesio/crm.lead:
+    read: false
+    create: true
     edit: false
     delete: false
     fields: {}
@@ -31,22 +38,23 @@ collections:
 routes:
   uesio/web.blog: true
   uesio/web.blogentry: true
+  uesio/web.contact: true
+  uesio/web.demo: true
   uesio/web.earlyaccess: true
   uesio/web.home: true
   uesio/web.preview: true
+  uesio/web.pricing: true
   uesio/web.privacy: true
   uesio/web.signup: true
-  uesio/web.demo: true
-  uesio/web.pricing: true
   uesio/web.terms: true
 bots:
-  uesio/web.demorequest: true
+  uesio/web.request: true
 files:
   uesio/web.logo: true
   uesio/web.logowhite: true
-  uesio/web.swissmade: true
   uesio/web.oner: true
   uesio/web.second_graphic: true
+  uesio/web.swissmade: true
 allowallcollections: false
 allowallviews: false
 allowallroutes: false
