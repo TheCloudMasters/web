@@ -40,7 +40,7 @@ routes:
   uesio/web.pricing: true
   uesio/web.terms: true
 bots:
-  uesio/web.demorequest: true
+  uesio/web.request: true
 files:
   uesio/web.logo: true
   uesio/web.logowhite: true
