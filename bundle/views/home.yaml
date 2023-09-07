@@ -68,7 +68,7 @@ definition:
                               - bg-white
                               - rounded
                               - max-w-sm
-                              - p-4
+                              - p-6
                               - self-start
                               - justify-self-end
                               - w-full
@@ -81,13 +81,14 @@ definition:
                                     - font-bold
                             - uesio/io.text:
                                 element: p
-                                text: Enterprise companies undergoing digital transformation face challenges when transitioning from legacy on-premise to cloud-enabled and ultimately cloud-native systems.
+                                text: Enterprises embarking on digital transformation face challenges in security, AI, platform unification and managing independent teams.
+
                       - uesio/io.box:
                           uesio.styleTokens:
                             root:
                               - rounded
                               - max-w-sm
-                              - p-4
+                              - p-6
                               - bg-[#f76540]
                               - mt-20
                               - text-white
@@ -102,7 +103,7 @@ definition:
                                 element: p
                             - uesio/io.text:
                                 element: p
-                                text: ues.io is a comprehensive no-code AI enabled platform designed to simplify, secure and streamline the digital transformation process for enterprises.
+                                text: ues.io, The most comprehensive and secure no/low-code platform for digital transformation, powered by AI and extensible with code.
 
     # Dark section
     - uesio/io.grid:
@@ -252,23 +253,23 @@ definition:
                       - uesio/core.view:
                           view: uesio/web.allinclusiveitem
                           params:
-                            title: Cloud native capable platform to unify teams
-                            subtitle: Smoother transitioning
+                            title: Multiple layers of security including AI and machine learning.
+                            subtitle: Maintain your security compliance.
                       - uesio/core.view:
                           view: uesio/web.allinclusiveitem
                           params:
-                            title: Secure SOC2 pre-approved templates
-                            subtitle: Maintain your security compliance
+                            title: Interconnect and extend chosen platforms in a single environment.
+                            subtitle: Selectable infrastructure AWS, Google or Microsof
+                      - uesio/core.view:
+                          view: uesio/web.allinclusiveitem
+                          params:
+                            title: Quickly build applications and streamline apps and microservices.
+                            subtitle: Either self-host or build your own platform.
                       - uesio/core.view:
                           view: uesio/web.allinclusiveitem
                           params:
                             title: Source control and fine grain management in a single environment
-                            subtitle: Catalogue and manage you array of services
-                      - uesio/core.view:
-                          view: uesio/web.allinclusiveitem
-                          params:
-                            title: Source control and fine grain management in a single environment
-                            subtitle: Remove inter-departmental conflicts
+                            subtitle: Securely speed up development and delivery.
 
     - uesio/core.view:
         view: uesio/web.footer

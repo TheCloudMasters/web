@@ -6,6 +6,7 @@ views:
   uesio/web.earlyaccess: true
   uesio/web.footer: true
   uesio/web.home: true
+  uesio/web.contact: true
   uesio/web.preview: true
   uesio/web.privacy: true
   uesio/web.terms: true
@@ -35,12 +36,14 @@ routes:
   uesio/web.home: true
   uesio/web.preview: true
   uesio/web.privacy: true
+  uesio/web.contact: true
   uesio/web.signup: true
   uesio/web.demo: true
   uesio/web.pricing: true
   uesio/web.terms: true
 bots:
   uesio/web.request: true
+  uesio/web.addlead: true
 files:
   uesio/web.logo: true
   uesio/web.logowhite: true

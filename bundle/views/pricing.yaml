@@ -44,6 +44,7 @@ definition:
                                   transactions: 20K
                                   storage: 500MB
                                   downloads: 500MB
+                                  community: true
 
                       - uesio/io.box:
                           uesio.styleTokens:
@@ -55,10 +56,11 @@ definition:
                                 params:
                                   title: Go
                                   price: $149 /month
-                                  transactions: 20K
-                                  storage: 500MB
-                                  downloads: 500MB
-                                  subdomain: true
+                                  transactions: 50K
+                                  downloads: 2GB
+                                  storage: 1GB
+                                  domain: Subdomain
+                                  community: true
                       - uesio/io.box:
                           uesio.styleTokens:
                             root:
@@ -70,11 +72,11 @@ definition:
                                   title: Grow
                                   price: $299 /month
                                   transactions: 140K
-                                  storage: 4GB
-                                  downloads: 2GB
-                                  subdomain: true
+                                  storage: 2GB
+                                  downloads: 4GB
+                                  domain: Subdomain
                                   github: true
-                                  sla: true
+                                  sla: 24h
 
                 - uesio/io.box:
                     uesio.styleTokens:
@@ -126,9 +128,11 @@ definition:
                                 params:
                                   title: Small
                                   price: $2795 /month
-                                  transactions: 20K
-                                  storage: 500MB
-                                  downloads: 500MB
+                                  transactions: 500K
+                                  downloads: 20GB
+                                  storage: 10GB
+                                  sla: 24h
+                                  devsla: Includes 5 x GO Dev
 
                       - uesio/io.box:
                           uesio.styleTokens:
@@ -143,7 +147,9 @@ definition:
                                   transactions: 1.5m
                                   storage: 250GB
                                   downloads: 60GB
-                                  subdomain: true
+                                  sla: 24h
+                                  devsla: Includes 5 x GROW Dev
+
                       - uesio/io.box:
                           uesio.styleTokens:
                             root:
@@ -157,9 +163,10 @@ definition:
                                   transactions: ∞
                                   storage: ∞
                                   downloads: ∞
-                                  subdomain: true
-                                  github: true
-                                  sla: true
+                                  domain: Own Domain
+                                  sla: 12h
+                                  enterprise: true
+                                  devsla: Includes (X) Dev Licenses
 
                 - uesio/io.box:
                     uesio.styleTokens:

@@ -10,3 +10,4 @@ definition:
     root:
       - bg-[rgb(45,39,245)]
       - text-white
+      - inline-block

@@ -16,13 +16,19 @@ definition:
     title:
       type: TEXT
       required: false
+    community:
+      type: TEXT
+      required: false
     sla:
       type: TEXT
       required: false
     github:
       type: TEXT
       required: false
-    subdomain:
+    domain:
+      type: TEXT
+      required: false
+    devusp:
       type: TEXT
       required: false
   components:
@@ -106,31 +112,54 @@ definition:
           # features
           - uesio/io.text:
               element: div
-              text: 24h Support SLA
+              text: $Param{sla} Support SLA
               uesio.display:
                 - type: paramIsSet
                   param: sla
               uesio.styleTokens:
                 root:
                   - text-[rgb(45,39,245)]
+                    # Community
+          - uesio/io.text:
+              uesio.display:
+                - type: paramIsSet
+                  param: community
+              element: div
+              text: Community support
+          - uesio/io.text:
+              element: div
+              uesio.display:
+                - type: paramIsSet
+                  param: enterprise
+              text: SAML SSO
           # Subdomain
           - uesio/io.text:
               element: div
               uesio.display:
                 - type: paramIsSet
-                  param: subdomain
-              text: Subdomain
-          # Github
+                  param: domain
+              text: $Param{domain}
+
           - uesio/io.text:
               element: div
               uesio.display:
                 - type: paramIsSet
                   param: github
               text: Github Sync
-          # Community
+
           - uesio/io.text:
               element: div
-              text: Community support
+              uesio.display:
+                - type: paramIsSet
+                  param: devsla
+              text: $Param{devsla}
+
+          - uesio/io.text:
+              element: div
+              uesio.display:
+                - type: paramIsSet
+                  param: enterprise
+              text: Self hosted
 
           - uesio/io.button:
               uesio.styleTokens:
