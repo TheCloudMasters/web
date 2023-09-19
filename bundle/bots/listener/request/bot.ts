@@ -28,6 +28,7 @@ function request(bot: ListenerBotApi) {
 	for (const key in values) {
 		if (values[key] === "") throw new Error(`missing ${labels[key]}`)
 		if (
+			values[key] === "" &&
 			values[key] !== "no_employees" &&
 			values[key] !== "company"
 		)
