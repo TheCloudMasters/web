@@ -1,4 +1,4 @@
-import { ListenerBotApi, Record as WireRecord } from "@uesio/bots"
+import { FieldValue, ListenerBotApi, Record as WireRecord } from "@uesio/bots"
 function request(bot: ListenerBotApi) {
 	const fields = [
 		"first_name",
@@ -6,7 +6,7 @@ function request(bot: ListenerBotApi) {
 		"email",
 		"company",
 		"no_employees",
-		"country",
+		"location",
 		"description",
 		"source",
 	]
@@ -27,19 +27,23 @@ function request(bot: ListenerBotApi) {
 	} as Record<string, string>
 	for (const key in values) {
 		if (values[key] === "") throw new Error(`missing ${labels[key]}`)
+		if (
+			values[key] !== "no_employees" &&
+			values[key] !== "company"
+		)
+			throw new Error(`missing ${labels[key]}`)
 	}
-
 	// Save the lead in our leads collection
 	bot.asAdmin.save("uesio/crm.lead", [
 		{
-			"uesio/crm.firstname": values["first_name"],
-			"uesio/crm.lastname": values["last_name"],
-			"uesio/crm.email": values["email"],
-			"uesio/crm.account": values["company"],
-			"uesio/crm.no_employees": values["no_employees"],
-			"uesio/crm.location": values["country"],
-			"uesio/crm.description": values["description"],
-			"uesio/crm.source": values["source"],
+			"uesio/crm.firstname": values.first_name,
+			"uesio/crm.lastname": values.last_name,
+			"uesio/crm.email": values.email,
+			"uesio/crm.account": values.company,
+			"uesio/crm.no_employees": Number(values.no_employees),
+			"uesio/crm.location": values.country,
+			"uesio/crm.description": values.description,
+			"uesio/web.source": values.source,
 			"uesio/crm.status": "OPEN",
 		} as unknown as WireRecord,
 	])
