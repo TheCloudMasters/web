@@ -29,9 +29,9 @@ definition:
                         - text-slate-400
                     components:
                       - uesio/io.text:
-                          text: 🇺🇸 +41 123123123
+                          text: "\U0001F1FA\U0001F1F8 +1 844-558-0040"
                       - uesio/io.text:
-                          text: 🇨🇭 +41 44 511 22 88
+                          text: "\U0001F1E8\U0001F1ED +41 44 511 22 88"
           - uesio/io.grid:
               uesio.variant: uesio/web.mainlayout
               items:
@@ -45,7 +45,7 @@ definition:
                       - uesio/io.image:
                           uesio.styleTokens:
                             root:
-                              # - mb-4
+                            # - mb-4
                           height: 55
                           file: uesio/web.logo
                           signals:
@@ -128,14 +128,12 @@ definition:
   panels:
     navmenu:
       uesio.type: uesio/io.sidepanel
-
       components:
         - uesio/io.group:
             uesio.styleTokens:
               root:
                 - grid-flow-row
                 - bg-[rgb(247,247,247)]
-
             components:
               - uesio/io.button:
                   uesio.variant: uesio/web.borderless

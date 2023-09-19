@@ -1,6 +1,6 @@
 name: calloutcenter
-label: Callout Centered
 extends: uesio/web.callout
+label: Callout Centered
 definition:
   uesio.styleTokens:
     root:

@@ -1,4 +1,4 @@
 name: crmlogin
-path: crm/login
 type: redirect
+path: crm/login
 redirect: https://$Site{domain}/site/app/uesio/crm/login

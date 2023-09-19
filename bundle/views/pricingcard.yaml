@@ -69,7 +69,6 @@ definition:
                   - flex
                   - justify-center
                   - font-bold
-
           - uesio/io.box:
               components:
                 - uesio/io.text:
@@ -99,7 +98,6 @@ definition:
                         - text-[rgb(45,39,245)]
                 - uesio/io.text:
                     text: " Storage"
-
           - uesio/io.box:
               uesio.styleTokens:
                 root:
@@ -108,7 +106,6 @@ definition:
                   - w-[4em]
                   - mx-auto
                   - my-4
-
           # features
           - uesio/io.text:
               element: div
@@ -119,7 +116,7 @@ definition:
               uesio.styleTokens:
                 root:
                   - text-[rgb(45,39,245)]
-                    # Community
+                  # Community
           - uesio/io.text:
               uesio.display:
                 - type: paramIsSet
@@ -139,28 +136,24 @@ definition:
                 - type: paramIsSet
                   param: domain
               text: $Param{domain}
-
           - uesio/io.text:
               element: div
               uesio.display:
                 - type: paramIsSet
                   param: github
               text: Github Sync
-
           - uesio/io.text:
               element: div
               uesio.display:
                 - type: paramIsSet
                   param: devsla
               text: $Param{devsla}
-
           - uesio/io.text:
               element: div
               uesio.display:
                 - type: paramIsSet
                   param: enterprise
               text: Self hosted
-
           - uesio/io.button:
               uesio.styleTokens:
                 root:

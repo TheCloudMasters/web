@@ -1,5 +1,4 @@
 name: pricing
 path: pricing
-view: uesio/web.pricing
-theme: uesio/core.default
+view: pricing
 title: $Site{title} - Pricing

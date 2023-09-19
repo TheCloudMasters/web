@@ -1,8 +1,8 @@
 name: demo
-label: demo
 extends: uesio/web.calltoaction
+label: demo
 definition:
-  text: Book a demo 👉
+  text: "Book a demo \U0001F449"
   signals:
     - signal: route/REDIRECT
       path: demo

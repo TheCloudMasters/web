@@ -6,7 +6,6 @@ definition:
   components:
     - uesio/core.view:
         view: uesio/web.topbar
-
     - uesio/io.box:
         uesio.styleTokens:
           root:
@@ -82,7 +81,6 @@ definition:
                             - uesio/io.text:
                                 element: p
                                 text: Enterprises embarking on digital transformation face challenges in security, AI, platform unification and managing independent teams.
-
                       - uesio/io.box:
                           uesio.styleTokens:
                             root:
@@ -93,7 +91,6 @@ definition:
                               - mt-20
                               - text-white
                               - shadow-lg
-
                           components:
                             - uesio/io.text:
                                 text: solution
@@ -104,7 +101,6 @@ definition:
                             - uesio/io.text:
                                 element: p
                                 text: ues.io, The most comprehensive and secure no/low-code platform for digital transformation, powered by AI and extensible with code.
-
     # Dark section
     - uesio/io.grid:
         uesio.variant: uesio/web.mainlayout_dark
@@ -116,7 +112,7 @@ definition:
                   - pt-12
                   - text-slate-500
               element: div
-              text: Digital transformation solutions
+              text: The cloud transformation platform
           - uesio/io.grid:
               uesio.variant: uesio/web.callout_double
               items:
@@ -130,12 +126,12 @@ definition:
                           components:
                             - uesio/io.text:
                                 uesio.variant: uesio/web.calloutsmalldark
-                                text: Managing monolithic sets of services.
+                                text: Secure
                             - uesio/io.text:
                                 uesio.variant: uesio/web.calloutsmallsub
-                                text: Build as much as you want. Only start paying for usage after publishing your app to your users.
+                                text: API with built-in security to bypass custom coding vulnerabilities including record level control.
                 - uesio/io.grid:
-                    uesio.variant: uesio/web.icongridsoon
+                    uesio.variant: uesio/web.icongrid
                     items:
                       - uesio/io.text:
                           uesio.variant: uesio/web.callouticon
@@ -144,10 +140,10 @@ definition:
                           components:
                             - uesio/io.text:
                                 uesio.variant: uesio/web.calloutsmalldark
-                                text: Maintaining and acquiring security compliance.
+                                text: Infrastructure
                             - uesio/io.text:
                                 uesio.variant: uesio/web.calloutsmallsub
-                                text: Run ues.io in your own infrastructure on premise with our Docker image and Helm chart.
+                                text: Can be run on your own servers and behind your own security services.
                 - uesio/io.grid:
                     uesio.variant: uesio/web.icongrid
                     items:
@@ -158,10 +154,10 @@ definition:
                           components:
                             - uesio/io.text:
                                 uesio.variant: uesio/web.calloutsmalldark
-                                text: Refactoring and transitioning microservices.
+                                text: Platform
                             - uesio/io.text:
                                 uesio.variant: uesio/web.calloutsmallsub
-                                text: Package components, data models, user interfaces and more into bundles. Then reuse them in your other apps.
+                                text: Easily build and deploy applications quickly inclusive of automated testing and AI.
                 - uesio/io.grid:
                     uesio.variant: uesio/web.icongrid
                     items:
@@ -172,11 +168,10 @@ definition:
                           components:
                             - uesio/io.text:
                                 uesio.variant: uesio/web.calloutsmalldark
-                                text: Interdepartmental conflicts.
+                                text: No-Code
                             - uesio/io.text:
                                 uesio.variant: uesio/web.calloutsmallsub
-                                text: Create custom components and backend logic in your favorite IDE. Manage all configuration as code. Integrate with Git for source control.
-
+                                text: Make use of AI to assist in building applications and extend user applications with AI functionality.
     - uesio/io.grid:
         uesio.variant: uesio/web.mainlayout_dark
         items:
@@ -230,7 +225,6 @@ definition:
         uesio.styleTokens:
           root:
             - py-28
-
         items:
           - uesio/io.grid:
               uesio.variant: uesio/web.mainlayout
@@ -238,7 +232,7 @@ definition:
                 - uesio/io.text:
                     uesio.variant: uesio/web.calloutcenter
                     element: div
-                    text: Uesio is all inclusive
+                    text: ues.io is all inclusive
                 - uesio/io.box:
                     uesio.styleTokens:
                       root:
@@ -259,7 +253,7 @@ definition:
                           view: uesio/web.allinclusiveitem
                           params:
                             title: Interconnect and extend chosen platforms in a single environment.
-                            subtitle: Selectable infrastructure AWS, Google or Microsof
+                            subtitle: Selectable infrastructure AWS, Google or Microsoft.
                       - uesio/core.view:
                           view: uesio/web.allinclusiveitem
                           params:
@@ -268,8 +262,7 @@ definition:
                       - uesio/core.view:
                           view: uesio/web.allinclusiveitem
                           params:
-                            title: Source control and fine grain management in a single environment
+                            title: Source control and fine grain management in a single environment.
                             subtitle: Securely speed up development and delivery.
-
     - uesio/core.view:
         view: uesio/web.footer

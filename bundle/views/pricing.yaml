@@ -6,100 +6,12 @@ definition:
   components:
     - uesio/core.view:
         view: uesio/web.topbar
-
     - uesio/io.box:
         uesio.styleTokens:
           root:
             - bg-[rgb(247,247,247)]
             - pt-28
         components:
-          - uesio/io.grid:
-              uesio.variant: uesio/web.mainlayout
-              items:
-                - uesio/io.box:
-                    components:
-                      - uesio/io.text:
-                          uesio.variant: uesio/web.calloutcenter
-                          element: div
-                          text: Developer Pricing
-                - uesio/io.box:
-                    uesio.styleTokens:
-                      root:
-                        - flex
-                        - flex-wrap
-                        - text-center
-                        - gap-4
-                        - items-end
-                    components:
-                      - uesio/io.box:
-                          uesio.styleTokens:
-                            root:
-                              - flex-[30%]
-                          components:
-                            - uesio/core.view:
-                                view: uesio/web.pricingcard
-                                params:
-                                  title: Free
-                                  price: $0 /month
-                                  transactions: 20K
-                                  storage: 500MB
-                                  downloads: 500MB
-                                  community: true
-
-                      - uesio/io.box:
-                          uesio.styleTokens:
-                            root:
-                              - flex-[33%]
-                          components:
-                            - uesio/core.view:
-                                view: uesio/web.pricingcard
-                                params:
-                                  title: Go
-                                  price: $149 /month
-                                  transactions: 50K
-                                  downloads: 2GB
-                                  storage: 1GB
-                                  domain: Subdomain
-                                  community: true
-                      - uesio/io.box:
-                          uesio.styleTokens:
-                            root:
-                              - flex-[33%]
-                          components:
-                            - uesio/core.view:
-                                view: uesio/web.pricingcard
-                                params:
-                                  title: Grow
-                                  price: $299 /month
-                                  transactions: 140K
-                                  storage: 2GB
-                                  downloads: 4GB
-                                  domain: Subdomain
-                                  github: true
-                                  sla: 24h
-
-                - uesio/io.box:
-                    uesio.styleTokens:
-                      root:
-                        - flex
-                        - gap-4
-                        - items-center
-                        - my-8
-                    components:
-                      - uesio/io.box:
-                          uesio.styleTokens:
-                            root:
-                              - h-0.5
-                              - bg-slate-400
-                              - flex-1
-                      - uesio/io.text:
-                          text: Unlimited Users
-                      - uesio/io.box:
-                          uesio.styleTokens:
-                            root:
-                              - h-0.5
-                              - bg-slate-400
-                              - flex-1
           - uesio/io.grid:
               uesio.variant: uesio/web.mainlayout
               items:
@@ -121,39 +33,51 @@ definition:
                       - uesio/io.box:
                           uesio.styleTokens:
                             root:
-                              - flex-[30%]
+                              - flex-[20%]
+                          components:
+                            - uesio/core.view:
+                                view: uesio/web.pricingcard
+                                params:
+                                  title: Free
+                                  price: $0 /month
+                                  transactions: 20K
+                                  storage: 500MB
+                                  downloads: 500MB
+                                  community: true
+                      - uesio/io.box:
+                          uesio.styleTokens:
+                            root:
+                              - flex-[20%]
                           components:
                             - uesio/core.view:
                                 view: uesio/web.pricingcard
                                 params:
                                   title: Small
-                                  price: $2795 /month
+                                  price: $249 /month
                                   transactions: 500K
                                   downloads: 20GB
                                   storage: 10GB
                                   sla: 24h
                                   devsla: Includes 5 x GO Dev
-
                       - uesio/io.box:
                           uesio.styleTokens:
                             root:
-                              - flex-[33%]
+                              - flex-[20%]
                           components:
                             - uesio/core.view:
                                 view: uesio/web.pricingcard
                                 params:
                                   title: Medium
-                                  price: $6990 /month
+                                  price: $799 /month
                                   transactions: 1.5m
                                   storage: 250GB
                                   downloads: 60GB
                                   sla: 24h
                                   devsla: Includes 5 x GROW Dev
-
                       - uesio/io.box:
                           uesio.styleTokens:
                             root:
-                              - flex-[33%]
+                              - flex-[20%]
                           components:
                             - uesio/core.view:
                                 view: uesio/web.pricingcard
@@ -167,7 +91,6 @@ definition:
                                   sla: 12h
                                   enterprise: true
                                   devsla: Includes (X) Dev Licenses
-
                 - uesio/io.box:
                     uesio.styleTokens:
                       root:
@@ -190,6 +113,5 @@ definition:
                               - h-0.5
                               - bg-slate-400
                               - flex-1
-
     - uesio/core.view:
         view: uesio/web.footer

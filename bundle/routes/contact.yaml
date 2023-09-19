@@ -1,5 +1,4 @@
 name: contact
 path: contact
-view: uesio/web.contact
-theme: uesio/core.default
+view: contact
 title: ues.io Contact

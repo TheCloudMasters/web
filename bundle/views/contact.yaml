@@ -104,7 +104,7 @@ definition:
                                     - mx-0
                             - uesio/io.text:
                                 uesio.variant: uesio/web.blogteasertitle
-                                text: ues.io AG
+                                text: ues.io
                             - uesio/io.box:
                                 uesio.styleTokens:
                                   root:
@@ -137,19 +137,19 @@ definition:
                                 uesio.styleTokens:
                                   root:
                                     - mb-4
-                                text: info[@]thecloudmasters[.]com
+                                text: info[@]ues[.]io
                                 signals:
                                   - signal: route/REDIRECT
                                     path: mailto:info@thecloudmasters.com
                                     newtab: true
                             - uesio/io.button:
                                 uesio.variant: uesio/web.contactlink
-                                text: linkedIn
+                                text: LinkedIn
                                 signals:
                                   - signal: route/REDIRECT
-                                    path: https://www.linkedin.com/company/the-cloud-masters/mycompany/
+                                    path: https://www.linkedin.com/company/uesio
                                     newtab: true
-                        # Form box
+                                    # Form box
                       - uesio/io.list:
                           wire: newContactRequest
                           mode: EDIT
