@@ -26,7 +26,6 @@ function request(bot: ListenerBotApi) {
 		description: "description",
 	} as Record<string, string>
 	for (const key in values) {
-		if (values[key] === "") throw new Error(`missing ${labels[key]}`)
 		if (
 			values[key] === "" &&
 			values[key] !== "no_employees" &&
@@ -49,6 +48,8 @@ function request(bot: ListenerBotApi) {
 		} as unknown as WireRecord,
 	])
 
+		},
+	] as any)
 	// Send an email to the user
 	const salesEmail = bot.asAdmin.getConfigValue("uesio/crm.sales_email")
 	const userConfigValue =
