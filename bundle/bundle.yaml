@@ -8,10 +8,10 @@ dependencies:
   uesio/builder:
     version: v0.0.1
   uesio/cms:
-    version: v0.0.1
+    version: v0.1.0
   uesio/core:
     version: v0.0.1
   uesio/crm:
-    version: v0.0.1
+    version: v1.0.3
   uesio/io:
     version: v0.0.1

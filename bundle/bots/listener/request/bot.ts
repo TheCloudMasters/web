@@ -25,14 +25,16 @@ function request(bot: ListenerBotApi) {
 		email: "email",
 		description: "description",
 	} as Record<string, string>
-	for (const key in values) {
-		if (
-			values[key] === "" &&
-			values[key] !== "no_employees" &&
-			values[key] !== "company"
-		)
-			throw new Error(`missing ${labels[key]}`)
-	}
+
+	// for (const key in values) {
+	// 	if (
+	// 		values[key] === "" &&
+	// 		values[key] !== "no_employees" &&
+	// 		values[key] !== "company"
+	// 	)
+	// 		throw new Error(`missing ${labels[key]}`)
+	// }
+
 	// Save the lead in our leads collection
 	bot.asAdmin.save("uesio/crm.lead", [
 		{
@@ -48,8 +50,8 @@ function request(bot: ListenerBotApi) {
 		} as unknown as WireRecord,
 	])
 
-		},
-	] as any)
+	// return
+
 	// Send an email to the user
 	const salesEmail = bot.asAdmin.getConfigValue("uesio/crm.sales_email")
 	const userConfigValue =
@@ -65,9 +67,9 @@ function request(bot: ListenerBotApi) {
 	const templateIdUser = bot.asAdmin.getConfigValue(userConfigValue)
 	const templateIdSales = bot.asAdmin.getConfigValue(SalesConfigValue)
 
-	// Email to user
+	// // Email to user
 	bot.asAdmin.runIntegrationAction("uesio/crm.sendgrid", "sendEmail", {
-		to: [values["uesio/crm.email"]],
+		to: [values.email],
 		from: salesEmail,
 		templateId: templateIdUser,
 		dynamicTemplateData: {
@@ -81,8 +83,8 @@ function request(bot: ListenerBotApi) {
 			source: values["source"],
 		},
 	})
-
-	// Email to us
+	// return
+	// // Email to us
 	bot.asAdmin.runIntegrationAction("uesio/crm.sendgrid", "sendEmail", {
 		to: [salesEmail],
 		from: salesEmail,

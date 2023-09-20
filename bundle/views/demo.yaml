@@ -195,5 +195,11 @@ definition:
                                                   email: ${email}
                                                   description: ${description}
                                                   source: "Demo Request"
+                                              - signal: notification/ADD
+                                                text: Thank you for scheduling a demo, we'll be in touch shortly
+                                                severity: success
+                                              - signal: wire/RESET
+                                                wire: newDemo
+
     - uesio/core.view:
         view: uesio/web.footer

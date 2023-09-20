@@ -1,5 +1,6 @@
 import { ListenerBotApi, Record as WireRecord } from "@uesio/bots"
 function addlead(bot: ListenerBotApi) {
+	return
 	const fields = [
 		"uesio/crm.firstname",
 		"uesio/crm.lastname",

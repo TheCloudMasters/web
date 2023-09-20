@@ -140,7 +140,7 @@ definition:
                                 text: info[@]ues[.]io
                                 signals:
                                   - signal: route/REDIRECT
-                                    path: mailto:info@thecloudmasters.com
+                                    path: mailto:info@ues.io
                                     newtab: true
                             - uesio/io.button:
                                 uesio.variant: uesio/web.contactlink
@@ -148,6 +148,13 @@ definition:
                                 signals:
                                   - signal: route/REDIRECT
                                     path: https://www.linkedin.com/company/uesio
+                                    newtab: true
+                            - uesio/io.button:
+                                uesio.variant: uesio/web.contactlink
+                                text: Youtube
+                                signals:
+                                  - signal: route/REDIRECT
+                                    path: https://www.youtube.com/channel/UCPanoza3zR9zCgn7Y4dg6sw
                                     newtab: true
                                     # Form box
                       - uesio/io.list:
