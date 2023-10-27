@@ -1,83 +1,134 @@
 name: topbar
 definition:
   # Wires are how we pull in data
-  wires:
-  # Components are how we describe the layout of our view
+  wires: # Components are how we describe the layout of our view
   components:
-    - uesio/io.grid:
-        uesio.variant: uesio/web.mainlayout
-        items:
+    - uesio/io.box:
+        uesio.styleTokens:
+          root:
+            - fixed
+            - bg-[rgb(247,247,247)]
+            - w-full
+            - z-10
+        components:
           - uesio/io.grid:
+              uesio.variant: uesio/web.mainlayout_dark
               uesio.styleTokens:
                 root:
-                  - grid-flow-col
-                  - items-center
-                  - justify-stretch
+                  - text-right
               items:
-                - uesio/io.image:
+                - uesio/io.box:
                     uesio.styleTokens:
                       root:
-                        - m-4
-                    height: 55
-                    file: uesio/web.logo
-                    signals:
-                      - signal: route/NAVIGATE
-                        path: home
-                - uesio/io.group:
-                    uesio.styleTokens:
-                      root:
-                        - grid
-                        - md:hidden
-                        - justify-right
-                        - m-5
+                        - flex
+                        - gap-4
+                        - justify-end
+                        - text-sm
+                        - p-1
+                        - text-slate-400
                     components:
-                      - uesio/io.button:
+                      - uesio/io.text:
+                          text: "\U0001F1FA\U0001F1F8 +1 844-558-0040"
+                      - uesio/io.text:
+                          text: "\U0001F1E8\U0001F1ED +41 44 511 22 88"
+          - uesio/io.grid:
+              uesio.variant: uesio/web.mainlayout
+              items:
+                - uesio/io.grid:
+                    uesio.styleTokens:
+                      root:
+                        - grid-flow-col
+                        - items-center
+                        - justify-stretch
+                    items:
+                      - uesio/io.image:
                           uesio.styleTokens:
-                            root:
-                              - text-xl
-                              - text-blue-600
-                              - p-2
-                          icon: menu
-                          signals:
-                            - signal: panel/TOGGLE
-                              panel: navmenu
-                - uesio/io.group:
-                    uesio.styleTokens:
-                      root:
-                        - hidden
-                        - md:grid
-                        - m-5
-                        - gap-2
-                        - md:gap-4
-                        - justify-right
-                    components:
-                      - uesio/io.button:
-                          uesio.variant: uesio/web.borderless
-                          text: Docs
-                          signals:
-                            - signal: route/REDIRECT
-                              path: https://docs.$Site{domain}
-                      - uesio/io.button:
-                          uesio.variant: uesio/web.borderless
-                          text: Community
-                          signals:
-                            - signal: route/REDIRECT
-                              path: https://community.ues.io
-                      - uesio/io.button:
-                          uesio.variant: uesio/web.borderless
-                          text: Blog
+                            root: # - mb-4
+                          height: 55
+                          file: uesio/web.logo
                           signals:
                             - signal: route/NAVIGATE
-                              path: blog
-                      - uesio/io.button:
-                          uesio.variant: uesio/web.calltoaction
-                          text: Login
+                              path: home
+                      - uesio/io.group:
                           uesio.styleTokens:
                             root:
-                              - ml-4
-                          signals:
-                            - signal: route/REDIRECT
-                              path: https://studio.$Site{domain}
+                              - grid
+                              - md:hidden
+                              - justify-right
+                              # - mb-5
+                          components:
+                            - uesio/io.button:
+                                uesio.variant: uesio/web.demo
+                            - uesio/io.button:
+                                uesio.styleTokens:
+                                  root:
+                                    - text-xl
+                                    - text-blue-600
+                                    - p-2
+                                icon: menu
+                                signals:
+                                  - signal: panel/TOGGLE
+                                    panel: navmenu
+                      - uesio/io.group:
+                          uesio.styleTokens:
+                            root:
+                              - hidden
+                              - md:grid
+                              # - mb-5
+                              - gap-2
+                              - md:gap-4
+                              - justify-right
+                          components:
+                            # - uesio/io.button:
+                            #     uesio.variant: uesio/web.borderless
+                            #     text: Docs
+                            #     signals:
+                            #       - signal: route/REDIRECT
+                            #         path: https://docs.$Site{domain}
+                            - uesio/io.button:
+                                uesio.variant: uesio/web.borderless
+                                text: Documentation
+                                signals:
+                                  - signal: route/REDIRECT
+                                    path: https://docs.ues.io/
+                            - uesio/io.button:
+                                uesio.variant: uesio/web.borderless
+                                text: Pricing
+                                signals:
+                                  - signal: route/NAVIGATE
+                                    path: pricing
+                            - uesio/io.button:
+                                uesio.variant: uesio/web.borderless
+                                text: Community
+                                signals:
+                                  - signal: route/REDIRECT
+                                    path: https://community.ues.io
+                            - uesio/io.button:
+                                uesio.variant: uesio/web.borderless
+                                text: Contact
+                                signals:
+                                  - signal: route/NAVIGATE
+                                    path: contact
+                            # - uesio/io.button:
+                            #     uesio.variant: uesio/web.borderless
+                            #     text: Blog
+                            #     signals:
+                            #       - signal: route/NAVIGATE
+                            #         path: blog
+                            - uesio/io.button:
+                                uesio.variant: uesio/web.calltoaction
+                                text: Login
+                                uesio.styleTokens:
+                                  root:
+                                    - ml-4
+                                signals:
+                                  - signal: route/REDIRECT
+                                    path: https://studio.$Site{domain}
+                            - uesio/io.button:
+                                uesio.variant: uesio/web.demo
+                                signals:
+                                  - signal: route/NAVIGATE
+                                    path: demo
   panels:
     navmenu:
       uesio.type: uesio/io.sidepanel
@@ -86,6 +137,7 @@ definition:
             uesio.styleTokens:
               root:
                 - grid-flow-row
+                - bg-[rgb(247,247,247)]
             components:
               - uesio/io.button:
                   uesio.variant: uesio/web.borderless

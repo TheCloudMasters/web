@@ -1,0 +1,8 @@
+name: calloutcenter
+extends: uesio/web.callout
+label: Callout Centered
+definition:
+  uesio.styleTokens:
+    root:
+      - text-center
+  element: div

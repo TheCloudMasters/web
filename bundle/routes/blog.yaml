@@ -1,5 +1,4 @@
 name: blog
 path: blog
-view: uesio/web.blog
-theme: uesio/core.default
+view: blog
 title: ues.io Blog

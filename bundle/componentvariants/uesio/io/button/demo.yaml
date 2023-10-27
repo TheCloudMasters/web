@@ -1,0 +1,15 @@
+name: demo
+extends: uesio/web.calltoaction
+label: demo
+definition:
+  text: "Book a demo"
+  icon: arrow_right_alt
+  iconPlacement: end
+  signals:
+    - signal: route/REDIRECT
+      path: demo
+  uesio.styleTokens:
+    root:
+      - bg-[rgb(45,39,245)]
+      - text-white
+      - inline-block

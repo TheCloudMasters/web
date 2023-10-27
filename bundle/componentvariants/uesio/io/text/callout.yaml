@@ -7,4 +7,7 @@ definition:
       - md:text-5xl
       - text-slate-800
       - font-[Gosha]
+      - mb-6
+      - max-w-[800px]
+      - mx-auto
   element: div

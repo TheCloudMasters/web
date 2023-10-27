@@ -1,12 +1,18 @@
 name: public
 named: {}
 views:
+  uesio/web.allinclusiveitem: true
   uesio/web.blog: true
   uesio/web.blogentry: true
+  uesio/web.contact: true
+  uesio/web.demo: true
   uesio/web.earlyaccess: true
+  uesio/web.featurewithicon: true
   uesio/web.footer: true
   uesio/web.home: true
   uesio/web.preview: true
+  uesio/web.pricing: true
+  uesio/web.pricingcard: true
   uesio/web.privacy: true
   uesio/web.terms: true
   uesio/web.topbar: true
@@ -16,29 +22,43 @@ collections:
     create: false
     edit: false
     delete: false
+    modifyall: false
+    viewall: false
     fields: {}
   uesio/core.userfile:
     read: true
     create: false
     edit: false
     delete: false
+    modifyall: false
+    viewall: false
     fields: {}
 routes:
   uesio/web.blog: true
   uesio/web.blogentry: true
+  uesio/web.contact: true
+  uesio/web.demo: true
   uesio/web.earlyaccess: true
   uesio/web.home: true
   uesio/web.preview: true
+  uesio/web.pricing: true
   uesio/web.privacy: true
   uesio/web.signup: true
   uesio/web.terms: true
 files:
   uesio/web.logo: true
   uesio/web.logowhite: true
+  uesio/web.oner: true
+  uesio/web.second_graphic: true
   uesio/web.swissmade: true
+bots:
+  uesio/web.request: true
+integrationActions: {}
+allowallbots: false
 allowallcollections: false
 allowallviews: false
 allowallroutes: false
 allowallfiles: false
+allowallintegrationactions: false
 modifyallrecords: false
 viewallrecords: false

@@ -1,0 +1,10 @@
+name: contactlink
+label: Contact link
+definition:
+  uesio.styleTokens:
+    root:
+      - font-light
+      - my-4
+      - text-base
+      - block
+      - justify-self-start

@@ -1,0 +1,41 @@
+name: allinclusiveitem
+definition:
+  params:
+    title:
+      type: TEXT
+      required: false
+    subtitle:
+      type: TEXT
+      required: false
+  components:
+    - uesio/io.box:
+        uesio.styleTokens:
+          root:
+            - grid
+            - grid-cols-[1fr_80px_1fr]
+            - grid-rows-1
+            - gap-4
+            - mb-4
+            - items-center
+        components:
+          - uesio/io.text:
+              uesio.styleTokens:
+                root:
+                  - max-w-[350px]
+              text: $Param{title}
+          - uesio/io.text:
+              uesio.variant: uesio/io.icon
+              text: arrow_forward_ios
+              uesio.styleTokens:
+                root:
+                  - p-3
+                  - md:p-4
+                  - text-[orange]
+                  - text-3xl
+                  - md:text-5xl
+                  - "[font-variation-settings:'FILL'_1,'wght'_400]"
+                  - "md:[font-variation-settings:'FILL'_1,'wght'_700]"
+                  - relative
+                  - leading-none
+          - uesio/io.text:
+              text: $Param{subtitle}

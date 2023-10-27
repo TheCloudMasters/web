@@ -5,6 +5,7 @@ entrypoint: ga4
 configvalues:
   - uesio/web.ga4_measurement_id
 slots: null
+definition: null
 title: Google Analytics 4
 discoverable: true
 description: Enables Google Analytics tracking for a view
