@@ -52,7 +52,6 @@ files:
   uesio/web.second_graphic: true
   uesio/web.swissmade: true
 bots:
-  uesio/web.addlead: true
   uesio/web.request: true
 integrationActions: {}
 allowallbots: false
