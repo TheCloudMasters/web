@@ -1,5 +1,4 @@
 name: terms
 path: terms
-view: uesio/web.terms
-theme: uesio/core.default
+view: terms
 title: $Site{title} - Terms of Service

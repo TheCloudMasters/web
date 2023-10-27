@@ -1,0 +1,4 @@
+name: pricing
+path: pricing
+view: pricing
+title: $Site{title} - Pricing

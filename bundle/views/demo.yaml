@@ -1,0 +1,211 @@
+name: demo
+definition:
+  # Wires are how we pull in data
+  wires:
+    newDemo:
+      viewOnly: true
+      fields:
+        first_name:
+          label: First Name
+          type: TEXT
+          required: true
+        last_name:
+          label: Last Name
+          type: TEXT
+          required: true
+        company:
+          label: Company Name
+          type: TEXT
+          required: false
+        email:
+          label: Email
+          type: EMAIL
+          required: true
+        description:
+          label: How did you hear about us?
+          type: LONGTEXT
+          required: true
+      init:
+        create: true
+  # Components are how we describe the layout of our view
+  components:
+    - uesio/core.view:
+        view: uesio/web.topbar
+    - uesio/io.box:
+        uesio.styleTokens:
+          root:
+            - bg-[rgb(247,247,247)]
+            - pt-28
+            - min-h-[70vh]
+        components:
+          - uesio/io.grid:
+              uesio.variant: uesio/web.mainlayout
+              items:
+                - uesio/io.grid:
+                    uesio.variant: uesio/web.callout_double
+                    uesio.styleTokens:
+                      root:
+                        - min-h-[70vh]
+                    items:
+                      - uesio/io.grid:
+                          uesio.styleTokens:
+                            root:
+                              - grid
+                              - grid-flow-row
+                              - px-3
+                          items:
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.callout
+                                text: Book your free ues.io demo
+                                uesio.styleTokens:
+                                  root:
+                                    - mb-0
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.calloutsub
+                                text: Experience ues.io in action! Schedule a personalised demo to learn how ues.io can help you with your digital transformation journey. Fill out the form and we'll get in touch to arrange a convenient time.
+                            - uesio/io.grid:
+                                uesio.styleTokens:
+                                  root:
+                                    - grid
+                                    - grid-flow-row-dense
+                                    - text-[22px]
+                                items:
+                                  - uesio/io.box:
+                                      uesio.styleTokens:
+                                        root:
+                                          - grid
+                                          - grid-cols-[20px_1fr]
+                                          - items-center
+                                          - gap-2
+                                      components:
+                                        - uesio/io.text:
+                                            uesio.variant: uesio/io.icon
+                                            text: check
+                                            color: green
+                                        - uesio/io.text:
+                                            uesio.styleTokens:
+                                              root:
+                                                - m-0
+                                            uesio.variant: uesio/web.calloutsub
+                                            text: No-code extensible with code
+                                  - uesio/io.box:
+                                      uesio.styleTokens:
+                                        root:
+                                          - grid
+                                          - grid-cols-[20px_1fr]
+                                          - items-center
+                                          - gap-2
+                                      components:
+                                        - uesio/io.text:
+                                            uesio.variant: uesio/io.icon
+                                            text: check
+                                            color: green
+                                        - uesio/io.text:
+                                            uesio.styleTokens:
+                                              root:
+                                                - m-0
+                                            uesio.variant: uesio/web.calloutsub
+                                            text: AI included
+                                  - uesio/io.box:
+                                      uesio.styleTokens:
+                                        root:
+                                          - grid
+                                          - grid-cols-[20px_1fr]
+                                          - items-center
+                                          - gap-2
+                                      components:
+                                        - uesio/io.text:
+                                            uesio.variant: uesio/io.icon
+                                            text: check
+                                            color: green
+                                        - uesio/io.text:
+                                            uesio.styleTokens:
+                                              root:
+                                                - m-0
+                                            uesio.variant: uesio/web.calloutsub
+                                            text: All the components to build with
+                                  - uesio/io.box:
+                                      uesio.styleTokens:
+                                        root:
+                                          - grid
+                                          - grid-cols-[20px_1fr]
+                                          - items-center
+                                          - gap-2
+                                      components:
+                                        - uesio/io.text:
+                                            uesio.variant: uesio/io.icon
+                                            text: check
+                                            color: green
+                                        - uesio/io.text:
+                                            uesio.styleTokens:
+                                              root:
+                                                - m-0
+                                            uesio.variant: uesio/web.calloutsub
+                                            text: Team development
+                                  - uesio/io.box:
+                                      uesio.styleTokens:
+                                        root:
+                                          - grid
+                                          - grid-cols-[20px_1fr]
+                                          - items-center
+                                          - gap-2
+                                      components:
+                                        - uesio/io.text:
+                                            uesio.variant: uesio/io.icon
+                                            text: check
+                                            color: green
+                                            align: center
+                                        - uesio/io.text:
+                                            uesio.styleTokens:
+                                              root:
+                                                - m-0
+                                            uesio.variant: uesio/web.calloutsub
+                                            text: Unlimited users
+                      - uesio/io.list:
+                          wire: newDemo
+                          mode: EDIT
+                          uesio.id: demoForm
+                          components:
+                            - uesio/io.box:
+                                uesio.styleTokens:
+                                  root:
+                                    - bg-white
+                                    - rounded-lg
+                                    - shadow-lg
+                                    - p-8
+                                components:
+                                  - uesio/io.field:
+                                      fieldId: first_name
+                                  - uesio/io.field:
+                                      fieldId: last_name
+                                  - uesio/io.field:
+                                      fieldId: email
+                                  - uesio/io.field:
+                                      fieldId: company
+                                  - uesio/io.field:
+                                      fieldId: description
+                                  - uesio/io.box:
+                                      components:
+                                        - uesio/io.button:
+                                            uesio.variant: uesio/web.calltoaction
+                                            uesio.styleTokens:
+                                              root:
+                                                - w-fit
+                                            text: Send now
+                                            signals:
+                                              - signal: bot/CALL
+                                                bot: uesio/web.request
+                                                params:
+                                                  first_name: ${first_name}
+                                                  last_name: ${last_name}
+                                                  company: ${company}
+                                                  email: ${email}
+                                                  description: ${description}
+                                                  source: "Demo Request"
+                                              - signal: notification/ADD
+                                                text: Thank you for scheduling a demo, we'll be in touch shortly
+                                                severity: success
+                                              - signal: wire/RESET
+                                                wire: newDemo
+    - uesio/core.view:
+        view: uesio/web.footer

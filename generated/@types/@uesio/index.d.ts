@@ -1,6 +1,9 @@
 declare module "@uesio/bots" {
+type BotParamValue = string | boolean | number | object | undefined
+
 interface BotParamsApi {
-	get: (paramName: string) => string | boolean | number | object | undefined
+	get: (paramName: string) => BotParamValue
+	getAll: () => Record<string, BotParamValue>
 }
 interface FieldRequest {
 	id: string
@@ -23,6 +26,7 @@ interface ConditionRequest {
 	field: string
 	operator: ConditionOperator
 	value?: FieldValue
+	values?: FieldValue[]
 	type?: ConditionType
 	conjunction?: Conjunction
 	fields?: string[]
@@ -34,27 +38,43 @@ interface LoadOrder {
 	field: string
 	desc: boolean
 }
-interface Record {
+interface WireRecord {
 	GetField: (field: string) => FieldValue | undefined
 	SetField: (field: string, value: FieldValue) => void
 }
 interface LoadRequest {
+	batchsize?: number
 	collection: string
 	fields?: FieldRequest[]
 	conditions?: ConditionRequest[]
 	order?: LoadOrder[]
+	loadAll?: boolean
 }
-interface DeleteApi {
-	getOld: (field: string) => FieldValue
+type Logger = (message: string, ...data: unknown[]) => void
+
+interface LogApi {
+	info: Logger
+	warn: Logger
+	error: Logger
 }
-interface ChangeApi {
-	get: (field: string) => FieldValue
-	getOld: (field: string) => FieldValue
-	set: (field: string, value: FieldValue) => void
+
+interface BaseChangeApi {
 	addError: (error: string) => void
+	getId: () => string
+}
+
+interface InsertApi extends BaseChangeApi {
+	get: (field: string) => FieldValue
+	set: (field: string, value: FieldValue) => void
+}
+interface ChangeApi extends InsertApi {
+	getOld: (field: string) => FieldValue
+}
+interface DeleteApi extends BaseChangeApi {
+	getOld: (field: string) => FieldValue
 }
 interface InsertsApi {
-	get: () => ChangeApi[]
+	get: () => InsertApi[]
 }
 interface UpdatesApi {
 	get: () => ChangeApi[]
@@ -62,60 +82,141 @@ interface UpdatesApi {
 interface DeletesApi {
 	get: () => DeleteApi[]
 }
+interface SessionApi {
+	getId: () => string
+}
+interface UserApi {
+	getId: () => string
+	getUsername: () => string
+	getEmail: () => string
+	getUniqueKey: () => string
+}
+
+interface BotHttpRequest {
+	url: string
+	method: string
+	headers?: Record<string, string>
+	body?: string | Record<string, unknown>
+}
+interface BotHttpResponse {
+	code: number
+	status: string
+	headers: Record<string, string>
+	body: string | Record<string, unknown> | null
+}
+
+interface HttpApi {
+	request: (options: BotHttpRequest) => BotHttpResponse
+}
+
+interface SaveOptionsApi {
+	upsert: boolean
+}
+
+interface IntegrationApi {
+	getBaseURL(): string | undefined
+}
+
+type RunIntegrationAction = (
+	integration: string,
+	action: string,
+	options: unknown
+) => unknown
+
 interface BeforeSaveBotApi {
 	addError: (error: string) => void
-	load: (loadRequest: LoadRequest) => Record[]
+	load: (loadRequest: LoadRequest) => WireRecord[]
 	deletes: DeletesApi
 	inserts: InsertsApi
 	updates: UpdatesApi
 }
 interface AfterSaveBotApi extends BeforeSaveBotApi {
-	save: (collectionName: string, records: Record[]) => void
-	runIntegrationAction: (
-		integration: string,
-		action: string,
-		options: unknown
-	) => void
+	save: (collectionName: string, records: WireRecord[]) => void
+	runIntegrationAction: RunIntegrationAction
 	getConfigValue: (configValueKey: string) => string
 	asAdmin: AsAdminApi
 }
 interface AsAdminApi {
-	load: (loadRequest: LoadRequest) => Record[]
-	save: (collectionName: string, records: Record[]) => void
-	runIntegrationAction: (
-		integration: string,
-		action: string,
-		options: unknown
-	) => void
+	load: (loadRequest: LoadRequest) => WireRecord[]
+	save: (collectionName: string, records: WireRecord[]) => void
+	runIntegrationAction: RunIntegrationAction
 	getConfigValue: (configValueKey: string) => string
 }
 interface ListenerBotApi {
 	addResult: (key: string, value: FieldValue | undefined) => void
-	load: (loadRequest: LoadRequest) => Record[]
+	load: (loadRequest: LoadRequest) => WireRecord[]
 	params: BotParamsApi
-	save: (collectionName: string, records: Record[]) => void
-	runIntegrationAction: (
-		integration: string,
-		action: string,
-		options: unknown
-	) => void
+	save: (collectionName: string, records: WireRecord[]) => void
+	runIntegrationAction: RunIntegrationAction
 	getConfigValue: (configValueKey: string) => string
 	asAdmin: AsAdminApi
+	getSession: () => SessionApi
+	getUser: () => UserApi
+	log: LogApi
+	http: HttpApi
+}
+interface RunActionBotApi {
+	addError: (error: string) => void
+	addResult: (key: string, value: FieldValue | undefined) => void
+	getActionName: () => string
+	getCredentials: () => Record<string, string | undefined>
+	getConfigValue: (configValueKey: string) => string
+	getIntegration: () => IntegrationApi
+	getSession: () => SessionApi
+	getUser: () => UserApi
+	http: HttpApi
+	load: (loadRequest: LoadRequest) => WireRecord[]
+	log: LogApi
+	params: BotParamsApi
+	save: (collectionName: string, records: WireRecord[]) => void
+}
+
+interface LoadBotApi {
+	addError: (error: string) => void
+	addRecord: (record: Record<string, unknown>) => void
+	loadRequest: LoadRequest
+	getIntegration: () => IntegrationApi
+	getCredentials: () => Record<string, string | undefined>
+	getConfigValue: (configValueKey: string) => string
+	getSession: () => SessionApi
+	getUser: () => UserApi
+	log: LogApi
+	http: HttpApi
+}
+interface SaveBotApi {
+	addError: (message: string, fieldId: string, recordId: string) => void
+	deletes: DeletesApi
+	inserts: InsertsApi
+	updates: UpdatesApi
+	getCollectionName: () => string
+	getIntegration: () => IntegrationApi
+	getCredentials: () => Record<string, string | undefined>
+	getConfigValue: (configValueKey: string) => string
+	getSession: () => SessionApi
+	getUser: () => UserApi
+	log: LogApi
+	http: HttpApi
+	saveOptions: SaveOptionsApi
 }
 export type {
-	ListenerBotApi,
-	BeforeSaveBotApi,
 	AfterSaveBotApi,
+	BeforeSaveBotApi,
 	BotParamsApi,
+	ChangeApi,
 	ConditionOperator,
 	ConditionRequest,
 	ConditionType,
-	ChangeApi,
+	DeleteApi,
 	FieldRequest,
 	FieldValue,
+	InsertApi,
+	ListenerBotApi,
+	LoadBotApi,
 	LoadOrder,
 	LoadRequest,
-	Record,
+	RunActionBotApi,
+	SaveBotApi,
+	WireRecord,
 }
 }
 declare module "@uesio/ui" {
@@ -299,26 +400,30 @@ export type BaseProps<T = DefinitionMap> = {
 }
 
 export type METADATA = {
-	COLLECTION: "collections"
-	FIELD: "fields"
-	VIEW: "views"
-	DATASOURCE: "datasources"
 	AUTHSOURCE: "authsources"
-	FILESOURCE: "filesources"
-	SIGNUPMETHOD: "signupmethods"
-	SECRET: "secrets"
-	THEME: "themes"
-	SELECTLIST: "selectlists"
 	BOT: "bots"
-	CREDENTIALS: "credentials"
-	ROUTE: "routes"
-	PROFILE: "profiles"
-	PERMISSIONSET: "permissionsets"
-	COMPONENTVARIANT: "componentvariants"
-	COMPONENTPACK: "componentpacks"
+	COLLECTION: "collections"
 	COMPONENT: "components"
+	COMPONENTPACK: "componentpacks"
+	COMPONENTVARIANT: "componentvariants"
+	CONFIGVALUE: "configvalues"
+	CREDENTIALS: "credentials"
+	FIELD: "fields"
 	FILE: "files"
+	FILESOURCE: "filesources"
+	INTEGRATION: "integrations"
+	INTEGRATIONACTION: "integrationactions"
 	LABEL: "labels"
+	PERMISSIONSET: "permissionsets"
+	PROFILE: "profiles"
+	RECORDCHALLENGETOKEN: "recordchallengetokens"
+	ROUTE: "routes"
+	SECRET: "secrets"
+	SELECTLIST: "selectlists"
+	SIGNUPMETHOD: "signupmethods"
+	THEME: "themes"
+	USERACCESSTOKEN: "useraccesstokens"
+	VIEW: "views"
 }
 export type MetadataType = keyof METADATA
 type MetadataKey = `${string}/${string}.${string}`
@@ -459,10 +564,174 @@ type ValueCondition = ConditionBase & {
 	inclusiveStart?: boolean
 	inclusiveEnd?: boolean
 }
+
+type FieldType =
+	| "AUTONUMBER"
+	| "CHECKBOX"
+	| "DATE"
+	| "EMAIL"
+	| "FILE"
+	| "LIST"
+	| "LONGTEXT"
+	| "MAP"
+	| "METADATA"
+	| "MULTIMETADATA"
+	| "MULTISELECT"
+	| "NUMBER"
+	| "REFERENCE"
+	| "REFERENCEGROUP"
+	| "SELECT"
+	| "STRUCT"
+	| "TEXT"
+	| "TIMESTAMP"
+	| "USER"
+
+type AcceptTypes = "IMAGE" | "AUDIO" | "VIDEO" | "DOCUMENT" | "ANY"
+
+type SelectOption = {
+	label: string
+	value: string
+	languageLabel?: string
+	disabled?: boolean
+	title?: string
+}
+
+type NumberMetadata = {
+	decimals: number
+}
+
+type SelectListMetadata = {
+	name: string
+	options: SelectOption[]
+	blank_option_label?: string
+	blank_option_language_label?: string
+}
+
+type FileMetadata = {
+	accept: AcceptTypes
+	filesource: string
+}
+
+type ReferenceMetadata = {
+	collection: string
+}
+
+type ReferenceGroupMetadata = {
+	collection: string
+	field: string
+}
+
+/**
+ * API for interacting with the Fields on a Collection
+ */
+type Field = {
+	/**
+	 * Get the fully-qualified field name, e.g. "uesio/core.firstname"
+	 */
+	getId: () => string
+	/**
+	 * Returns just the field's name, e.g. "firstname"
+	 */
+	getName: () => string
+	/**
+	 * Returns the namespace of the field's app, e.g. "uesio/core"
+	 */
+	getNamespace: () => string
+	/**
+	 * Get the label defined for the field, e.g. "First Name"
+	 */
+	getLabel: () => string
+	/**
+	 * Returns the Uesio field type
+	 */
+	getType: () => FieldType
+	/**
+	 * Returns true if the field is createable by the current user
+	 */
+	getCreateable: () => boolean
+	/**
+	 * Returns true if the field is updateable by the current user
+	 */
+	getUpdateable: () => boolean
+	/**
+	 * Returns true if the field is accessible by the current user
+	 */
+	getAccessible: () => boolean
+	/**
+	 * If this is a "Reference" field, returns the Reference field specific metadata extensions
+	 */
+	getReferenceMetadata: () => ReferenceMetadata
+	/**
+	 * If this is a "Select" field, returns the Select field specific metadata extensions
+	 */
+	getSelectMetadata: () => SelectListMetadata
+	/**
+	 * If this is a "Select" field, returns a list of SelectOptions,
+	 * including a blank option if a blank option label is defined on the field
+	 */
+	getSelectOptions: (context: Context) => SelectOption[]
+	/**
+	 * If this is a "Number" field, returns the Number field specific metadata extensions
+	 */
+	getNumberMetadata: () => NumberMetadata
+	/**
+	 * Returns true if this is a "Reference" type field, or one of the special Reference-extending types
+	 */
+	isReference: () => boolean
+	/**
+	 * Returns true if this is a required field
+	 */
+	isRequired: () => boolean
+}
+
+type Collection = {
+	/**
+	 * Get the collection's app-unique name, e.g. "user", "contact"
+	 */
+	getId: () => string
+	/**
+	 * Get the collection's associated app, e.g. "uesio/core"
+	 */
+	getNamespace: () => string
+	/**
+	 * Get the fully-qualified collection name, e.g. "uesio/core.user"
+	 */
+	getFullName: () => string
+	/**
+	 * Get the collection's label, e.g. "User", "Contact"
+	 */
+	getLabel: () => string
+	/**
+	 * Get the collection's plural label, e.g. "Users", "Contacts"
+	 */
+	getPluralLabel: () => string
+	/**
+	 * Get the metadata for a field on the collection, using the fully-qualified field name.
+	 * To fetch a sub-field on an associated Reference field, use a path separator ("->"),
+	 * for example "uesio/core.owner->uesio/core.username"
+	 * @param fieldName string - the field's API name, e.g. "user/app.fieldName", or "uesio/core.user->uesio/core.username"
+	 */
+	getField: (fieldName: string) => Field | undefined
+	/**
+	 * Get the metadata for the collection's id field
+	 */
+	getIdField: () => Field
+	/**
+	 * Get the metadata for the collection's name field (if a name field is defined on the collection)
+	 */
+	getNameField: () => Field | undefined
+}
 type WireField = {
 	id: string
 	fields?: WireField[]
 }
+
+interface CreateRecordsOptions {
+	context: Context
+	records: PlainWireRecord[]
+	prepend?: boolean
+}
+
 type Wire = {
 	cancel: () => void
 	createRecord: (
@@ -470,9 +739,10 @@ type Wire = {
 		prepend?: boolean,
 		recordId?: string
 	) => WireRecord
+	createRecords: (CreateRecordsOptions) => Context
 	empty: () => void
 	getChanges: () => WireRecord[]
-	getCollection: () => string
+	getCollection: () => Collection
 	getCondition: (conditionId: string) => WireCondition | null
 	getConditions: () => WireCondition[]
 	getData: () => WireRecord[]
@@ -482,6 +752,7 @@ type Wire = {
 	getFirstRecord: () => WireRecord
 	getFullId: () => string
 	getId: () => string
+	getPlainData: () => PlainWireRecord[]
 	getRecord: (recordId: string) => WireRecord
 	getSize: () => number
 	getViewId: () => string
@@ -507,16 +778,65 @@ type PlainWireRecord = {
 }
 type PlainFieldValue = string | number | boolean | undefined | null
 type WireRecord = {
-	getId: () => string
-	getWire: () => string
-	getFieldValue: <T extends FieldValue>(fieldName: string) => T | undefined
-	isNew: () => boolean
-	isDeleted: () => boolean
+	/**
+	 * Returns the stable, unique id of this record, which is created when the record is first saved.
+	 */
 	getIdFieldValue: () => string
+	/**
+	 * Get the value of a field on the record.
+	 * @param fieldName - string - the fully-qualified field name, e.g. "uesio/core.firstname", which may contain path separators to access fields across Reference field boundaries, e.g. "uesio/core.owner->uesio/core.username"
+	 */
+	getFieldValue: <T extends FieldValue>(fieldName: string) => T | undefined
+	/**
+	 * Returns an object representation of the raw data fields for the record, which can be useful when interacting with other frameworks or component libraries
+	 */
+	getPlainData: () => PlainWireRecord
+	/**
+	 * Returns the unique key value for this record, as specified by the collection's unique key fields
+	 */
 	getUniqueKey: () => string
+	/**
+	 * Returns the parent Wire for this record
+	 */
+	getWire: () => Wire
+	/**
+	 * Returns true if this record is marked for deletion
+	 */
+	isDeleted: () => boolean
+	/**
+	 * Returns true if this is a newly-created record which has not yet been saved to the database
+	 */
+	isNew: () => boolean
+	/**
+	 * Update the value of the specified field on this record
+	 * @param fieldId string - the fully-qualified field name, e.g. "uesio/core.firstname"
+	 * @param value FieldValue - the new value to use for this field
+	 * @param context Context - the context in which to perform the update
+	 */
 	update: (fieldId: string, value: FieldValue, context: Context) => void
 }
-// type useWire = (wireId: string, context: Context) => Wire;
+
+type OrderState = {
+	field: MetadataKey
+	desc: boolean
+}
+
+type PlainWire = {
+	batchid: string
+	batchnumber: number
+	changes: Record<string, PlainWireRecord>
+	collection: string
+	data: Record<string, PlainWireRecord>
+	deletes: Record<string, PlainWireRecord>
+	name: string
+	original: Record<string, PlainWireRecord>
+	query?: boolean
+	create?: boolean
+	view: string
+	batchsize?: number
+	viewOnly: boolean
+	loadAll?: boolean
+}
 
 interface SignalDefinition {
 	signal: string
@@ -552,7 +872,42 @@ export namespace api {
 		export { useConfigValue }
 	}
 
-	export default { signal, view }
+	export namespace wire {
+		/**
+		 * Returns a Wire object by wire name, if one exists at the time that it is called. Does not update if the Wire changes.
+		 * @param wireName the name of the wire to use
+		 * @param context Context object
+		 * @returns Wire object, or undefined if no Wire with that name exists
+		 */
+		export function getWire(
+			wireName: string | undefined,
+			context: Context
+		): Wire | undefined
+		/**
+		 * A hook to return a Wire object by wire name, which will update if any change is made to the Wire
+		 * @param wireName the name of the wire to use
+		 * @param context Context object
+		 * @returns Wire object
+		 */
+		export function useWire(
+			wireName: string | undefined,
+			context: Context
+		): Wire | undefined
+		/**
+		 * A hook to return multiple Wire objects by their names, which will update if any changes are made to the Wires
+		 * @param wireNames the names of the wires to use
+		 * @param context Context object
+		 * @returns array of Wire objects
+		 */
+		export function useWires(
+			wireNames: string[],
+			context: Context
+		): (Wire | undefined)[]
+
+		export { getWire, useWire, useWires }
+	}
+
+	export default { signal, view, wire }
 }
 
 export default {

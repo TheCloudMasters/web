@@ -1,5 +1,4 @@
 name: blogentry
 path: blog/{slug}
-view: uesio/web.blogentry
-theme: uesio/core.default
+view: blogentry
 title: ues.io Blog Entry

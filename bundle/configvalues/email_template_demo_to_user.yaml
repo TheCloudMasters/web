@@ -1,0 +1,4 @@
+name: email_template_demo_to_user
+public: true
+store: platform
+managedBy: site
