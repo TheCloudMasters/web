@@ -3,4 +3,5 @@ node_modules/
 bundle/componentpacks/*/dist/
 .in
 .out
-generated/
+generated/@types/@uesio/index.d.ts
+generated/@types/@uesio/package.json
