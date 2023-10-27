@@ -1,3 +1,5 @@
 .uesio
 node_modules/
 bundle/componentpacks/*/dist/
+.in
+.out
