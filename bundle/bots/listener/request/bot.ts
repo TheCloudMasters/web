@@ -1,4 +1,4 @@
-import { FieldValue, ListenerBotApi, Record as WireRecord } from "@uesio/bots"
+import { ListenerBotApi, WireRecord } from "@uesio/bots"
 function request(bot: ListenerBotApi) {
 	const fields = [
 		"first_name",
