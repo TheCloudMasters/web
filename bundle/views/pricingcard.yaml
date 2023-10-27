@@ -106,29 +106,6 @@ definition:
                   - w-[4em]
                   - mx-auto
                   - my-4
-          # features
-          - uesio/io.text:
-              element: div
-              text: $Param{sla} Support SLA
-              uesio.display:
-                - type: paramIsSet
-                  param: sla
-              uesio.styleTokens:
-                root:
-                  - text-[rgb(45,39,245)]
-                  # Community
-          - uesio/io.text:
-              uesio.display:
-                - type: paramIsSet
-                  param: community
-              element: div
-              text: Community support
-          - uesio/io.text:
-              element: div
-              uesio.display:
-                - type: paramIsSet
-                  param: enterprise
-              text: SAML SSO
           # Subdomain
           - uesio/io.text:
               element: div
@@ -154,9 +131,51 @@ definition:
                 - type: paramIsSet
                   param: enterprise
               text: Self hosted
+          - uesio/io.text:
+              element: div
+              uesio.display:
+                - type: paramIsSet
+                  param: enterprise
+              text: SAML SSO
+          # features
+          - uesio/io.text:
+              element: div
+              text: $Param{sla} Support SLA
+              uesio.display:
+                - type: paramIsSet
+                  param: sla
+              uesio.styleTokens:
+                root:
+                  - text-[rgb(45,39,245)]
+                  # Community
+          - uesio/io.text:
+              uesio.display:
+                - type: paramIsSet
+                  param: community
+              element: div
+              text: Community support
+              uesio.styleTokens:
+                root:
+                  - text-[rgb(45,39,245)]
           - uesio/io.button:
+              uesio.display:
+                - type: paramValue
+                  operator: NOT_EQUALS
+                  param: title
+                  value: Free
               uesio.styleTokens:
                 root:
                   - mt-8
                   - mb-2
               uesio.variant: uesio/web.demo
+          - uesio/io.button:
+              uesio.display:
+                - type: paramValue
+                  operator: EQUALS
+                  param: title
+                  value: Free
+              uesio.styleTokens:
+                root:
+                  - mt-8
+                  - mb-2
+              uesio.variant: uesio/web.signup

@@ -1,4 +1,4 @@
-import { ListenerBotApi, Record as WireRecord } from "@uesio/bots"
+import { ListenerBotApi, WireRecord } from "@uesio/bots"
 function demorequest(bot: ListenerBotApi) {
 	const fields = [
 		"first_name",
@@ -27,7 +27,7 @@ function demorequest(bot: ListenerBotApi) {
 
 	// Save the lead in our leads collection
 	bot.asAdmin.save("uesio/crm.lead", [{
-		    "uesio/crm.firstname": values["first_name"],
+			"uesio/crm.firstname": values["first_name"],
 			"uesio/crm.lastname": values["last_name"],
 			"uesio/crm.email": values["email"],
 			"uesio/crm.account": values["company"],

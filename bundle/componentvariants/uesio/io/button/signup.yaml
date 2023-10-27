@@ -1,0 +1,15 @@
+name: signup
+extends: uesio/web.calltoaction
+label: Signup
+definition:
+  text: "Signup"
+  icon: arrow_right_alt
+  iconPlacement: end
+  signals:
+    - signal: route/REDIRECT
+      path: signup
+  uesio.styleTokens:
+    root:
+      - bg-[rgb(45,39,245)]
+      - text-white
+      - inline-block
