@@ -29,13 +29,13 @@ definition:
                                 components:
                                   - uesio/io.text:
                                       uesio.variant: uesio/web.calloutpre
-                                      text: the platforms for platforms
+                                      text: unlimited users
                                   - uesio/io.text:
                                       uesio.variant: uesio/web.callout
-                                      text: Discover the ROI of building apps with ues.io
+                                      text: Build enterprise grade applications for FREE!
                                   - uesio/io.text:
                                       uesio.variant: uesio/web.calloutsub
-                                      text: ues.io (User Experience Studio) is a comprehensive no-code AI enabled platform designed to simplify, secure and streamline the digital transformation process for enterprises.
+                                      text: "ues.io (u)ser (e)xperience (s)tudio is a comprehensive pro-code AI enabled platform which offers you the freedom to extend your application functionality with your own code and only start paying on a usage basis when your users start engaging. "
                                   - uesio/io.button:
                                       uesio.variant: uesio/web.demo
                       - uesio/io.box:
@@ -79,7 +79,13 @@ definition:
                                     - font-bold
                             - uesio/io.text:
                                 element: p
-                                text: Enterprises embarking on digital transformation face challenges in security, AI, platform unification and managing independent teams.
+                                text: Most platforms are very complicated.
+                            - uesio/io.text:
+                                element: p
+                                text: You are locked behind the features on offer.
+                            - uesio/io.text:
+                                element: p
+                                text: Pay per user subscriptions even if users are not engaged.
                       - uesio/io.box:
                           uesio.styleTokens:
                             root:
@@ -99,7 +105,13 @@ definition:
                                 element: p
                             - uesio/io.text:
                                 element: p
-                                text: ues.io is the most comprehensive and secure no/low-code platform for digital transformation, powered by AI and extensible with code.
+                                text: Make it simple and add AI to help you along.
+                            - uesio/io.text:
+                                element: p
+                                text: Extend functionality with your own code.
+                            - uesio/io.text:
+                                element: p
+                                text: FREE to build and pay as you go for usage only.
     # Dark section
     - uesio/io.grid:
         uesio.variant: uesio/web.mainlayout_dark
@@ -156,7 +168,7 @@ definition:
                                 text: Platform
                             - uesio/io.text:
                                 uesio.variant: uesio/web.calloutsmallsub
-                                text: Easily build and deploy applications quickly inclusive of automated testing and AI.
+                                text: Easily build and deploy enterprise applications in a professional software lifecycle management system.
                 - uesio/io.grid:
                     uesio.variant: uesio/web.icongrid
                     items:
@@ -188,7 +200,7 @@ definition:
                           uesio.styleTokens:
                             root:
                               - text-slate-500
-                          text: Low code no-code tools are not living up to their promise.
+                          text: Low-code / no-code tools are not living up to their promise.
                       - uesio/io.box:
                           uesio.styleTokens:
                             root:
