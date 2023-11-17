@@ -1,0 +1,16 @@
+name: Main Branch Build
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  bundle_and_site_update:
+    name: Create patch bundle in PROD
+    uses: ./.github/workflows/bundle.yaml
+    with:
+      environment: prod
+      type: patch
+      workspace: github_main
+      site: prod
+    secrets: inherit

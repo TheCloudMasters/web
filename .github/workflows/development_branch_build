@@ -1,0 +1,16 @@
+name: Development Branch Build
+on:
+  push:
+    branches:
+      - development
+
+jobs:
+  bundle_and_site_update:
+    name: Create patch bundle in STAGING
+    uses: ./.github/workflows/bundle.yaml
+    with:
+      environment: prod
+      type: patch
+      workspace: github_development
+      site: staging
+    secrets: inherit
