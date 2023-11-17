@@ -68,7 +68,7 @@ function request(bot: ListenerBotApi) {
 	const templateIdSales = bot.asAdmin.getConfigValue(SalesConfigValue)
 
 	// // Email to user
-	bot.asAdmin.runIntegrationAction("uesio/crm.sendgrid", "sendEmail", {
+	bot.asAdmin.runIntegrationAction("uesio/crm.sendgrid", "sendemail", {
 		to: [values.email],
 		from: salesEmail,
 		templateId: templateIdUser,
@@ -85,7 +85,7 @@ function request(bot: ListenerBotApi) {
 	})
 
 	// // Email to us
-	bot.asAdmin.runIntegrationAction("uesio/crm.sendgrid", "sendEmail", {
+	bot.asAdmin.runIntegrationAction("uesio/crm.sendgrid", "sendemail", {
 		to: [salesEmail],
 		from: salesEmail,
 		templateId: templateIdSales,
