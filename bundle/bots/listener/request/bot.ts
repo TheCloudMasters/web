@@ -41,7 +41,7 @@ function request(bot: ListenerBotApi) {
 			"uesio/crm.firstname": values.first_name,
 			"uesio/crm.lastname": values.last_name,
 			"uesio/crm.email": values.email,
-			"uesio/crm.account": values.company,
+			"uesio/crm.account_name": values.company,
 			"uesio/crm.no_employees": Number(values.no_employees),
 			"uesio/crm.location": values.country,
 			"uesio/crm.description": values.description,
