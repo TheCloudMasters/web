@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 uesio login
 uesio work
 npm run push

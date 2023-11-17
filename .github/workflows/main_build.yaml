@@ -6,8 +6,8 @@ on:
 
 jobs:
   deploy:
-    name: Build and release to dev
+    name: Build and release to prod
     uses: ./.github/workflows/patch_build_and_release.yaml
     with:
-      environment: dev
+      environment: prod
     secrets: inherit
