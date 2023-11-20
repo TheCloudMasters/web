@@ -8,7 +8,7 @@ function request(bot: ListenerBotApi) {
 		"no_employees",
 		"location",
 		"description",
-		"lead_source",
+		"topic",
 	]
 
 	const values = fields.reduce(
@@ -45,7 +45,8 @@ function request(bot: ListenerBotApi) {
 			"uesio/crm.no_employees": Number(values.no_employees),
 			"uesio/crm.location": values.country,
 			"uesio/crm.description": values.description,
-			"uesio/crm.lead_source": values.lead_source,
+			"uesio/crm.topic": values.topic,
+			"uesio/crm.lead_source": "ues.io website",
 			"uesio/crm.status": "OPEN",
 		} as unknown as WireRecord,
 	])
@@ -78,7 +79,7 @@ function request(bot: ListenerBotApi) {
 			email: values["email"],
 			account: values["company"],
 			no_employees: values["no_employees"],
-			country: values["country"],
+			country: values["location"],
 			description: values["description"],
 			source: values["topic"],
 		},
@@ -95,7 +96,7 @@ function request(bot: ListenerBotApi) {
 			email: values["email"],
 			account: values["company"],
 			no_employees: values["no_employees"],
-			country: values["country"],
+			country: values["location"],
 			description: values["description"],
 			source: values["topic"],
 		},

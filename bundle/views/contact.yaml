@@ -217,7 +217,6 @@ definition:
                                                   location: ${location}
                                                   description: ${description}
                                                   topic: "Contact Request"
-                                                  lead_source: "ues.io website"
                                                 onerror:
                                                   continue: false
                                                   notify: true
