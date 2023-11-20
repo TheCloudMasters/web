@@ -44,6 +44,7 @@ routes:
   uesio/web.pricing: true
   uesio/web.privacy: true
   uesio/web.signup: true
+  uesio/web.crmlogin: true
   uesio/web.terms: true
 files:
   uesio/web.logo: true

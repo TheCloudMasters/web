@@ -8,7 +8,7 @@ function request(bot: ListenerBotApi) {
 		"no_employees",
 		"location",
 		"description",
-		"source",
+		"lead_source",
 	]
 
 	const values = fields.reduce(
@@ -45,7 +45,7 @@ function request(bot: ListenerBotApi) {
 			"uesio/crm.no_employees": Number(values.no_employees),
 			"uesio/crm.location": values.country,
 			"uesio/crm.description": values.description,
-			"uesio/web.source": values.source,
+			"uesio/crm.lead_source": values.lead_source,
 			"uesio/crm.status": "OPEN",
 		} as unknown as WireRecord,
 	])
@@ -55,12 +55,12 @@ function request(bot: ListenerBotApi) {
 	// Send an email to the user
 	const salesEmail = bot.asAdmin.getConfigValue("uesio/crm.sales_email")
 	const userConfigValue =
-		values["source"] === "contact request"
+		values["topic"] === "Contact Request"
 			? "uesio/web.email_template_contact_to_user"
 			: "uesio/web.email_template_demo_to_user"
 
 	const SalesConfigValue =
-		values["source"] === "contact request"
+		values["topic"] === "Contact Request"
 			? "uesio/web.email_template_contact_to_sales"
 			: "uesio/web.email_template_demo_to_sales"
 
@@ -80,7 +80,7 @@ function request(bot: ListenerBotApi) {
 			no_employees: values["no_employees"],
 			country: values["country"],
 			description: values["description"],
-			source: values["source"],
+			source: values["topic"],
 		},
 	})
 
@@ -97,7 +97,7 @@ function request(bot: ListenerBotApi) {
 			no_employees: values["no_employees"],
 			country: values["country"],
 			description: values["description"],
-			source: values["source"],
+			source: values["topic"],
 		},
 	})
 }

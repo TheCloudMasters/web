@@ -1,4 +1,5 @@
 name: public
+homeRoute: uesio/web.home
 permissionSets:
   - uesio/web.public
   - uesio/core.public

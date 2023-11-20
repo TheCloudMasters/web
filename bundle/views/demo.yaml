@@ -201,7 +201,8 @@ definition:
                                                   company: ${company}
                                                   email: ${email}
                                                   description: ${description}
-                                                  source: "Demo Request"
+                                                  topic: "Demo Request"
+                                                  lead_source: "ues.io website"
                                               - signal: notification/ADD
                                                 text: Thank you for scheduling a demo, we'll be in touch shortly
                                                 severity: success
