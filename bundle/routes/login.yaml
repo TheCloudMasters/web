@@ -1,5 +1,5 @@
 name: login
 path: crm/login
 view: uesio/web.login
-theme: uesio/crm.default
-title: uesio CRM - Login
+theme: uesio/core.default
+title: uesio - Login
