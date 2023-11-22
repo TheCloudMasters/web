@@ -201,7 +201,7 @@ definition:
                                                   company: ${company}
                                                   email: ${email}
                                                   description: ${description}
-                                                  source: "Demo Request"
+                                                  topic: "Demo Request"
                                               - signal: notification/ADD
                                                 text: Thank you for scheduling a demo, we'll be in touch shortly
                                                 severity: success

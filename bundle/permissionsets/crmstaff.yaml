@@ -1,0 +1,16 @@
+name: crmstaff
+named: {}
+views:
+collections:
+routes:
+  uesio/web.crm: true
+files:
+bots:
+allowallbots: false
+allowallcollections: false
+allowallviews: false
+allowallroutes: false
+allowallfiles: false
+allowallintegrationactions: true
+modifyallrecords: false
+viewallrecords: false
