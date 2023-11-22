@@ -216,7 +216,7 @@ definition:
                                                   no_employees: ${no_employees}
                                                   location: ${location}
                                                   description: ${description}
-                                                  source: "Contact Request"
+                                                  topic: "Contact Request"
                                                 onerror:
                                                   continue: false
                                                   notify: true

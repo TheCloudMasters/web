@@ -8,7 +8,7 @@ function request(bot: ListenerBotApi) {
 		"no_employees",
 		"location",
 		"description",
-		"source",
+		"topic",
 	]
 
 	const values = fields.reduce(
@@ -41,11 +41,12 @@ function request(bot: ListenerBotApi) {
 			"uesio/crm.firstname": values.first_name,
 			"uesio/crm.lastname": values.last_name,
 			"uesio/crm.email": values.email,
-			"uesio/crm.account": values.company,
+			"uesio/crm.account_name": values.company,
 			"uesio/crm.no_employees": Number(values.no_employees),
 			"uesio/crm.location": values.country,
 			"uesio/crm.description": values.description,
-			"uesio/web.source": values.source,
+			"uesio/crm.topic": values.topic,
+			"uesio/crm.lead_source": "ues.io website",
 			"uesio/crm.status": "OPEN",
 		} as unknown as WireRecord,
 	])
@@ -55,12 +56,12 @@ function request(bot: ListenerBotApi) {
 	// Send an email to the user
 	const salesEmail = bot.asAdmin.getConfigValue("uesio/crm.sales_email")
 	const userConfigValue =
-		values["source"] === "contact request"
+		values["topic"] === "Contact Request"
 			? "uesio/web.email_template_contact_to_user"
 			: "uesio/web.email_template_demo_to_user"
 
 	const SalesConfigValue =
-		values["source"] === "contact request"
+		values["topic"] === "Contact Request"
 			? "uesio/web.email_template_contact_to_sales"
 			: "uesio/web.email_template_demo_to_sales"
 
@@ -78,9 +79,9 @@ function request(bot: ListenerBotApi) {
 			email: values["email"],
 			account: values["company"],
 			no_employees: values["no_employees"],
-			country: values["country"],
+			country: values["location"],
 			description: values["description"],
-			source: values["source"],
+			source: values["topic"],
 		},
 	})
 
@@ -95,9 +96,9 @@ function request(bot: ListenerBotApi) {
 			email: values["email"],
 			account: values["company"],
 			no_employees: values["no_employees"],
-			country: values["country"],
+			country: values["location"],
 			description: values["description"],
-			source: values["source"],
+			source: values["topic"],
 		},
 	})
 }
