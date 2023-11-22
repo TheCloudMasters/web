@@ -1,6 +1,7 @@
 name: public
 named: {}
 views:
+  #Content Views
   uesio/web.allinclusiveitem: true
   uesio/web.blog: true
   uesio/web.blogentry: true
@@ -16,6 +17,11 @@ views:
   uesio/web.privacy: true
   uesio/web.terms: true
   uesio/web.topbar: true
+  #Authentification Views
+  uesio/web.login: true
+  uesio/web.loginarea: true
+  uesio/web.changepassword: true
+  uesio/web.requestpassword: true
 collections:
   uesio/cms.article:
     read: true
@@ -34,6 +40,7 @@ collections:
     viewall: false
     fields: {}
 routes:
+  #Content Routes
   uesio/web.blog: true
   uesio/web.blogentry: true
   uesio/web.contact: true
@@ -43,9 +50,11 @@ routes:
   uesio/web.preview: true
   uesio/web.pricing: true
   uesio/web.privacy: true
-  uesio/web.signup: true
-  uesio/web.crmlogin: true
   uesio/web.terms: true
+  #Authentification Routes
+  uesio/web.changepassword: true
+  uesio/web.requestpassword: true
+  uesio/web.login: true
 files:
   uesio/web.logo: true
   uesio/web.logowhite: true
@@ -54,12 +63,13 @@ files:
   uesio/web.swissmade: true
 bots:
   uesio/web.request: true
-integrationActions: {}
+  uesio/web.createlogin: true
+  uesio/web.forgotpassword: true
 allowallbots: false
 allowallcollections: false
 allowallviews: false
 allowallroutes: false
 allowallfiles: false
-allowallintegrationactions: false
+allowallintegrationactions: true
 modifyallrecords: false
 viewallrecords: false

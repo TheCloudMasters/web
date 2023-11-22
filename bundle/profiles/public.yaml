@@ -1,6 +1,6 @@
 name: public
 homeRoute: uesio/web.home
 permissionSets:
-  - uesio/web.public
   - uesio/core.public
+  - uesio/web.public
   - uesio/crm.public

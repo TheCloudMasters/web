@@ -1,0 +1,20 @@
+name: login
+public: true
+definition:
+  components:
+    - uesio/core.splash:
+        content:
+          - uesio/io.image:
+              uesio.variant: uesio/core.fancy
+              file: uesio/core.logo
+              signals:
+                - signal: "route/REDIRECT"
+                  path: "https://$Site{domain}"
+          - uesio/core.view:
+              view: uesio/web.loginarea
+              params:
+                expired: $Param{expired}
+  params:
+    expired:
+      type: CHECKBOX
+      required: false
