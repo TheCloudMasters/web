@@ -40,10 +40,9 @@ Hit enter to select the `main` component pack.
 
 ## Continuous integration
 
-The `main` branch will automatically be built and deployed to the `prod` site in the Uesio dev environment (`https://www.ues-dev.io`)
+The `main` branch will automatically be built and deployed to the `prod` site (`https://www.ues.io`)
+The `development` branch will automatically be built and deployed to the `staging` site (`https://www-staging.ues.io`)
 
-You can also manually initiate this using the ["Manual patch release"](<(./github/workflows/manual_patch_release.yaml)>) workflow, selecting "dev" as the environment
+## Blog Posts
 
-## Release to prod
-
-Use the ["Manual patch release"](./github/workflows/manual_patch_release.yaml) workflow to initiate a Prod deployment to the `prod` site in the Uesio "prod" environment (accessible at `https://www.ues.io`). Select "prod" as the environment target.
+Web site blog post entries are stored in the `data` directory. These blog posts can be seeded in either a workspace or a site using the `./seed.sh` or `./seedsite.sh` scripts, respectively. Make sure that you have set your workspace or site admin context beforehand (with `uesio work` / `uesio siteadmin`)
