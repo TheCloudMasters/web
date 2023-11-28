@@ -1,0 +1,9 @@
+name: footerlink_muted
+label: Footer Link Muted
+definition:
+  uesio.styleTokens:
+    root:
+      - text-slate-400
+      - text-xs
+      - font-light
+      - whitespace-nowrap

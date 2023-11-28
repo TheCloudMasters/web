@@ -5,9 +5,10 @@ definition:
     root:
       - text-4xl
       - md:text-5xl
-      - text-slate-800
+      - text-[$Theme{color.text_secondary}]
       - font-[Gosha]
-      - mb-6
+      - font-bold
+      - md:my-6
+      - my-4
       - max-w-[800px]
-      - mx-auto
   element: div

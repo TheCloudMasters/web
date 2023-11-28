@@ -1,0 +1,73 @@
+name: pricing_new
+definition:
+  wires:
+  components:
+    - uesio/web.main_layout:
+        content:
+          - uesio/io.box:
+              uesio.variant: uesio/web.mainlayout_pricing
+              components:
+                - uesio/io.grid:
+                    uesio.variant: uesio/web.callout_double
+                    items:
+                      - uesio/io.box:
+                          uesio.variant: uesio/web.section
+                          components:
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.callout_dark
+                                text: Enterprise Pricing
+          - uesio/io.box:
+              uesio.variant: uesio/web.mainlayout_pricing
+              components:
+                - uesio/io.grid:
+                    uesio.variant: uesio/web.callout
+                    items:
+                      - uesio/io.grid:
+                          uesio.styleTokens:
+                            root:
+                              - grid
+                              - grid-flow-row
+                              - sm:grid-flow-col
+                              - gap-4
+                          items:
+                            - uesio/core.view:
+                                view: uesio/web.pricingcard
+                                params:
+                                  title: Free
+                                  price: $0
+                                  subprice: /month
+                                  transactions: 20K
+                                  storage: 500MB
+                                  downloads: 500MB
+                                  community: true
+                            - uesio/core.view:
+                                view: uesio/web.pricingcard
+                                params:
+                                  title: Small
+                                  price: $249
+                                  subprice: /month
+                                  transactions: 500K
+                                  downloads: 20GB
+                                  storage: 10GB
+                                  sla: 24h
+                            - uesio/core.view:
+                                view: uesio/web.pricingcard
+                                params:
+                                  title: Medium
+                                  price: $799
+                                  subprice: /month
+                                  transactions: 1.5m
+                                  storage: 250GB
+                                  downloads: 60GB
+                                  sla: 24h
+                            - uesio/core.view:
+                                view: uesio/web.pricingcard
+                                params:
+                                  title: Large
+                                  price: Contact us
+                                  transactions: ∞
+                                  storage: ∞
+                                  downloads: ∞
+                                  domain: Own Domain
+                                  sla: 12h
+                                  enterprise: true

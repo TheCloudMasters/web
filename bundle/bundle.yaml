@@ -1,7 +1,7 @@
 name: uesio/web
 loginRoute: uesio/web.login
 homeRoute: uesio/web.home
-defaultTheme: uesio/core.default
+defaultTheme: uesio/web.default
 publicProfile: uesio/web.public
 favicon: uesio/core.favicon
 dependencies:
@@ -12,6 +12,6 @@ dependencies:
   uesio/core:
     version: v0.0.1
   uesio/crm:
-    version: v1.1.57
+    version: v1.1.53
   uesio/io:
     version: v0.0.1

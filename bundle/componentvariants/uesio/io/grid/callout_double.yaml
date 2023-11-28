@@ -3,9 +3,12 @@ label: Callout Double
 definition:
   uesio.styleTokens:
     root:
-      - grid-cols-1
-      - md:grid-cols-2
-      - px-10
-      - xl:px-20
-      - py-28
-      - gap-20
+      - grid-cols-[90vw]
+      - md:grid-cols-[45vw_45vw]
+      - gap-4
+      - h-full
+      - w-full
+      - my-auto
+      - py-8
+      - place-content-center
+      - justify-content

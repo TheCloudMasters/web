@@ -1,0 +1,79 @@
+name: arrow
+category: CONTENT
+type: DECLARATIVE
+slots:
+  - name: left
+  - name: right
+properties:
+  - name: uesio.id
+    label: Component Id
+    type: COMPONENT_ID
+  - name: arrow
+    label: Arrow SVG name
+    type: TEXT
+definition:
+  - uesio/io.box:
+      uesio.styleTokens:
+        root:
+          - w-screen
+          - h-fit
+          - bg-[$Theme{color.white}]
+          - text-left
+      components:
+        - uesio/io.box:
+            uesio.styleTokens:
+              root:
+                - w-screen
+                - h-full
+                - relative
+            components:
+              - uesio/io.image:
+                  uesio.display:
+                    - type: mergeValue
+                      value: arrow_primary_light
+                      sourceValue: $Prop{arrow}
+                  file: uesio/web.arrow_primary_light
+                  uesio.styleTokens:
+                    root:
+                      - h-full
+                      - w-[50vw]
+                      - absolute
+              - uesio/io.image:
+                  uesio.display:
+                    - type: mergeValue
+                      value: arrow_blue
+                      sourceValue: $Prop{arrow}
+                  file: uesio/web.arrow_blue
+                  uesio.styleTokens:
+                    root:
+                      - h-full
+                      - w-[50vw]
+                      - absolute
+              - uesio/io.grid:
+                  uesio.variant: uesio/web.callout_double
+                  uesio.styleTokens:
+                    root:
+                      - relative
+                      - grid-cols-[45vw_45vw]
+                  items:
+                    - uesio/io.box:
+                        components:
+                          - uesio/core.slot:
+                              name: left
+                    - uesio/io.box:
+                        components:
+                          - uesio/core.slot:
+                              name: right
+title: Arrow Content
+discoverable: true
+description: Arrow with left and right content
+defaultDefinition:
+sections:
+  - type: HOME
+    properties:
+      - uesio.id
+      - arrow
+  - type: STYLES
+  - type: DISPLAY
+signals: null
+styleRegions: null

@@ -1,0 +1,38 @@
+name: main_layout
+category: LAYOUT
+type: DECLARATIVE
+slots:
+  - name: content
+properties:
+  - name: uesio.id
+    label: Component Id
+    type: COMPONENT_ID
+definition:
+  - uesio/io.grid:
+      uesio.styleTokens:
+        root:
+          - w-full
+          - h-full
+          - grid
+          - grid-flow-row
+          - w-screen
+          - xl:max-w-[80vw]
+      items:
+        - uesio/core.view:
+            view: uesio/web.topbar
+        - uesio/core.slot:
+            name: content
+        - uesio/core.view:
+            view: uesio/web.footer
+title: Main Web Layout
+discoverable: true
+description: Header -> Content -> Footer
+defaultDefinition:
+sections:
+  - type: HOME
+    properties:
+      - uesio.id
+  - type: STYLES
+  - type: DISPLAY
+signals: null
+styleRegions: null

@@ -3,8 +3,7 @@ label: Footer Link
 definition:
   uesio.styleTokens:
     root:
-      - text-slate-400
-      - text-xs
-      - font-light
-      - whitespace-nowrap
-      - px-2
+      - text-[$Theme{color.text_secondary}]
+      - text-sm
+      - font-extralight
+      - font-[Gosha]

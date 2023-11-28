@@ -7,9 +7,10 @@ definition:
         uesio.styleTokens:
           root:
             - fixed
-            - bg-[rgb(247,247,247)]
+            - bg-[$Theme{color.white}]
             - w-full
             - z-10
+            - max-h-[83px]
         components:
           - uesio/io.grid:
               uesio.variant: uesio/web.mainlayout_dark
@@ -18,14 +19,13 @@ definition:
                   - text-right
               items:
                 - uesio/io.box:
+                    uesio.variant: uesio/web.flex_structure_small
                     uesio.styleTokens:
                       root:
-                        - flex
-                        - gap-4
                         - justify-end
                         - text-sm
                         - p-1
-                        - text-slate-400
+                        - text-[$Theme{color.text_secondary_muted}]
                     components:
                       - uesio/io.text:
                           text: "\U0001F1FA\U0001F1F8 +1 844-558-0040"
@@ -42,8 +42,6 @@ definition:
                         - justify-stretch
                     items:
                       - uesio/io.image:
-                          uesio.styleTokens:
-                            root: # - mb-4
                           height: 55
                           file: uesio/web.logo
                           signals:
@@ -55,7 +53,6 @@ definition:
                               - grid
                               - md:hidden
                               - justify-right
-                              # - mb-5
                           components:
                             - uesio/io.button:
                                 uesio.variant: uesio/web.demo
@@ -74,17 +71,12 @@ definition:
                             root:
                               - hidden
                               - md:grid
-                              # - mb-5
                               - gap-2
                               - md:gap-4
                               - justify-right
+                              - justify-content-stretch
+                              - "[&>a]:px-1.5"
                           components:
-                            # - uesio/io.button:
-                            #     uesio.variant: uesio/web.borderless
-                            #     text: Docs
-                            #     signals:
-                            #       - signal: route/REDIRECT
-                            #         path: https://docs.$Site{domain}
                             - uesio/io.button:
                                 uesio.variant: uesio/web.borderless
                                 text: Documentation
@@ -109,26 +101,20 @@ definition:
                                 signals:
                                   - signal: route/NAVIGATE
                                     path: contact
-                            # - uesio/io.button:
-                            #     uesio.variant: uesio/web.borderless
-                            #     text: Blog
-                            #     signals:
-                            #       - signal: route/NAVIGATE
-                            #         path: blog
-                            - uesio/io.button:
-                                uesio.variant: uesio/web.calltoaction
-                                text: Login
-                                uesio.styleTokens:
-                                  root:
-                                    - ml-4
-                                signals:
-                                  - signal: route/REDIRECT
-                                    path: https://studio.$Site{domain}
-                            - uesio/io.button:
-                                uesio.variant: uesio/web.demo
-                                signals:
-                                  - signal: route/NAVIGATE
-                                    path: demo
+                            - uesio/io.box:
+                                uesio.variant: uesio/web.flex_structure_small
+                                components:
+                                  - uesio/io.button:
+                                      uesio.variant: uesio/web.calltoaction
+                                      text: login
+                                      signals:
+                                        - signal: route/REDIRECT
+                                          path: https://studio.$Site{domain}
+                                  - uesio/io.button:
+                                      uesio.variant: uesio/web.demo
+                                      signals:
+                                        - signal: route/NAVIGATE
+                                          path: demo
   panels:
     navmenu:
       uesio.type: uesio/io.sidepanel
@@ -136,15 +122,21 @@ definition:
         - uesio/io.group:
             uesio.styleTokens:
               root:
+                - pt-[83px]
                 - grid-flow-row
-                - bg-[rgb(247,247,247)]
             components:
               - uesio/io.button:
                   uesio.variant: uesio/web.borderless
-                  text: Docs
+                  text: Documentation
                   signals:
                     - signal: route/REDIRECT
-                      path: https://docs.$Site{domain}
+                      path: https://docs.ues.io/
+              - uesio/io.button:
+                  uesio.variant: uesio/web.borderless
+                  text: Pricing
+                  signals:
+                    - signal: route/NAVIGATE
+                      path: pricing
               - uesio/io.button:
                   uesio.variant: uesio/web.borderless
                   text: Community
@@ -153,10 +145,10 @@ definition:
                       path: https://community.ues.io
               - uesio/io.button:
                   uesio.variant: uesio/web.borderless
-                  text: Blog
+                  text: Contact
                   signals:
                     - signal: route/NAVIGATE
-                      path: blog
+                      path: contact
               - uesio/io.button:
                   uesio.variant: uesio/web.borderless
                   text: Login

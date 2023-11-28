@@ -1,4 +1,4 @@
 name: pricing
 path: pricing
-view: pricing
+view: pricing_new
 title: $Site{title} - Pricing

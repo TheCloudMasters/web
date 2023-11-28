@@ -4,5 +4,5 @@ label: Main Layout Dark
 definition:
   uesio.styleTokens:
     root:
-      - bg-slate-900
-      - text-slate-200
+      - bg-[$Theme{color.dark}]
+      - text-[{$Theme{color.textsecondary}}]

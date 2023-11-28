@@ -1,9 +1,14 @@
 name: calloutsmall
-extends: uesio/web.callout
+# extends: uesio/web.callout
 label: Callout Small
 definition:
   uesio.styleTokens:
     root:
-      - text-2xl
+      - text-xl
       - md:text-2xl
-  element: div
+      - text-[$Theme{color.text_secondary}] #n
+      - font-[Gosha] #n
+      - font-bold #n
+      - mb-2
+      - md:mb-3
+  element: h3

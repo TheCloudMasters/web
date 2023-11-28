@@ -1,0 +1,11 @@
+name: calloutsmedium
+label: Callout Medium
+definition:
+  uesio.styleTokens:
+    root:
+      - text-[$Theme{color.text_secondary}]
+      - font-[Gosha]
+      - font-semibold
+      - text-2xl
+      - md:text-3xl
+  element: h2
