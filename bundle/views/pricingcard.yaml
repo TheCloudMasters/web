@@ -37,11 +37,16 @@ definition:
           root:
             - rounded
             - bg-[$Theme{color.white}]
-            - w-[300px]
-            - h-full
+            #- w-[20%]
+            - h-[315px]
+            - w-full
             - grid
             - grid-flow-row
-            - gap-8
+            - content-between
+            - px-auto
+            - pb-4
+            - max-w-[250px]
+            - min-w-[190px]
         components:
           - uesio/io.box:
               components:
@@ -64,10 +69,9 @@ definition:
           - uesio/io.box:
               uesio.styleTokens:
                 root:
-                  - py-4
-                  - px-8
                   - text-center
               components:
+                #Price
                 - uesio/io.text:
                     uesio.display:
                       - type: mergeValue
@@ -79,117 +83,145 @@ definition:
                     uesio.styleTokens:
                       root:
                         - text-[#f76540]
-                        - my-4
-                        - mx-auto
-                        - text-xl
-                        - max-w-[1px]
-                        - flex
-                        - justify-center
+                        - text-2xl
                         - font-bold
+                #Subprice
+                - uesio/io.text:
+                    uesio.display:
+                      - type: hasValue
+                        operator: NOT_EQUALS
+                        value: $Param{subprice}
+                    text: $Param{subprice}
+                    uesio.styleTokens:
+                      root:
+                        - text-[#f76540]
+                        - mb-4
+                        - text-1xl
+                        - font-bold
+                #Contact us
                 - uesio/io.text:
                     uesio.display:
                       - type: mergeValue
                         sourceValue: $Param{price}
                         value: Contact us
                     text: $Param{price}
-                    element: div
                     uesio.styleTokens:
                       root:
                         - text-[#f76540]
-                        - my-4
-                        - mx-auto
-                        - text-xl
-                        - flex
-                        - justify-center
+                        - mb-4
+                        - text-1xl
                         - font-bold
+          - uesio/io.box:
+              uesio.styleTokens:
+                root:
+                  - text-center
+              components:
+                # Transactions
                 - uesio/io.box:
                     components:
                       - uesio/io.text:
+                          uesio.variant: uesio/web.pricing_category
                           text: $Param{transactions}
                           uesio.styleTokens:
                             root:
-                              - text-[rgb(45,39,245)]
+                              - font-bold
                       - uesio/io.text:
-                          text: " transactions"
+                          uesio.variant: uesio/web.pricing_category
+                          text: " Transactions"
                 # Downloads
                 - uesio/io.box:
                     components:
                       - uesio/io.text:
+                          uesio.variant: uesio/web.pricing_category
                           text: $Param{downloads}
                           uesio.styleTokens:
                             root:
-                              - text-[rgb(45,39,245)]
+                              - font-bold
                       - uesio/io.text:
+                          uesio.variant: uesio/web.pricing_category
                           text: " File Downloads"
                 # Storage
                 - uesio/io.box:
                     components:
                       - uesio/io.text:
+                          uesio.variant: uesio/web.pricing_category
                           text: $Param{storage}
                           uesio.styleTokens:
                             root:
-                              - text-[rgb(45,39,245)]
+                              - font-bold
                       - uesio/io.text:
+                          uesio.variant: uesio/web.pricing_category
                           text: " Storage"
                 - uesio/io.box:
                     uesio.styleTokens:
                       root:
-                        - h-0.5
-                        - bg-slate-300
-                        - w-[4em]
-                        - mx-auto
-                        - my-4
-                # Subdomain
-                - uesio/io.text:
-                    element: div
-                    uesio.display:
-                      - type: paramIsSet
-                        param: domain
-                    text: $Param{domain}
-                - uesio/io.text:
-                    element: div
-                    uesio.display:
-                      - type: paramIsSet
-                        param: github
-                    text: Github Sync
-                - uesio/io.text:
-                    element: div
-                    uesio.display:
-                      - type: paramIsSet
-                        param: devsla
-                    text: $Param{devsla}
-                - uesio/io.text:
-                    element: div
-                    uesio.display:
-                      - type: paramIsSet
-                        param: enterprise
-                    text: Self hosted
-                - uesio/io.text:
-                    element: div
-                    uesio.display:
-                      - type: paramIsSet
-                        param: enterprise
-                    text: SAML SSO
-                # features
-                - uesio/io.text:
-                    element: div
-                    text: $Param{sla} Support SLA
-                    uesio.display:
-                      - type: paramIsSet
-                        param: sla
-                    uesio.styleTokens:
-                      root:
-                        - text-[rgb(45,39,245)]
-                        # Community
-                - uesio/io.text:
-                    uesio.display:
-                      - type: paramIsSet
-                        param: community
-                    element: div
-                    text: Community support
-                    uesio.styleTokens:
-                      root:
-                        - text-[rgb(45,39,245)]
+                        - pt-4
+                    components:
+                      # Subdomain
+                      - uesio/io.box:
+                          components:
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.pricing_category
+                                uesio.display:
+                                  - type: paramIsSet
+                                    param: domain
+                                text: $Param{domain}
+                      - uesio/io.box:
+                          components:
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.pricing_category
+                                uesio.display:
+                                  - type: paramIsSet
+                                    param: github
+                                text: Github Sync
+                      - uesio/io.box:
+                          components:
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.pricing_category
+                                uesio.display:
+                                  - type: paramIsSet
+                                    param: devsla
+                                text: $Param{devsla}
+                      - uesio/io.box:
+                          components:
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.pricing_category
+                                uesio.display:
+                                  - type: paramIsSet
+                                    param: enterprise
+                                text: Self hosted
+                      - uesio/io.box:
+                          components:
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.pricing_category
+                                uesio.display:
+                                  - type: paramIsSet
+                                    param: enterprise
+                                text: SAML SSO
+                      # features
+                      - uesio/io.box:
+                          components:
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.pricing_category
+                                text: $Param{sla} Support SLA
+                                uesio.display:
+                                  - type: paramIsSet
+                                    param: sla
+                      # Community
+                      - uesio/io.box:
+                          components:
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.pricing_category
+                                uesio.display:
+                                  - type: paramIsSet
+                                    param: community
+                                text: Community support
+          - uesio/io.box:
+              uesio.styleTokens:
+                root:
+                  - text-center
+                  - h-full
+              components:
                 - uesio/io.button:
                     uesio.variant: uesio/web.calltoaction
                     uesio.display:
@@ -199,9 +231,8 @@ definition:
                         value: Free
                     uesio.styleTokens:
                       root:
-                        - mt-8
-                        - mb-2
                         - w-fit
+                        - md:px-8
                     text: book a demo
                     signals:
                       - signal: route/REDIRECT
@@ -215,9 +246,8 @@ definition:
                         value: Free
                     uesio.styleTokens:
                       root:
-                        - mt-8
-                        - mb-2
                         - w-fit
+                        - md:px-8
                     text: sign up
                     signals:
                       - signal: route/REDIRECT

@@ -97,7 +97,7 @@ definition:
                               - px-3
                           items:
                             - uesio/io.text:
-                                uesio.variant: uesio/web.callout
+                                uesio.variant: uesio/web.callout_dark
                                 text: Contact us
                                 uesio.styleTokens:
                                   root:

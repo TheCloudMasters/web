@@ -1,81 +1,68 @@
 name: pricing
 definition:
-  # Wires are how we pull in data
-  wires: # Components are how we describe the layout of our view
+  wires:
   components:
-    - uesio/core.view:
-        view: uesio/web.topbar
-    - uesio/io.box:
-        uesio.styleTokens:
-          root:
-            - bg-[rgb(247,247,247)]
-            - pt-28
-        components:
-          - uesio/io.grid:
-              uesio.variant: uesio/web.mainlayout
-              items:
-                - uesio/io.box:
-                    components:
+    - uesio/web.main_layout:
+        inner:
+          - uesio/io.box:
+              uesio.variant: uesio/web.mainlayout_pricing
+              uesio.styleTokens:
+                root:
+                  - pt-[83px]
+              components:
+                - uesio/io.grid:
+                    uesio.variant: uesio/web.callout_double
+                    items:
                       - uesio/io.text:
-                          uesio.variant: uesio/web.calloutcenter
-                          element: div
+                          uesio.variant: uesio/web.callout_dark
                           text: Enterprise Pricing
-                - uesio/io.box:
-                    uesio.styleTokens:
-                      root:
-                        - flex
-                        - flex-wrap
-                        - text-center
-                        - gap-4
-                        - items-end
-                    components:
-                      - uesio/io.box:
+          - uesio/io.box:
+              uesio.variant: uesio/web.mainlayout_pricing
+              uesio.styleTokens:
+                root:
+                  - pb-8
+              components:
+                - uesio/io.grid:
+                    uesio.variant: uesio/web.callout
+                    items:
+                      - uesio/io.grid:
                           uesio.styleTokens:
                             root:
-                              - flex-[20%]
-                          components:
+                              - flex
+                              - flex-wrap
+                              - gap-8
+                              - justify-center
+                          items:
                             - uesio/core.view:
                                 view: uesio/web.pricingcard
                                 params:
                                   title: Free
-                                  price: $0 /month
+                                  price: $0
+                                  subprice: /month
                                   transactions: 20K
                                   storage: 500MB
                                   downloads: 500MB
                                   community: true
-                      - uesio/io.box:
-                          uesio.styleTokens:
-                            root:
-                              - flex-[20%]
-                          components:
                             - uesio/core.view:
                                 view: uesio/web.pricingcard
                                 params:
                                   title: Small
-                                  price: $249 /month
+                                  price: $249
+                                  subprice: /month
                                   transactions: 500K
                                   downloads: 20GB
                                   storage: 10GB
                                   sla: 24h
-                      - uesio/io.box:
-                          uesio.styleTokens:
-                            root:
-                              - flex-[20%]
-                          components:
                             - uesio/core.view:
                                 view: uesio/web.pricingcard
                                 params:
                                   title: Medium
-                                  price: $799 /month
+                                  price: $799
+                                  subprice: /month
                                   transactions: 1.5m
                                   storage: 250GB
                                   downloads: 60GB
                                   sla: 24h
-                      - uesio/io.box:
-                          uesio.styleTokens:
-                            root:
-                              - flex-[20%]
-                          components:
                             - uesio/core.view:
                                 view: uesio/web.pricingcard
                                 params:
@@ -88,27 +75,146 @@ definition:
                                   sla: 12h
                                   enterprise: true
                 - uesio/io.box:
-                    uesio.styleTokens:
-                      root:
-                        - flex
-                        - gap-4
-                        - items-center
-                        - my-8
+                    uesio.variant: uesio/web.mainlayout
                     components:
                       - uesio/io.box:
                           uesio.styleTokens:
                             root:
-                              - h-0.5
-                              - bg-slate-400
-                              - flex-1
+                              - text-center
+                              - py-16
+                          components:
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.calloutpre
+                                uesio.styleTokens:
+                                  root:
+                                    - normal-case
+                                    - text-[$Theme{color.secondary}]
+                                    - font-bold
+                                    - font-1xl
+                                text: Unlimited Users
+          - uesio/io.box:
+              uesio.variant: uesio/web.mainlayout_dark
+              components:
+                - uesio/io.grid:
+                    uesio.variant: uesio/web.callout
+                    uesio.styleTokens:
+                      root:
+                        - mt-8
+                    items:
                       - uesio/io.text:
-                          text: Unlimited Users
-                          uesio.variant: uesio/web.callout
-                      - uesio/io.box:
+                          uesio.variant: uesio/web.calloutsmedium
+                          text: "How our pricing structure works:"
+                - uesio/io.box:
+                    uesio.styleTokens:
+                      root:
+                        - w-[95%]
+                        - md:w-[90%]
+                        - bg-[#ffaa91]
+                        - h-[2px]
+                        - place-self-center
+                    components:
+          - uesio/io.box:
+              uesio.variant: uesio/web.mainlayout_dark
+              components:
+                - uesio/io.box:
+                    uesio.variant: uesio/web.section
+                    components:
+                      - uesio/io.grid:
+                          uesio.variant: uesio/web.callout_double
                           uesio.styleTokens:
                             root:
-                              - h-0.5
-                              - bg-slate-400
-                              - flex-1
-    - uesio/core.view:
-        view: uesio/web.footer
+                              - py-0
+                              - mb-8
+                          items:
+                            - uesio/io.box:
+                                components:
+                                  - uesio/io.text:
+                                      uesio.variant: uesio/web.calloutsmall_primary
+                                      text: Free to Play
+                                  - uesio/io.box:
+                                      uesio.variant: uesio/web.text_block
+                                      components:
+                                        - uesio/io.text:
+                                            uesio.variant: uesio/web.calloutsmallsub
+                                            text: We believe that you should be able to develop your software application
+                                              ideas for FREE in the ues.io Studio development environment
+                                              for as long as it takes. You only start incurring costs on a pay
+                                              as you go basis once your application is live in production and
+                                              your users are engaging on a pay as you go basis.
+                            - uesio/io.box:
+                                components:
+                                  - uesio/io.text:
+                                      uesio.variant: uesio/web.calloutsmall_primary
+                                      text: Freedom to Test
+                                  - uesio/io.box:
+                                      uesio.variant: uesio/web.text_block
+                                      components:
+                                        - uesio/io.text:
+                                            uesio.variant: uesio/web.calloutsmallsub
+                                            text: To give you even more free space to test we
+                                              also have a free tier which will give you plenty of
+                                              time to test your application in a live environment
+                                              before choosing an appropriate pricing tier.
+                      - uesio/io.grid:
+                          uesio.variant: uesio/web.callout_double
+                          uesio.styleTokens:
+                            root:
+                              - py-0
+                              - mb-8
+                          items:
+                            - uesio/io.box:
+                                components:
+                                  - uesio/io.text:
+                                      uesio.variant: uesio/web.calloutsmall_primary
+                                      text: Unlimited Users
+                                  - uesio/io.box:
+                                      uesio.variant: uesio/web.text_block
+                                      components:
+                                        - uesio/io.text:
+                                            uesio.variant: uesio/web.calloutsmallsub
+                                            text: We measure costs against your record storage, file storage,
+                                              file downloads and screen loads. Because of the way we have
+                                              engineered ues.io it allows us to share costs across all our users
+                                              and in turn gives you the advantage of a very affordable monthly
+                                              bill at a fraction of the cost of other similar platforms. This
+                                              way you can add as many users as you need to without having to
+                                              pay a price for each user no matter how often they do or don’t
+                                              use the system.
+                            - uesio/io.box:
+                                components:
+                                  - uesio/io.text:
+                                      uesio.variant: uesio/web.calloutsmall_primary
+                                      text: Freedom to Choose
+                                  - uesio/io.box:
+                                      uesio.variant: uesio/web.text_block
+                                      components:
+                                        - uesio/io.text:
+                                            uesio.variant: uesio/web.calloutsmallsub
+                                            text: Here is our pay as you go pricing calculator to help you
+                                              decide which tier is right for you, your enterprise and the
+                                              type of application you might like to use from the ues.io
+                                              Bundle Store Marketplace, which you can either customize to
+                                              your liking or just build your own from scratch.
+                      - uesio/io.grid:
+                          uesio.variant: uesio/web.callout_double
+                          uesio.styleTokens:
+                            root:
+                              - py-0
+                              - mb-8
+                          items:
+                            - uesio/io.box:
+                                components:
+                            - uesio/io.box:
+                                components:
+                                  - uesio/io.text:
+                                      uesio.variant: uesio/web.calloutsmall_primary
+                                      text: Freedom to Move
+                                  - uesio/io.box:
+                                      uesio.variant: uesio/web.text_block
+                                      components:
+                                        - uesio/io.text:
+                                            uesio.variant: uesio/web.calloutsmallsub
+                                            text: If at any stage you feel ues.io is not for you then
+                                              you can simply cancel your subscription which will then
+                                              end on the last day of the month you canceled and you
+                                              can export all your data at any time and move on.

@@ -1,6 +1,0 @@
-name: flex_one
-label: Flex One
-definition:
-  uesio.styleTokens:
-    root:
-      - flex-[1]

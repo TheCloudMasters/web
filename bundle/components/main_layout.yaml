@@ -2,28 +2,32 @@ name: main_layout
 category: LAYOUT
 type: DECLARATIVE
 slots:
-  - name: content
+  - name: inner
 properties:
   - name: uesio.id
     label: Component Id
     type: COMPONENT_ID
 definition:
-  - uesio/io.grid:
+  - uesio/io.box:
       uesio.styleTokens:
         root:
+          - relative
+          - min-h-screen
           - w-full
-          - h-full
-          - grid
-          - grid-flow-row
-          - w-screen
-          - xl:max-w-[80vw]
-      items:
-        - uesio/core.view:
-            view: uesio/web.topbar
-        - uesio/core.slot:
-            name: content
-        - uesio/core.view:
-            view: uesio/web.footer
+          # TEST
+      components:
+        - uesio/io.box:
+            uesio.styleTokens:
+              root:
+                - max-w-[$Theme{color.maxwidth}]
+                - mx-auto
+            components:
+              - uesio/core.view:
+                  view: uesio/web.topbar
+              - uesio/core.slot:
+                  name: inner
+              - uesio/core.view:
+                  view: uesio/web.footer
 title: Main Web Layout
 discoverable: true
 description: Header -> Content -> Footer

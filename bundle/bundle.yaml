@@ -12,6 +12,6 @@ dependencies:
   uesio/core:
     version: v0.0.1
   uesio/crm:
-    version: v1.1.53
+    version: v1.1.57
   uesio/io:
     version: v0.0.1

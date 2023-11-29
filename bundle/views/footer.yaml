@@ -7,6 +7,11 @@ definition:
     - uesio/web.ga4:
     - uesio/io.box:
         uesio.variant: uesio/web.mainlayout_dark
+        uesio.styleTokens:
+          root:
+            - bg-[$Theme{color.black}]
+            - max-w-[$Theme{color.maxwidth}]
+            - mx-auto
         components:
           - uesio/io.grid:
               uesio.variant: uesio/web.callout_double

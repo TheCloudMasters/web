@@ -3,7 +3,7 @@ label: Main Layout
 definition:
   uesio.styleTokens:
     root:
-      - w-screen
+      - w-full
       - text-left
       - py-auto
       - bg-[$Theme{color.white}]

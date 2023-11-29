@@ -15,3 +15,5 @@ definition:
     warning: "#ff9800"
     info: "#2196f3"
     success: "emerald-400"
+    maxwidth: "2000px"
+    text_width: "600px"

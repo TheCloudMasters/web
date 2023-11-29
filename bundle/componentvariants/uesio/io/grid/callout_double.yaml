@@ -3,9 +3,9 @@ label: Callout Double
 definition:
   uesio.styleTokens:
     root:
-      - grid-cols-[90vw]
-      - md:grid-cols-[45vw_45vw]
-      - gap-4
+      - grid-cols-[90%]
+      - md:grid-cols-[45%_45%]
+      - gap-8
       - h-full
       - w-full
       - my-auto

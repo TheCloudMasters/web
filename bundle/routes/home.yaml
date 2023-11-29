@@ -1,6 +1,6 @@
 name: home
 path: home
-view: home_new
+view: home
 title: $Site{title}
 tags:
   - type: meta

@@ -1,6 +1,0 @@
-name: full
-label: 100vh
-definition:
-  uesio.styleTokens:
-    root:
-      - h-[100vh]

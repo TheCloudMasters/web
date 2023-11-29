@@ -57,9 +57,11 @@ routes:
   uesio/web.login: true
 files:
   uesio/web.logo: true
-  uesio/web.logowhite: true
-  uesio/web.oner: true
-  uesio/web.second_graphic: true
+  uesio/web.logowhite_full: true
+  uesio/web.problem_icon: true
+  uesio/web.solution_icon: true
+  uesio/web.arrow_blue: true
+  uesio/web.arrow_primary_light: true
   uesio/web.swissmade: true
 bots:
   uesio/web.request: true

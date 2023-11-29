@@ -3,8 +3,8 @@ label: Callout
 definition:
   uesio.styleTokens:
     root:
-      - grid-cols-[90vw]
-      - md:grid-cols-[calc(90vw+16px)]
+      - grid-cols-[90%]
+      - md:grid-cols-[calc(90%+16px)]
       - h-fit
       - w-full
       - py-8

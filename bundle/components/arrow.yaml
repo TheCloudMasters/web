@@ -15,7 +15,7 @@ definition:
   - uesio/io.box:
       uesio.styleTokens:
         root:
-          - w-screen
+          - w-full
           - h-fit
           - bg-[$Theme{color.white}]
           - text-left
@@ -23,7 +23,7 @@ definition:
         - uesio/io.box:
             uesio.styleTokens:
               root:
-                - w-screen
+                - w-full
                 - h-full
                 - relative
             components:
@@ -36,7 +36,7 @@ definition:
                   uesio.styleTokens:
                     root:
                       - h-full
-                      - w-[50vw]
+                      - w-[50%]
                       - absolute
               - uesio/io.image:
                   uesio.display:
@@ -47,20 +47,22 @@ definition:
                   uesio.styleTokens:
                     root:
                       - h-full
-                      - w-[50vw]
+                      - w-[50%]
                       - absolute
               - uesio/io.grid:
                   uesio.variant: uesio/web.callout_double
                   uesio.styleTokens:
                     root:
                       - relative
-                      - grid-cols-[45vw_45vw]
+                      - grid-cols-[45%_45%]
                   items:
                     - uesio/io.box:
+                        uesio.variant: uesio/web.text_block
                         components:
                           - uesio/core.slot:
                               name: left
                     - uesio/io.box:
+                        uesio.variant: uesio/web.text_block
                         components:
                           - uesio/core.slot:
                               name: right
