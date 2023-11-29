@@ -28,22 +28,7 @@ definition:
                 - relative
             components:
               - uesio/io.image:
-                  uesio.display:
-                    - type: mergeValue
-                      value: arrow_primary_light
-                      sourceValue: $Prop{arrow}
-                  file: uesio/web.arrow_primary_light
-                  uesio.styleTokens:
-                    root:
-                      - h-full
-                      - w-[50%]
-                      - absolute
-              - uesio/io.image:
-                  uesio.display:
-                    - type: mergeValue
-                      value: arrow_blue
-                      sourceValue: $Prop{arrow}
-                  file: uesio/web.arrow_blue
+                  file: $Prop{arrow}
                   uesio.styleTokens:
                     root:
                       - h-full

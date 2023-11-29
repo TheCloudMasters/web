@@ -424,7 +424,7 @@ definition:
                           uesio.variant: uesio/web.flex_col
                           components:
                             - uesio/web.arrow:
-                                arrow: arrow_primary_light
+                                arrow: uesio/web.arrow_primary_light
                                 left:
                                   - uesio/io.text:
                                       uesio.variant: uesio/web.calloutsmallsubdark
@@ -449,7 +449,7 @@ definition:
                                         root:
                                           - font-extrabold
                             - uesio/web.arrow:
-                                arrow: arrow_blue
+                                arrow: uesio/web.arrow_blue
                                 left:
                                   - uesio/io.text:
                                       uesio.variant: uesio/web.calloutsmallsub
@@ -474,7 +474,7 @@ definition:
                                       uesio.variant: uesio/web.calloutsmallsubdark
                                       text: AWS, Google or Microsoft.
                             - uesio/web.arrow:
-                                arrow: arrow_primary_light
+                                arrow: uesio/web.arrow_primary_light
                                 left:
                                   - uesio/io.text:
                                       uesio.variant: uesio/web.calloutsmallsubdark
@@ -505,7 +505,7 @@ definition:
                                         root:
                                           - font-extrabold
                             - uesio/web.arrow:
-                                arrow: arrow_blue
+                                arrow: uesio/web.arrow_blue
                                 left:
                                   - uesio/io.text:
                                       uesio.variant: uesio/web.calloutsmallsub
