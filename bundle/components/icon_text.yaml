@@ -1,0 +1,55 @@
+name: icon_text
+category: CONTENT
+type: DECLARATIVE
+slots:
+properties:
+  - name: uesio.id
+    label: Component Id
+    type: COMPONENT_ID
+  - name: icon
+    label: Icon
+    type: TEXT
+  - name: color
+    label: Color
+    type: TEXT
+  - name: text
+    label: Text
+    type: TEXT
+definition:
+  - uesio/io.box:
+      uesio.styleTokens:
+        root:
+          - grid
+          - grid-cols-[20px_1fr]
+          - items-center
+          - gap-2
+      components:
+        - uesio/io.text:
+            uesio.variant: uesio/io.icon
+            uesio.styleTokens:
+              root:
+                - text-xl
+                - font-bold
+            text: $Prop{icon}
+            color: $Prop{color}
+        - uesio/io.text:
+            uesio.styleTokens:
+              root:
+                - m-0
+            uesio.variant: uesio/web.calloutsmallsub
+            text: $Prop{text}
+title: Icon Text
+discoverable: true
+description: Text with an icon left
+defaultDefinition:
+sections:
+  - type: HOME
+    properties:
+      - uesio.id
+      - icon
+      - color
+      - text
+  - type: STYLES
+  - type: DISPLAY
+signals: null
+styleRegions: null

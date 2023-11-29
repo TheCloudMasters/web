@@ -71,39 +71,28 @@ definition:
               value: ""
   # Components are how we describe the layout of our view
   components:
-    - uesio/core.view:
-        view: uesio/web.topbar
-    - uesio/io.box:
-        uesio.styleTokens:
-          root:
-            - bg-[rgb(247,247,247)]
-            - pt-28
-            - min-h-[70vh]
-        components:
-          - uesio/io.grid:
-              uesio.variant: uesio/web.mainlayout
-              items:
+    - uesio/web.main_layout:
+        inner:
+          - uesio/io.box:
+              uesio.variant: uesio/web.mainlayout_dark
+              uesio.styleTokens:
+                root:
+                  - pt-[83px]
+                  - min-h-[80vh]
+              components:
                 - uesio/io.grid:
                     uesio.variant: uesio/web.callout_double
-                    uesio.styleTokens:
-                      root:
-                        - min-h-[70vh]
                     items:
-                      - uesio/io.grid:
-                          uesio.styleTokens:
-                            root:
-                              - grid
-                              - auto-rows-min
-                              - px-3
-                          items:
+                      - uesio/io.box:
+                          components:
                             - uesio/io.text:
-                                uesio.variant: uesio/web.callout_dark
+                                uesio.variant: uesio/web.callout
                                 text: Contact us
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.calloutpre
                                 uesio.styleTokens:
                                   root:
-                                    - mx-0
-                            - uesio/io.text:
-                                uesio.variant: uesio/web.blogteasertitle
+                                    - normal-case
                                 text: ues.io
                             - uesio/io.box:
                                 uesio.styleTokens:
@@ -116,14 +105,14 @@ definition:
                                     newtab: true
                                 components:
                                   - uesio/io.text:
-                                      uesio.variant: uesio/web.blogteaserdescription
+                                      uesio.variant: uesio/web.calloutsmallsub
                                       uesio.styleTokens:
                                         root:
                                           - block
                                       text: Technopark, Technoparkstrasse 1
                                       align: start
                                   - uesio/io.text:
-                                      uesio.variant: uesio/web.blogteaserdescription
+                                      uesio.variant: uesio/web.calloutsmallsub
                                       text: 8005 Zurich, Switzerland
                                       align: start
                             - uesio/io.button:
@@ -156,19 +145,17 @@ definition:
                                   - signal: route/REDIRECT
                                     path: https://www.youtube.com/channel/UCPanoza3zR9zCgn7Y4dg6sw
                                     newtab: true
-                                    # Form box
-                      - uesio/io.list:
-                          wire: newContactRequest
-                          mode: EDIT
-                          uesio.id: contactForm
+                      - uesio/io.box:
+                          uesio.variant: uesio/web.mainlayout
+                          uesio.styleTokens:
+                            root:
+                              - p-8
+                              - rounded
                           components:
-                            - uesio/io.box:
-                                uesio.styleTokens:
-                                  root:
-                                    - bg-white
-                                    - rounded-lg
-                                    - shadow-lg
-                                    - p-8
+                            - uesio/io.list:
+                                wire: newContactRequest
+                                mode: EDIT
+                                uesio.id: contactForm
                                 components:
                                   - uesio/io.field:
                                       fieldId: first_name
@@ -227,5 +214,3 @@ definition:
                                                 severity: success
                                               - signal: wire/RESET
                                                 wire: newContactRequest
-    - uesio/core.view:
-        view: uesio/web.footer

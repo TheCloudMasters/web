@@ -9,21 +9,24 @@ definition:
             - bg-[$Theme{color.white}]
             - w-full
             - top-0
+            - left-0
             - mx-auto
             - fixed
             - z-10
         components:
-          - uesio/io.box:
+          - uesio/io.grid:
               uesio.variant: uesio/web.mainlayout_dark
-              components:
+              uesio.styleTokens:
+                root:
+                  - max-w-[$Theme{color.maxwidth}]
+                  - mx-auto
+
+              items:
                 - uesio/io.box:
                     uesio.variant: uesio/web.flex_structure_small
                     uesio.styleTokens:
                       root:
                         #- text-right
-                        - mx-auto
-                        - w-[90%]
-                        - md:w-[calc(90%+16px)]
                         - justify-end
                         - text-sm
                         - p-1
@@ -38,6 +41,7 @@ definition:
               uesio.styleTokens:
                 root:
                   - mx-auto
+                  - max-w-[$Theme{color.maxwidth}]
               items:
                 - uesio/io.grid:
                     uesio.styleTokens:

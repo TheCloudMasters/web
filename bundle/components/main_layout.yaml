@@ -12,9 +12,8 @@ definition:
       uesio.styleTokens:
         root:
           - relative
-          - min-h-screen
+          - min-h-[100vh]
           - w-full
-          # TEST
       components:
         - uesio/io.box:
             uesio.styleTokens:
@@ -24,10 +23,17 @@ definition:
             components:
               - uesio/core.view:
                   view: uesio/web.topbar
-              - uesio/core.slot:
-                  name: inner
-              - uesio/core.view:
-                  view: uesio/web.footer
+              - uesio/io.box:
+                  uesio.styleTokens:
+                    root:
+                      - max-w-[$Theme{color.maxwidth}]
+                      - mx-auto
+                      - min-h-[100vh]
+                  components:
+                    - uesio/core.slot:
+                        name: inner
+                    - uesio/core.view:
+                        view: uesio/web.footer
 title: Main Web Layout
 discoverable: true
 description: Header -> Content -> Footer

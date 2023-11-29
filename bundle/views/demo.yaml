@@ -29,150 +29,68 @@ definition:
         create: true
   # Components are how we describe the layout of our view
   components:
-    - uesio/core.view:
-        view: uesio/web.topbar
-    - uesio/io.box:
-        uesio.styleTokens:
-          root:
-            - bg-[rgb(247,247,247)]
-            - pt-28
-            - min-h-[70vh]
-        components:
-          - uesio/io.grid:
-              uesio.variant: uesio/web.mainlayout
-              items:
+    - uesio/web.main_layout:
+        inner:
+          - uesio/io.box:
+              uesio.variant: uesio/web.mainlayout_dark
+              uesio.styleTokens:
+                root:
+                  - pt-[83px]
+                  - min-h-[80vh]
+              components:
                 - uesio/io.grid:
                     uesio.variant: uesio/web.callout_double
-                    uesio.styleTokens:
-                      root:
-                        - min-h-[70vh]
                     items:
-                      - uesio/io.grid:
-                          uesio.styleTokens:
-                            root:
-                              - grid
-                              - grid-flow-row
-                              - px-3
-                          items:
+                      - uesio/io.box:
+                          uesio.variant: uesio/web.text_block
+                          components:
                             - uesio/io.text:
-                                uesio.variant: uesio/web.callout_dark
+                                uesio.variant: uesio/web.callout
                                 text: Book your free ues.io demo
-                                uesio.styleTokens:
-                                  root:
-                                    - mb-0
                             - uesio/io.text:
-                                uesio.variant: uesio/web.calloutsmallsubdark
-                                text: Experience ues.io in action! Schedule a personalised demo to learn how ues.io can help you with your digital transformation journey. Fill out the form and we'll get in touch to arrange a convenient time.
+                                uesio.variant: uesio/web.calloutsmallsub
+                                text: Experience ues.io in action! Schedule a personalised
+                                  demo to learn how ues.io can help you with your digital
+                                  transformation journey. Fill out the form and we'll get
+                                  in touch to arrange a convenient time.
                             - uesio/io.grid:
                                 uesio.styleTokens:
                                   root:
                                     - grid
+                                    - pt-4
                                     - grid-flow-row-dense
-                                    - text-[22px]
                                 items:
-                                  - uesio/io.box:
-                                      uesio.styleTokens:
-                                        root:
-                                          - grid
-                                          - grid-cols-[20px_1fr]
-                                          - items-center
-                                          - gap-2
-                                      components:
-                                        - uesio/io.text:
-                                            uesio.variant: uesio/io.icon
-                                            text: check
-                                            color: green
-                                        - uesio/io.text:
-                                            uesio.styleTokens:
-                                              root:
-                                                - m-0
-                                            uesio.variant: uesio/web.calloutsmallsubdark
-                                            text: No-code extensible with code
-                                  - uesio/io.box:
-                                      uesio.styleTokens:
-                                        root:
-                                          - grid
-                                          - grid-cols-[20px_1fr]
-                                          - items-center
-                                          - gap-2
-                                      components:
-                                        - uesio/io.text:
-                                            uesio.variant: uesio/io.icon
-                                            text: check
-                                            color: green
-                                        - uesio/io.text:
-                                            uesio.styleTokens:
-                                              root:
-                                                - m-0
-                                            uesio.variant: uesio/web.calloutsmallsubdark
-                                            text: AI included
-                                  - uesio/io.box:
-                                      uesio.styleTokens:
-                                        root:
-                                          - grid
-                                          - grid-cols-[20px_1fr]
-                                          - items-center
-                                          - gap-2
-                                      components:
-                                        - uesio/io.text:
-                                            uesio.variant: uesio/io.icon
-                                            text: check
-                                            color: green
-                                        - uesio/io.text:
-                                            uesio.styleTokens:
-                                              root:
-                                                - m-0
-                                            uesio.variant: uesio/web.calloutsmallsubdark
-                                            text: All the components to build with
-                                  - uesio/io.box:
-                                      uesio.styleTokens:
-                                        root:
-                                          - grid
-                                          - grid-cols-[20px_1fr]
-                                          - items-center
-                                          - gap-2
-                                      components:
-                                        - uesio/io.text:
-                                            uesio.variant: uesio/io.icon
-                                            text: check
-                                            color: green
-                                        - uesio/io.text:
-                                            uesio.styleTokens:
-                                              root:
-                                                - m-0
-                                            uesio.variant: uesio/web.calloutsmallsubdark
-                                            text: Team development
-                                  - uesio/io.box:
-                                      uesio.styleTokens:
-                                        root:
-                                          - grid
-                                          - grid-cols-[20px_1fr]
-                                          - items-center
-                                          - gap-2
-                                      components:
-                                        - uesio/io.text:
-                                            uesio.variant: uesio/io.icon
-                                            text: check
-                                            color: green
-                                            align: center
-                                        - uesio/io.text:
-                                            uesio.styleTokens:
-                                              root:
-                                                - m-0
-                                            uesio.variant: uesio/web.calloutsmallsubdark
-                                            text: Unlimited users
-                      - uesio/io.list:
-                          wire: newDemo
-                          mode: EDIT
-                          uesio.id: demoForm
+                                  - uesio/web.icon_text:
+                                      text: No-code extensible with code
+                                      icon: check
+                                      color: "#a3e635"
+                                  - uesio/web.icon_text:
+                                      text: AI included
+                                      icon: check
+                                      color: "#a3e635"
+                                  - uesio/web.icon_text:
+                                      text: All the components to build with
+                                      icon: check
+                                      color: "#a3e635"
+                                  - uesio/web.icon_text:
+                                      text: Team development
+                                      icon: check
+                                      color: "#a3e635"
+                                  - uesio/web.icon_text:
+                                      text: Unlimited users
+                                      icon: check
+                                      color: "#a3e635"
+                      - uesio/io.box:
+                          uesio.variant: uesio/web.mainlayout
+                          uesio.styleTokens:
+                            root:
+                              - p-8
+                              - rounded
                           components:
-                            - uesio/io.box:
-                                uesio.styleTokens:
-                                  root:
-                                    - bg-white
-                                    - rounded-lg
-                                    - shadow-lg
-                                    - p-8
+                            - uesio/io.list:
+                                wire: newDemo
+                                mode: EDIT
+                                uesio.id: demoForm
                                 components:
                                   - uesio/io.field:
                                       fieldId: first_name
@@ -207,5 +125,3 @@ definition:
                                                 severity: success
                                               - signal: wire/RESET
                                                 wire: newDemo
-    - uesio/core.view:
-        view: uesio/web.footer
