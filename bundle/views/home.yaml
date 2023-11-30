@@ -485,7 +485,7 @@ definition:
                                 right:
                                   - uesio/io.text:
                                       uesio.variant: uesio/web.calloutsmallsubdark
-                                      text: Eighter
+                                      text: Either
                                   - uesio/io.text:
                                       uesio.variant: uesio/web.calloutsmallsubdark
                                       text: " self-host "

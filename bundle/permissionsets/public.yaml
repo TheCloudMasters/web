@@ -56,8 +56,11 @@ routes:
   uesio/web.requestpassword: true
   uesio/web.login: true
 files:
+  uesio/web.aws: true
+  uesio/web.aws_marketplace: true
   uesio/web.logo: true
   uesio/web.logowhite_full: true
+  uesio/web.linkedin: true
   uesio/web.problem_icon: true
   uesio/web.banner: true
   uesio/web.bg_banner: true
@@ -66,6 +69,7 @@ files:
   uesio/web.arrow_blue: true
   uesio/web.arrow_primary_light: true
   uesio/web.swissmade: true
+  uesio/web.youtube: true
 bots:
   uesio/web.request: true
   uesio/web.createlogin: true
