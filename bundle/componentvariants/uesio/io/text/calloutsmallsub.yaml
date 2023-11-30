@@ -4,7 +4,9 @@ label: Callout Small Sub
 definition:
   uesio.styleTokens:
     root:
-      - text-md
-      - md:text-md
-      - my-2
+      - text-sm
+      - md:text-base
+      - my-0
+      - md:my-0
+      - inline
   element: div

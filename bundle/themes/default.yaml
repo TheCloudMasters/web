@@ -1,0 +1,19 @@
+name: default
+definition:
+  palette:
+    white: "#ffffff"
+    black: "#000000"
+    dark: "#0e172b"
+    primary: "#f76540"
+    primary_light: "#ffaa91"
+    text_primary: "#000000"
+    text_secondary: "#ffffff"
+    text_secondary_muted: "#94a3b8"
+    secondary: "#3612ff"
+    pricing_bg: "#ffeae3"
+    error: "red-400"
+    warning: "#ff9800"
+    info: "#2196f3"
+    success: "emerald-400"
+    maxwidth: "2000px"
+    text_width: "600px"

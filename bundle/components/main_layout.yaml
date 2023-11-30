@@ -1,0 +1,48 @@
+name: main_layout
+category: LAYOUT
+type: DECLARATIVE
+slots:
+  - name: inner
+properties:
+  - name: uesio.id
+    label: Component Id
+    type: COMPONENT_ID
+definition:
+  - uesio/io.box:
+      uesio.styleTokens:
+        root:
+          - relative
+          - min-h-[100vh]
+          - w-full
+      components:
+        - uesio/io.box:
+            uesio.styleTokens:
+              root:
+                - max-w-[$Theme{color.maxwidth}]
+                - mx-auto
+            components:
+              - uesio/core.view:
+                  view: uesio/web.topbar
+              - uesio/io.box:
+                  uesio.styleTokens:
+                    root:
+                      - max-w-[$Theme{color.maxwidth}]
+                      - mx-auto
+                      - min-h-[100vh]
+                  components:
+                    - uesio/core.slot:
+                        name: inner
+                    - uesio/core.view:
+                        view: uesio/web.footer
+title: Main Web Layout
+discoverable: true
+description: Header -> Content -> Footer
+defaultDefinition:
+sections:
+  - type: HOME
+    properties:
+      - uesio.id
+  - type: STYLES
+  - type: DISPLAY
+signals: null
+styleRegions: null

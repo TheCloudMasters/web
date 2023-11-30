@@ -3,7 +3,10 @@ label: Callout
 definition:
   uesio.styleTokens:
     root:
-      - grid-cols-1
-      - md:grid-cols-[440px]
-      - p-12
-      - md:p-20
+      - grid-cols-[90%]
+      - md:grid-cols-[calc(90%+16px)]
+      - h-fit
+      - w-full
+      - py-8
+      - place-content-center
+      - justify-content

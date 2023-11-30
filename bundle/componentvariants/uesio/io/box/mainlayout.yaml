@@ -1,0 +1,12 @@
+name: mainlayout
+label: Main Layout
+definition:
+  uesio.styleTokens:
+    root:
+      - w-full
+      - text-left
+      - py-auto
+      - bg-[$Theme{color.white}]
+      - flex
+      - flex-col
+      - place-content-center

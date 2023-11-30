@@ -1,7 +1,7 @@
 name: uesio/web
 loginRoute: uesio/web.login
 homeRoute: uesio/web.home
-defaultTheme: uesio/core.default
+defaultTheme: uesio/web.default
 publicProfile: uesio/web.public
 favicon: uesio/core.favicon
 dependencies:

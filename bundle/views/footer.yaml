@@ -5,64 +5,112 @@ definition:
   # Components are how we describe the layout of our view
   components:
     - uesio/web.ga4:
-    - uesio/io.grid:
+    - uesio/io.box:
+        uesio.variant: uesio/web.mainlayout_dark
         uesio.styleTokens:
           root:
-            - bg-slate-900
-            - min-h-[400px]
-            - items-start
-        uesio.variant: uesio/web.mainlayout
-        items:
+            - bg-[$Theme{color.black}]
+            - max-w-[$Theme{color.maxwidth}]
+            - mx-auto
+        components:
           - uesio/io.grid:
-              uesio.styleTokens:
-                root:
-                  - grid-flow-row
-                  - md:grid-flow-col
-                  - items-center
-                  - justify-between
-                  - m-4
-                  - gap-2
+              uesio.variant: uesio/web.callout_double
               items:
-                - uesio/io.griditem:
+                - uesio/io.box:
+                    uesio.styleTokens:
+                      - h-fit
+                      - place-self-start
                     components:
                       - uesio/io.image:
-                          file: uesio/web.logowhite
-                          height: 55
-                - uesio/io.griditem:
-                    components:
-                      - uesio/io.text:
-                          uesio.variant: uesio/web.footertext
-                          text: The Cloud Masters LLC Switzerland - All rights reserved ©2023
-                          element: div
-                - uesio/io.griditem:
-                    components:
-                      - uesio/io.button:
-                          uesio.variant: uesio/web.footerlink
-                          text: Who we are
-                          signals:
-                            - signal: "route/REDIRECT"
-                              path: "https://www.thecloudmasters.com"
-                - uesio/io.griditem:
-                    components:
-                      - uesio/io.button:
-                          uesio.variant: uesio/web.footerlink
-                          text: Privacy policy
-                          signals:
-                            - signal: route/NAVIGATE
-                              path: privacy
-                - uesio/io.griditem:
-                    components:
-                      - uesio/io.button:
-                          uesio.variant: uesio/web.footerlink
-                          text: Terms of use
-                          signals:
-                            - signal: route/NAVIGATE
-                              path: terms
-                - uesio/io.griditem:
-                    components:
-                      - uesio/io.image:
-                          file: uesio/web.swissmade
                           height: 40
+                          file: uesio/web.logowhite_full
+                          signals:
+                            - signal: route/NAVIGATE
+                              path: home
+                - uesio/io.box:
+                    uesio.styleTokens:
+                      - h-full
+                      - place-self-start
+                    components:
+                      - uesio/io.box:
                           uesio.styleTokens:
                             root:
-                              - m-2.5
+                              - grid
+                              - grid-flow-row
+                              - gap-8
+                          components:
+                            - uesio/io.box:
+                                uesio.styleTokens:
+                                  root:
+                                    - grid
+                                    - grid-flow-row
+                                    - gap-2
+                                components:
+                                  - uesio/io.button:
+                                      uesio.variant: uesio/web.footerlink
+                                      text: Documentation
+                                      signals:
+                                        - signal: "route/REDIRECT"
+                                          path: "https://docs.ues.io"
+                                  - uesio/io.button:
+                                      uesio.variant: uesio/web.footerlink
+                                      text: Pricing
+                                      signals:
+                                        - signal: route/NAVIGATE
+                                          path: pricing
+                                  - uesio/io.button:
+                                      uesio.variant: uesio/web.footerlink
+                                      text: Community
+                                      signals:
+                                        - signal: route/REDIRECT
+                                          path: https://community.ues.io
+                                  - uesio/io.button:
+                                      uesio.variant: uesio/web.footerlink
+                                      text: Contact
+                                      signals:
+                                        - signal: route/NAVIGATE
+                                          path: contact
+                            - uesio/io.box:
+                                uesio.styleTokens:
+                                  root:
+                                    - flex
+                                    - justify-between
+                                    - items-center
+                                components:
+                                  - uesio/io.box:
+                                      components:
+                                        - uesio/io.text:
+                                            uesio.variant: uesio/web.footertext
+                                            text: The Cloud Masters LLC Switzerland - All rights reserved ©2023
+                                            element: div
+                                        - uesio/io.box:
+                                            uesio.styleTokens:
+                                              root:
+                                                - flex
+                                                - gap-4
+                                            components:
+                                              - uesio/io.button:
+                                                  uesio.variant: uesio/web.footerlink_muted
+                                                  text: Who we are
+                                                  signals:
+                                                    - signal: "route/REDIRECT"
+                                                      path: "https://www.thecloudmasters.com"
+                                              - uesio/io.button:
+                                                  uesio.variant: uesio/web.footerlink_muted
+                                                  text: Privacy policy
+                                                  signals:
+                                                    - signal: route/NAVIGATE
+                                                      path: privacy
+                                              - uesio/io.button:
+                                                  uesio.variant: uesio/web.footerlink_muted
+                                                  text: Terms of use
+                                                  signals:
+                                                    - signal: route/NAVIGATE
+                                                      path: terms
+
+                                  - uesio/io.image:
+                                      file: uesio/web.swissmade
+                                      height: 40
+                                      uesio.styleTokens:
+                                        root:
+                                          - m-2.5

@@ -3,9 +3,11 @@ label: Callout Subtitle
 definition:
   uesio.styleTokens:
     root:
-      - text-slate-400
-      - text-sm
+      - text-[$Theme{color.text_secondary}]
+      - text-base
       - md:text-lg
-      - font-light
+      - font-extralight
+      - font-[Gosha]
+      - md:my-6
       - my-4
   element: div
