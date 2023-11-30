@@ -27,7 +27,6 @@ definition:
                           signals:
                             - signal: route/NAVIGATE
                               path: home
-
                 - uesio/io.box:
                     uesio.styleTokens:
                       - h-full
