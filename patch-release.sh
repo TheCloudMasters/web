@@ -3,6 +3,8 @@
 set -e
 
 uesio login
+uesio workspace delete -n=$WORKSPACE
+uesio workspace create -n=$WORKSPACE
 uesio work -n=$WORKSPACE
 uesio pack && uesio workspace deploy
 

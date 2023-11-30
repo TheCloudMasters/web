@@ -15,7 +15,7 @@ definition:
                   - p-20
               components:
                 - uesio/io.text:
-                    uesio.variant: uesio/web.callout
+                    uesio.variant: uesio/web.callout_dark
                     text: Privacy Policy
                 - uesio/io.text:
                     uesio.variant: uesio/web.privacytext

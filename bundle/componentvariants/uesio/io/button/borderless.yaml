@@ -4,5 +4,6 @@ label: Borderless
 definition:
   uesio.styleTokens:
     root:
-      - border-transparent
-      - md:px-4
+      - border-none
+      - md:px-5
+      - w-fit

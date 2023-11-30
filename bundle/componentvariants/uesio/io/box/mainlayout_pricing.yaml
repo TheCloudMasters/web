@@ -1,0 +1,12 @@
+name: mainlayout_pricing
+label: Main Layout Pricing
+definition:
+  uesio.styleTokens:
+    root:
+      - w-full
+      - text-left
+      - py-auto
+      - bg-[$Theme{color.pricing_bg}]
+      - flex
+      - flex-col
+      - place-content-center

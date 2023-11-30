@@ -3,9 +3,8 @@ label: Main Layout
 definition:
   uesio.styleTokens:
     root:
-      - grid-cols-[1fr]
-      - lg:grid-cols-[900px]
-      - xl:grid-cols-[1280px]
+      - grid
+      - grid-cols-[95%]
+      - sm:grid-cols-[90%]
       - justify-center
-      - bg-[rgb(247,247,247)]
-      # - bg-slate-50
+      - bg-[$Theme{color.white}]

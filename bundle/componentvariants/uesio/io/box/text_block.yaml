@@ -1,0 +1,6 @@
+name: text_block
+label: Text Block
+definition:
+  uesio.styleTokens:
+    root:
+      - max-w-[$Theme{color.text_width}]

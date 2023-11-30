@@ -1,0 +1,8 @@
+name: flex_structure
+label: Flex Gap 8
+extends: uesio/web.flex
+definition:
+  uesio.styleTokens:
+    root:
+      - gap-4
+      - md:gap-8

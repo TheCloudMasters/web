@@ -1,0 +1,9 @@
+name: flex_col
+label: Flex Col Gap 8
+definition:
+  uesio.styleTokens:
+    root:
+      - flex
+      - flex-col
+      - gap-8
+      - pb-8

@@ -1,0 +1,8 @@
+name: calloutsmedium_dark
+label: Callout Medium Dark
+extends: uesio/web.calloutsmedium
+definition:
+  uesio.styleTokens:
+    root:
+      - text-[$Theme{color.text_primary}
+  element: h2

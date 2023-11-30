@@ -3,8 +3,11 @@ label: Contact link
 definition:
   uesio.styleTokens:
     root:
-      - font-light
-      - my-4
-      - text-base
       - block
-      - justify-self-start
+      - text-sm
+      - md:text-base
+      - my-4
+      - text-[$Theme{color.text_primary}]
+      - font-extralight
+      - font-[Gosha]
+      - w-fit

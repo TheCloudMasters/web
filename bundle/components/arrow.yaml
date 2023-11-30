@@ -1,0 +1,66 @@
+name: arrow
+category: CONTENT
+type: DECLARATIVE
+slots:
+  - name: left
+  - name: right
+properties:
+  - name: uesio.id
+    label: Component Id
+    type: COMPONENT_ID
+  - name: arrow
+    label: Arrow SVG name
+    type: TEXT
+definition:
+  - uesio/io.box:
+      uesio.styleTokens:
+        root:
+          - w-full
+          - h-fit
+          - bg-[$Theme{color.white}]
+          - text-left
+      components:
+        - uesio/io.box:
+            uesio.styleTokens:
+              root:
+                - w-full
+                - h-full
+                - relative
+            components:
+              - uesio/io.image:
+                  file: $Prop{arrow}
+                  uesio.styleTokens:
+                    root:
+                      - h-full
+                      - w-[50%]
+                      - absolute
+              - uesio/io.grid:
+                  uesio.variant: uesio/web.callout_double
+                  uesio.styleTokens:
+                    root:
+                      - relative
+                      - grid-cols-[45%_45%]
+                  items:
+                    - uesio/io.box:
+                        uesio.variant: uesio/web.text_block
+                        components:
+                          - uesio/core.slot:
+                              name: left
+                    - uesio/io.box:
+                        uesio.variant: uesio/web.text_block
+                        components:
+                          - uesio/core.slot:
+                              name: right
+title: Arrow Content
+discoverable: true
+description: Arrow with left and right content
+defaultDefinition:
+sections:
+  - type: HOME
+    properties:
+      - uesio.id
+      - arrow
+  - type: STYLES
+  - type: DISPLAY
+signals: null
+styleRegions: null

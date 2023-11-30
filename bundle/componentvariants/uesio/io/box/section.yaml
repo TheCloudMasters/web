@@ -3,4 +3,4 @@ label: Section
 definition:
   uesio.styleTokens:
     root:
-      -
+      - my-8

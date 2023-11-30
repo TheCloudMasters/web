@@ -1,0 +1,6 @@
+name: flex
+label: Flex
+definition:
+  uesio.styleTokens:
+    root:
+      - flex

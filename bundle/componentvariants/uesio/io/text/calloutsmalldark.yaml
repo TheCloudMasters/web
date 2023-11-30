@@ -4,4 +4,4 @@ label: Callout Small Dark
 definition:
   uesio.styleTokens:
     root:
-      - text-slate-200
+      - text-[$Theme{color.text_primary}]

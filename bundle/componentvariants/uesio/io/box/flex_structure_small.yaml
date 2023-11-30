@@ -1,0 +1,8 @@
+name: flex_structure_small
+label: Flex Gap 4
+extends: uesio/web.flex
+definition:
+  uesio.styleTokens:
+    root:
+      - flex
+      - gap-4
