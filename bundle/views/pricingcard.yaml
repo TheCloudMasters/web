@@ -37,7 +37,6 @@ definition:
           root:
             - rounded
             - bg-[$Theme{color.white}]
-            #- w-[20%]
             - h-[315px]
             - w-full
             - grid
