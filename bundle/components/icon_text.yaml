@@ -36,7 +36,7 @@ definition:
             uesio.styleTokens:
               root:
                 - m-0
-            uesio.variant: uesio/web.calloutsmallsub
+            uesio.variant: uesio/web.calloutsmallsubdark
             text: $Prop{text}
 title: Icon Text
 discoverable: true

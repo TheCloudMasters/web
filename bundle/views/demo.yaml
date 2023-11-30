@@ -32,12 +32,17 @@ definition:
     - uesio/web.main_layout:
         inner:
           - uesio/io.box:
-              uesio.variant: uesio/web.mainlayout_dark
+              uesio.variant: uesio/web.mainlayout
               uesio.styleTokens:
                 root:
-                  - pt-[83px]
-                  - min-h-[80vh]
+                  - min-h-[60vh]
               components:
+                - uesio/io.image:
+                    uesio.styleTokens:
+                      root:
+                        - object-cover
+                    file: uesio/web.banner
+                    height: 150
                 - uesio/io.grid:
                     uesio.variant: uesio/web.callout_double
                     items:
@@ -45,10 +50,10 @@ definition:
                           uesio.variant: uesio/web.text_block
                           components:
                             - uesio/io.text:
-                                uesio.variant: uesio/web.callout
+                                uesio.variant: uesio/web.callout_dark
                                 text: Book your free ues.io demo
                             - uesio/io.text:
-                                uesio.variant: uesio/web.calloutsmallsub
+                                uesio.variant: uesio/web.calloutsmallsubdark
                                 text: Experience ues.io in action! Schedule a personalised
                                   demo to learn how ues.io can help you with your digital
                                   transformation journey. Fill out the form and we'll get
@@ -85,7 +90,6 @@ definition:
                           uesio.styleTokens:
                             root:
                               - p-8
-                              - rounded
                           components:
                             - uesio/io.list:
                                 wire: newDemo

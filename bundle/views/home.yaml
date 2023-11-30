@@ -7,7 +7,7 @@ definition:
           - uesio/io.box:
               uesio.styleTokens:
                 root:
-                  - mt-[83px]
+                  #- mt-[83px]
                   - bg-[url($File{uesio/web.bg_banner})]
                   - md:min-h-[calc(70vh-83px)]
                   - bg-cover

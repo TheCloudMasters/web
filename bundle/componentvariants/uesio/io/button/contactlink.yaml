@@ -12,6 +12,7 @@ definition:
       - text-sm
       - md:text-base
       - my-4
-      - text-[$Theme{color.text_secondary}]
+      - text-[$Theme{color.text_primary}]
       - font-extralight
       - font-[Gosha]
+      - w-fit

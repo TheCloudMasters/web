@@ -6,9 +6,6 @@ definition:
         inner:
           - uesio/io.box:
               uesio.variant: uesio/web.mainlayout_pricing
-              uesio.styleTokens:
-                root:
-                  - pt-[83px]
               components:
                 - uesio/io.grid:
                     uesio.variant: uesio/web.callout_double
@@ -24,6 +21,10 @@ definition:
               components:
                 - uesio/io.grid:
                     uesio.variant: uesio/web.callout
+                    uesio.styleTokens:
+                      root:
+                        - py-0
+                        - pb-16
                     items:
                       - uesio/io.grid:
                           uesio.styleTokens:
