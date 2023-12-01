@@ -52,6 +52,7 @@ routes:
   uesio/web.privacy: true
   uesio/web.terms: true
   #Authentification Routes
+  uesio/web.signup: true
   uesio/web.changepassword: true
   uesio/web.requestpassword: true
   uesio/web.login: true

@@ -68,8 +68,10 @@ definition:
                             - uesio/io.box:
                                 uesio.styleTokens:
                                   root:
-                                    - flex
-                                    - justify-between
+                                    - grid
+                                    - grid-flow-row
+                                    - sm:flex
+                                    - sm:justify-between
                                     - items-center
                                 components:
                                   - uesio/io.box:
