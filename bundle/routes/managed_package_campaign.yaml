@@ -1,0 +1,4 @@
+name: managed_package_campaign
+path: campaign/managed-package
+view: managed_package_campaign
+title: $Site{title} - Managed Package

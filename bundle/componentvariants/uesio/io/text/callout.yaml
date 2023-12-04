@@ -10,5 +10,4 @@ definition:
       - font-bold
       - md:my-6
       - my-4
-      - max-w-[800px]
   element: div

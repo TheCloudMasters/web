@@ -1,0 +1,14 @@
+name: icon
+public: true
+extends: uesio/io.nav
+label: Navigation
+definition:
+  uesio.styleTokens:
+    root:
+      - bg-slate-100
+      - rounded-full
+      - color-white
+      - m-1
+      - transition-all
+      - hover:bg-$Theme{color.primary}-500
+      - hover:text-slate-50
