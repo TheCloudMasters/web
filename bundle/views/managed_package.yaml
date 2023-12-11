@@ -25,6 +25,10 @@ definition:
           label: Email
           type: EMAIL
           required: true
+        phone:
+          label: Phone
+          type: TEXT
+          required: true
         description:
           label: Tell us briefly the reason why you are contacting us.
           type: LONGTEXT
@@ -73,22 +77,24 @@ definition:
                           components:
                             - uesio/io.text:
                                 uesio.variant: uesio/web.calloutsmedium
-                                text: Small software Development projects run 65% OVER BUDGET on average.
+                                text: '"Small software Development projects run 65% OVER BUDGET on average."'
                             - uesio/io.text:
                                 uesio.variant: uesio/web.footertext
-                                text: Project Cost Management Statistics 2023 - Everything you need to know, webinarcare.com, 11-12-23
+                                text: "Source: Project Cost Management Statistics 2023 - Everything you need to know, webinarcare.com, 11-12-23"
                       - uesio/io.box:
                           uesio.variant: uesio/web.text_block
                           components:
                             - uesio/io.text:
                                 uesio.variant: uesio/web.calloutsmedium
-                                text: The average spend by company on SaaS increases by over 50%/year.
+                                text: '"The average spend by company on SaaS increases by over 50%/year."'
                             - uesio/io.text:
                                 uesio.variant: uesio/web.footertext
-                                text: "SaaS Statistics: trends, data and insights from $2.5b in processed software spend, vendor.com, , 2-8-23"
+                                text: "Source: SaaS Statistics: trends, data and insights from $2.5b in processed software spend, vendor.com, , 2-8-23"
+                                element: div
                             - uesio/io.text:
                                 uesio.variant: uesio/web.footertext
-                                text: "70 SaaS Statistics You Must Learn: 2021 Market Share & Data Analysis, financesonline.com, 2022"
+                                text: "Source: 70 SaaS Statistics You Must Learn: 2021 Market Share & Data Analysis, financesonline.com, 2022"
+                                element: div
           - uesio/io.box:
               uesio.variant: uesio/web.mainlayout
               components:
@@ -221,7 +227,7 @@ definition:
                                         hours and usage and requires an upfront annual purchase."
                                   - uesio/io.text:
                                       uesio.variant: uesio/web.footertext
-                                      text: ($20,000 package includes up xxx hours of professional services/year)
+                                      text: ($20,000 package includes up to 85 hours of professional services/year)
                                       element: div
                       - uesio/io.box:
                           components:
@@ -456,6 +462,8 @@ definition:
                                               - uesio/io.field:
                                                   fieldId: email
                                               - uesio/io.field:
+                                                  fieldId: phone
+                                              - uesio/io.field:
                                                   fieldId: company
                                               - uesio/io.field:
                                                   fieldId: description
@@ -475,6 +483,7 @@ definition:
                                                               last_name: ${last_name}
                                                               company: ${company}
                                                               email: ${email}
+                                                              phone: ${phone}
                                                               description: ${description}
                                                               topic: "Managed Package"
                                                           - signal: notification/ADD

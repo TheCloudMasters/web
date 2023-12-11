@@ -68,7 +68,7 @@ definition:
                                 uesio.styleTokens:
                                   root:
                                     - text-xl
-                                    - text-blue-600
+                                    - text-[$Theme{color.primary}]
                                     - p-2
                                 icon: menu
                                 signals:
@@ -151,6 +151,12 @@ definition:
                   signals:
                     - signal: route/NAVIGATE
                       path: pricing
+              - uesio/io.button:
+                  uesio.variant: uesio/web.borderless
+                  text: Managed Package
+                  signals:
+                    - signal: route/NAVIGATE
+                      path: managed-package
               - uesio/io.button:
                   uesio.variant: uesio/web.borderless
                   text: Community
