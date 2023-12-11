@@ -39,8 +39,8 @@ function request(bot: ListenerBotApi) {
 
 	// Send an email to the user
 	const salesEmail = bot.asAdmin.getConfigValue("uesio/crm.sales_email")
-	let userConfigValue: string = ""
-	let salesConfigValue: string = ""
+	let userConfigValue = ""
+	let salesConfigValue = ""
 	switch (values["topic"]) {
 		case "contact request": {
 			userConfigValue = "uesio/web.email_template_contact_to_user"
