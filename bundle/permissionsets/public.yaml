@@ -11,6 +11,7 @@ views:
   uesio/web.featurewithicon: true
   uesio/web.footer: true
   uesio/web.home: true
+  uesio/web.managed_package: true
   uesio/web.preview: true
   uesio/web.pricing: true
   uesio/web.pricingcard: true
@@ -47,6 +48,7 @@ routes:
   uesio/web.demo: true
   uesio/web.earlyaccess: true
   uesio/web.home: true
+  uesio/web.managed_package: true
   uesio/web.preview: true
   uesio/web.pricing: true
   uesio/web.privacy: true
@@ -57,19 +59,32 @@ routes:
   uesio/web.requestpassword: true
   uesio/web.login: true
 files:
+  uesio/web.agco_logo: true
+  uesio/web.amazon_logo: true
+  uesio/web.arrow_blue: true
+  uesio/web.arrow_primary_light: true
   uesio/web.aws: true
+  uesio/web.aws_logo: true
   uesio/web.aws_marketplace: true
+  uesio/web.axa_logo: true
+  uesio/web.dhl_logo: true
+  uesio/web.intel_logo: true
   uesio/web.logo: true
   uesio/web.logowhite_full: true
   uesio/web.linkedin: true
+  uesio/web.morandi_logo: true
   uesio/web.problem_icon: true
   uesio/web.banner: true
   uesio/web.bg_banner: true
   uesio/web.blocks: true
   uesio/web.solution_icon: true
-  uesio/web.arrow_blue: true
-  uesio/web.arrow_primary_light: true
   uesio/web.swissmade: true
+  uesio/web.shell_logo: true
+  uesio/web.uesio_landing_image: true
+  uesio/web.uesio_screenshot_builder: true
+  uesio/web.uesio_screenshot_collage_cpq: true
+  uesio/web.uesio_screenshot_collage_crm: true
+  uesio/web.uesio_screenshot_morandi: true
   uesio/web.youtube: true
 bots:
   uesio/web.request: true

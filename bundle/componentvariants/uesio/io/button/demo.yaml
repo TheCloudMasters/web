@@ -1,15 +1,8 @@
 name: demo
-extends: uesio/web.calltoaction
+extends: uesio/web.primary
 label: demo
 definition:
   text: "book a demo"
   signals:
     - signal: route/REDIRECT
       path: demo
-  uesio.styleTokens:
-    root:
-      - text-[$Theme{color.text_secondary}]
-      - bg-[$Theme{color.primary}]
-      - border-none
-      - md:px-5
-      - w-fit

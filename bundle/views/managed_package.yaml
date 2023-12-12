@@ -1,0 +1,493 @@
+name: managed_package
+definition:
+  wires:
+    contact_sales:
+      viewOnly: true
+      init:
+        create: true
+      fields:
+        display_form:
+          label: Display Form
+          type: CHECKBOX
+        first_name:
+          label: First Name
+          type: TEXT
+          required: true
+        last_name:
+          label: Last Name
+          type: TEXT
+          required: true
+        company:
+          label: Company Name
+          type: TEXT
+          required: false
+        email:
+          label: Email
+          type: EMAIL
+          required: true
+        phone:
+          label: Phone
+          type: TEXT
+          required: true
+        description:
+          label: Tell us briefly the reason why you are contacting us.
+          type: LONGTEXT
+          required: true
+      defaults:
+        - field: display_form
+          valueSource: VALUE
+          value: false
+  components:
+    - uesio/web.main_layout:
+        inner:
+          - uesio/io.image:
+              uesio.styleTokens:
+                root:
+                  - mx-auto
+                  - md:-mb-[150px]
+                  - -mb-[100px]
+              height:
+              file: uesio/web.uesio_landing_image
+          - uesio/io.box:
+              uesio.variant: uesio/web.mainlayout_dark
+              components:
+                - uesio/io.grid:
+                    uesio.variant: uesio/web.callout_center
+                    uesio.styleTokens:
+                      root:
+                        - py-0
+                        - pt-10
+                    items:
+                      - uesio/io.text:
+                          uesio.variant: uesio/web.callout
+                          uesio.styleTokens:
+                            root:
+                              - my-0
+                              - md:my-0
+                              - pt-10
+                          text: Reign In your Software Costs
+                - uesio/io.grid:
+                    uesio.variant: uesio/web.callout_double
+                    uesio.styleTokens:
+                      root:
+                        - text-center
+                    items:
+                      - uesio/io.box:
+                          uesio.variant: uesio/web.text_block
+                          components:
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.calloutsmedium
+                                text: '"Small software Development projects run 65% OVER BUDGET on average."'
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.footertext
+                                text: "Source: Project Cost Management Statistics 2023 - Everything you need to know, webinarcare.com, 11-12-23"
+                      - uesio/io.box:
+                          uesio.variant: uesio/web.text_block
+                          components:
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.calloutsmedium
+                                text: '"The average spend by company on SaaS increases by over 50%/year."'
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.footertext
+                                text: "Source: SaaS Statistics: trends, data and insights from $2.5b in processed software spend, vendor.com, , 2-8-23"
+                                element: div
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.footertext
+                                text: "Source: 70 SaaS Statistics You Must Learn: 2021 Market Share & Data Analysis, financesonline.com, 2022"
+                                element: div
+          - uesio/io.box:
+              uesio.variant: uesio/web.mainlayout
+              components:
+                - uesio/io.grid:
+                    uesio.variant: uesio/web.callout_center
+                    items:
+                      - uesio/io.text:
+                          uesio.variant: uesio/web.callout_dark
+                          text: Why ues.io?
+                - uesio/io.grid:
+                    uesio.variant: uesio/web.callout_double
+                    uesio.styleTokens:
+                      root:
+                        - md:min-h-[40vh]
+                    items:
+                      - uesio/io.box:
+                          components:
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.calloutsmedium_dark
+                                text: Less than 50% the Cost!
+                                element: span
+                            - uesio/io.box:
+                                uesio.variant: uesio/web.text_block
+                                components:
+                                  - uesio/web.bulleted_element:
+                                      text: You only pay for usage not users.
+                                      color: $Theme{color.text_primary}
+                                  - uesio/web.bulleted_element:
+                                      text: All Costs included - App usage hosting, storage.
+                                      color: $Theme{color.text_primary}
+                                  - uesio/web.bulleted_element:
+                                      text: Our proprietary developer toolkit allows us to build much faster and more secure than custom coding.
+                                      color: $Theme{color.text_primary}
+                      - uesio/io.box:
+                          components:
+                            - uesio/io.image:
+                                uesio.styleTokens:
+                                  root:
+                                height:
+                                file: uesio/web.uesio_screenshot_collage_cpq
+          - uesio/io.box:
+              uesio.variant: uesio/web.mainlayout
+              components:
+                - uesio/io.grid:
+                    uesio.variant: uesio/web.callout_double
+                    uesio.styleTokens:
+                      root:
+                        - md:min-h-[40vh]
+                    items:
+                      - uesio/io.box:
+                          components:
+                            - uesio/io.image:
+                                uesio.styleTokens:
+                                  root:
+                                height:
+                                file: uesio/web.uesio_screenshot_builder
+                      - uesio/io.box:
+                          components:
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.calloutsmedium_dark
+                                text: "We Build Custom Apps In 35% the Time!"
+                                element: span
+                            - uesio/io.box:
+                                uesio.variant: uesio/web.text_block
+                                components:
+                                  - uesio/web.bulleted_element:
+                                      text: Pre-coded, secure, drag-and drop components - no need for user testing or concerns about attack surfaces
+                                      color: $Theme{color.text_primary}
+                                  - uesio/web.bulleted_element:
+                                      text: Pre-built back-end APIs - makes connecting to your other applications a snap
+                                      color: $Theme{color.text_primary}
+                                  - uesio/web.bulleted_element:
+                                      text: AI helpers to quickly create data fields, categories, etc.
+                                      color: $Theme{color.text_primary}
+                                  - uesio/web.bulleted_element:
+                                      text: Ability to customize with code or without
+                                      color: $Theme{color.text_primary}
+                                  - uesio/web.bulleted_element:
+                                      text: Built in field and user level security
+                                      color: $Theme{color.text_primary}
+          - uesio/io.box:
+              uesio.variant: uesio/web.mainlayout_dark
+              components:
+                - uesio/io.grid:
+                    uesio.variant: uesio/web.callout_center
+                    items:
+                      - uesio/io.text:
+                          uesio.variant: uesio/web.callout
+                          text: Managed Packages start at only $20,000 USD/Year*
+                - uesio/io.grid:
+                    uesio.variant: uesio/web.callout_double
+                    uesio.styleTokens:
+                      root:
+                        - md:min-h-[40vh]
+                    items:
+                      - uesio/io.box:
+                          components:
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.calloutsmedium
+                                text: "What is included:"
+                            - uesio/io.box:
+                                uesio.variant: uesio/web.text_block
+                                components:
+                                  - uesio/web.bulleted_element:
+                                      text: Unlimited Users
+                                      color: $Theme{color.text_secondary}
+                                  - uesio/web.bulleted_element:
+                                      text: Professional services to design, code and test your custom application
+                                      color: $Theme{color.text_secondary}
+                                  - uesio/web.bulleted_element:
+                                      text: All software costs - Application usage, hosting and storage (On AWS)
+                                      color: $Theme{color.text_secondary}
+                                  - uesio/web.bulleted_element:
+                                      text: Annual software support
+                                      color: $Theme{color.text_secondary}
+                                  - uesio/web.bulleted_element:
+                                      text: Two pre-built basic software applications
+                                      color: $Theme{color.text_secondary}
+                                  - uesio/web.bulleted_element:
+                                      text: CPQ (Configure price quote) application
+                                      color: $Theme{color.text_secondary}
+                                      sub: true
+                                  - uesio/web.bulleted_element:
+                                      text: CRM application
+                                      color: $Theme{color.text_secondary}
+                                      sub: true
+                                  - uesio/io.text:
+                                      uesio.variant: uesio/web.footertext
+                                      text: "* Managed package includes up to a set amount of professional services
+                                        hours and usage and requires an upfront annual purchase."
+                                  - uesio/io.text:
+                                      uesio.variant: uesio/web.footertext
+                                      text: ($20,000 package includes up to 85 hours of professional services/year)
+                                      element: div
+                      - uesio/io.box:
+                          components:
+                            - uesio/io.image:
+                                uesio.styleTokens:
+                                  root:
+                                height:
+                                file: uesio/web.uesio_screenshot_collage_crm
+          - uesio/io.box:
+              uesio.variant: uesio/web.mainlayout
+              components:
+                - uesio/io.grid:
+                    uesio.variant: uesio/web.callout_center
+                    items:
+                      - uesio/io.text:
+                          uesio.variant: uesio/web.callout_dark
+                          text: Case Study
+
+                - uesio/io.grid:
+                    uesio.variant: uesio/web.callout_double
+                    uesio.styleTokens:
+                      root:
+                        - md:min-h-[40vh]
+                    items:
+                      - uesio/io.box:
+                          components:
+                            - uesio/io.image:
+                                uesio.styleTokens:
+                                  root:
+                                height:
+                                file: uesio/web.uesio_screenshot_morandi
+                      - uesio/io.box:
+                          uesio.variant: uesio/web.flex_col
+                          components:
+                            - uesio/io.box:
+                                components:
+                                  - uesio/io.text:
+                                      uesio.variant: uesio/web.calloutsmedium_dark
+                                      text: "Challange:"
+                                      uesio.styleTokens:
+                                        root:
+                                          - mb-4
+                                  - uesio/io.box:
+                                      uesio.variant: uesio/web.text_block
+                                      components:
+                                        - uesio/io.text:
+                                            uesio.variant: uesio/web.calloutsmallsubdark
+                                            text: They hired a company to code a custom CPQ App for them.
+                                              The project failed after 18 months of coding.
+                            - uesio/io.box:
+                                uesio.variant: uesio/web.text_block
+                                components:
+                                  - uesio/io.text:
+                                      uesio.variant: uesio/web.calloutsmedium_dark
+                                      text: Why ues.io?
+                                  - uesio/io.box:
+                                      uesio.variant: uesio/web.text_block
+                                      components:
+                                        - uesio/web.bulleted_element:
+                                            text: Speed to Deployment
+                                            color: $Theme{color.text_primary}
+                                        - uesio/web.bulleted_element:
+                                            text: Cost savings for build & updates
+                                            color: $Theme{color.text_primary}
+                            - uesio/io.box:
+                                uesio.variant: uesio/web.text_block
+                                components:
+                                  - uesio/io.text:
+                                      uesio.variant: uesio/web.calloutsmedium_dark
+                                      text: "Benefits:"
+                                  - uesio/io.box:
+                                      uesio.variant: uesio/web.text_block
+                                      components:
+                                        - uesio/web.bulleted_element:
+                                            text: New website with integrated CPQ App
+                                            color: $Theme{color.text_primary}
+                                        - uesio/web.bulleted_element:
+                                            text: Site went live in 3 months at 35% the cost spent on custom code
+                                            color: $Theme{color.text_primary}
+                                        - uesio/web.bulleted_element:
+                                            text: On-going cost savings of $10K for each future product added to their pricing catalog
+                                            color: $Theme{color.text_primary}
+          - uesio/io.box:
+              uesio.variant: uesio/web.mainlayout_dark
+              uesio.styleTokens:
+                root:
+                  - h-[5px]
+                  - mt-4
+              components:
+          - uesio/io.box:
+              uesio.variant: uesio/web.mainlayout
+              components:
+                - uesio/io.grid:
+                    uesio.variant: uesio/web.callout_center
+                    items:
+                      - uesio/io.box:
+                          uesio.variant: uesio/web.text_block
+                      - uesio/io.text:
+                          uesio.variant: uesio/web.calloutsmedium_dark
+                          text: A sample of our current and past clients
+                          element: div
+                      - uesio/io.text:
+                          uesio.variant: uesio/web.calloutsmedium_dark
+                          text: for whom our team has developed custom solutions
+                          element: div
+                - uesio/io.grid:
+                    uesio.variant: uesio/web.callout_center
+                    items:
+                      - uesio/io.box:
+                          uesio.styleTokens:
+                            root:
+                              - justify-center
+                              - content-center
+                              - flex
+                              - flex-col
+                              - md:flex-row
+                              - gap-8
+                              - w-fit
+                              - mx-auto
+                          components:
+                            - uesio/io.image:
+                                uesio.variant: uesio/web.logo
+                                file: uesio/web.intel_logo
+                            - uesio/io.image:
+                                uesio.variant: uesio/web.logo
+                                file: uesio/web.aws_logo
+                            - uesio/io.image:
+                                uesio.variant: uesio/web.logo
+                                file: uesio/web.amazon_logo
+                            - uesio/io.image:
+                                uesio.variant: uesio/web.logo
+                                file: uesio/web.agco_logo
+                            - uesio/io.image:
+                                uesio.variant: uesio/web.logo
+                                file: uesio/web.morandi_logo
+                            - uesio/io.image:
+                                uesio.variant: uesio/web.logo
+                                file: uesio/web.shell_logo
+                            - uesio/io.image:
+                                uesio.variant: uesio/web.logo
+                                file: uesio/web.axa_logo
+                            - uesio/io.image:
+                                uesio.variant: uesio/web.logo
+                                file: uesio/web.dhl_logo
+          - uesio/io.box:
+              uesio.styleTokens:
+                root:
+                  - w-full
+                  - sticky
+                  - bottom-[20px]
+                  - mb-[20px]
+                  - z-1
+              components:
+                - uesio/io.box:
+                    uesio.styleTokens:
+                      root:
+                        - text-right
+                        - pr-4
+                        - max-w-[$Theme{color.maxwidth}]
+                        - pointer-events-none
+                    components:
+                      - uesio/io.item:
+                          wire: contact_sales
+                          components:
+                            - uesio/io.box:
+                                uesio.styleTokens:
+                                  root:
+                                    - w-[95%]
+                                    - sm:w-[90%]
+                                    - mx-auto
+                                    - place-self-end
+                                    - pointer-events-none
+                                components:
+                                  - uesio/io.button:
+                                      uesio.variant: uesio/web.primary
+                                      uesio.styleTokens:
+                                        root:
+                                          - pointer-events-auto
+                                      uesio.display:
+                                        - type: mergeValue
+                                          value: false
+                                          sourceValue: ${display_form}
+                                      text: Contact sales
+                                      signals:
+                                        - signal: wire/UPDATE_FIELDS
+                                          wire: contact_sales
+                                          fields:
+                                            - field: display_form
+                                              value: true
+                                  - uesio/io.box:
+                                      uesio.display:
+                                        - type: mergeValue
+                                          value: true
+                                          sourceValue: ${display_form}
+                                      uesio.styleTokens:
+                                        root:
+                                          - border-4
+                                          - border-[$Theme{color.primary}]
+                                          - w-[70%]
+                                          - md:w-[30%]
+                                          - 4xl:w-[10%]
+                                          - inline-block
+                                          - bg-[$Theme{color.white}]
+                                          - p-4
+                                          - rounded
+                                          - justify-content-end
+                                          - pointer-events-auto
+                                      components:
+                                        - uesio/io.box:
+                                            uesio.styleTokens:
+                                              root:
+                                                - flex
+                                                - justify-between
+                                            components:
+                                              - uesio/io.text:
+                                                  uesio.variant: uesio/web.calloutsmallsubdark
+                                                  text: Contact sales
+                                              - uesio/io.button:
+                                                  icon: close
+                                                  signals:
+                                                    - signal: wire/RESET
+                                                      wire: contact_sales
+                                        - uesio/io.list:
+                                            wire: contact_sales
+                                            mode: EDIT
+                                            uesio.id: salesForm
+                                            components:
+                                              - uesio/io.field:
+                                                  fieldId: first_name
+                                              - uesio/io.field:
+                                                  fieldId: last_name
+                                              - uesio/io.field:
+                                                  fieldId: email
+                                              - uesio/io.field:
+                                                  fieldId: phone
+                                              - uesio/io.field:
+                                                  fieldId: company
+                                              - uesio/io.field:
+                                                  fieldId: description
+                                              - uesio/io.box:
+                                                  components:
+                                                    - uesio/io.button:
+                                                        uesio.variant: uesio/web.calltoaction
+                                                        uesio.styleTokens:
+                                                          root:
+                                                            - w-fit
+                                                        text: Send now
+                                                        signals:
+                                                          - signal: bot/CALL
+                                                            bot: uesio/web.request
+                                                            params:
+                                                              first_name: ${first_name}
+                                                              last_name: ${last_name}
+                                                              company: ${company}
+                                                              email: ${email}
+                                                              phone: ${phone}
+                                                              description: ${description}
+                                                              topic: "Managed Package"
+                                                          - signal: notification/ADD
+                                                            text: Thank you for contacting the ues.io sales team, we'll be in touch shortly.
+                                                            severity: success
+                                                          - signal: wire/RESET
+                                                            wire: contact_sales
