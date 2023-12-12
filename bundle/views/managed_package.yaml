@@ -155,7 +155,7 @@ definition:
                           components:
                             - uesio/io.text:
                                 uesio.variant: uesio/web.calloutsmedium_dark
-                                text: "We Build Custom Apps In 33% the Time!"
+                                text: "We Build Custom Apps In 35% the Time!"
                                 element: span
                             - uesio/io.box:
                                 uesio.variant: uesio/web.text_block
@@ -305,7 +305,7 @@ definition:
                                             text: New website with integrated CPQ App
                                             color: $Theme{color.text_primary}
                                         - uesio/web.bulleted_element:
-                                            text: Site went live in 3 months at 33% the cost spent on custom code
+                                            text: Site went live in 3 months at 35% the cost spent on custom code
                                             color: $Theme{color.text_primary}
                                         - uesio/web.bulleted_element:
                                             text: On-going cost savings of $10K for each future product added to their pricing catalog
