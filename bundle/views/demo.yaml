@@ -21,6 +21,10 @@ definition:
           label: Email
           type: EMAIL
           required: true
+        phone:
+          label: Phone
+          type: TEXT
+          required: true
         description:
           label: How did you hear about us?
           type: LONGTEXT
@@ -103,6 +107,8 @@ definition:
                                   - uesio/io.field:
                                       fieldId: email
                                   - uesio/io.field:
+                                      fieldId: phone
+                                  - uesio/io.field:
                                       fieldId: company
                                   - uesio/io.field:
                                       fieldId: description
@@ -122,6 +128,7 @@ definition:
                                                   last_name: ${last_name}
                                                   company: ${company}
                                                   email: ${email}
+                                                  phone: ${phone}
                                                   description: ${description}
                                                   topic: "Demo Request"
                                               - signal: notification/ADD

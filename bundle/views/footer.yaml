@@ -55,6 +55,12 @@ definition:
                                           path: pricing
                                   - uesio/io.button:
                                       uesio.variant: uesio/web.footerlink
+                                      text: Managed Package
+                                      signals:
+                                        - signal: route/NAVIGATE
+                                          path: managed-package
+                                  - uesio/io.button:
+                                      uesio.variant: uesio/web.footerlink
                                       text: Community
                                       signals:
                                         - signal: route/REDIRECT
@@ -73,6 +79,7 @@ definition:
                                     - sm:flex
                                     - sm:justify-between
                                     - items-center
+                                    - mt-2
                                 components:
                                   - uesio/io.box:
                                       components:

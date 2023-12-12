@@ -1,0 +1,10 @@
+name: primary
+extends: uesio/web.calltoaction
+definition:
+  uesio.styleTokens:
+    root:
+      - text-[$Theme{color.text_secondary}]
+      - bg-[$Theme{color.primary}]
+      - border-none
+      - md:px-5
+      - w-fit

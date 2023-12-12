@@ -1,0 +1,108 @@
+name: bulleted_element
+category: CONTENT
+type: DECLARATIVE
+slots:
+properties:
+  - name: uesio.id
+    label: Component Id
+    type: COMPONENT_ID
+  - name: text
+    label: Text
+    type: TEXT
+  - name: color
+    label: Color Hex
+    type: TEXT
+  - name: sub
+    label: Sub bullet point
+    type: CHECKBOX
+definition:
+  - uesio/io.box:
+      uesio.display:
+        - type: mergeValue
+          value: true
+          operator: NOT_EQUALS
+          sourceValue: $Prop{sub}
+      uesio.styleTokens:
+        root:
+          - flex
+          - gap-4
+          - my-4
+      components:
+        - uesio/io.box:
+            uesio.styleTokens:
+              root:
+                - flex
+                - items-center
+            components:
+              - uesio/io.box:
+                  uesio.styleTokens:
+                    root:
+                      - rounded-full
+                      - bg-[$Prop{color}]
+                      - h-2.5
+                      - w-2.5
+                  components:
+        - uesio/io.box:
+            uesio.styleTokens:
+              root:
+            components:
+              - uesio/io.text:
+                  uesio.variant: uesio/web.calloutsmallsub
+                  uesio.styleTokens:
+                    root:
+                      - text-[$Prop{color}]
+                  text: $Prop{text}
+  - uesio/io.box:
+      uesio.display:
+        - type: mergeValue
+          value: true
+          operator: EQUALS
+          sourceValue: $Prop{sub}
+      uesio.styleTokens:
+        root:
+          - flex
+          - gap-4
+          - my-4
+          - ml-[26px]
+      components:
+        - uesio/io.box:
+            uesio.styleTokens:
+              root:
+                - flex
+                - items-center
+            components:
+              - uesio/io.box:
+                  uesio.styleTokens:
+                    root:
+                      - rounded-full
+                      - bg-transparent
+                      - border-[$Prop{color}]
+                      - border
+                      - h-2.5
+                      - w-2.5
+                  components:
+        - uesio/io.box:
+            uesio.styleTokens:
+              root:
+            components:
+              - uesio/io.text:
+                  uesio.variant: uesio/web.calloutsmallsub
+                  uesio.styleTokens:
+                    root:
+                      - text-[$Prop{color}]
+                  text: $Prop{text}
+title: Bulleted Text Element
+discoverable: true
+description: Bulleted Text Element
+defaultDefinition:
+sections:
+  - type: HOME
+    properties:
+      - uesio.id
+      - text
+      - color
+      - sub
+  - type: STYLES
+  - type: DISPLAY
+signals: null
+styleRegions: null
