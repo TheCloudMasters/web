@@ -344,7 +344,7 @@ definition:
                               - flex
                               - flex-col
                               - md:flex-row
-                              - gap-8
+                              - gap-10
                               - w-fit
                               - mx-auto
                           components:
@@ -353,9 +353,17 @@ definition:
                                 file: uesio/web.intel_logo
                             - uesio/io.image:
                                 uesio.variant: uesio/web.logo
+                                uesio.styleTokens:
+                                  root:
+                                    - mt-0
+                                    - md:mt-[40px]
                                 file: uesio/web.aws_logo
                             - uesio/io.image:
                                 uesio.variant: uesio/web.logo
+                                uesio.styleTokens:
+                                  root:
+                                    - mt-0
+                                    - md:mt-[40px]
                                 file: uesio/web.amazon_logo
                             - uesio/io.image:
                                 uesio.variant: uesio/web.logo

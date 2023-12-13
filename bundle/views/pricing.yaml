@@ -185,7 +185,7 @@ definition:
                                 components:
                                   - uesio/io.text:
                                       uesio.variant: uesio/web.calloutsmall_primary
-                                      text: Freedom to Choose
+                                      text: 'Freedom to Choose "Coming Soon"'
                                   - uesio/io.box:
                                       uesio.variant: uesio/web.text_block
                                       components:
