@@ -75,17 +75,30 @@ definition:
                                               root:
                                                 - uppercase
                                             text: Problem
-                                        - uesio/io.box:
-                                            components:
-                                              - uesio/io.text:
-                                                  uesio.variant: uesio/web.calloutsmallsubdark
-                                                  text: Most platforms are very complicated.
-                                              - uesio/io.text:
-                                                  uesio.variant: uesio/web.calloutsmallsubdark
-                                                  text: "You are locked behind the features on offer.
-                                                    Pay per user subscriptions even if users are not engaged."
+                                        - uesio/io.grid:
+                                            uesio.styleTokens:
+                                              root:
+                                                - grid
+                                                - pt-4
+                                                - grid-flow-row-dense
+                                            items:
+                                              - uesio/web.icon_text:
+                                                  text: High complexity, slow development
+                                                  icon: chevron_right
+                                                  color: "#a3e635"
+                                              - uesio/web.icon_text:
+                                                  text: Limited to vendor-provided features
+                                                  icon: chevron_right
+                                                  color: "#a3e635"
+                                              - uesio/web.icon_text:
+                                                  text: Per-user subscription model
+                                                  icon: chevron_right
+                                                  color: "#a3e635"
                       - uesio/io.box:
                           uesio.variant: uesio/web.text_block
+                          uesio.styleTokens:
+                            root:
+                              - max-w-[800px]
                           components:
                             - uesio/io.box:
                                 uesio.variant: uesio/web.flex_structure
@@ -116,48 +129,25 @@ definition:
                                               root:
                                                 - uppercase
                                             text: Solution
-                                        - uesio/io.box:
-                                            components:
-                                              - uesio/io.box:
-                                                  components:
-                                                    - uesio/io.text:
-                                                        uesio.variant: uesio/web.calloutsmallsubdark
-                                                        text: "Make it simple and add "
-                                                    - uesio/io.text:
-                                                        uesio.variant: uesio/web.calloutsmallsubdark
-                                                        text: " AI "
-                                                        uesio.styleTokens:
-                                                          root:
-                                                            - font-extrabold
-                                                    - uesio/io.text:
-                                                        uesio.variant: uesio/web.calloutsmallsubdark
-                                                        text: "to help you along. "
-                                              - uesio/io.box:
-                                                  components:
-                                                    - uesio/io.text:
-                                                        uesio.variant: uesio/web.calloutsmallsubdark
-                                                        text: Extend functionality with your
-                                                    - uesio/io.text:
-                                                        uesio.variant: uesio/web.calloutsmallsubdark
-                                                        uesio.styleTokens:
-                                                          root:
-                                                            - font-extrabold
-                                                        text: " own code."
-                                              - uesio/io.box:
-                                                  components:
-                                                    - uesio/io.text:
-                                                        uesio.variant: uesio/web.calloutsmallsubdark
-                                                        uesio.styleTokens:
-                                                          root:
-                                                            - font-extrabold
-                                                            - md:text-lg
-                                                        text: "FREE "
-                                                    - uesio/io.text:
-                                                        uesio.variant: uesio/web.calloutsmallsubdark
-                                                        uesio.styleTokens:
-                                                          root:
-                                                            - inline
-                                                        text: to build and pay as you go for usage only.
+                                        - uesio/io.grid:
+                                            uesio.styleTokens:
+                                              root:
+                                                - grid
+                                                - pt-4
+                                                - grid-flow-row-dense
+                                            items:
+                                              - uesio/web.icon_text:
+                                                  text: Powerful, intuitive abstractions help you build faster
+                                                  icon: chevron_right
+                                                  color: "#a3e635"
+                                              - uesio/web.icon_text:
+                                                  text: Go beyond the abstractions when needed with custom code
+                                                  icon: chevron_right
+                                                  color: "#a3e635"
+                                              - uesio/web.icon_text:
+                                                  text: Open Source with a usage-based pricing model for hosting
+                                                  icon: chevron_right
+                                                  color: "#a3e635"
           - uesio/io.box:
               uesio.variant: uesio/web.mainlayout_dark
               components:
@@ -202,16 +192,16 @@ definition:
                                       components:
                                         - uesio/io.text:
                                             uesio.variant: uesio/web.calloutsmallsub
-                                            text: API with built-in
+                                            text: Built-in,
                                         - uesio/io.text:
                                             uesio.variant: uesio/web.calloutsmallsub
-                                            text: " security "
+                                            text: " secure-by-default "
                                             uesio.styleTokens:
                                               root:
                                                 - font-extrabold
                                         - uesio/io.text:
                                             uesio.variant: uesio/web.calloutsmallsub
-                                            text: to bypass custom coding vulnerabilities including record level conrol.
+                                            text: data access APIs prevent custom coding vulnerabilities.
                             - uesio/io.box:
                                 components:
                                   - uesio/io.text:
@@ -222,22 +212,13 @@ definition:
                                       components:
                                         - uesio/io.text:
                                             uesio.variant: uesio/web.calloutsmallsub
-                                            text: Can be run on your own
-                                        - uesio/io.text:
-                                            uesio.variant: uesio/web.calloutsmallsub
-                                            text: " servers "
+                                            text: " No lock-in: "
                                             uesio.styleTokens:
                                               root:
                                                 - font-extrabold
                                         - uesio/io.text:
                                             uesio.variant: uesio/web.calloutsmallsub
-                                            text: and behind your own
-                                        - uesio/io.text:
-                                            uesio.variant: uesio/web.calloutsmallsub
-                                            text: " security services. "
-                                            uesio.styleTokens:
-                                              root:
-                                                - font-extrabold
+                                            text: run Uesio in our infrastructure, or yours!
                       - uesio/io.grid:
                           uesio.variant: uesio/web.callout_double
                           uesio.styleTokens:
@@ -326,29 +307,22 @@ definition:
                                             components:
                                               - uesio/io.text:
                                                   uesio.variant: uesio/web.calloutsmallsubdark
-                                                  text: "No-Code "
+                                                  text: Quickly overcome the
+                                              - uesio/io.text:
+                                                  uesio.variant: uesio/web.calloutsmallsubdark
+                                                  text: " 10% trap "
                                                   uesio.styleTokens:
                                                     root:
                                                       - font-extrabold
                                               - uesio/io.text:
                                                   uesio.variant: uesio/web.calloutsmallsubdark
-                                                  text: "and"
-                                              - uesio/io.text:
-                                                  uesio.variant: uesio/web.calloutsmallsubdark
-                                                  text: " Low-Code "
-                                                  uesio.styleTokens:
-                                                    root:
-                                                      - font-extrabold
-                                              - uesio/io.text:
-                                                  uesio.variant: uesio/web.calloutsmallsubdark
-                                                  text: platforms quickly achieve 80% of a build,
-                                                    struggle with the next 10%, and the last 10% can’t bypass the abstraction.
+                                                  text: when creating apps and achieve 100% first time round.
                                   - uesio/io.box:
                                       uesio.variant: uesio/web.section
                                       components:
                                         - uesio/io.text:
                                             uesio.variant: uesio/web.calloutsmall_primary
-                                            text: Few native on-permise options
+                                            text: Few native on-premise options
                                         - uesio/io.box:
                                             uesio.variant: uesio/web.text_block
                                             components:
@@ -428,13 +402,10 @@ definition:
                                       text: Multiple layers of
                                   - uesio/io.text:
                                       uesio.variant: uesio/web.calloutsmallsubdark
-                                      text: " security "
+                                      text: " security. "
                                       uesio.styleTokens:
                                         root:
                                           - font-extrabold
-                                  - uesio/io.text:
-                                      uesio.variant: uesio/web.calloutsmallsubdark
-                                      text: including AI and machine learning.
                                 right:
                                   - uesio/io.text:
                                       uesio.variant: uesio/web.calloutsmallsubdark
@@ -453,23 +424,20 @@ definition:
                                       text: Interconnect and extend
                                   - uesio/io.text:
                                       uesio.variant: uesio/web.calloutsmallsub
-                                      text: " chosen platforms "
+                                      text: " your existing platforms. "
                                       uesio.styleTokens:
                                         root:
                                           - font-extrabold
-                                  - uesio/io.text:
-                                      uesio.variant: uesio/web.calloutsmallsub
-                                      text: in a single environment.
                                 right:
                                   - uesio/io.text:
                                       uesio.variant: uesio/web.calloutsmallsubdark
-                                      text: "Selectable infrastructure "
+                                      text: "Choose your infrastructure "
                                       uesio.styleTokens:
                                         root:
                                           - font-extrabold
                                   - uesio/io.text:
                                       uesio.variant: uesio/web.calloutsmallsubdark
-                                      text: AWS, Google or Microsoft.
+                                      text: AWS, GCP or Azure.
                             - uesio/web.arrow:
                                 arrow: uesio/web.arrow_primary_light
                                 left:
@@ -485,7 +453,7 @@ definition:
                                 right:
                                   - uesio/io.text:
                                       uesio.variant: uesio/web.calloutsmallsubdark
-                                      text: Eighter
+                                      text: Either
                                   - uesio/io.text:
                                       uesio.variant: uesio/web.calloutsmallsubdark
                                       text: " self-host "
@@ -494,10 +462,10 @@ definition:
                                           - font-extrabold
                                   - uesio/io.text:
                                       uesio.variant: uesio/web.calloutsmallsubdark
-                                      text: or build your
+                                      text: or let UES.IO run it for you on a
                                   - uesio/io.text:
                                       uesio.variant: uesio/web.calloutsmallsubdark
-                                      text: " own platform."
+                                      text: " Pay as You Go basis."
                                       uesio.styleTokens:
                                         root:
                                           - font-extrabold
@@ -506,22 +474,13 @@ definition:
                                 left:
                                   - uesio/io.text:
                                       uesio.variant: uesio/web.calloutsmallsub
-                                      text: "Source control "
+                                      text: "Everything out of the box, "
                                       uesio.styleTokens:
                                         root:
                                           - font-extrabold
                                   - uesio/io.text:
                                       uesio.variant: uesio/web.calloutsmallsub
-                                      text: and fine grain
-                                  - uesio/io.text:
-                                      uesio.variant: uesio/web.calloutsmallsub
-                                      text: " management "
-                                      uesio.styleTokens:
-                                        root:
-                                          - font-extrabold
-                                  - uesio/io.text:
-                                      uesio.variant: uesio/web.calloutsmallsub
-                                      text: in a single environment.
+                                      text: DB, user access management and UI components.
                                 right:
                                   - uesio/io.text:
                                       uesio.variant: uesio/web.calloutsmallsubdark
