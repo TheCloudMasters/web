@@ -22,7 +22,7 @@ definition:
                       - place-self-start
                     components:
                       - uesio/io.image:
-                          height: 40
+                          height: 60
                           file: uesio/web.logowhite_full
                           signals:
                             - signal: route/NAVIGATE
@@ -37,14 +37,9 @@ definition:
                             root:
                               - grid
                               - grid-flow-row
-                              - gap-8
                           components:
                             - uesio/io.box:
-                                uesio.styleTokens:
-                                  root:
-                                    - grid
-                                    - grid-flow-row
-                                    - gap-2
+                                uesio.variant: uesio/web.flex_structure_small
                                 components:
                                   - uesio/io.button:
                                       uesio.variant: uesio/web.footerlink
@@ -60,6 +55,12 @@ definition:
                                           path: pricing
                                   - uesio/io.button:
                                       uesio.variant: uesio/web.footerlink
+                                      text: Managed Package
+                                      signals:
+                                        - signal: route/NAVIGATE
+                                          path: managed-package
+                                  - uesio/io.button:
+                                      uesio.variant: uesio/web.footerlink
                                       text: Community
                                       signals:
                                         - signal: route/REDIRECT
@@ -73,9 +74,12 @@ definition:
                             - uesio/io.box:
                                 uesio.styleTokens:
                                   root:
-                                    - flex
-                                    - justify-between
+                                    - grid
+                                    - grid-flow-row
+                                    - sm:flex
+                                    - sm:justify-between
                                     - items-center
+                                    - mt-2
                                 components:
                                   - uesio/io.box:
                                       components:
@@ -107,10 +111,45 @@ definition:
                                                   signals:
                                                     - signal: route/NAVIGATE
                                                       path: terms
-
-                                  - uesio/io.image:
-                                      file: uesio/web.swissmade
-                                      height: 40
-                                      uesio.styleTokens:
-                                        root:
-                                          - m-2.5
+                                  - uesio/io.box:
+                                      components:
+                                        - uesio/io.box:
+                                            uesio.variant: uesio/web.flex_structure_small
+                                            uesio.styleTokens:
+                                              root:
+                                                - mb-4
+                                            components:
+                                              - uesio/io.image:
+                                                  height: 55
+                                                  file: uesio/web.aws
+                                                  signals:
+                                                    - signal: route/REDIRECT
+                                                      path: "https://aws.amazon.com/marketplace/pp/prodview-3s622khfhwbqi"
+                                                      newtab: true
+                                              - uesio/io.image:
+                                                  height: 55
+                                                  file: uesio/web.aws_marketplace
+                                                  signals:
+                                                    - signal: route/REDIRECT
+                                                      path: https://aws.amazon.com/marketplace/pp/prodview-3s622khfhwbqi
+                                                      newtab: true
+                                        - uesio/io.box:
+                                            uesio.variant: uesio/web.flex_structure_small
+                                            components:
+                                              - uesio/io.image:
+                                                  height: 40
+                                                  file: uesio/web.linkedin
+                                                  signals:
+                                                    - signal: route/REDIRECT
+                                                      path: https://www.linkedin.com/company/uesio
+                                                      newtab: true
+                                              - uesio/io.image:
+                                                  height: 40
+                                                  file: uesio/web.youtube
+                                                  signals:
+                                                    - signal: route/REDIRECT
+                                                      path: https://www.youtube.com/channel/UCPanoza3zR9zCgn7Y4dg6sw
+                                                      newtab: true
+                                              - uesio/io.image:
+                                                  file: uesio/web.swissmade
+                                                  height: 40

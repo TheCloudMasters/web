@@ -8,7 +8,9 @@
 		"lint": "prettier --check . && eslint bundle/**/*.ts* && tsc --noEmit",
 		"push": "uesio pack && uesio workspace deploy",
 		"pull": "uesio workspace retrieve",
-		"publish": "uesio bundle create"
+		"publish": "uesio bundle create",
+		"prettier-check": "prettier --check .",
+		"prettier-format": "prettier --write ."
 	},
 	"devDependencies": {
 		"@types/react": "^18.2.0",

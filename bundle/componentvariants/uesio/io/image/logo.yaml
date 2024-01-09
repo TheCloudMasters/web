@@ -1,0 +1,8 @@
+name: logo
+label: Logo List
+definition:
+  uesio.styleTokens:
+    root:
+      - h-[50px]
+      - w-fit
+      - self-center
