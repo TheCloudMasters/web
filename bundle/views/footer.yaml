@@ -124,7 +124,7 @@ definition:
                                                   file: uesio/web.aws
                                                   signals:
                                                     - signal: route/REDIRECT
-                                                      path: https://aws.amazon.com/marketplace/pp/prodview-3s622khfhwbqi
+                                                      path: "https://aws.amazon.com/marketplace/pp/prodview-3s622khfhwbqi"
                                                       newtab: true
                                               - uesio/io.image:
                                                   height: 55
