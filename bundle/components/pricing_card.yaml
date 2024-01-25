@@ -1,0 +1,453 @@
+name: pricing_card
+category: LAYOUT
+type: DECLARATIVE
+properties:
+  - name: uesio.id
+    label: Component Id
+    type: COMPONENT_ID
+  - name: categories_wire
+    label: Categories Wire
+    type: WIRE
+  - name: package_id
+    label: Package Id
+    type: TEXT
+  - name: name
+    label: Name
+    type: TEXT
+  - name: price
+    label: Price
+    type: NUMBER
+  - name: feature_1
+    label: Feature 1
+    type: TEXT
+  - name: feature_2
+    label: Feature 2
+    type: TEXT
+  - name: feature_3
+    label: Feature 3
+    type: TEXT
+  - name: support_package
+    label: Support Package
+    type: TEXT
+  - name: contact_us
+    label: Contact Us
+    type: CHECKBOX
+  - name: signup
+    label: Signup
+    type: CHECKBOX
+definition:
+  - uesio/io.box:
+      uesio.styleTokens:
+        root:
+          - rounded
+          - bg-[$Theme{color.white}]
+          - h-[315px]
+          - w-full
+          - grid
+          - grid-flow-row
+          - content-between
+          - px-auto
+          - pb-4
+          - max-w-[250px]
+          - min-w-[190px]
+      components:
+        - uesio/io.box:
+            components:
+              - uesio/io.text:
+                  uesio.styleTokens:
+                    root:
+                      - bg-[$Theme{color.secondary}]
+                      - text-white
+                      - font-[Gosha]
+                      - font-lg
+                      - justify-self-start
+                      - p-1
+                      - rounded-tl
+                      - rounded-br
+                      - w-fit
+                      - min-w-[33%]
+                  text: $Prop{name}
+                  align: center
+                  element: div
+        - uesio/io.box:
+            uesio.styleTokens:
+              root:
+                - text-center
+            components:
+              #Price
+              - uesio/io.text:
+                  uesio.display:
+                    - type: mergeValue
+                      sourceValue: $Prop{contact_us}
+                      operator: NOT_EQ
+                      value: true
+                  text: $Prop{price}
+                  element: div
+                  uesio.styleTokens:
+                    root:
+                      - text-[#f76540]
+                      - text-2xl
+                      - font-bold
+              #Subprice
+              - uesio/io.text:
+                  uesio.display:
+                    - type: mergeValue
+                      sourceValue: $Prop{contact_us}
+                      operator: NOT_EQ
+                      value: true
+                  text: $Prop{subprice}
+                  uesio.styleTokens:
+                    root:
+                      - text-[#f76540]
+                      - mb-4
+                      - text-1xl
+                      - font-bold
+              #Contact us
+              - uesio/io.text:
+                  uesio.display:
+                    - type: mergeValue
+                      sourceValue: $Prop{contact_us}
+                      value: true
+                  text: Contact us
+                  uesio.styleTokens:
+                    root:
+                      - text-[#f76540]
+                      - mb-4
+                      - text-1xl
+                      - font-bold
+        - uesio/io.box:
+            uesio.styleTokens:
+              root:
+                - text-center
+            components:
+              # Transactions loads
+              - uesio/io.deck:
+                  uesio.id: category_transaction_loads
+                  wire: $Prop{categories_wire}
+                  recordDisplay:
+                    - type: group
+                      conjunction: AND
+                      conditions:
+                        - type: fieldValue
+                          field: uesio/pricing.package_pricebook
+                          value: $Prop{package_id}
+                        - type: fieldValue
+                          field: uesio/pricing.category
+                          value: transaction_loads
+                  components:
+                    - uesio/io.box:
+                        uesio.display:
+                          - type: hasValue
+                            value: ${uesio/pricing.displayed_quantity}
+                        components:
+                          - uesio/io.text:
+                              uesio.variant: uesio/web.pricing_category
+                              text: ${uesio/pricing.displayed_quantity}
+                              uesio.styleTokens:
+                                root:
+                                  - font-bold
+                          - uesio/io.text:
+                              uesio.variant: uesio/web.pricing_category
+                              text: " Transaction Loads"
+              # Transactions saves
+              - uesio/io.deck:
+                  uesio.id: category_transaction_saves
+                  wire: $Prop{categories_wire}
+                  recordDisplay:
+                    - type: group
+                      conjunction: AND
+                      conditions:
+                        - type: fieldValue
+                          field: uesio/pricing.package_pricebook
+                          value: $Prop{package_id}
+                        - type: fieldValue
+                          field: uesio/pricing.category
+                          value: transaction_saves
+                  components:
+                    - uesio/io.box:
+                        uesio.display:
+                          - type: hasValue
+                            value: ${uesio/pricing.displayed_quantity}
+                        components:
+                          - uesio/io.text:
+                              uesio.variant: uesio/web.pricing_category
+                              text: ${uesio/pricing.displayed_quantity}
+                              uesio.styleTokens:
+                                root:
+                                  - font-bold
+                          - uesio/io.text:
+                              uesio.variant: uesio/web.pricing_category
+                              text: " Transaction Saves"
+              # File Downloads
+              - uesio/io.deck:
+                  uesio.id: category_file_downloads
+                  wire: $Prop{categories_wire}
+                  recordDisplay:
+                    - type: group
+                      conjunction: AND
+                      conditions:
+                        - type: fieldValue
+                          field: uesio/pricing.package_pricebook->uesio/core.id
+                          value: $Prop{package_id}
+                        - type: fieldValue
+                          field: uesio/pricing.category
+                          value: file_downloads
+                  components:
+                    - uesio/io.box:
+                        uesio.display:
+                          - type: hasValue
+                            value: ${uesio/pricing.displayed_quantity}
+                        components:
+                          - uesio/io.text:
+                              uesio.variant: uesio/web.pricing_category
+                              text: ${uesio/pricing.displayed_quantity}
+                              uesio.styleTokens:
+                                root:
+                                  - font-bold
+                          - uesio/io.text:
+                              uesio.variant: uesio/web.pricing_category
+                              text: " File Downloads"
+              # File Storage
+              - uesio/io.deck:
+                  uesio.id: category_file_storage
+                  wire: $Prop{categories_wire}
+                  recordDisplay:
+                    - type: group
+                      conjunction: AND
+                      conditions:
+                        - type: fieldValue
+                          field: uesio/pricing.package_pricebook->uesio/core.id
+                          value: $Prop{package_id}
+                        - type: fieldValue
+                          field: uesio/pricing.category
+                          value: file_storage
+                  components:
+                    - uesio/io.box:
+                        uesio.display:
+                          - type: hasValue
+                            value: ${uesio/pricing.displayed_quantity}
+                        components:
+                          - uesio/io.text:
+                              uesio.variant: uesio/web.pricing_category
+                              text: ${uesio/pricing.displayed_quantity}
+                              uesio.styleTokens:
+                                root:
+                                  - font-bold
+                          - uesio/io.text:
+                              uesio.variant: uesio/web.pricing_category
+                              text: " File Storage"
+              # Bot Invocations
+              - uesio/io.deck:
+                  uesio.id: category_bot_invocations
+                  wire: $Prop{categories_wire}
+                  recordDisplay:
+                    - type: group
+                      conjunction: AND
+                      conditions:
+                        - type: fieldValue
+                          field: uesio/pricing.package_pricebook->uesio/core.id
+                          value: $Prop{package_id}
+                        - type: fieldValue
+                          field: uesio/pricing.category
+                          value: bot_invocations
+                  components:
+                    - uesio/io.box:
+                        uesio.display:
+                          - type: hasValue
+                            value: ${uesio/pricing.displayed_quantity}
+                        components:
+                          - uesio/io.text:
+                              uesio.variant: uesio/web.pricing_category
+                              text: ${uesio/pricing.displayed_quantity}
+                              uesio.styleTokens:
+                                root:
+                                  - font-bold
+                          - uesio/io.text:
+                              uesio.variant: uesio/web.pricing_category
+                              text: " Bot Invocations"
+              # Data Records
+              - uesio/io.deck:
+                  uesio.id: category_data_records
+                  wire: $Prop{categories_wire}
+                  recordDisplay:
+                    - type: group
+                      conjunction: AND
+                      conditions:
+                        - type: fieldValue
+                          field: uesio/pricing.package_pricebook
+                          value: $Prop{package_id}
+                        - type: fieldValue
+                          field: uesio/pricing.category
+                          value: data_records
+                  components:
+                    - uesio/io.box:
+                        uesio.display:
+                          - type: hasValue
+                            value: ${uesio/pricing.displayed_quantity}
+                        components:
+                          - uesio/io.text:
+                              uesio.variant: uesio/web.pricing_category
+                              text: ${uesio/pricing.displayed_quantity}
+                              uesio.styleTokens:
+                                root:
+                                  - font-bold
+                          - uesio/io.text:
+                              uesio.variant: uesio/web.pricing_category
+                              text: " Data Records"
+              # Sites
+              - uesio/io.deck:
+                  uesio.id: category_data_records
+                  wire: $Prop{categories_wire}
+                  recordDisplay:
+                    - type: group
+                      conjunction: AND
+                      conditions:
+                        - type: fieldValue
+                          field: uesio/pricing.package_pricebook
+                          value: $Prop{package_id}
+                        - type: fieldValue
+                          field: uesio/pricing.category
+                          value: sites
+                  components:
+                    - uesio/io.box:
+                        uesio.display:
+                          - type: hasValue
+                            value: ${uesio/pricing.displayed_quantity}
+                        components:
+                          - uesio/io.text:
+                              uesio.variant: uesio/web.pricing_category
+                              text: ${uesio/pricing.displayed_quantity}
+                              uesio.styleTokens:
+                                root:
+                                  - font-bold
+                          - uesio/io.text:
+                              uesio.variant: uesio/web.pricing_category
+                              text: " Sites"
+              # Apps
+              - uesio/io.deck:
+                  uesio.id: category_data_records
+                  wire: packages
+                  recordDisplay:
+                    - type: group
+                      conjunction: AND
+                      conditions:
+                        - type: fieldValue
+                          field: uesio/pricing.package_pricebook
+                          value: $Prop{package_id}
+                        - type: fieldValue
+                          field: uesio/pricing.category
+                          value: apps
+                  components:
+                    - uesio/io.box:
+                        uesio.display:
+                          - type: hasValue
+                            value: ${uesio/pricing.displayed_quantity}
+                        components:
+                          - uesio/io.text:
+                              uesio.variant: uesio/web.pricing_category
+                              text: ${uesio/pricing.displayed_quantity}
+                              uesio.styleTokens:
+                                root:
+                                  - font-bold
+                          - uesio/io.text:
+                              uesio.variant: uesio/web.pricing_category
+                              text: " Apps"
+              - uesio/io.box:
+                  uesio.styleTokens:
+                    root:
+                      - pt-4
+                  components:
+                    # Feature 1
+                    - uesio/io.box:
+                        uesio.display:
+                          - type: hasValue
+                            value: $Prop{feature_1}
+                        components:
+                          - uesio/io.text:
+                              uesio.variant: uesio/web.pricing_category
+                              text: $Prop{feature_1}
+                    # Feature 2
+                    - uesio/io.box:
+                        uesio.display:
+                          - type: hasValue
+                            value: $Prop{feature_2}
+                        components:
+                          - uesio/io.text:
+                              uesio.variant: uesio/web.pricing_category
+                              text: $Prop{feature_2}
+                    # Feature 3
+                    - uesio/io.box:
+                        uesio.display:
+                          - type: hasValue
+                            value: $Prop{feature_3}
+                        components:
+                          - uesio/io.text:
+                              uesio.variant: uesio/web.pricing_category
+                              text: $Prop{feature_3}
+                    # Support Package
+                    - uesio/io.box:
+                        uesio.display:
+                          - type: hasValue
+                            value: $Prop{support_package}
+                        components:
+                          - uesio/io.text:
+                              uesio.variant: uesio/web.pricing_category
+                              text: $Prop{support_package}
+        - uesio/io.box:
+            uesio.styleTokens:
+              root:
+                - text-center
+                - h-full
+            components:
+              - uesio/io.button:
+                  uesio.variant: uesio/web.calltoaction
+                  uesio.display:
+                    - type: paramValue
+                      operator: NOT_EQUALS
+                      param: signup
+                      value: true
+                  uesio.styleTokens:
+                    root:
+                      - w-fit
+                      - md:px-8
+                  text: book a demo
+                  signals:
+                    - signal: route/REDIRECT
+                      path: demo
+              - uesio/io.button:
+                  uesio.variant: uesio/web.calltoaction
+                  uesio.display:
+                    - type: paramValue
+                      operator: EQUALS
+                      param: signup
+                      value: true
+                  uesio.styleTokens:
+                    root:
+                      - w-fit
+                      - md:px-8
+                  text: sign up
+                  signals:
+                    - signal: route/REDIRECT
+                      path: signup
+title: Pricing Card
+discoverable: true
+description: Package / Template Pricing card
+defaultDefinition:
+sections:
+  - type: HOME
+    properties:
+      - uesio.id
+      - name
+      - price
+      - feature_1
+      - feature_2
+      - feature_3
+      - support_package
+      - contact_us
+      - signup
+      - categories_wire
+      - package_id
+  - type: STYLES
+  - type: DISPLAY
+signals: null
+styleRegions: null

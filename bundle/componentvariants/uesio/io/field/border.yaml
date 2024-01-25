@@ -1,0 +1,16 @@
+name: border
+label: Border
+extends: uesio/io.default
+definition:
+  uesio.styleTokens:
+    readonly:
+      - border-[3px]
+      - border-[$Theme{color.dark}]
+      - bg-transparent
+      - self-end
+    input:
+      - bg-transparent
+      - border-[3px]
+      - self-end
+      - border-[$Theme{color.dark}]
+public: true

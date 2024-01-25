@@ -1,0 +1,16 @@
+name: border_primary
+label: Border Primary
+extends: uesio/io.default
+definition:
+  uesio.styleTokens:
+    readonly:
+      - border-[3px]
+      - border-[$Theme{color.primary}]
+      - bg-transparent
+      - self-end
+    input:
+      - bg-transparent
+      - border-[3px]
+      - self-end
+      - border-[$Theme{color.primary}]
+public: true

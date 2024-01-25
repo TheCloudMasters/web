@@ -1,0 +1,392 @@
+name: pricingcard_v2
+definition:
+  params:
+    package_id:
+      type: RECORD
+      required: true
+      collection: uesio/pricing.package_pricebook
+    name:
+      type: TEXT
+      required: false
+    price:
+      type: TEXT
+      required: false
+    feature_1:
+      type: TEXT
+      required: false
+    feature_2:
+      type: TEXT
+      required: false
+    feature_3:
+      type: TEXT
+      required: false
+    support_package:
+      type: TEXT
+      required: false
+    contact_us:
+      type: TEXT
+      required: false
+    signup:
+      type: TEXT
+      required: false
+  wires:
+    categories:
+      collection: uesio/pricing.category_quote
+      fields:
+        uesio/pricing.category:
+        uesio/pricing.id:
+        uesio/pricing.displayed_quantity:
+        uesio/pricing.package_pricebook:
+          fields:
+            uesio/pricing.id:
+      conditions:
+        - field: uesio/pricing.package_pricebook
+          valueSource: VALUE
+          operator: EQ
+          value: $Param{package_id}
+  components:
+    - uesio/io.box:
+        uesio.styleTokens:
+          root:
+            - rounded
+            - bg-[$Theme{color.white}]
+            - h-[315px]
+            - w-full
+            - grid
+            - grid-flow-row
+            - content-between
+            - px-auto
+            - pb-4
+            - max-w-[250px]
+            - min-w-[190px]
+        components:
+          - uesio/io.box:
+              components:
+                - uesio/io.text:
+                    uesio.styleTokens:
+                      root:
+                        - bg-[$Theme{color.secondary}]
+                        - text-white
+                        - font-[Gosha]
+                        - font-lg
+                        - justify-self-start
+                        - p-1
+                        - rounded-tl
+                        - rounded-br
+                        - w-fit
+                        - min-w-[33%]
+                    text: $Param{name}
+                    align: center
+                    element: div
+          - uesio/io.box:
+              uesio.styleTokens:
+                root:
+                  - text-center
+              components:
+                #Price
+                - uesio/io.text:
+                    uesio.display:
+                      - type: mergeValue
+                        sourceValue: $Param{contact_us}
+                        operator: NOT_EQ
+                        value: true
+                    text: $Param{price}
+                    element: div
+                    uesio.styleTokens:
+                      root:
+                        - text-[#f76540]
+                        - text-2xl
+                        - font-bold
+                #Subprice
+                - uesio/io.text:
+                    uesio.display:
+                      - type: mergeValue
+                        sourceValue: $Param{contact_us}
+                        operator: NOT_EQ
+                        value: true
+                    text: $Param{subprice}
+                    uesio.styleTokens:
+                      root:
+                        - text-[#f76540]
+                        - mb-4
+                        - text-1xl
+                        - font-bold
+                #Contact us
+                - uesio/io.text:
+                    uesio.display:
+                      - type: mergeValue
+                        sourceValue: $Param{contact_us}
+                        value: true
+                    text: Contact us
+                    uesio.styleTokens:
+                      root:
+                        - text-[#f76540]
+                        - mb-4
+                        - text-1xl
+                        - font-bold
+          - uesio/io.box:
+              uesio.styleTokens:
+                root:
+                  - text-center
+              components:
+                # Transactions loads
+                - uesio/io.deck:
+                    uesio.id: category_transaction_loads
+                    wire: packages
+                    recordDisplay:
+                      - type: fieldValue
+                        field: uesio/pricing.category
+                        value: transaction_loads
+                    components:
+                      - uesio/io.box:
+                          uesio.display:
+                            - type: hasValue
+                              value: ${uesio/pricing.displayed_quantity}
+                          components:
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.pricing_category
+                                text: ${uesio/pricing.displayed_quantity}
+                                uesio.styleTokens:
+                                  root:
+                                    - font-bold
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.pricing_category
+                                text: " Transaction Loads"
+                # Transactions saves
+                - uesio/io.deck:
+                    uesio.id: category_transaction_saves
+                    wire: packages
+                    recordDisplay:
+                      - type: fieldValue
+                        field: uesio/pricing.category
+                        value: transaction_saves
+                    components:
+                      - uesio/io.box:
+                          uesio.display:
+                            - type: hasValue
+                              value: ${uesio/pricing.displayed_quantity}
+                          components:
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.pricing_category
+                                text: ${uesio/pricing.displayed_quantity}
+                                uesio.styleTokens:
+                                  root:
+                                    - font-bold
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.pricing_category
+                                text: " Transaction Saves"
+                # File Downloads
+                - uesio/io.deck:
+                    uesio.id: category_file_downloads
+                    wire: packages
+                    recordDisplay:
+                      - type: fieldValue
+                        field: uesio/pricing.category
+                        value: file_downloads
+                    components:
+                      - uesio/io.box:
+                          uesio.display:
+                            - type: hasValue
+                              value: ${uesio/pricing.displayed_quantity}
+                          components:
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.pricing_category
+                                text: ${uesio/pricing.displayed_quantity}
+                                uesio.styleTokens:
+                                  root:
+                                    - font-bold
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.pricing_category
+                                text: " File Downloads"
+                # File Storage
+                - uesio/io.deck:
+                    uesio.id: category_file_storage
+                    wire: packages
+                    recordDisplay:
+                      - type: fieldValue
+                        field: uesio/pricing.category
+                        value: file_storage
+                    components:
+                      - uesio/io.box:
+                          uesio.display:
+                            - type: hasValue
+                              value: ${uesio/pricing.displayed_quantity}
+                          components:
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.pricing_category
+                                text: ${uesio/pricing.displayed_quantity}
+                                uesio.styleTokens:
+                                  root:
+                                    - font-bold
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.pricing_category
+                                text: " File Storage"
+                # Bot Invocations
+                - uesio/io.deck:
+                    uesio.id: category_bot_invocations
+                    wire: packages
+                    recordDisplay:
+                      - type: fieldValue
+                        field: uesio/pricing.category
+                        value: bot_invocations
+                    components:
+                      - uesio/io.box:
+                          uesio.display:
+                            - type: hasValue
+                              value: ${uesio/pricing.displayed_quantity}
+                          components:
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.pricing_category
+                                text: ${uesio/pricing.displayed_quantity}
+                                uesio.styleTokens:
+                                  root:
+                                    - font-bold
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.pricing_category
+                                text: " Bot Invocations"
+                # Data Records
+                - uesio/io.deck:
+                    uesio.id: category_data_records
+                    wire: packages
+                    recordDisplay:
+                      - type: fieldValue
+                        field: uesio/pricing.category
+                        value: data_records
+                    components:
+                      - uesio/io.box:
+                          uesio.display:
+                            - type: hasValue
+                              value: ${uesio/pricing.displayed_quantity}
+                          components:
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.pricing_category
+                                text: ${uesio/pricing.displayed_quantity}
+                                uesio.styleTokens:
+                                  root:
+                                    - font-bold
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.pricing_category
+                                text: " Data Records"
+                # Sites
+                - uesio/io.deck:
+                    uesio.id: category_data_records
+                    wire: packages
+                    recordDisplay:
+                      - type: fieldValue
+                        field: uesio/pricing.category
+                        value: sites
+                    components:
+                      - uesio/io.box:
+                          uesio.display:
+                            - type: hasValue
+                              value: ${uesio/pricing.displayed_quantity}
+                          components:
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.pricing_category
+                                text: ${uesio/pricing.displayed_quantity}
+                                uesio.styleTokens:
+                                  root:
+                                    - font-bold
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.pricing_category
+                                text: " Sites"
+                # Apps
+                - uesio/io.deck:
+                    uesio.id: category_data_records
+                    wire: packages
+                    recordDisplay:
+                      - type: fieldValue
+                        field: uesio/pricing.category
+                        value: apps
+                    components:
+                      - uesio/io.box:
+                          uesio.display:
+                            - type: hasValue
+                              value: ${uesio/pricing.displayed_quantity}
+                          components:
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.pricing_category
+                                text: ${uesio/pricing.displayed_quantity}
+                                uesio.styleTokens:
+                                  root:
+                                    - font-bold
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.pricing_category
+                                text: " Apps"
+                - uesio/io.box:
+                    uesio.styleTokens:
+                      root:
+                        - pt-4
+                    components:
+                      # Feature 1
+                      - uesio/io.box:
+                          uesio.display:
+                            - type: hasValue
+                              value: $Param{feature_1}
+                          components:
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.pricing_category
+                                text: $Param{feature_1}
+                      # Feature 2
+                      - uesio/io.box:
+                          uesio.display:
+                            - type: hasValue
+                              value: $Param{feature_2}
+                          components:
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.pricing_category
+                                text: $Param{feature_2}
+                      # Feature 3
+                      - uesio/io.box:
+                          uesio.display:
+                            - type: hasValue
+                              value: $Param{feature_3}
+                          components:
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.pricing_category
+                                text: $Param{feature_3}
+                      # Support Package
+                      - uesio/io.box:
+                          uesio.display:
+                            - type: hasValue
+                              value: $Param{support_package}
+                          components:
+                            - uesio/io.text:
+                                uesio.variant: uesio/web.pricing_category
+                                text: $Param{support_package}
+          - uesio/io.box:
+              uesio.styleTokens:
+                root:
+                  - text-center
+                  - h-full
+              components:
+                - uesio/io.button:
+                    uesio.variant: uesio/web.calltoaction
+                    uesio.display:
+                      - type: paramValue
+                        operator: NOT_EQUALS
+                        param: signup
+                        value: true
+                    uesio.styleTokens:
+                      root:
+                        - w-fit
+                        - md:px-8
+                    text: book a demo
+                    signals:
+                      - signal: route/REDIRECT
+                        path: demo
+                - uesio/io.button:
+                    uesio.variant: uesio/web.calltoaction
+                    uesio.display:
+                      - type: paramValue
+                        operator: EQUALS
+                        param: signup
+                        value: true
+                    uesio.styleTokens:
+                      root:
+                        - w-fit
+                        - md:px-8
+                    text: sign up
+                    signals:
+                      - signal: route/REDIRECT
+                        path: signup

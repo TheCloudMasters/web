@@ -1,0 +1,97 @@
+name: inputs
+category: CONTENT
+type: DECLARATIVE
+slots:
+properties:
+  - name: field
+    label: Field
+    type: FIELD
+  - name: flex1
+    label: Flex 1
+    type: TEXT
+  - name: flex2
+    label: Flex 2
+    type: TEXT
+  - name: wire1
+    label: Wire 1
+    type: WIRE
+  - name: wire2
+    label: Wire 2
+    type: WIRE
+  - name: mode1
+    label: Mode 1
+    type: TEXT
+  - name: mode2
+    label: Mode 2
+    type: TEXT
+  - name: variant1
+    label: Variant 1
+    type: TEXT
+definition:
+  - uesio/io.box:
+      uesio.variant: uesio/web.flex_structure_small
+      components:
+        - uesio/io.box:
+            uesio.styleTokens:
+              root:
+                - flex-[$Prop{flex1}]
+            components:
+              - uesio/io.item:
+                  wire: $Prop{wire1}
+                  mode: $Prop{mode1}
+                  components:
+                    - uesio/io.field:
+                        uesio.display:
+                          - type: fieldMode
+                            mode: EDIT
+                        uesio.variant: uesio/web.border
+                        fieldId: $Prop{field}
+                    - uesio/io.field:
+                        uesio.display:
+                          - type: fieldMode
+                            mode: READ
+                        uesio.variant: uesio/web.border_primary
+                        fieldId: $Prop{field}
+        - uesio/io.box:
+            uesio.styleTokens:
+              root:
+                - flex-[$Prop{flex2}]
+                - self-end
+            components:
+              - uesio/io.item:
+                  wire: $Prop{wire2}
+                  mode: $Prop{mode2}
+                  components:
+                    - uesio/io.field:
+                        uesio.display:
+                          - type: fieldMode
+                            mode: EDIT
+                        uesio.variant: uesio/web.border
+                        labelPosition: none
+                        fieldId: $Prop{field}
+                    - uesio/io.field:
+                        uesio.display:
+                          - type: fieldMode
+                            mode: READ
+                        uesio.variant: uesio/web.border_primary
+                        labelPosition: none
+                        fieldId: $Prop{field}
+title: Flex left right
+discoverable: true
+description:
+defaultDefinition:
+sections:
+  - type: HOME
+    properties:
+      - field
+      - wire1
+      - wire2
+      - flex1
+      - flex2
+      - mode1
+      - mode2
+      - variant1
+  - type: STYLES
+  - type: DISPLAY
+signals: null
+styleRegions: null

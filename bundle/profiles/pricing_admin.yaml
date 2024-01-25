@@ -1,7 +1,7 @@
-name: public
-homeRoute: uesio/web.home
+name: pricing_admin
+homeRoute: uesio/pricing.admin
 permissionSets:
   - uesio/core.public
   - uesio/web.public
-  - uesio/crm.public
   - uesio/pricing.pricing_public
+  - uesio/pricing.pricing_admin

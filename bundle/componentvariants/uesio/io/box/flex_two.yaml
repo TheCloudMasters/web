@@ -1,0 +1,6 @@
+name: flex_two
+label: Flex Two
+definition:
+  uesio.styleTokens:
+    root:
+      - flex-[2]

@@ -1,0 +1,6 @@
+name: pricing_login
+path: pricing/login
+type: redirect
+redirect: https://$Site{domain}/site/app/uesio/pricing/login
+title: Pricing - Login
+public: true

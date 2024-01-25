@@ -1,0 +1,222 @@
+name: pricing_packages
+definition:
+  params:
+    package:
+      type: TEXT
+      required: false
+  wires:
+    packages:
+      collection: uesio/pricing.package_pricebook
+      fields:
+        uesio/pricing.name:
+        uesio/pricing.price:
+        uesio/pricing.contact_us:
+        uesio/pricing.signup:
+        uesio/pricing.feature_1:
+        uesio/pricing.feature_2:
+        uesio/pricing.feature_3:
+        uesio/pricing.support_package:
+        uesio/pricing.active:
+        uesio/pricing.id:
+      conditions:
+        - field: uesio/pricing.active
+          value: true
+        - field: uesio/pricing.id
+          valueSource: VALUE
+          inactive: true
+          id: single_package
+          value: $Param{package}
+      init:
+        query: true
+  components:
+    - uesio/io.deck:
+        uesio.id: pricing_cards
+        wire: packages
+        uesio.styleTokens:
+          root:
+            - grid
+            - gap-8
+            - lg:grid-flow-col
+            - h-fit
+            - w-fit
+            - mx-auto
+            - m-8
+            - container
+        components:
+          - uesio/io.box:
+              uesio.styleTokens:
+                root:
+                  - rounded
+                  - bg-[$Theme{color.white}]
+                  - h-[315px]
+                  - w-full
+                  - grid
+                  - grid-flow-row
+                  - content-between
+                  - px-auto
+                  - pb-4
+                  - max-w-[250px]
+                  - min-w-[190px]
+              components:
+                - uesio/io.box:
+                    components:
+                      - uesio/io.text:
+                          uesio.styleTokens:
+                            root:
+                              - bg-[$Theme{color.secondary}]
+                              - text-white
+                              - font-[Gosha]
+                              - font-lg
+                              - justify-self-start
+                              - p-1
+                              - rounded-tl
+                              - rounded-br
+                              - w-fit
+                              - min-w-[33%]
+                          text: ${uesio/pricing.name}
+                          align: center
+                          element: div
+                - uesio/io.box:
+                    uesio.styleTokens:
+                      root:
+                        - text-center
+                    components:
+                      #Price
+                      - uesio/io.box:
+                          components:
+                            - uesio/io.text:
+                                uesio.display:
+                                  - type: mergeValue
+                                    sourceValue: ${uesio/pricing.contact_us}
+                                    operator: NOT_EQUALS
+                                    value: true
+                                text: $
+                                element: div
+                                uesio.styleTokens:
+                                  root:
+                                    - text-[#f76540]
+                                    - text-2xl
+                                    - font-bold
+                                    - inline-block
+                            - uesio/io.text:
+                                uesio.display:
+                                  - type: mergeValue
+                                    sourceValue: ${uesio/pricing.contact_us}
+                                    operator: NOT_EQUALS
+                                    value: true
+                                text: ${uesio/pricing.price}
+                                element: div
+                                uesio.styleTokens:
+                                  root:
+                                    - text-[#f76540]
+                                    - text-2xl
+                                    - font-bold
+                                    - inline-block
+                      #Subprice
+                      - uesio/io.text:
+                          uesio.display:
+                            - type: mergeValue
+                              sourceValue: ${uesio/pricing.contact_us}
+                              operator: NOT_EQUALS
+                              value: true
+                          text: /month
+                          uesio.styleTokens:
+                            root:
+                              - text-[#f76540]
+                              - mb-4
+                              - text-1xl
+                              - font-bold
+                      #Contact us
+                      - uesio/io.text:
+                          uesio.display:
+                            - type: mergeValue
+                              sourceValue: ${uesio/pricing.contact_us}
+                              value: true
+                          text: Contact us
+                          uesio.styleTokens:
+                            root:
+                              - text-[#f76540]
+                              - mb-4
+                              - text-1xl
+                              - font-bold
+                      - uesio/core.view:
+                          view: uesio/web.pricing_package_categories
+                          params:
+                            package_id: ${uesio/pricing.id}
+                      - uesio/io.box:
+                          uesio.styleTokens:
+                            root:
+                              - pt-4
+                          components:
+                            # Feature 1
+                            - uesio/io.box:
+                                uesio.display:
+                                  - type: hasValue
+                                    value: ${uesio/pricing.feature_1}
+                                components:
+                                  - uesio/io.text:
+                                      uesio.variant: uesio/web.pricing_category
+                                      text: ${uesio/pricing.feature_1}
+                            # Feature 2
+                            - uesio/io.box:
+                                uesio.display:
+                                  - type: hasValue
+                                    value: ${uesio/pricing.feature_2}
+                                components:
+                                  - uesio/io.text:
+                                      uesio.variant: uesio/web.pricing_category
+                                      text: ${uesio/pricing.feature_2}
+                            # Feature 3
+                            - uesio/io.box:
+                                uesio.display:
+                                  - type: hasValue
+                                    value: ${uesio/pricing.feature_3}
+                                components:
+                                  - uesio/io.text:
+                                      uesio.variant: uesio/web.pricing_category
+                                      text: ${uesio/pricing.feature_3}
+                            # Support Package
+                            - uesio/io.box:
+                                uesio.display:
+                                  - type: hasValue
+                                    value: ${uesio/pricing.support_package}
+                                components:
+                                  - uesio/io.text:
+                                      uesio.variant: uesio/web.pricing_category
+                                      text: ${uesio/pricing.support_package}
+                - uesio/io.box:
+                    uesio.styleTokens:
+                      root:
+                        - text-center
+                        - h-full
+                    components:
+                      - uesio/io.button:
+                          uesio.variant: uesio/web.calltoaction
+                          uesio.display:
+                            - type: fieldValue
+                              field: uesio/pricing.signup
+                              value: true
+                              operator: NOT_EQUALS
+                          uesio.styleTokens:
+                            root:
+                              - w-fit
+                              - md:px-8
+                          text: book a demo
+                          signals:
+                            - signal: route/REDIRECT
+                              path: demo
+                      - uesio/io.button:
+                          uesio.variant: uesio/web.calltoaction
+                          uesio.display:
+                            - type: fieldValue
+                              field: uesio/pricing.signup
+                              value: true
+                              operator: signup
+                          uesio.styleTokens:
+                            root:
+                              - w-fit
+                              - md:px-8
+                          text: sign up
+                          signals:
+                            - signal: route/REDIRECT
+                              path: signup

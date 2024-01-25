@@ -15,6 +15,7 @@ views:
   uesio/web.preview: true
   uesio/web.pricing: true
   uesio/web.pricingcard: true
+  uesio/web.pricingcard_v2: true
   uesio/web.privacy: true
   uesio/web.terms: true
   uesio/web.topbar: true
@@ -58,6 +59,7 @@ routes:
   uesio/web.changepassword: true
   uesio/web.requestpassword: true
   uesio/web.login: true
+  uesio/web.pricing_login: true
 files:
   uesio/web.agco_logo: true
   uesio/web.amazon_logo: true

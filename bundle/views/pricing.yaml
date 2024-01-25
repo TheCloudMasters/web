@@ -1,6 +1,21 @@
 name: pricing
 definition:
   wires:
+    packages:
+      collection: uesio/pricing.package_pricebook
+      fields:
+        uesio/core.id:
+        uesio/pricing.active:
+        uesio/pricing.display_order:
+      order:
+        - field: uesio/pricing.display_order
+          desc: false
+      conditions:
+        - field: uesio/pricing.active
+          operator: EQ
+          value: true
+      init:
+        query: true
   components:
     - uesio/web.main_layout:
         inner:
@@ -25,56 +40,10 @@ definition:
                       root:
                         - py-0
                         - pb-16
+                        - place-items-center
                     items:
-                      - uesio/io.grid:
-                          uesio.styleTokens:
-                            root:
-                              - flex
-                              - flex-wrap
-                              - gap-8
-                              - justify-center
-                          items:
-                            - uesio/core.view:
-                                view: uesio/web.pricingcard
-                                params:
-                                  title: Free
-                                  price: $0
-                                  subprice: /month
-                                  transactions: 20K
-                                  storage: 500MB
-                                  downloads: 500MB
-                                  community: true
-                            - uesio/core.view:
-                                view: uesio/web.pricingcard
-                                params:
-                                  title: Small
-                                  price: $249
-                                  subprice: /month
-                                  transactions: 500K
-                                  downloads: 20GB
-                                  storage: 10GB
-                                  sla: 24h
-                            - uesio/core.view:
-                                view: uesio/web.pricingcard
-                                params:
-                                  title: Medium
-                                  price: $799
-                                  subprice: /month
-                                  transactions: 1.5m
-                                  storage: 250GB
-                                  downloads: 60GB
-                                  sla: 24h
-                            - uesio/core.view:
-                                view: uesio/web.pricingcard
-                                params:
-                                  title: Large
-                                  price: Contact us
-                                  transactions: ∞
-                                  storage: ∞
-                                  downloads: ∞
-                                  domain: Own Domain
-                                  sla: 12h
-                                  enterprise: true
+                      - uesio/core.view:
+                          view: uesio/web.pricing_packages
                 - uesio/io.box:
                     uesio.variant: uesio/web.mainlayout
                     components:
@@ -219,3 +188,5 @@ definition:
                                               you can simply cancel your subscription which will then
                                               end on the last day of the month you canceled and you
                                               can export all your data at any time and move on.
+          - uesio/core.view:
+              view: uesio/web.pricing_simulator

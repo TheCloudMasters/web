@@ -1,0 +1,13 @@
+name: pricing_small_dark
+label: Pricing Small Dark
+definition:
+  uesio.styleTokens:
+    root:
+      - text-xl
+      - md:text-2xl
+      - text-[$Theme{color.dark}]
+      - font-[Gosha]
+      - font-normal
+      - mb-1
+      - md:mb-2
+  element: h3

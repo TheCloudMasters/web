@@ -1,0 +1,613 @@
+name: pricing_simulator
+definition:
+  wires:
+    # Inputs
+    setup:
+      viewOnly: true
+      fields:
+        apps:
+          label: Apps
+          type: NUMBER
+          required: true
+        users:
+          label: Users
+          type: NUMBER
+          required: true
+        sites:
+          label: Sites
+          type: NUMBER
+          required: true
+        days:
+          label: Workdays per month
+          type: NUMBER
+          required: true
+          number:
+            decimals: 0
+      init:
+        query: false
+        create: true
+      defaults:
+        - field: apps
+          valueSource: VALUE
+          value: 1
+        - field: users
+          valueSource: VALUE
+          value: 1
+        - field: sites
+          valueSource: VALUE
+          value: 1
+        - field: days
+          valueSource: VALUE
+          value: 22
+      events:
+        #Update Day Fields if <apps&&users> not blank
+        - type: onChange
+          fields:
+            - apps
+            - users
+          conditions:
+            - type: group
+              conjunction: AND
+              conditions:
+                - type: hasValue
+                  value: $Record{setup:apps}
+                - type: hasValue
+                  value: $Record{setup:users}
+                - type: group
+                  conjunction: OR
+                  conditions:
+                    - type: hasValue
+                      value: $Record{customizeUsage_month:file_storage}
+                    - type: hasValue
+                      value: $Record{customizeUsage_month:file_downloads}
+                    - type: hasValue
+                      value: $Record{customizeUsage_month:bot_invocations}
+                    - type: hasValue
+                      value: $Record{customizeUsage_month:transaction_loads}
+                    - type: hasValue
+                      value: $Record{customizeUsage_month:transaction_saves}
+                    - type: hasValue
+                      value: $Record{customizeUsage_month:data_records}
+          signals:
+            - signal: bot/CALL
+              bot: uesio/pricing.total_to_day
+              stepId: inputs
+              params:
+                apps: $Record{setup:apps}
+                users: $Record{setup:users}
+                days: $Record{setup:days}
+                file_storage: $Record{customizeUsage_month:file_storage}
+                file_downloads: $Record{customizeUsage_month:file_downloads}
+                bot_invocations: $Record{customizeUsage_month:bot_invocations}
+                transaction_loads: $Record{customizeUsage_month:transaction_loads}
+                transaction_saves: $Record{customizeUsage_month:transaction_saves}
+                data_records: $Record{customizeUsage_month:data_records}
+            - signal: wire/UPDATE_FIELDS
+              wire: customizeUsage_day
+              fields:
+                - field: file_storage
+                  value: $SignalOutput{inputs:file_storage}
+                - field: file_downloads
+                  value: $SignalOutput{inputs:file_downloads}
+                - field: bot_invocations
+                  value: $SignalOutput{inputs:bot_invocations}
+                - field: transaction_loads
+                  value: $SignalOutput{inputs:transaction_loads}
+                - field: transaction_saves
+                  value: $SignalOutput{inputs:transaction_saves}
+                - field: data_records
+                  value: $SignalOutput{inputs:data_records}
+    customizeUsage_month:
+      viewOnly: true
+      fields:
+        file_storage:
+          label: File Storage (MB)
+          type: NUMBER
+        file_downloads:
+          label: File Downloads (MB)
+          type: NUMBER
+        bot_invocations:
+          label: Bot Invocations
+          type: NUMBER
+        transaction_loads:
+          type: NUMBER
+          label: Transaction Loads
+        transaction_saves:
+          type: NUMBER
+          label: Transaction Saves
+        data_records:
+          type: NUMBER
+          label: Records Created
+      init:
+        query: false
+        create: true
+      events:
+        #Update Day Fields if <apps&&users> not blank
+        - type: onChange
+          fields:
+            - file_storage
+            - file_downloads
+            - bot_invocations
+            - transaction_loads
+            - transaction_saves
+            - data_records
+          conditions:
+            - type: hasValue
+              value: $Record{setup:apps}
+            - type: hasValue
+              value: $Record{setup:users}
+          signals:
+            - signal: bot/CALL
+              bot: uesio/pricing.total_to_day
+              stepId: inputs_month
+              params:
+                apps: $Record{setup:apps}
+                users: $Record{setup:users}
+                days: $Record{setup:days}
+                file_storage: $Record{customizeUsage_month:file_storage}
+                file_downloads: $Record{customizeUsage_month:file_downloads}
+                bot_invocations: $Record{customizeUsage_month:bot_invocations}
+                transaction_loads: $Record{customizeUsage_month:transaction_loads}
+                transaction_saves: $Record{customizeUsage_month:transaction_saves}
+                data_records: $Record{customizeUsage_month:data_records}
+            - signal: wire/UPDATE_FIELDS
+              wire: customizeUsage_day
+              fields:
+                - field: file_storage
+                  value: $SignalOutput{inputs_month:file_storage}
+                - field: file_downloads
+                  value: $SignalOutput{inputs_month:file_downloads}
+                - field: bot_invocations
+                  value: $SignalOutput{inputs_month:bot_invocations}
+                - field: transaction_loads
+                  value: $SignalOutput{inputs_month:transaction_loads}
+                - field: transaction_saves
+                  value: $SignalOutput{inputs_month:transaction_saves}
+                - field: data_records
+                  value: $SignalOutput{inputs_month:data_records}
+    customizeUsage_day:
+      viewOnly: true
+      fields:
+        file_storage:
+          label: " "
+          type: NUMBER
+        file_downloads:
+          label: " "
+          type: NUMBER
+        bot_invocations:
+          label: " "
+          type: NUMBER
+        transaction_loads:
+          label: " "
+          type: NUMBER
+        transaction_saves:
+          label: " "
+          type: NUMBER
+        data_records:
+          label: " "
+          type: NUMBER
+      init:
+        query: false
+        create: true
+    limitations:
+      viewOnly: true
+      fields:
+        file_storage:
+          label: File Storage (MB)
+          type: NUMBER
+        file_downloads:
+          label: File Downloads (MB)
+          type: NUMBER
+        bot_invocations:
+          label: Bot Invocations
+          type: NUMBER
+        transaction_loads:
+          type: NUMBER
+          label: Transaction Loads
+        transaction_saves:
+          type: NUMBER
+          label: Transaction Saves
+        data_records:
+          type: NUMBER
+          label: Records Created
+      init:
+        query: false
+        create: true
+    output_overcharge:
+      viewOnly: true
+      fields:
+        file_storage:
+          label: File Storage (MB)
+          type: NUMBER
+        file_downloads:
+          label: File Downloads (MB)
+          type: NUMBER
+        bot_invocations:
+          label: Bot Invocations
+          type: NUMBER
+        transaction_loads:
+          type: NUMBER
+          label: Transaction Loads
+        transaction_saves:
+          type: NUMBER
+          label: Transaction Saves
+        data_records:
+          type: NUMBER
+          label: Records Created
+      init:
+        query: false
+        create: true
+    output_max_quantity:
+      viewOnly: true
+      fields:
+        file_storage:
+          label: File Storage (MB)
+          type: NUMBER
+        file_downloads:
+          label: File Downloads (MB)
+          type: NUMBER
+        bot_invocations:
+          label: Bot Invocations
+          type: NUMBER
+        transaction_loads:
+          type: NUMBER
+          label: Transaction Loads
+        transaction_saves:
+          type: NUMBER
+          label: Transaction Saves
+        data_records:
+          type: NUMBER
+          label: Records Created
+      init:
+        query: false
+        create: true
+    output_control:
+      viewOnly: true
+      init:
+        create: true
+      fields:
+        #Recommended
+        recommended_package_id:
+          type: TEXT
+          label: Recommended Package Id
+        recommended_package_name:
+          type: TEXT
+          label: Recommended Package Name
+        recommended_package_price:
+          type: NUMBER
+          label: Recommended Package Price
+        #Selected
+        selected_package_id:
+          type: TEXT
+          label: Selected Package Id
+        selected_package_name:
+          type: TEXT
+          label: Selected Package Name
+        selected_package_price:
+          type: TEXT
+          label: Selected Package Price
+        #Total's
+        total_overcharge:
+          type: NUMBER
+          label: Overcharge
+        total_price:
+          type: NUMBER
+          label: Price
+
+  components:
+    - uesio/io.box:
+        uesio.variant: uesio/web.mainlayout
+        components:
+          - uesio/io.grid:
+              uesio.variant: uesio/web.callout
+              items:
+                - uesio/io.text:
+                    uesio.variant: uesio/web.calloutsmedium_dark
+                    text: "Pricing Simulator"
+    - uesio/io.box:
+        uesio.variant: uesio/web.mainlayout
+        components:
+          - uesio/io.grid:
+              uesio.variant: uesio/web.mainlayout
+              items:
+                - uesio/io.box:
+                    components:
+                      - uesio/io.grid:
+                          uesio.variant: uesio/web.pricing_simulator
+                          items:
+                            - uesio/io.box:
+                                components:
+                                  - uesio/io.text:
+                                      text: Select Template
+                                  - uesio/io.filter:
+                                      wire: selectTemplate
+                                      fieldId: uesio/pricing.self_reference
+                                      labelPosition: none
+                            - uesio/io.box:
+                                components:
+                                  - uesio/io.text:
+                                      uesio.variant: uesio/web.pricing_small_dark
+                                      text: Setup
+                                  - uesio/io.item:
+                                      wire: setup
+                                      mode: EDIT
+                                      components:
+                                        - uesio/io.text:
+                                            uesio.variant: uesio/web.pricing_small_dark
+                                            text: (per month)
+                                        - uesio/io.field:
+                                            uesio.variant: uesio/web.border
+                                            fieldId: apps
+                                        - uesio/io.field:
+                                            uesio.variant: uesio/web.border
+                                            fieldId: users
+                                        - uesio/io.field:
+                                            uesio.variant: uesio/web.border
+                                            fieldId: sites
+                                        - uesio/io.field:
+                                            uesio.variant: uesio/web.border_primary
+                                            fieldId: days
+                                            readonly: true
+                            - uesio/io.box:
+                                components:
+                                  - uesio/io.text:
+                                      uesio.variant: uesio/web.pricing_small_dark
+                                      text: Customize Usage
+                                  - uesio/io.box:
+                                      uesio.variant: uesio/web.flex_structure_small
+                                      components:
+                                        - uesio/io.box:
+                                            uesio.variant: uesio/web.flex_two
+                                            components:
+                                              - uesio/io.text:
+                                                  uesio.variant: uesio/web.pricing_small_dark
+                                                  text: (per month)
+                                        - uesio/io.box:
+                                            uesio.variant: uesio/web.flex_one
+                                            components:
+                                              - uesio/io.text:
+                                                  uesio.variant: uesio/web.calloutsmall_primary
+                                                  text: (per day)
+                                  - uesio/web.inputs:
+                                      field: file_storage
+                                      wire1: customizeUsage_month
+                                      wire2: customizeUsage_day
+                                      flex1: "2"
+                                      flex2: "1"
+                                      mode1: EDIT
+                                      mode2: READ
+                                  - uesio/web.inputs:
+                                      field: file_downloads
+                                      wire1: customizeUsage_month
+                                      wire2: customizeUsage_day
+                                      flex1: "2"
+                                      flex2: "1"
+                                      mode1: EDIT
+                                      mode2: READ
+                                  - uesio/web.inputs:
+                                      field: bot_invocations
+                                      wire1: customizeUsage_month
+                                      wire2: customizeUsage_day
+                                      flex1: "2"
+                                      flex2: "1"
+                                      mode1: EDIT
+                                      mode2: READ
+                                  - uesio/web.inputs:
+                                      field: transaction_loads
+                                      wire1: customizeUsage_month
+                                      wire2: customizeUsage_day
+                                      flex1: "2"
+                                      flex2: "1"
+                                      mode1: EDIT
+                                      mode2: READ
+                                  - uesio/web.inputs:
+                                      field: transaction_saves
+                                      wire1: customizeUsage_month
+                                      wire2: customizeUsage_day
+                                      flex1: "2"
+                                      flex2: "1"
+                                      mode1: EDIT
+                                      mode2: READ
+                                  - uesio/web.inputs:
+                                      field: data_records
+                                      wire1: customizeUsage_month
+                                      wire2: customizeUsage_day
+                                      flex1: "2"
+                                      flex2: "1"
+                                      mode1: EDIT
+                                      mode2: READ
+                                  - uesio/io.button:
+                                      text: CALCULATE
+                                      signals:
+                                        # Calculation Signals
+                                        - signal: bot/CALL
+                                          stepId: cheapest_package
+                                          bot: uesio/pricing.calculate_cheapest_package
+                                          params:
+                                            apps: $Record{setup:apps}
+                                            sites: $Record{setup:sites}
+                                            file_storage: $Record{customizeUsage_month:file_storage}
+                                            file_downloads: $Record{customizeUsage_month:file_downloads}
+                                            bot_invocations: $Record{customizeUsage_month:bot_invocations}
+                                            transaction_loads: $Record{customizeUsage_month:transaction_loads}
+                                            transaction_saves: $Record{customizeUsage_month:transaction_saves}
+                                            data_records: $Record{customizeUsage_month:data_records}
+                                        - signal: wire/UPDATE_FIELDS
+                                          wire: output_control
+                                          fields:
+                                            - field: recommended_package_id
+                                              value: $SignalOutput{cheapest_package:package.id}
+                                            - field: recommended_package_name
+                                              value: $SignalOutput{cheapest_package:package.name}
+                                            - field: recommended_package_price
+                                              value: $SignalOutput{cheapest_package:package.price}
+                                        - signal: bot/CALL
+                                          bot: uesio/pricing.calculate_remaining_bandwidth
+                                          stepId: bandwidth
+                                          params:
+                                            package_pricebook_id: $SignalOutput{cheapest_package:package.id}
+                                            apps: $Record{setup:apps}
+                                            sites: $Record{setup:sites}
+                                            file_storage: $Record{customizeUsage_month:file_storage}
+                                            file_downloads: $Record{customizeUsage_month:file_downloads}
+                                            bot_invocations: $Record{customizeUsage_month:bot_invocations}
+                                            transaction_loads: $Record{customizeUsage_month:transaction_loads}
+                                            transaction_saves: $Record{customizeUsage_month:transaction_saves}
+                                            data_records: $Record{customizeUsage_month:data_records}
+                                        #limitations
+                                        - signal: wire/UPDATE_FIELDS
+                                          wire: limitations
+                                          fields:
+                                            - field: file_storage
+                                              value: $SignalOutput{bandwidth:file_storage_remaining}
+                                            - field: file_downloads
+                                              value: $SignalOutput{bandwidth:file_downloads_remaining}
+                                            - field: bot_invocations
+                                              value: $SignalOutput{bandwidth:bot_invocations_remaining}
+                                            - field: transaction_loads
+                                              value: $SignalOutput{bandwidth:transaction_loads_remaining}
+                                            - field: transaction_saves
+                                              value: $SignalOutput{bandwidth:transaction_saves_remaining}
+                                            - field: data_records
+                                              value: $SignalOutput{bandwidth:data_records_remaining}
+                                        #Overcharge
+                                        - signal: wire/UPDATE_FIELDS
+                                          wire: output_overcharge
+                                          fields:
+                                            - field: file_storage
+                                              value: $SignalOutput{bandwidth:file_storage_overcharge}
+                                            - field: file_downloads
+                                              value: $SignalOutput{bandwidth:file_downloads_overcharge}
+                                            - field: bot_invocations
+                                              value: $SignalOutput{bandwidth:bot_invocations_overcharge}
+                                            - field: transaction_loads
+                                              value: $SignalOutput{bandwidth:transaction_loads_overcharge}
+                                            - field: transaction_saves
+                                              value: $SignalOutput{bandwidth:transaction_saves_overcharge}
+                                            - field: sites
+                                              value: $SignalOutput{bandwidth:sites_remaining_overcharge}
+                                        #Max Quantity
+                                        - signal: wire/UPDATE_FIELDS
+                                          wire: output_max_quantity
+                                          fields:
+                                            - field: file_storage
+                                              value: $SignalOutput{bandwidth:file_storage_max}
+                                            - field: file_downloads
+                                              value: $SignalOutput{bandwidth:file_downloads_max}
+                                            - field: bot_invocations
+                                              value: $SignalOutput{bandwidth:bot_invocations_max}
+                                            - field: transaction_loads
+                                              value: $SignalOutput{bandwidth:transaction_loads_max}
+                                            - field: transaction_saves
+                                              value: $SignalOutput{bandwidth:transaction_saves_max}
+                                            - field: sites
+                                              value: $SignalOutput{bandwidth:sites_remaining_max}
+                                        #Calculator Control
+                                        - signal: wire/UPDATE_FIELDS
+                                          wire: output_control
+                                          fields:
+                                            #Total
+                                            - field: total_overcharge
+                                              value: $SignalOutput{bandwidth:apps_overcharge}
+                                            - field: total_price
+                                              value: $SignalOutput{bandwidth:sites_overcharge}
+                                            #Selected
+                                            - field: selected_package_id
+                                              value: $SignalOutput{bandwidth:selectedPackageId}
+                                            - field: selected_package_name
+                                              value: $SignalOutput{bandwidth:selectedPackageName}
+                                            - field: selected_package_price
+                                              value: $SignalOutput{bandwidth:selectedPackagePrice}
+                      - uesio/io.item:
+                          wire: output_control
+                          uesio.display:
+                            - type: hasValue
+                              value: ${selected_package_id}
+                          components:
+                            - uesio/io.grid:
+                                uesio.styleTokens:
+                                  root:
+                                    - grid
+                                    - grid-cols-[40%_50%]
+                                    - gap-8
+                                items:
+                                  - uesio/io.box:
+                                      components:
+                                        - uesio/io.item:
+                                            wire: output_control
+                                            components:
+                                              - uesio/core.view:
+                                                  view: uesio/web.pricing_packages
+                                                  package: ${selected_package_id}
+                                        - uesio/io.text:
+                                            text: Recommended Package
+                                        - uesio/io.text:
+                                            text: Selected Package
+                                  - uesio/io.box:
+                                      uesio.styleTokens:
+                                        root:
+                                          - -mr-8
+                                      components:
+                                        - uesio/io.box:
+                                            uesio.variant: uesio/web.flex_structure_small
+                                            components:
+                                              - uesio/io.box:
+                                                  uesio.variant: uesio/web.flex_one
+                                                  components:
+                                                    - uesio/io.text:
+                                                        uesio.variant: uesio/web.pricing_small_dark
+                                                        text: Limitations
+                                              - uesio/io.box:
+                                                  uesio.variant: uesio/web.flex_one
+                                                  components:
+                                                    - uesio/io.text:
+                                                        uesio.variant: uesio/web.pricing_small_dark
+                                                        text: Overage
+                                        - uesio/web.inputs:
+                                            field: file_storage
+                                            wire1: limitations
+                                            wire2: output_overcharge
+                                            flex1: "1"
+                                            flex2: "1"
+                                            mode1: READ
+                                            mode2: READ
+                                        - uesio/web.inputs:
+                                            field: file_downloads
+                                            wire1: limitations
+                                            wire2: output_overcharge
+                                            flex1: "1"
+                                            flex2: "1"
+                                            mode1: READ
+                                            mode2: READ
+                                        - uesio/web.inputs:
+                                            field: bot_invocations
+                                            wire1: limitations
+                                            wire2: output_overcharge
+                                            flex1: "1"
+                                            flex2: "1"
+                                            mode1: READ
+                                            mode2: READ
+                                        - uesio/web.inputs:
+                                            field: transaction_loads
+                                            wire1: limitations
+                                            wire2: output_overcharge
+                                            flex1: "1"
+                                            flex2: "1"
+                                            mode1: READ
+                                            mode2: READ
+                                        - uesio/web.inputs:
+                                            field: transaction_saves
+                                            wire1: limitations
+                                            wire2: output_overcharge
+                                            flex1: "1"
+                                            flex2: "1"
+                                            mode1: READ
+                                            mode2: READ
+                                        - uesio/web.inputs:
+                                            field: data_records
+                                            wire1: limitations
+                                            wire2: output_overcharge
+                                            flex1: "1"
+                                            flex2: "1"
+                                            mode1: READ
+                                            mode2: READ
