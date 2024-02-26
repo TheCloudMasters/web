@@ -1,6 +1,6 @@
 name: calloutsmallsubdark
-extends: uesio/web.calloutsmallsub
 label: Callout Small Sub Dark
+extends: uesio/web.calloutsmallsub
 definition:
   uesio.styleTokens:
     root:

@@ -1,5 +1,5 @@
 name: crm
-path: crm
 type: redirect
+path: crm
 redirect: https://$Site{domain}/site/app/uesio/crm/leads
 title: CRM Home

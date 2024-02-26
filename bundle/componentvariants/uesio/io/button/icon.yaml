@@ -1,7 +1,7 @@
 name: icon
+label: Navigation
 public: true
 extends: uesio/io.nav
-label: Navigation
 definition:
   uesio.styleTokens:
     root:

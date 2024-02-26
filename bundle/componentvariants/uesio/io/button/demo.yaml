@@ -1,6 +1,6 @@
 name: demo
-extends: uesio/web.primary
 label: demo
+extends: uesio/web.primary
 definition:
   text: "book a demo"
   signals:

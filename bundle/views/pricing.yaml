@@ -137,11 +137,7 @@ definition:
                                       components:
                                         - uesio/io.text:
                                             uesio.variant: uesio/web.calloutsmallsub
-                                            text: We believe that you should be able to develop your software application
-                                              ideas for FREE in the ues.io Studio development environment
-                                              for as long as it takes. You only start incurring costs on a pay
-                                              as you go basis once your application is live in production and
-                                              your users are engaging on a pay as you go basis.
+                                            text: We believe that you should be able to develop your software application ideas for FREE in the ues.io Studio development environment for as long as it takes. You only start incurring costs on a pay as you go basis once your application is live in production and your users are engaging on a pay as you go basis.
                             - uesio/io.box:
                                 components:
                                   - uesio/io.text:
@@ -152,10 +148,7 @@ definition:
                                       components:
                                         - uesio/io.text:
                                             uesio.variant: uesio/web.calloutsmallsub
-                                            text: To give you even more free space to test we
-                                              also have a free tier which will give you plenty of
-                                              time to test your application in a live environment
-                                              before choosing an appropriate pricing tier.
+                                            text: To give you even more free space to test we also have a free tier which will give you plenty of time to test your application in a live environment before choosing an appropriate pricing tier.
                       - uesio/io.grid:
                           uesio.variant: uesio/web.callout_double
                           uesio.styleTokens:
@@ -173,14 +166,7 @@ definition:
                                       components:
                                         - uesio/io.text:
                                             uesio.variant: uesio/web.calloutsmallsub
-                                            text: We measure costs against your record storage, file storage,
-                                              file downloads and screen loads. Because of the way we have
-                                              engineered ues.io it allows us to share costs across all our users
-                                              and in turn gives you the advantage of a very affordable monthly
-                                              bill at a fraction of the cost of other similar platforms. This
-                                              way you can add as many users as you need to without having to
-                                              pay a price for each user no matter how often they do or don’t
-                                              use the system.
+                                            text: We measure costs against your record storage, file storage, file downloads and screen loads. Because of the way we have engineered ues.io it allows us to share costs across all our users and in turn gives you the advantage of a very affordable monthly bill at a fraction of the cost of other similar platforms. This way you can add as many users as you need to without having to pay a price for each user no matter how often they do or don’t use the system.
                             - uesio/io.box:
                                 components:
                                   - uesio/io.text:
@@ -191,11 +177,7 @@ definition:
                                       components:
                                         - uesio/io.text:
                                             uesio.variant: uesio/web.calloutsmallsub
-                                            text: Here is our pay as you go pricing calculator to help you
-                                              decide which tier is right for you, your enterprise and the
-                                              type of application you might like to use from the ues.io
-                                              Bundle Store Marketplace, which you can either customize to
-                                              your liking or just build your own from scratch.
+                                            text: Here is our pay as you go pricing calculator to help you decide which tier is right for you, your enterprise and the type of application you might like to use from the ues.io Bundle Store Marketplace, which you can either customize to your liking or just build your own from scratch.
                       - uesio/io.grid:
                           uesio.variant: uesio/web.callout_double
                           uesio.styleTokens:
@@ -215,7 +197,4 @@ definition:
                                       components:
                                         - uesio/io.text:
                                             uesio.variant: uesio/web.calloutsmallsub
-                                            text: If at any stage you feel ues.io is not for you then
-                                              you can simply cancel your subscription which will then
-                                              end on the last day of the month you canceled and you
-                                              can export all your data at any time and move on.
+                                            text: If at any stage you feel ues.io is not for you then you can simply cancel your subscription which will then end on the last day of the month you canceled and you can export all your data at any time and move on.

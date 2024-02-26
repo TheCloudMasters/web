@@ -58,10 +58,7 @@ definition:
                                 text: Book your free ues.io demo
                             - uesio/io.text:
                                 uesio.variant: uesio/web.calloutsmallsubdark
-                                text: Experience ues.io in action! Schedule a personalised
-                                  demo to learn how ues.io can help you with your digital
-                                  transformation journey. Fill out the form and we'll get
-                                  in touch to arrange a convenient time.
+                                text: Experience ues.io in action! Schedule a personalised demo to learn how ues.io can help you with your digital transformation journey. Fill out the form and we'll get in touch to arrange a convenient time.
                             - uesio/io.grid:
                                 uesio.styleTokens:
                                   root:
