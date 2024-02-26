@@ -1,11 +1,12 @@
 name: crmstaff
 named: {}
-views:
-collections:
+views: {}
+collections: {}
 routes:
   uesio/web.crm: true
-files:
-bots:
+files: {}
+bots: {}
+integrationActions: {}
 allowallbots: false
 allowallcollections: false
 allowallviews: false

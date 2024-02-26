@@ -54,7 +54,6 @@ definition:
 title: Arrow Content
 discoverable: true
 description: Arrow with left and right content
-defaultDefinition:
 sections:
   - type: HOME
     properties:
@@ -62,5 +61,3 @@ sections:
       - arrow
   - type: STYLES
   - type: DISPLAY
-signals: null
-styleRegions: null

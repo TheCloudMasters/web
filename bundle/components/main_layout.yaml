@@ -37,12 +37,9 @@ definition:
 title: Main Web Layout
 discoverable: true
 description: Header -> Content -> Footer
-defaultDefinition:
 sections:
   - type: HOME
     properties:
       - uesio.id
   - type: STYLES
   - type: DISPLAY
-signals: null
-styleRegions: null

@@ -1,7 +1,6 @@
 name: bulleted_element
 category: CONTENT
 type: DECLARATIVE
-slots:
 properties:
   - name: uesio.id
     label: Component Id
@@ -94,7 +93,6 @@ definition:
 title: Bulleted Text Element
 discoverable: true
 description: Bulleted Text Element
-defaultDefinition:
 sections:
   - type: HOME
     properties:
@@ -104,5 +102,3 @@ sections:
       - sub
   - type: STYLES
   - type: DISPLAY
-signals: null
-styleRegions: null

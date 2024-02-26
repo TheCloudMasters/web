@@ -1,5 +1,4 @@
 name: calloutsmall_primary
-# extends: uesio/web.callout
 label: Callout Small Primary
 definition:
   uesio.styleTokens:

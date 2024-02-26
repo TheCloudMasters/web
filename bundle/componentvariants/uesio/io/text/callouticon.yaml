@@ -1,6 +1,6 @@
 name: callouticon
-extends: uesio/io.icon
 label: Callout Icon
+extends: uesio/io.icon
 definition:
   uesio.styleTokens:
     root:
