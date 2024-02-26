@@ -65,7 +65,7 @@ definition:
                               - my-0
                               - md:my-0
                               - pt-10
-                          text: Reign In your Software Costs
+                          text: Rein In your Software Costs
                 - uesio/io.grid:
                     uesio.variant: uesio/web.callout_double
                     uesio.styleTokens:
@@ -223,8 +223,7 @@ definition:
                                       sub: true
                                   - uesio/io.text:
                                       uesio.variant: uesio/web.footertext
-                                      text: "* Managed package includes up to a set amount of professional services
-                                        hours and usage and requires an upfront annual purchase."
+                                      text: "* Managed package includes up to a set amount of professional services hours and usage and requires an upfront annual purchase."
                                   - uesio/io.text:
                                       uesio.variant: uesio/web.footertext
                                       text: ($20,000 package includes up to 85 hours of professional services/year)
@@ -245,7 +244,6 @@ definition:
                       - uesio/io.text:
                           uesio.variant: uesio/web.callout_dark
                           text: Case Study
-
                 - uesio/io.grid:
                     uesio.variant: uesio/web.callout_double
                     uesio.styleTokens:
@@ -275,8 +273,7 @@ definition:
                                       components:
                                         - uesio/io.text:
                                             uesio.variant: uesio/web.calloutsmallsubdark
-                                            text: They hired a company to code a custom CPQ App for them.
-                                              The project failed after 18 months of coding.
+                                            text: They hired a company to code a custom CPQ App for them. The project failed after 18 months of coding.
                             - uesio/io.box:
                                 uesio.variant: uesio/web.text_block
                                 components:
