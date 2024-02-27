@@ -1,8 +1,7 @@
 name: footer
 definition:
   # Wires are how we pull in data
-  wires:
-  # Components are how we describe the layout of our view
+  wires: # Components are how we describe the layout of our view
   components:
     - uesio/web.ga4:
     - uesio/io.box:
@@ -27,6 +26,22 @@ definition:
                           signals:
                             - signal: route/NAVIGATE
                               path: home
+                      - uesio/io.box:
+                          components:
+                            - uesio/io.markdown:
+                                markdown: "# Launching – 21 March '24 – [START Summit Switzerland](https://www.startglobal.org/start-summit)"
+                                uesio.styleTokens:
+                                  root:
+                                    - text-white
+                            - uesio/io.markdown:
+                                markdown: "# [CIO Review Magazine Award](https://www.cioreview.com/ues-io) - January 2024"
+                                uesio.styleTokens:
+                                  root:
+                                    - text-white
+                                    - mt-1
+                          uesio.styleTokens:
+                            root:
+                              - mt-4
                 - uesio/io.box:
                     uesio.styleTokens:
                       - h-full

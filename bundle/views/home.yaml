@@ -28,7 +28,7 @@ definition:
                                 text: Build enterprise grade applications for FREE!
                             - uesio/io.text:
                                 uesio.variant: uesio/web.calloutsub
-                                text: "ues.io (u)ser (e)xperience (s)tudio is a comprehensive pro-code AI enabled platform which offers you the freedom to extend your application functionality with your own code and only start paying on a usage basis when your users start engaging. "
+                                text: "ues.io (u)ser (e)xperience (s)tudio is a comprehensive open source pro-code AI enabled platform which offers you the freedom to extend your application functionality with your own code and only start paying on a usage basis when your users start engaging. "
                             - uesio/io.button:
                                 uesio.variant: uesio/web.demo
           - uesio/io.box:
@@ -216,7 +216,7 @@ definition:
                                                 - font-extrabold
                                         - uesio/io.text:
                                             uesio.variant: uesio/web.calloutsmallsub
-                                            text: run Uesio in our infrastructure, or yours!
+                                            text: run ues.io in our infrastructure, or yours!
                       - uesio/io.grid:
                           uesio.variant: uesio/web.callout_double
                           uesio.styleTokens:
@@ -435,7 +435,7 @@ definition:
                                           - font-extrabold
                                   - uesio/io.text:
                                       uesio.variant: uesio/web.calloutsmallsubdark
-                                      text: AWS, GCP or Azure.
+                                      text: AWS, GCP, Digital Ocean or Azure.
                             - uesio/web.arrow:
                                 arrow: uesio/web.arrow_primary_light
                                 left:
@@ -460,7 +460,7 @@ definition:
                                           - font-extrabold
                                   - uesio/io.text:
                                       uesio.variant: uesio/web.calloutsmallsubdark
-                                      text: or let UES.IO run it for you on a
+                                      text: or host on ues.io on a
                                   - uesio/io.text:
                                       uesio.variant: uesio/web.calloutsmallsubdark
                                       text: " Pay as You Go basis."
@@ -478,7 +478,7 @@ definition:
                                           - font-extrabold
                                   - uesio/io.text:
                                       uesio.variant: uesio/web.calloutsmallsub
-                                      text: DB, user access management and UI components.
+                                      text: database, security management and UI components.
                                 right:
                                   - uesio/io.text:
                                       uesio.variant: uesio/web.calloutsmallsubdark
