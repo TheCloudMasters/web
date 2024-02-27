@@ -45,7 +45,7 @@ definition:
                     uesio.styleTokens:
                       root:
                         - object-cover
-                    file: uesio/web.banner
+                    file: uesio/web.banner1
                     height: 150
                 - uesio/io.grid:
                     uesio.variant: uesio/web.callout_double
