@@ -94,6 +94,19 @@ interface SessionApi {
 	// If in a Workspace context, returns a Workspace Api
 	// to obtain info about the context Workspace
 	getWorkspace: () => WorkspaceApi
+	// returns a Site Api
+	// to obtain info about the context Workspace
+	getSite: () => SiteApi
+}
+interface SiteApi {
+	// Return the name of the site
+	getName: () => string
+	// Return the title of the site
+	getTitle: () => string
+	// Return the domain of the site
+	getDomain: () => string
+	// Return the subdomain of the site
+	getSubDomain: () => string
 }
 interface WorkspaceApi {
 	// Return the name of the workspace
@@ -110,21 +123,27 @@ interface UserApi {
 	getUniqueKey: () => string
 }
 
-interface BotHttpRequest {
+interface BotHttpRequest<
+	RequestBody = string | Record<string, unknown> | unknown[],
+> {
 	url: string
 	method: string
 	headers?: Record<string, string>
-	body?: string | Record<string, unknown> | unknown[]
+	body?: RequestBody
 }
-interface BotHttpResponse {
+interface BotHttpResponse<
+	ResponseBody = string | Record<string, unknown> | null,
+> {
 	code: number
 	status: string
 	headers: Record<string, string>
-	body: string | Record<string, unknown> | null
+	body: ResponseBody
 }
 
 interface HttpApi {
-	request: (options: BotHttpRequest) => BotHttpResponse
+	request: <RequestBody, ResponseBody>(
+		options: BotHttpRequest<RequestBody>
+	) => BotHttpResponse<ResponseBody>
 }
 
 interface SaveOptionsApi {
