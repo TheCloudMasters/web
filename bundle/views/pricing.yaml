@@ -47,8 +47,8 @@ definition:
                             - uesio/core.view:
                                 view: uesio/web.pricingcard
                                 params:
-                                  title: Small
-                                  price: $249
+                                  title: GO
+                                  price: $99
                                   subprice: /month
                                   transactions: 500K
                                   downloads: 20GB
@@ -57,8 +57,8 @@ definition:
                             - uesio/core.view:
                                 view: uesio/web.pricingcard
                                 params:
-                                  title: Medium
-                                  price: $799
+                                  title: GROW
+                                  price: $299
                                   subprice: /month
                                   transactions: 1.5m
                                   storage: 250GB
@@ -67,8 +67,8 @@ definition:
                             - uesio/core.view:
                                 view: uesio/web.pricingcard
                                 params:
-                                  title: Large
-                                  price: Contact us
+                                  title: PRO
+                                  price: $599
                                   transactions: ∞
                                   storage: ∞
                                   downloads: ∞
