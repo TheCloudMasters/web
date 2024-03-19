@@ -34,47 +34,110 @@ definition:
                               - gap-8
                               - justify-center
                           items:
-                            - uesio/core.view:
-                                view: uesio/web.pricingcard
-                                params:
-                                  title: Free
-                                  price: $0
-                                  subprice: /month
-                                  transactions: 20K
-                                  storage: 500MB
-                                  downloads: 500MB
-                                  community: true
-                            - uesio/core.view:
-                                view: uesio/web.pricingcard
-                                params:
-                                  title: GO
-                                  price: $99
-                                  subprice: /month
-                                  transactions: 500K
-                                  downloads: 20GB
-                                  storage: 10GB
-                                  sla: 24h
-                            - uesio/core.view:
-                                view: uesio/web.pricingcard
-                                params:
-                                  title: GROW
-                                  price: $299
-                                  subprice: /month
-                                  transactions: 1.5m
-                                  storage: 250GB
-                                  downloads: 60GB
-                                  sla: 24h
-                            - uesio/core.view:
-                                view: uesio/web.pricingcard
-                                params:
-                                  title: PRO
-                                  price: $599
-                                  transactions: ∞
-                                  storage: ∞
-                                  downloads: ∞
-                                  domain: Own Domain
-                                  sla: 12h
-                                  enterprise: true
+                            - uesio/io.box:
+                                components:
+                                  - uesio/core.view:
+                                      view: uesio/web.pricingcard
+                                      params:
+                                        title: Free
+                                        price: $0
+                                        subprice: /month
+                                        transactions: 20K
+                                        storage: 500MB
+                                        downloads: 500MB
+                                        community: true
+                                  - uesio/io.text:
+                                      text: Great for getting started or hobby sites.
+                                      element: div
+                                      align: center
+                                      uesio.variant: ""
+                                      uesio.styleTokens:
+                                        root:
+                                          - text-sm
+                                          - pt-1
+                                uesio.styleTokens:
+                                  root:
+                                    - bg-white
+                                    - p-5
+                            - uesio/io.box:
+                                components:
+                                  - uesio/core.view:
+                                      view: uesio/web.pricingcard
+                                      params:
+                                        title: GO
+                                        price: $99
+                                        subprice: /month
+                                        transactions: 500K
+                                        downloads: 20GB
+                                        storage: 10GB
+                                        sla: 24h
+                                  - uesio/io.text:
+                                      text: Low traffic sites for small businesses.
+                                      element: div
+                                      align: center
+                                      uesio.variant: ""
+                                      uesio.styleTokens:
+                                        root:
+                                          - text-sm
+                                          - pt-1
+                                          - pr-3
+                                uesio.styleTokens:
+                                  root:
+                                    - p-5
+                                    - bg-white
+                            - uesio/io.box:
+                                components:
+                                  - uesio/core.view:
+                                      view: uesio/web.pricingcard
+                                      params:
+                                        title: GROW
+                                        price: $299
+                                        subprice: /month
+                                        transactions: 1.5M
+                                        storage: 250GB
+                                        downloads: 60GB
+                                        sla: 24h
+                                  - uesio/io.text:
+                                      text: "Ideal for most business use cases. "
+                                      element: div
+                                      align: center
+                                      uesio.variant: ""
+                                      uesio.styleTokens:
+                                        root:
+                                          - text-sm
+                                          - pt-1
+                                          - pr-7
+                                uesio.styleTokens:
+                                  root:
+                                    - p-5
+                                    - bg-white
+                            - uesio/io.box:
+                                components:
+                                  - uesio/core.view:
+                                      view: uesio/web.pricingcard
+                                      params:
+                                        title: PRO
+                                        price: $599
+                                        subprice: /month
+                                        transactions: 3M
+                                        storage: 1TB
+                                        downloads: 200GB
+                                        sla: 12h
+                                      uesio.styleTokens:
+                                        root: []
+                                  - uesio/io.text:
+                                      text: High volume and mission critical sites.
+                                      element: div
+                                      align: center
+                                      uesio.variant: ""
+                                      uesio.styleTokens:
+                                        root:
+                                          - text-sm
+                                          - pt-1
+                                uesio.styleTokens:
+                                  root:
+                                    - p-5
+                                    - bg-white
                 - uesio/io.box:
                     uesio.variant: uesio/web.mainlayout
                     components:
@@ -169,32 +232,17 @@ definition:
                                             text: We measure costs against your record storage, file storage, file downloads and screen loads. Because of the way we have engineered ues.io it allows us to share costs across all our users and in turn gives you the advantage of a very affordable monthly bill at a fraction of the cost of other similar platforms. This way you can add as many users as you need to without having to pay a price for each user no matter how often they do or don’t use the system.
                             - uesio/io.box:
                                 components:
-                                  - uesio/io.text:
-                                      uesio.variant: uesio/web.calloutsmall_primary
-                                      text: 'Freedom to Choose "Coming Soon"'
                                   - uesio/io.box:
                                       uesio.variant: uesio/web.text_block
                                       components:
-                                        - uesio/io.text:
-                                            uesio.variant: uesio/web.calloutsmallsub
-                                            text: Here is our pay as you go pricing calculator to help you decide which tier is right for you, your enterprise and the type of application you might like to use from the ues.io Bundle Store Marketplace, which you can either customize to your liking or just build your own from scratch.
-                      - uesio/io.grid:
-                          uesio.variant: uesio/web.callout_double
-                          uesio.styleTokens:
-                            root:
-                              - py-0
-                              - mb-8
-                          items:
-                            - uesio/io.box:
-                                components:
-                            - uesio/io.box:
-                                components:
-                                  - uesio/io.text:
-                                      uesio.variant: uesio/web.calloutsmall_primary
-                                      text: Freedom to Move
-                                  - uesio/io.box:
-                                      uesio.variant: uesio/web.text_block
-                                      components:
-                                        - uesio/io.text:
-                                            uesio.variant: uesio/web.calloutsmallsub
-                                            text: If at any stage you feel ues.io is not for you then you can simply cancel your subscription which will then end on the last day of the month you canceled and you can export all your data at any time and move on.
+                                        - uesio/io.box:
+                                            components:
+                                              - uesio/io.text:
+                                                  uesio.variant: uesio/web.calloutsmall_primary
+                                                  text: Freedom to Move
+                                              - uesio/io.box:
+                                                  uesio.variant: uesio/web.text_block
+                                                  components:
+                                                    - uesio/io.text:
+                                                        uesio.variant: uesio/web.calloutsmallsub
+                                                        text: If at any stage you feel ues.io is not for you then you can simply cancel your subscription which will then end on the last day of the month you canceled and you can export all your data at any time and move on.
