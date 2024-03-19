@@ -223,26 +223,6 @@ definition:
               components:
                 - uesio/io.button:
                     uesio.variant: uesio/web.calltoaction
-                    uesio.display:
-                      - type: paramValue
-                        operator: NOT_EQUALS
-                        param: title
-                        value: Free
-                    uesio.styleTokens:
-                      root:
-                        - w-fit
-                        - md:px-8
-                    text: book a demo
-                    signals:
-                      - signal: route/REDIRECT
-                        path: demo
-                - uesio/io.button:
-                    uesio.variant: uesio/web.calltoaction
-                    uesio.display:
-                      - type: paramValue
-                        operator: EQUALS
-                        param: title
-                        value: Free
                     uesio.styleTokens:
                       root:
                         - w-fit
