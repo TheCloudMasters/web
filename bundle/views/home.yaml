@@ -25,7 +25,7 @@ definition:
                                 text: unlimited users
                             - uesio/io.text:
                                 uesio.variant: uesio/web.callout
-                                text: Build enterprise grade applications for FREE!
+                                text: Build enterprise grade applications like a PRO!
                             - uesio/io.text:
                                 uesio.variant: uesio/web.calloutsub
                                 text: "ues.io (u)ser (e)xperience (s)tudio is a comprehensive open source pro-code AI enabled platform which offers you the freedom to extend your application functionality with your own code and only start paying on a usage basis when your users start engaging. "
