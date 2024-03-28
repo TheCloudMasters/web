@@ -11,6 +11,7 @@ definition:
         uesio/cms.description:
         uesio/cms.content:
         uesio/cms.date:
+        uesio/web.image: {}
       conditions:
         - field: uesio/cms.slug
           param: slug
@@ -31,6 +32,8 @@ definition:
                 - uesio/io.list:
                     wire: article
                     components:
+                      - uesio/io.image:
+                          src: $UserFile{uesio/web.image}
                       - uesio/io.field:
                           uesio.variant: uesio/io.markdownfield:uesio/web.blogmarkdown
                           fieldId: uesio/cms.content
