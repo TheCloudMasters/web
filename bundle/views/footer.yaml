@@ -29,11 +29,6 @@ definition:
                       - uesio/io.box:
                           components:
                             - uesio/io.markdown:
-                                markdown: "# Launching – 21 March '24 – [START Summit Switzerland](https://www.startglobal.org/start-summit)"
-                                uesio.styleTokens:
-                                  root:
-                                    - text-white
-                            - uesio/io.markdown:
                                 markdown: "# [CIO Review Magazine Award](https://www.cioreview.com/ues-io) - January 2024"
                                 uesio.styleTokens:
                                   root:
