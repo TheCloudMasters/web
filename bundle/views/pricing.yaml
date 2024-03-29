@@ -6,15 +6,6 @@ definition:
         inner:
           - uesio/io.box:
               uesio.variant: uesio/web.mainlayout_pricing
-              components:
-                - uesio/io.grid:
-                    uesio.variant: uesio/web.callout_double
-                    items:
-                      - uesio/io.text:
-                          uesio.variant: uesio/web.callout_dark
-                          text: Enterprise Pricing
-          - uesio/io.box:
-              uesio.variant: uesio/web.mainlayout_pricing
               uesio.styleTokens:
                 root:
                   - pb-8
@@ -26,6 +17,17 @@ definition:
                         - py-0
                         - pb-16
                     items:
+                      - uesio/io.box:
+                          components:
+                            - uesio/io.text:
+                                uesio.variant: ""
+                                text: Enterprise Pricing
+                                uesio.styleTokens:
+                                  root:
+                                    - text-3xl
+                          uesio.styleTokens:
+                            root:
+                              - p-8
                       - uesio/io.grid:
                           uesio.styleTokens:
                             root:
@@ -47,7 +49,7 @@ definition:
                                         downloads: 500MB
                                         community: true
                                   - uesio/io.text:
-                                      text: Great for getting started or hobby sites.
+                                      text: Great for startups & POC's.
                                       element: div
                                       align: center
                                       uesio.variant: ""
@@ -55,6 +57,8 @@ definition:
                                         root:
                                           - text-sm
                                           - pt-1
+                                          - pl-10
+                                          - pr-10
                                 uesio.styleTokens:
                                   root:
                                     - bg-white
@@ -148,13 +152,14 @@ definition:
                               - py-16
                           components:
                             - uesio/io.text:
-                                uesio.variant: uesio/web.calloutpre
+                                uesio.variant: ""
                                 uesio.styleTokens:
                                   root:
                                     - normal-case
                                     - text-[$Theme{color.secondary}]
                                     - font-bold
                                     - font-1xl
+                                    - text-4xl
                                 text: Unlimited Users
           - uesio/io.box:
               uesio.variant: uesio/web.mainlayout_dark
@@ -200,7 +205,7 @@ definition:
                                       components:
                                         - uesio/io.text:
                                             uesio.variant: uesio/web.calloutsmallsub
-                                            text: We believe that you should be able to develop your software application ideas for FREE in the ues.io Studio development environment for as long as it takes. You only start incurring costs on a pay as you go basis once your application is live in production and your users are engaging on a pay as you go basis.
+                                            text: We believe that you should be able to develop your software application ideas for FREE in the ues.io Studio development environment for as long as it takes. You only start incurring costs on a pay as you go basis once your application is live in production and your users are engaging.
                             - uesio/io.box:
                                 components:
                                   - uesio/io.text:
@@ -211,7 +216,7 @@ definition:
                                       components:
                                         - uesio/io.text:
                                             uesio.variant: uesio/web.calloutsmallsub
-                                            text: To give you even more free space to test we also have a free tier which will give you plenty of time to test your application in a live environment before choosing an appropriate pricing tier.
+                                            text: "To give you even more free space to test we also have a free tier which will give you plenty of time to test your application in a live environment before choosing an appropriate pricing tier. It is also great for startups who want to build a MVP (Minimum Viable Product) and developers who want to build a POC (Proof of Concept). "
                       - uesio/io.grid:
                           uesio.variant: uesio/web.callout_double
                           uesio.styleTokens:
@@ -245,4 +250,4 @@ definition:
                                                   components:
                                                     - uesio/io.text:
                                                         uesio.variant: uesio/web.calloutsmallsub
-                                                        text: If at any stage you feel ues.io is not for you then you can simply cancel your subscription which will then end on the last day of the month you canceled and you can export all your data at any time and move on.
+                                                        text: If at any stage you feel ues.io is not for you then you can simply cancel your subscription which will then end  immediately and export all your data and move on. We have a no vendor lock-in approach and of course an open source policy.
