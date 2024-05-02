@@ -99,12 +99,6 @@ definition:
                                     path: pricing
                             - uesio/io.button:
                                 uesio.variant: uesio/web.borderless
-                                text: Managed Package
-                                signals:
-                                  - signal: route/NAVIGATE
-                                    path: managed-package
-                            - uesio/io.button:
-                                uesio.variant: uesio/web.borderless
                                 text: Community
                                 signals:
                                   - signal: route/REDIRECT
@@ -158,12 +152,6 @@ definition:
                   signals:
                     - signal: route/NAVIGATE
                       path: pricing
-              - uesio/io.button:
-                  uesio.variant: uesio/web.borderless
-                  text: Managed Package
-                  signals:
-                    - signal: route/NAVIGATE
-                      path: managed-package
               - uesio/io.button:
                   uesio.variant: uesio/web.borderless
                   text: Community
