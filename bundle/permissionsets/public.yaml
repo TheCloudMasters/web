@@ -13,7 +13,6 @@ views:
   uesio/web.home: true
   uesio/web.login: true
   uesio/web.loginarea: true
-  uesio/web.managed_package: true
   uesio/web.preview: true
   uesio/web.pricing: true
   uesio/web.pricingcard: true
@@ -47,7 +46,6 @@ routes:
   uesio/web.earlyaccess: true
   uesio/web.home: true
   uesio/web.login: true
-  uesio/web.managed_package: true
   uesio/web.preview: true
   uesio/web.pricing: true
   uesio/web.privacy: true

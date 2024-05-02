@@ -54,12 +54,6 @@ function request(bot: ListenerBotApi) {
 			salesConfigValue = "uesio/web.email_template_demo_to_sales"
 			break
 		}
-		case "managed package": {
-			userConfigValue = "uesio/web.email_template_contact_to_user"
-			salesConfigValue =
-				"uesio/web.email_template_managed_package_to_sales"
-			break
-		}
 		default: {
 			break
 		}
