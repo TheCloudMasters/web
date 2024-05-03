@@ -28,9 +28,21 @@ definition:
                                 text: Build enterprise grade applications like a PRO!
                             - uesio/io.text:
                                 uesio.variant: uesio/web.calloutsub
-                                text: "ues.io (u)ser (e)xperience (s)tudio is a comprehensive open source pro-code AI enabled platform which offers you the freedom to extend your application functionality with your own code and only start paying on a usage basis when your users start engaging. "
+                                text: "ues.io (u)ser (e)xperience (s)tudio is a comprehensive open source no-code/pro-code AI enabled platform which offers you the freedom to extend your application functionality with your own code and only start paying on a usage basis when your users are engaging. "
                             - uesio/io.button:
-                                uesio.variant: uesio/web.demo
+                                text: SIGN UP FOR FREE
+                                uesio.variant: uesio/web.primary
+                                iconPlacement: start
+                                signals:
+                                  - signal: route/NAVIGATE_TO_ROUTE
+                                    namespace: uesio/web
+                                    path: https://ues.io/signup
+                                    route: uesio/web.signup
+                                uesio.styleTokens:
+                                  root:
+                                    - shadow-inner
+                                    - drop-shadow-lg
+                                    - hover:scale-110
           - uesio/io.box:
               uesio.styleTokens:
                 root:
@@ -152,26 +164,16 @@ definition:
                 - uesio/io.grid:
                     uesio.variant: uesio/web.callout
                     uesio.styleTokens:
-                      root:
-                        - mt-8
+                      root: []
                     items:
                       - uesio/io.text:
                           uesio.variant: uesio/web.calloutsmedium
                           text: The cloud transformation platform
-                - uesio/io.box:
-                    uesio.styleTokens:
-                      root:
-                        - w-[95%]
-                        - md:w-[90%]
-                        - bg-[#ffaa91]
-                        - h-[2px]
-                        - place-self-center
-                    components:
           - uesio/io.box:
               uesio.variant: uesio/web.mainlayout_dark
               components:
                 - uesio/io.box:
-                    uesio.variant: uesio/web.section
+                    uesio.variant: ""
                     components:
                       - uesio/io.grid:
                           uesio.variant: uesio/web.callout_double
@@ -204,7 +206,7 @@ definition:
                                 components:
                                   - uesio/io.text:
                                       uesio.variant: uesio/web.calloutsmall_primary
-                                      text: Infrastructure
+                                      text: Open Source GPL3
                                   - uesio/io.box:
                                       uesio.variant: uesio/web.text_block
                                       components:
@@ -216,7 +218,7 @@ definition:
                                                 - font-extrabold
                                         - uesio/io.text:
                                             uesio.variant: uesio/web.calloutsmallsub
-                                            text: run ues.io in our infrastructure, or yours!
+                                            text: run ues.io on our infrastructure, or yours!
                       - uesio/io.grid:
                           uesio.variant: uesio/web.callout_double
                           uesio.styleTokens:
@@ -228,7 +230,7 @@ definition:
                                 components:
                                   - uesio/io.text:
                                       uesio.variant: uesio/web.calloutsmall_primary
-                                      text: Platform
+                                      text: No-Code & Pro-Code
                                   - uesio/io.box:
                                       uesio.variant: uesio/web.text_block
                                       components:
@@ -243,12 +245,12 @@ definition:
                                                 - font-extrabold
                                         - uesio/io.text:
                                             uesio.variant: uesio/web.calloutsmallsub
-                                            text: lifecycle management system.
+                                            text: lifecycle management system with or without code.
                             - uesio/io.box:
                                 components:
                                   - uesio/io.text:
                                       uesio.variant: uesio/web.calloutsmall_primary
-                                      text: No-Code
+                                      text: Artificial Intelligence
                                   - uesio/io.box:
                                       uesio.variant: uesio/web.text_block
                                       components:
@@ -299,7 +301,7 @@ definition:
                                       components:
                                         - uesio/io.text:
                                             uesio.variant: uesio/web.calloutsmall_primary
-                                            text: 10% trap
+                                            text: Missing features 10% trap
                                         - uesio/io.box:
                                             uesio.variant: uesio/web.text_block
                                             components:
@@ -378,114 +380,98 @@ definition:
                     uesio.variant: uesio/web.mainlayout_dark
                     components:
                       - uesio/io.box:
-                          uesio.variant: uesio/web.section
+                          uesio.variant: uesio/io.section
                           components:
                             - uesio/io.grid:
-                                uesio.variant: uesio/web.callout
+                                uesio.variant: ""
                                 items:
                                   - uesio/io.text:
                                       uesio.variant: uesio/web.calloutsmedium
                                       uesio.styleTokens:
                                         root:
                                           - font-medium
+                                          - p-3
                                       text: ues.io is all inclusive
-                      - uesio/io.box:
-                          uesio.variant: uesio/web.flex_col
-                          components:
-                            - uesio/web.arrow:
-                                arrow: uesio/web.arrow_primary_light
-                                left:
-                                  - uesio/io.text:
-                                      uesio.variant: uesio/web.calloutsmallsubdark
-                                      text: Multiple layers of
-                                  - uesio/io.text:
-                                      uesio.variant: uesio/web.calloutsmallsubdark
-                                      text: " security. "
-                                      uesio.styleTokens:
-                                        root:
-                                          - font-extrabold
-                                right:
-                                  - uesio/io.text:
-                                      uesio.variant: uesio/web.calloutsmallsubdark
-                                      text: Maintain your
-                                  - uesio/io.text:
-                                      uesio.variant: uesio/web.calloutsmallsubdark
-                                      text: " security compliance."
-                                      uesio.styleTokens:
-                                        root:
-                                          - font-extrabold
-                            - uesio/web.arrow:
-                                arrow: uesio/web.arrow_blue
-                                left:
-                                  - uesio/io.text:
-                                      uesio.variant: uesio/web.calloutsmallsub
-                                      text: Interconnect and extend
-                                  - uesio/io.text:
-                                      uesio.variant: uesio/web.calloutsmallsub
-                                      text: " your existing platforms. "
-                                      uesio.styleTokens:
-                                        root:
-                                          - font-extrabold
-                                right:
-                                  - uesio/io.text:
-                                      uesio.variant: uesio/web.calloutsmallsubdark
-                                      text: "Choose your infrastructure "
-                                      uesio.styleTokens:
-                                        root:
-                                          - font-extrabold
-                                  - uesio/io.text:
-                                      uesio.variant: uesio/web.calloutsmallsubdark
-                                      text: AWS, GCP, Digital Ocean or Azure.
-                            - uesio/web.arrow:
-                                arrow: uesio/web.arrow_primary_light
-                                left:
-                                  - uesio/io.text:
-                                      uesio.variant: uesio/web.calloutsmallsubdark
-                                      text: "Quickly build "
-                                      uesio.styleTokens:
-                                        root:
-                                          - font-extrabold
-                                  - uesio/io.text:
-                                      uesio.variant: uesio/web.calloutsmallsubdark
-                                      text: applications and streamline apps and microservices.
-                                right:
-                                  - uesio/io.text:
-                                      uesio.variant: uesio/web.calloutsmallsubdark
-                                      text: Either
-                                  - uesio/io.text:
-                                      uesio.variant: uesio/web.calloutsmallsubdark
-                                      text: " self-host "
-                                      uesio.styleTokens:
-                                        root:
-                                          - font-extrabold
-                                  - uesio/io.text:
-                                      uesio.variant: uesio/web.calloutsmallsubdark
-                                      text: or host on ues.io on a
-                                  - uesio/io.text:
-                                      uesio.variant: uesio/web.calloutsmallsubdark
-                                      text: " Pay as You Go basis."
-                                      uesio.styleTokens:
-                                        root:
-                                          - font-extrabold
-                            - uesio/web.arrow:
-                                arrow: uesio/web.arrow_blue
-                                left:
-                                  - uesio/io.text:
-                                      uesio.variant: uesio/web.calloutsmallsub
-                                      text: "Everything out of the box, "
-                                      uesio.styleTokens:
-                                        root:
-                                          - font-extrabold
-                                  - uesio/io.text:
-                                      uesio.variant: uesio/web.calloutsmallsub
-                                      text: database, security management and UI components.
-                                right:
-                                  - uesio/io.text:
-                                      uesio.variant: uesio/web.calloutsmallsubdark
-                                      text: Securly speed up
-                                  - uesio/io.text:
-                                      uesio.variant: uesio/web.calloutsmallsubdark
-                                      text: " development and delivery."
-                                      uesio.styleTokens:
-                                        root:
-                                          - font-extrabold
+                                  - uesio/io.box:
+                                      uesio.variant: uesio/web.flex_col
+                                      components:
+                                        - uesio/web.arrow:
+                                            arrow: uesio/web.arrow_primary_light
+                                            left:
+                                              - uesio/io.text:
+                                                  uesio.variant: ""
+                                                  text: Multiple layers of security
+                                                  uesio.styleTokens:
+                                                    root:
+                                                      - p-4
+                                            right:
+                                              - uesio/io.text:
+                                                  uesio.variant: ""
+                                                  text: Maintain your security compliance
+                                                  uesio.styleTokens:
+                                                    root:
+                                                      - font-bold
+                                            uesio.styleTokens:
+                                              root:
+                                                - p-5
+                                                - sm:hidden
+                                        - uesio/web.arrow:
+                                            arrow: uesio/web.arrow_blue
+                                            left:
+                                              - uesio/io.text:
+                                                  uesio.variant: ""
+                                                  text: Interconnect and extend your existing platforms
+                                                  uesio.styleTokens:
+                                                    root:
+                                                      - p-4
+                                                      - text-white
+                                            right:
+                                              - uesio/io.text:
+                                                  uesio.variant: ""
+                                                  text: Choose your infrastructure AWS, GCP, Digital Ocean or Azure
+                                                  uesio.styleTokens:
+                                                    root:
+                                                      - font-bold
+                                            uesio.styleTokens:
+                                              root: []
+                                        - uesio/web.arrow:
+                                            arrow: uesio/web.arrow_primary_light
+                                            left:
+                                              - uesio/io.text:
+                                                  uesio.variant: ""
+                                                  text: Quickly build applications and streamline apps and microservices
+                                                  uesio.styleTokens:
+                                                    root:
+                                                      - p-4
+                                            right:
+                                              - uesio/io.text:
+                                                  uesio.variant: ""
+                                                  text: Either self-host or host on ues.io on a Pay as You Use basis
+                                                  uesio.styleTokens:
+                                                    root:
+                                                      - font-bold
+                                            uesio.styleTokens:
+                                              root: []
+                                        - uesio/web.arrow:
+                                            arrow: uesio/web.arrow_blue
+                                            left:
+                                              - uesio/io.text:
+                                                  uesio.variant: ""
+                                                  text: Everything out of the box, database, security and UI components
+                                                  uesio.styleTokens:
+                                                    root:
+                                                      - p-4
+                                                      - text-white
+                                            right:
+                                              - uesio/io.text:
+                                                  uesio.variant: uesio/web.calloutsmallsubdark
+                                                  text: Securly speed up development and delivery
+                                                  uesio.styleTokens:
+                                                    root:
+                                                      - font-bold
+                                            uesio.styleTokens:
+                                              root: []
+                    uesio.styleTokens:
+                      root:
+                        - hidden
+                        - lg:block
