@@ -1,0 +1,577 @@
+name: crm_web
+definition:
+  # Wires connect to data in collections
+  wires: {}
+  # Components determine the layout and composition of your view
+  components:
+    - uesio/io.viewlayout:
+        uesio.variant: uesio/io.default
+        content:
+          - uesio/io.grid:
+              uesio.variant: ""
+              items:
+                - uesio/io.grid:
+                    items:
+                      - uesio/io.box:
+                          components:
+                            - uesio/io.box:
+                                components:
+                                  - uesio/io.text:
+                                      text: Free Plan
+                                      element: div
+                                      align: left
+                                      color: grey
+                                      uesio.styleTokens:
+                                        root:
+                                          - text-xl
+                                          - font-[gosha]
+                                uesio.styleTokens:
+                                  root: []
+                            - uesio/io.box:
+                                components:
+                                  - uesio/io.text:
+                                      text: "Tired of expensive, per-user fees for features your team doesn't even use? "
+                                      element: div
+                                      align: left
+                                      uesio.variant: ""
+                                      uesio.styleTokens:
+                                        root:
+                                          - text-3xl
+                                          - font-bold
+                                          - font-[gosha]
+                            - uesio/io.text:
+                                text: UES.IO CRM is here to change the game. Our free plan equips your first 10 users with all the essential CRM tools you need to manage your sales pipeline effectively, at no cost.
+                                element: div
+                                align: left
+                                uesio.variant: ""
+                                uesio.styleTokens:
+                                  root:
+                                    - text-slate-500
+                                    - font-[gosha]
+                                    - pt-4
+                                    - text-xl
+                                color: dark-grey
+                            - uesio/io.text:
+                                text: To add unlimited users and access to the design studio for deep customisation you will need to subscribe to the $99/Month tier.
+                                element: div
+                                align: left
+                                uesio.variant: ""
+                                uesio.styleTokens:
+                                  root:
+                                    - text-slate-500
+                                    - font-[gosha]
+                                    - pt-4
+                                    - italic
+                                color: dark-grey
+                          uesio.variant: ""
+                          uesio.styleTokens:
+                            root:
+                              - pl-80
+                - uesio/io.image:
+                    loading: eager
+                    file: uesio/web.crm_leads
+                    uesio.variant: ""
+                    height: null
+                    uesio.styleTokens:
+                      root:
+                        - max-w-xl
+              uesio.styleTokens:
+                root:
+                  - mt-32
+                  - ml-40
+                  - mr-40
+                  - mb-48
+                  - grid-cols-2
+          - uesio/io.grid:
+              uesio.variant: uesio/io.two_columns
+              items:
+                - uesio/io.grid:
+                    items:
+                      - uesio/io.image:
+                          loading: eager
+                          file: uesio/web.crm_leads
+                          uesio.variant: ""
+                          height: null
+                          uesio.styleTokens:
+                            root:
+                              - pl-56
+                - uesio/io.box:
+                    components:
+                      - uesio/io.box:
+                          components:
+                            - uesio/io.text:
+                                text: User Friendly
+                                element: div
+                                align: left
+                                color: grey
+                                uesio.styleTokens:
+                                  root:
+                                    - text-xl
+                                    - font-[gosha]
+                      - uesio/io.box:
+                          components:
+                            - uesio/io.text:
+                                text: Take Control of Your Sales Pipeline Today
+                                element: div
+                                align: left
+                                uesio.variant: ""
+                                uesio.styleTokens:
+                                  root:
+                                    - text-3xl
+                                    - font-bold
+                                    - font-[gosha]
+                          uesio.styleTokens:
+                            root: []
+                      - uesio/io.text:
+                          text: Stop wasting money on bloated CRM software. Try UES.IO CRM today and experience the power of a free, user-friendly CRM that helps you close more deals.
+                          element: div
+                          align: left
+                          uesio.variant: ""
+                          uesio.styleTokens:
+                            root:
+                              - text-slate-500
+                              - font-[gosha]
+                              - text-xl
+                              - pt-4
+                    uesio.variant: ""
+                    uesio.styleTokens:
+                      root:
+                        - ml-20
+                        - w-3/4
+              uesio.styleTokens:
+                root: []
+          - uesio/io.grid:
+              uesio.variant: ""
+              items:
+                - uesio/io.box:
+                    components:
+                      - uesio/io.box:
+                          components:
+                            - uesio/io.text:
+                                text: AI Integration
+                                element: div
+                                align: left
+                                color: grey
+                                uesio.styleTokens:
+                                  root:
+                                    - text-xl
+                                    - font-[gosha]
+                          uesio.styleTokens:
+                            root: []
+                      - uesio/io.box:
+                          components:
+                            - uesio/io.text:
+                                text: Need to integrate AI in a secure environment?
+                                element: div
+                                align: left
+                                uesio.variant: ""
+                                uesio.styleTokens:
+                                  root:
+                                    - text-3xl
+                                    - font-bold
+                                    - font-[gosha]
+                      - uesio/io.text:
+                          text: Take your sales game to the next level with optional AI integrations. Streamline your sales process, gain valuable insights, and boost overall efficiency.
+                          element: div
+                          align: left
+                          uesio.variant: ""
+                          uesio.styleTokens:
+                            root:
+                              - text-slate-500
+                              - font-[gosha]
+                              - pt-4
+                              - text-xl
+                          color: dark-grey
+                      - uesio/io.text:
+                          text: (Available on the $99 paid plan.)
+                          element: div
+                          align: left
+                          color: ""
+                          uesio.styleTokens:
+                            root:
+                              - font-[gosha]
+                              - mt-2
+                    uesio.variant: ""
+                    uesio.styleTokens:
+                      root:
+                        - mr-12
+                        - w-3/4
+                        - pl-40
+                - uesio/io.image:
+                    loading: eager
+                    file: uesio/web.crm_leads
+                    uesio.variant: ""
+                    height: null
+                    uesio.styleTokens:
+                      root:
+                        - max-w-xl
+              uesio.styleTokens:
+                root:
+                  - mt-32
+                  - ml-40
+                  - mr-40
+                  - mb-48
+                  - grid-cols-2
+          - uesio/io.grid:
+              uesio.variant: uesio/io.two_columns
+              items:
+                - uesio/io.image:
+                    loading: eager
+                    file: uesio/web.crm_leads
+                    uesio.variant: ""
+                    height: null
+                    uesio.styleTokens:
+                      root:
+                        - max-w-xl
+                - uesio/io.box:
+                    components:
+                      - uesio/io.box:
+                          components:
+                            - uesio/io.text:
+                                text: Open Source
+                                element: div
+                                align: left
+                                color: grey
+                                uesio.styleTokens:
+                                  root:
+                                    - text-xl
+                                    - font-[gosha]
+                      - uesio/io.box:
+                          components:
+                            - uesio/io.text:
+                                text: UESIO CRM is open-source
+                                element: div
+                                align: left
+                                uesio.variant: ""
+                                uesio.styleTokens:
+                                  root:
+                                    - text-3xl
+                                    - font-bold
+                                    - font-[gosha]
+                          uesio.styleTokens:
+                            root: []
+                      - uesio/io.text:
+                          text: Which means our development process is completely transparent. This fosters a collaborative community where users can contribute to the product's ongoing improvement.
+                          element: div
+                          align: left
+                          uesio.variant: ""
+                          uesio.styleTokens:
+                            root:
+                              - text-slate-500
+                              - font-[gosha]
+                              - text-xl
+                              - pt-4
+                    uesio.variant: ""
+                    uesio.styleTokens:
+                      root:
+                        - ml-20
+                        - w-3/4
+                        - pr-56
+              uesio.styleTokens:
+                root:
+                  - ml-40
+                  - mr-40
+                  - mb-48
+          - uesio/io.box:
+              components:
+                - uesio/io.text:
+                    text: See how ues.io CRM outperforms the competition
+                    element: div
+                    align: center
+                    uesio.variant: uesio/web.callout_dark
+                    uesio.styleTokens:
+                      root:
+                        - font-[gosha]
+                - uesio/io.tabs:
+                    uesio.variant: uesio/io.default
+                    tabs:
+                      - id: Salesforce
+                        label: Salesforce
+                        components:
+                          - uesio/io.image:
+                              loading: lazy
+                              file: uesio/web.compare1
+                      - id: sugar
+                        label: SugarCRM
+                        components:
+                          - uesio/io.image:
+                              loading: lazy
+                              file: uesio/web.compare1
+                      - label: HubSpot
+                        id: hub
+                        components:
+                          - uesio/io.image:
+                              loading: lazy
+                              file: uesio/web.compare1
+                      - label: Pipedrive
+                        id: pipe
+                        components:
+                          - uesio/io.image:
+                              loading: lazy
+                              file: uesio/web.compare1
+                      - label: Zoho
+                        id: zoho
+                        components:
+                          - uesio/io.image:
+                              loading: lazy
+                              file: uesio/web.compare1
+                    uesio.styleTokens:
+                      root:
+                        - align-middle
+                        - pl-96
+                        - pr-96
+              uesio.variant: uesio/web.flex_col
+              uesio.styleTokens:
+                root: []
+          - uesio/io.box:
+              components:
+                - uesio/io.grid:
+                    items:
+                      - uesio/io.button:
+                          text: "Get STARTED for Free "
+                          icon: arrow_forward
+                          uesio.variant: uesio/web.calltoaction
+                          iconPlacement: end
+                          uesio.styleTokens:
+                            root:
+                              - bg-blue-700
+                              - text-white
+                              - rounded-xl
+                              - hover:shadow-lg
+                              - hover:scale-105
+                              - shadow-lg
+                              - w-max
+                    uesio.variant: uesio/io.one_column
+                    uesio.styleTokens:
+                      root:
+                        - place-items-center
+              uesio.variant: uesio/web.flex_col
+              uesio.styleTokens:
+                root: []
+          - uesio/io.box:
+              components:
+                - uesio/io.text:
+                    text: Need More? Upgrade to Unlimited Users and Deep Customization
+                    element: div
+                    align: center
+                    uesio.variant: uesio/web.blogteasertitle
+                    uesio.styleTokens:
+                      root:
+                        - mt-4
+                - uesio/io.text:
+                    text: Our affordable $99 monthly plan unlocks unlimited users and extensive customization options, allowing you to tailor UESI.O CRM to perfectly fit your unique workflow.
+                    element: div
+                    align: center
+                    uesio.variant: ""
+                    uesio.styleTokens:
+                      root:
+                        - font-[gosha]
+                        - -mt-4
+                - uesio/io.button:
+                    text: "Sign Up "
+                    icon: arrow_right_alt
+                    uesio.variant: uesio/io.default
+                    iconPlacement: end
+                    uesio.styleTokens:
+                      label:
+                        - text-xl
+              uesio.variant: uesio/web.flex_col
+              uesio.styleTokens:
+                root:
+                  - bg-blue-50
+                  - mb-5
+          - uesio/io.box:
+              components:
+                - uesio/io.text:
+                    text: Why customers love uesio CRM
+                    element: div
+                    align: center
+                    uesio.variant: uesio/web.callout_dark
+                    uesio.styleTokens:
+                      root: []
+                - uesio/io.grid:
+                    uesio.variant: uesio/io.three_columns
+                    items:
+                      - uesio/io.box:
+                          components:
+                            - uesio/io.group:
+                                columnGap: 10px
+                                components:
+                                  - uesio/io.image:
+                                      loading: lazy
+                                      file: uesio/web.agco_logo
+                                      height: 40
+                                uesio.styleTokens:
+                                  root:
+                                    - pb-5
+                            - uesio/io.text:
+                                text: "Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum "
+                                element: div
+                                align: center
+                                uesio.variant: ""
+                                uesio.styleTokens:
+                                  root:
+                                    - font-[gosha]
+                          uesio.variant: ""
+                          uesio.styleTokens:
+                            root:
+                              - p-4
+                              - bg-white
+                              - m-4
+                      - uesio/io.box:
+                          components:
+                            - uesio/io.group:
+                                columnGap: 10px
+                                components:
+                                  - uesio/io.image:
+                                      loading: lazy
+                                      file: uesio/web.amazon_logo
+                                      height: 40
+                                uesio.styleTokens:
+                                  root:
+                                    - pb-5
+                            - uesio/io.text:
+                                text: "Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum "
+                                element: div
+                                align: center
+                                uesio.variant: ""
+                                uesio.styleTokens:
+                                  root:
+                                    - font-[gosha]
+                          uesio.variant: ""
+                          uesio.styleTokens:
+                            root:
+                              - p-4
+                              - bg-white
+                              - m-4
+                      - uesio/io.box:
+                          components:
+                            - uesio/io.group:
+                                columnGap: 10px
+                                components:
+                                  - uesio/io.image:
+                                      loading: lazy
+                                      file: uesio/web.intel_logo
+                                      height: 40
+                                uesio.styleTokens:
+                                  root:
+                                    - pb-5
+                            - uesio/io.text:
+                                text: "Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum "
+                                element: div
+                                align: center
+                                uesio.variant: ""
+                                uesio.styleTokens:
+                                  root:
+                                    - font-[gosha]
+                          uesio.variant: ""
+                          uesio.styleTokens:
+                            root:
+                              - p-4
+                              - bg-white
+                              - m-4
+                    uesio.styleTokens:
+                      root:
+                        - pl-8
+                        - pr-8
+              uesio.variant: uesio/web.flex_col
+              uesio.styleTokens:
+                root:
+                  - bg-green-50
+                  - mb-8
+        header:
+          - uesio/io.viewheader:
+              uesio.variant: uesio/io.default
+              logo:
+                - uesio/io.image:
+                    loading: lazy
+                    file: uesio/web.logo
+                    height: 65
+              center:
+                - uesio/io.box:
+                    components:
+                      - uesio/io.text:
+                          text: Free, Powerful CRM for your Sales Team
+                          element: div
+                          align: center
+                          color: black
+                          uesio.variant: uesio/web.callout
+                          uesio.styleTokens:
+                            root:
+                              - text-black
+                      - uesio/io.text:
+                          text: Slash CRM Costs and Boost Sales
+                          element: div
+                          align: center
+                          color: black
+                          uesio.variant: uesio/web.calloutsmall_primary
+                          uesio.styleTokens:
+                            root:
+                              - text-black
+                    uesio.styleTokens:
+                      root: []
+              right:
+                - uesio/io.button:
+                    text: "Get Started for FREE "
+                    icon: arrow_forward
+                    uesio.variant: uesio/web.calltoaction
+                    iconPlacement: end
+                    uesio.styleTokens:
+                      root:
+                        - bg-blue-700
+                        - text-white
+                        - rounded-xl
+                        - hover:shadow-lg
+                        - hover:scale-105
+                        - shadow-lg
+              left:
+                - uesio/io.text:
+                    text: sales CRM
+                    element: div
+                    align: left
+                    color: grey
+                    uesio.variant: ""
+                    uesio.styleTokens:
+                      root:
+                        - font-[gosha]
+                        - text-xl
+        uesio.styleTokens:
+          root: []
+        footer:
+          - uesio/io.box:
+              components:
+                - uesio/io.grid:
+                    uesio.variant: uesio/io.four_columns
+                    items:
+                      - uesio/io.box:
+                          components: []
+                      - uesio/io.box:
+                          components:
+                            - uesio/crm.navbutton:
+                                text: About us
+                            - uesio/crm.navbutton:
+                                text: About us
+                      - uesio/io.box:
+                          components:
+                            - uesio/crm.navbutton:
+                                text: About us
+                            - uesio/crm.navbutton:
+                                text: About us
+                      - uesio/io.box:
+                          components:
+                            - uesio/crm.navbutton:
+                                text: About us
+                            - uesio/crm.navbutton:
+                                text: About us
+                    uesio.styleTokens:
+                      root:
+                        - items-center
+              uesio.styleTokens:
+                root:
+                  - border-t-2
+          - uesio/io.box:
+              uesio.variant: uesio/web.flex_structure
+              uesio.styleTokens:
+                root:
+                  - bg-white
+                  - h-16
