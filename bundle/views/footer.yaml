@@ -85,12 +85,6 @@ definition:
                                         - signal: route/REDIRECT
                                           path: https://ues.io/blog
                                           newtab: true
-                                  - uesio/io.button:
-                                      uesio.variant: uesio/web.footerlink
-                                      text: Contact
-                                      signals:
-                                        - signal: route/NAVIGATE
-                                          path: contact
                             - uesio/io.box:
                                 uesio.styleTokens:
                                   root:
