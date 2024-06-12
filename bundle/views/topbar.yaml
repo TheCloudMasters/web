@@ -110,6 +110,13 @@ definition:
                                   - signal: route/REDIRECT
                                     path: https://ues.io/blog
                                     newtab: true
+                            - uesio/io.button:
+                                uesio.variant: uesio/web.borderless
+                                text: CRM
+                                signals:
+                                  - signal: route/REDIRECT
+                                    path: https://crm.ues.io
+                                    newtab: true
                             - uesio/io.box:
                                 uesio.variant: uesio/web.flex_structure_small
                                 components:

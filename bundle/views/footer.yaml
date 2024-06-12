@@ -85,6 +85,13 @@ definition:
                                         - signal: route/REDIRECT
                                           path: https://ues.io/blog
                                           newtab: true
+                                  - uesio/io.button:
+                                      uesio.variant: uesio/web.footerlink
+                                      text: CRM
+                                      signals:
+                                        - signal: route/REDIRECT
+                                          path: https://crm.ues.io
+                                          newtab: true
                             - uesio/io.box:
                                 uesio.styleTokens:
                                   root:
@@ -99,7 +106,7 @@ definition:
                                       components:
                                         - uesio/io.text:
                                             uesio.variant: uesio/web.footertext
-                                            text: The Cloud Masters LLC Switzerland - All rights reserved ©2023
+                                            text: UESIO Inc. USA
                                             element: div
                                         - uesio/io.box:
                                             uesio.styleTokens:
@@ -107,12 +114,6 @@ definition:
                                                 - flex
                                                 - gap-4
                                             components:
-                                              - uesio/io.button:
-                                                  uesio.variant: uesio/web.footerlink_muted
-                                                  text: Who we are
-                                                  signals:
-                                                    - signal: "route/REDIRECT"
-                                                      path: "https://www.thecloudmasters.com"
                                               - uesio/io.button:
                                                   uesio.variant: uesio/web.footerlink_muted
                                                   text: Privacy policy
