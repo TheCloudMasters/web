@@ -1,6 +1,0 @@
-name: crmstaff
-permissionSets:
-  - uesio/web.public
-  - uesio/web.crmstaff
-  - uesio/crm.staff
-homeRoute: uesio/web.crm

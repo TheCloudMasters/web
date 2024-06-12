@@ -2,5 +2,4 @@ name: public
 permissionSets:
   - uesio/core.public
   - uesio/web.public
-  - uesio/crm.public
 homeRoute: uesio/web.home
