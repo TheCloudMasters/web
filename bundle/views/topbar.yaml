@@ -117,6 +117,13 @@ definition:
                                   - signal: route/REDIRECT
                                     path: https://crm.ues.io
                                     newtab: true
+                            - uesio/io.button:
+                                uesio.variant: uesio/web.borderless
+                                text: "Git Repo "
+                                signals:
+                                  - signal: route/REDIRECT
+                                    path: https://github.com/ues-io/uesio
+                                    newtab: true
                             - uesio/io.box:
                                 uesio.variant: uesio/web.flex_structure_small
                                 components:
@@ -172,6 +179,13 @@ definition:
                   signals:
                     - signal: route/REDIRECT
                       path: https://crm.ues.io
+                      newtab:
+              - uesio/io.button:
+                  uesio.variant: uesio/web.borderless
+                  text: Git Repo
+                  signals:
+                    - signal: route/REDIRECT
+                      path: https://github.com/ues-io/uesio
                       newtab: true
               - uesio/io.button:
                   uesio.variant: uesio/web.borderless
