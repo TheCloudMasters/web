@@ -132,7 +132,6 @@ definition:
                                                   signals:
                                                     - signal: route/NAVIGATE
                                                       path: terms
-                - components: []
               uesio.styleTokens:
                 root:
                   - justify-items-center

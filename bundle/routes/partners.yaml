@@ -1,7 +1,6 @@
 name: partners
 path: partners
 view: partners
-theme: uesio/core.default
 title: ues.io Partners
 tags:
   - type: meta
