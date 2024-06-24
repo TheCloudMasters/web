@@ -76,7 +76,7 @@ definition:
                                       text: Partners
                                       signals:
                                         - signal: route/NAVIGATE
-                                          path: partenrs
+                                          path: partners
                                   - uesio/io.button:
                                       uesio.variant: uesio/web.footerlink
                                       text: Community
