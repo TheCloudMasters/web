@@ -73,6 +73,12 @@ definition:
                                           path: pricing
                                   - uesio/io.button:
                                       uesio.variant: uesio/web.footerlink
+                                      text: Partners
+                                      signals:
+                                        - signal: route/NAVIGATE
+                                          path: partners
+                                  - uesio/io.button:
+                                      uesio.variant: uesio/web.footerlink
                                       text: Community
                                       signals:
                                         - signal: route/REDIRECT
@@ -126,7 +132,6 @@ definition:
                                                   signals:
                                                     - signal: route/NAVIGATE
                                                       path: terms
-                - components: []
               uesio.styleTokens:
                 root:
                   - justify-items-center

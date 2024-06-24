@@ -1,0 +1,95 @@
+name: partners
+definition:
+  # Wires connect to data in collections
+  wires: {}
+  # Components determine the layout and composition of your view
+  components:
+    - uesio/web.main_layout:
+        inner:
+          - uesio/io.text:
+              text: Our Partners
+              element: div
+              align: left
+              uesio.variant: uesio/web.callout_dark
+              uesio.styleTokens:
+                root:
+                  - pl-8
+                  - pt-8
+          - uesio/io.grid:
+              uesio.variant: uesio/io.three_columns
+              items:
+                - uesio/io.grid:
+                    uesio.variant: uesio/io.one_column
+                    items:
+                      - uesio/io.image:
+                          loading: lazy
+                          uesio.variant: ""
+                          file: uesio/web.aws_logo
+                          height: 80
+                          uesio.styleTokens:
+                            root: []
+                          signals:
+                            - signal: route/REDIRECT
+                              path: https://aws.amazon.com/marketplace/pp/prodview-3s622khfhwbqi
+                              newtab: true
+                      - uesio/io.text:
+                          text: ues.io is an AWS Software Partner, leveraging Amazon Web Services' robust cloud infrastructure to deliver innovative solutions. This partnership allows ues.io to integrate seamlessly with AWS services, providing customers with scalable, secure, and high-performance cloud-based applications. As an AWS Software Partner, ues.io demonstrates expertise in developing and deploying software on the AWS platform, ensuring clients benefit from the latest cloud technologies and best practices.
+                          element: div
+                          align: left
+                          uesio.variant: uesio/web.calloutsub
+                          uesio.styleTokens:
+                            root:
+                              - text-black
+                    uesio.styleTokens:
+                      root:
+                        - p-9
+                - uesio/io.grid:
+                    uesio.variant: uesio/io.one_column
+                    items:
+                      - uesio/io.image:
+                          loading: lazy
+                          uesio.variant: ""
+                          file: uesio/web.copebit_logo
+                          height: 80
+                          signals:
+                            - signal: route/REDIRECT
+                              path: https://www.copebit.ch/en/home/
+                              newtab: true
+                      - uesio/io.text:
+                          text: As a certified AWS advanced consulting partner, the Swiss IT Company COPEBIT guides clients on their journey into the AWS cloud, helping them migrate their workload and making sure that it is secure and runs optimally within the new environment. CopeBit demonstrates to its existing clients the simplicity of building and running enterprise grade applications either by accessing ues.io online or running it on-premise and extending it further using other AWS services.
+                          element: div
+                          align: left
+                          uesio.variant: uesio/web.calloutsub
+                          uesio.styleTokens:
+                            root:
+                              - text-black
+                    uesio.styleTokens:
+                      root:
+                        - p-8
+                - uesio/io.grid:
+                    uesio.variant: uesio/io.one_column
+                    items:
+                      - uesio/io.image:
+                          loading: lazy
+                          uesio.variant: ""
+                          file: uesio/web.usio_pay
+                          height: 65
+                          signals:
+                            - signal: route/REDIRECT
+                              path: https://usio.com
+                              newtab: true
+                      - uesio/io.text:
+                          text: Usio is a leading provider of integrated payment solutions, trusted by businesses to process billions of dollars in transactions annually. Usio's platform offers a comprehensive suite of features designed to simplify payment processing, improve user experience, and reduce costs. Usio's Payfac-as-a-Service solution offers a comprehensive suite of features designed to simplify payment processing for businesses of all sizes in the USA. *only available in the USA
+                          element: div
+                          align: left
+                          uesio.variant: uesio/web.calloutsub
+                          uesio.styleTokens:
+                            root:
+                              - text-black
+                    uesio.styleTokens:
+                      root:
+                        - p-8
+              uesio.styleTokens:
+                root:
+                  - pt-36
+                  - min-h-full

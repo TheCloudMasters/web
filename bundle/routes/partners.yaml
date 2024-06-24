@@ -1,0 +1,9 @@
+name: partners
+path: partners
+view: partners
+title: ues.io Partners
+tags:
+  - type: meta
+    location: body
+    name: keywords
+    content: uesio, copebit, aws
