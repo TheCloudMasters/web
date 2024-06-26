@@ -56,7 +56,7 @@ definition:
                               path: https://www.copebit.ch/en/home/
                               newtab: true
                       - uesio/io.text:
-                          text: As a certified AWS advanced consulting partner, the Swiss IT Company COPEBIT guides clients on their journey into the AWS cloud, helping them migrate their workload and making sure that it is secure and runs optimally within the new environment. CopeBit demonstrates to its existing clients the simplicity of building and running enterprise grade applications either by accessing ues.io online or running it on-premise and extending it further using other AWS services.
+                          text: As a certified AWS advanced consulting partner, the Swiss IT Company copebit guides clients on their journey into the AWS cloud, helping them migrate their workload and making sure that it is secure and runs optimally within the new environment. copebit demonstrates to its existing clients the simplicity of building and running enterprise grade applications either by accessing ues.io online or running it on-premise and extending it further using other AWS services.
                           element: div
                           align: left
                           uesio.variant: uesio/web.calloutsub
