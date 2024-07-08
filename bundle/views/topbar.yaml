@@ -106,13 +106,6 @@ definition:
                                     path: partners
                             - uesio/io.button:
                                 uesio.variant: uesio/web.borderless
-                                text: Community
-                                signals:
-                                  - signal: route/REDIRECT
-                                    path: https://community.ues.io
-                                    newtab: true
-                            - uesio/io.button:
-                                uesio.variant: uesio/web.borderless
                                 text: Blog
                                 signals:
                                   - signal: route/REDIRECT
@@ -174,12 +167,6 @@ definition:
                   signals:
                     - signal: route/NAVIGATE
                       path: partners
-              - uesio/io.button:
-                  uesio.variant: uesio/web.borderless
-                  text: Community
-                  signals:
-                    - signal: route/REDIRECT
-                      path: https://community.ues.io
               - uesio/io.button:
                   uesio.variant: uesio/web.borderless
                   text: Blog
