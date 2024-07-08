@@ -79,13 +79,6 @@ definition:
                                           path: partners
                                   - uesio/io.button:
                                       uesio.variant: uesio/web.footerlink
-                                      text: Community
-                                      signals:
-                                        - signal: route/REDIRECT
-                                          path: https://community.ues.io
-                                          newtab: true
-                                  - uesio/io.button:
-                                      uesio.variant: uesio/web.footerlink
                                       text: Blog
                                       signals:
                                         - signal: route/REDIRECT
