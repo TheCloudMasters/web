@@ -87,6 +87,13 @@ definition:
                           components:
                             - uesio/io.button:
                                 uesio.variant: uesio/web.borderless
+                                text: About
+                                signals:
+                                  - signal: route/NAVIGATE
+                                    path: about
+                                    newtab: true
+                            - uesio/io.button:
+                                uesio.variant: uesio/web.borderless
                                 text: Documentation
                                 signals:
                                   - signal: route/REDIRECT
@@ -149,6 +156,12 @@ definition:
                 - pt-[83px]
                 - grid-flow-row
             components:
+              - uesio/io.button:
+                  uesio.variant: uesio/web.borderless
+                  text: About
+                  signals:
+                    - signal: route/NAVIGATE
+                      path: about
               - uesio/io.button:
                   uesio.variant: uesio/web.borderless
                   text: Documentation

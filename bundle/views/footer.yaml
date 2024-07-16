@@ -17,8 +17,10 @@ definition:
               items:
                 - uesio/io.box:
                     uesio.styleTokens:
-                      - h-fit
-                      - place-self-start
+                      "0": h-fit
+                      "1": place-self-start
+                      root:
+                        - -ml-36
                     components:
                       - uesio/io.image:
                           height: 60
@@ -26,25 +28,58 @@ definition:
                           signals:
                             - signal: route/NAVIGATE
                               path: home
+                          uesio.styleTokens:
+                            root: []
                       - uesio/io.box:
                           components:
                             - uesio/io.markdown:
-                                markdown: "# [CIO Review Magazine Award](https://www.cioreview.com/ues-io) - January 2024"
+                                markdown: "# [CIO Review Magazine Award 2024](https://www.cioreview.com/ues-io) "
                                 uesio.styleTokens:
                                   root:
                                     - text-white
-                                    - mt-1
+                                  a:
+                                    - text-sm
                           uesio.styleTokens:
                             root:
                               - mt-4
                 - uesio/io.box:
                     components:
-                      - uesio/io.box:
-                          uesio.variant: uesio/web.flex_structure_small
+                      - uesio/io.grid:
+                          uesio.variant: uesio/io.four_columns
+                          items:
+                            - uesio/io.image:
+                                height: 55
+                                file: uesio/web.aws
+                                signals:
+                                  - signal: route/REDIRECT
+                                    path: "https://aws.amazon.com/marketplace/pp/prodview-3s622khfhwbqi"
+                                    newtab: true
+                            - uesio/io.image:
+                                height: 55
+                                file: uesio/web.aws_marketplace
+                                signals:
+                                  - signal: route/REDIRECT
+                                    path: https://aws.amazon.com/marketplace/pp/prodview-3s622khfhwbqi
+                                    newtab: true
+                            - uesio/io.image:
+                                height: 40
+                                file: uesio/web.linkedin
+                                signals:
+                                  - signal: route/REDIRECT
+                                    path: https://www.linkedin.com/company/uesio
+                                    newtab: true
+                            - uesio/io.image:
+                                height: 40
+                                file: uesio/web.youtube
+                                signals:
+                                  - signal: route/REDIRECT
+                                    path: https://www.youtube.com/channel/UCPanoza3zR9zCgn7Y4dg6sw
+                                    newtab: true
                           uesio.styleTokens:
                             root:
-                              - mb-4
-                          components: []
+                              - gap-4
+                              - place-items-center
+                              - p-3
                 - uesio/io.box:
                     uesio.styleTokens:
                       - h-full
@@ -59,6 +94,13 @@ definition:
                             - uesio/io.box:
                                 uesio.variant: uesio/web.flex_structure_small
                                 components:
+                                  - uesio/io.button:
+                                      uesio.variant: uesio/web.footerlink
+                                      text: About
+                                      signals:
+                                        - signal: route/NAVIGATE
+                                          path: about
+                                          newtab: true
                                   - uesio/io.button:
                                       uesio.variant: uesio/web.footerlink
                                       text: Documentation
@@ -129,39 +171,3 @@ definition:
                 root:
                   - justify-items-center
                   - p-4
-          - uesio/io.grid:
-              uesio.variant: uesio/io.four_columns
-              items:
-                - uesio/io.image:
-                    height: 55
-                    file: uesio/web.aws
-                    signals:
-                      - signal: route/REDIRECT
-                        path: "https://aws.amazon.com/marketplace/pp/prodview-3s622khfhwbqi"
-                        newtab: true
-                - uesio/io.image:
-                    height: 55
-                    file: uesio/web.aws_marketplace
-                    signals:
-                      - signal: route/REDIRECT
-                        path: https://aws.amazon.com/marketplace/pp/prodview-3s622khfhwbqi
-                        newtab: true
-                - uesio/io.image:
-                    height: 40
-                    file: uesio/web.linkedin
-                    signals:
-                      - signal: route/REDIRECT
-                        path: https://www.linkedin.com/company/uesio
-                        newtab: true
-                - uesio/io.image:
-                    height: 40
-                    file: uesio/web.youtube
-                    signals:
-                      - signal: route/REDIRECT
-                        path: https://www.youtube.com/channel/UCPanoza3zR9zCgn7Y4dg6sw
-                        newtab: true
-              uesio.styleTokens:
-                root:
-                  - gap-4
-                  - place-items-center
-                  - p-3

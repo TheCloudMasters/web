@@ -1,0 +1,154 @@
+name: about
+definition:
+  # Wires connect to data in collections
+  wires: {}
+  # Components determine the layout and composition of your view
+  components:
+    - uesio/web.main_layout:
+        inner:
+          - uesio/io.box:
+              components:
+                - uesio/io.grid:
+                    items:
+                      - uesio/io.box:
+                          components:
+                            - uesio/io.text:
+                                text: Low-Code & No-code
+                                element: div
+                                align: left
+                                color: white
+                                uesio.variant: uesio/web.calloutpre
+                                uesio.styleTokens:
+                                  root:
+                                    - pb-2
+                            - uesio/io.text:
+                                text: ues.io stands at the intersection of simplicity and sophistication. Its platform is where the intuitiveness of low-code and no-code meets the power and flexibility of professional-grade coding with a Core Open Source model. The comprehensive solution encompasses built-in security, seamless authentication, integrated databases, and extensive APIs, all within a cohesive development environment. This environment is not just a workspace; it’s a collaborative ecosystem where product managers, developers, and UX/UI designers come together to create groundbreaking applications.
+                                element: div
+                                align: left
+                                color: white
+                          uesio.styleTokens:
+                            root:
+                              - max-w-[800px]
+                              - p-4
+                      - uesio/io.box:
+                          components:
+                            - uesio/io.text:
+                                text: Greater Flexibility
+                                element: div
+                                align: left
+                                color: white
+                                uesio.variant: uesio/web.calloutpre
+                                uesio.styleTokens:
+                                  root:
+                                    - pb-2
+                            - uesio/io.text:
+                                text: While many platforms claim no-code or low-code capabilities, they often cater to specific industries or imposing rigid features and menus. The typical development journey on these platforms starts smoothly and quickly achieves 80 percent of a build, struggles with the next 10 percent, but soon hits roadblocks in the last 10 percent that can’t be bypassed due to the abstraction. ues.io disrupts this by offering an inherently extendable platform. This unique feature allows developers to seamlessly integrate custom code, ensuring all functionalities are within reach. The platform eradicates the notorious bottleneck of the ‘10 percent gap’ in traditional no-code/low-code platforms.
+                                element: div
+                                align: left
+                                color: white
+                          uesio.styleTokens:
+                            root:
+                              - max-w-[800px]
+                              - p-4
+                      - uesio/io.box:
+                          components:
+                            - uesio/io.text:
+                                text: Cost Barrier
+                                element: div
+                                align: left
+                                color: white
+                                uesio.variant: uesio/web.calloutpre
+                                uesio.styleTokens:
+                                  root:
+                                    - pb-2
+                            - uesio/io.text:
+                                text: Cost is a barrier in adopting no-code/low-code platforms, but ues.io challenges this with free development, eliminating upfront subscription costs. The 'Pay as You Go' model, akin to AWS's billing, scales transparently with usage, accommodating businesses of all sizes that wish to host their solutions on the ues.io platform.  We believe in empowering developers to explore, innovate, and grow without financial limitations. We provide a free platform for experimentation and flexible paid plans for hosting, while also offering an open-source solution for those who prefer full control.
+                                element: div
+                                align: left
+                                color: white
+                          uesio.styleTokens:
+                            root:
+                              - max-w-[800px]
+                              - p-4
+                      - uesio/io.box:
+                          components:
+                            - uesio/io.text:
+                                text: Harness AI
+                                element: div
+                                align: left
+                                color: white
+                                uesio.variant: uesio/web.calloutpre
+                                uesio.styleTokens:
+                                  root:
+                                    - pb-2
+                            - uesio/io.text:
+                                text: ues.io harnesses the power of AI to boost application development, offering efficiency and innovation. For instance, when building a database for a specific sector like transportation, the AI can suggest the most relevant fields, streamlining development and giving a competitive edge. Users can also extend their applications with AI functionality easily and quickly. Getting from idea to execution is faster than ever.
+                                element: div
+                                align: left
+                                color: white
+                          uesio.styleTokens:
+                            root:
+                              - max-w-[800px]
+                              - p-4
+                      - uesio/io.box:
+                          components:
+                            - uesio/io.text:
+                                text: Robust Marketplace
+                                element: div
+                                align: left
+                                color: white
+                                uesio.variant: uesio/web.calloutpre
+                                uesio.styleTokens:
+                                  root:
+                                    - pb-2
+                            - uesio/io.text:
+                                text: As a standout platform and thriving ecosystem, ues.io’s Bundle Marketplace allows developers to monetize innovations. Users can list and sell/lease applications or components, fostering a community of innovative solutions. The flexible pricing strategy, determined by creators, enables adaptive pricing based on usage, users, or a combination of both. This particularly benefits enterprise companies, eliminating hefty upfront costs. ues.io empowers creators and businesses to profit early, transforming innovative ideas into profitable ventures with minimal initial investment.
+                                element: div
+                                align: left
+                                color: white
+                          uesio.styleTokens:
+                            root:
+                              - max-w-[800px]
+                              - p-4
+                      - uesio/io.box:
+                          components:
+                            - uesio/io.text:
+                                text: Managed Packages
+                                element: div
+                                align: left
+                                color: white
+                                uesio.variant: uesio/web.calloutpre
+                                uesio.styleTokens:
+                                  root:
+                                    - pb-2
+                            - uesio/io.text:
+                                text: ues.io sets itself apart by empowering users to innovate on par with industry giants like Microsoft and Salesforce. The platform redefines managed packages, providing flexibility and control in a secure pro-code environment, fostering boundless growth of ideas. Manage all your apps and users from a single view. Share apps with your teams and combine your apps with each other to produce a single new app without having to start from scratch time and time again, harnessing the power of reusable patterns and infrastructure in a full life cycle development management system.
+                                element: div
+                                align: left
+                                color: white
+                          uesio.styleTokens:
+                            root:
+                              - max-w-[800px]
+                              - p-4
+                    uesio.variant: uesio/io.two_columns
+                    uesio.styleTokens:
+                      root:
+                        - py-4
+                        - mb-8
+              uesio.variant: uesio/web.flex_structure_small
+              uesio.styleTokens:
+                root:
+                  - p-4
+                  - bg-[url($File{uesio/web.bg_banner})]
+                  - flex
+                  - justify-center
+          - uesio/io.text:
+              text: We believe in empowering developers to explore, innovate, and grow without financial limitations.
+              element: div
+              align: center
+              color: ""
+              uesio.variant: uesio/web.blogteasertitle
+              uesio.styleTokens:
+                root:
+                  - mt-8
+                  - mb-8
