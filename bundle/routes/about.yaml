@@ -1,0 +1,8 @@
+name: about
+path: about
+view: about
+tags:
+  - type: meta
+    location: head
+    name: keywords
+    content: no-code, low-code, pro-code, web app builder, saas, pay as you go web app builder, no-code app development, AI-powered app builder
