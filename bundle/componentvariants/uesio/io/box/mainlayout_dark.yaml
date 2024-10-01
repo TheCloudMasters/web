@@ -4,5 +4,5 @@ extends: uesio/web.mainlayout
 definition:
   uesio.styleTokens:
     root:
-      - bg-[$Theme{color.dark}]
-      - text-[{$Theme{color.text_secondary}}]
+      - bg-[$Theme{color:dark}]
+      - text-[{$Theme{color:text_secondary}}]

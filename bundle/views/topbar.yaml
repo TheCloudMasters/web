@@ -6,7 +6,7 @@ definition:
     - uesio/io.box:
         uesio.styleTokens:
           root:
-            - bg-[$Theme{color.white}]
+            - bg-[$Theme{color:white}]
             - w-full
             - top-0
             - left-0
@@ -18,7 +18,7 @@ definition:
               uesio.variant: uesio/web.mainlayout_dark
               uesio.styleTokens:
                 root:
-                  - max-w-[$Theme{color.maxwidth}]
+                  - max-w-[$Theme{color:maxwidth}]
                   - mx-auto
               items:
                 - uesio/io.box:
@@ -29,7 +29,7 @@ definition:
                         - justify-end
                         - text-sm
                         - p-1
-                        - text-[$Theme{color.text_secondary_muted}]
+                        - text-[$Theme{color:text_secondary_muted}]
                     components:
                       - uesio/io.text:
                           text: "\U0001F1FA\U0001F1F8 +1 844-558-0040"
@@ -40,7 +40,7 @@ definition:
               uesio.styleTokens:
                 root:
                   - mx-auto
-                  - max-w-[$Theme{color.maxwidth}]
+                  - max-w-[$Theme{color:maxwidth}]
               items:
                 - uesio/io.grid:
                     uesio.styleTokens:
@@ -68,7 +68,7 @@ definition:
                                 uesio.styleTokens:
                                   root:
                                     - text-xl
-                                    - text-[$Theme{color.primary}]
+                                    - text-[$Theme{color:primary}]
                                     - p-2
                                 icon: menu
                                 signals:

@@ -4,5 +4,5 @@ extends: uesio/web.calloutsmedium
 definition:
   uesio.styleTokens:
     root:
-      - text-[$Theme{color.text_primary}
+      - text-[$Theme{color:text_primary}
   element: h2

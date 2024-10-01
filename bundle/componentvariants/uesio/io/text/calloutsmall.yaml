@@ -5,7 +5,7 @@ definition:
     root:
       - text-xl
       - md:text-2xl
-      - text-[$Theme{color.text_secondary}]
+      - text-[$Theme{color:text_secondary}]
       - font-[Gosha]
       - font-bold
       - mb-2

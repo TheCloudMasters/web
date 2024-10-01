@@ -6,7 +6,7 @@ definition:
       - w-full
       - text-left
       - py-auto
-      - bg-[$Theme{color.white}]
+      - bg-[$Theme{color:white}]
       - flex
       - flex-col
       - place-content-center

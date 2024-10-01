@@ -3,7 +3,7 @@ label: Callout Pretitle
 definition:
   uesio.styleTokens:
     root:
-      - text-[$Theme{color.text_secondary}]
+      - text-[$Theme{color:text_secondary}]
       - font-light
       - font-[Gosha]
       - mb-0
