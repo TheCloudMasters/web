@@ -4,4 +4,4 @@ extends: uesio/web.calloutsmall
 definition:
   uesio.styleTokens:
     root:
-      - text-[$Theme{color.text_primary}]
+      - text-[$Theme{color:text_primary}]

@@ -156,7 +156,7 @@ definition:
                                 uesio.styleTokens:
                                   root:
                                     - normal-case
-                                    - text-[$Theme{color.secondary}]
+                                    - text-[$Theme{color:secondary}]
                                     - font-bold
                                     - font-1xl
                                     - text-4xl

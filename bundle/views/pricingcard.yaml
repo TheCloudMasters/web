@@ -36,7 +36,7 @@ definition:
         uesio.styleTokens:
           root:
             - rounded
-            - bg-[$Theme{color.white}]
+            - bg-[$Theme{color:white}]
             - h-[315px]
             - w-full
             - grid
@@ -52,7 +52,7 @@ definition:
                 - uesio/io.text:
                     uesio.styleTokens:
                       root:
-                        - bg-[$Theme{color.secondary}]
+                        - bg-[$Theme{color:secondary}]
                         - text-white
                         - font-[Gosha]
                         - font-lg

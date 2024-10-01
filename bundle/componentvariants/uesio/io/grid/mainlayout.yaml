@@ -7,4 +7,4 @@ definition:
       - grid-cols-[95%]
       - sm:grid-cols-[90%]
       - justify-center
-      - bg-[$Theme{color.white}]
+      - bg-[$Theme{color:white}]

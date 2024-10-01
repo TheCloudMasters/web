@@ -4,7 +4,7 @@ definition:
   uesio.styleTokens:
     root:
       - text-center
-      - text-[$Theme{color.text_primary}]
+      - text-[$Theme{color:text_primary}]
       - tracking-wider
       - font-[Gosha]
       - py-1.5

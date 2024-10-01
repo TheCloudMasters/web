@@ -18,7 +18,7 @@ definition:
         - uesio/io.box:
             uesio.styleTokens:
               root:
-                - max-w-[$Theme{color.maxwidth}]
+                - max-w-[$Theme{color:maxwidth}]
                 - mx-auto
             components:
               - uesio/core.view:
@@ -26,12 +26,11 @@ definition:
               - uesio/io.box:
                   uesio.styleTokens:
                     root:
-                      - max-w-[$Theme{color.maxwidth}]
+                      - max-w-[$Theme{color:maxwidth}]
                       - mx-auto
                       - min-h-[100vh]
                   components:
-                    - uesio/core.slot:
-                        name: inner
+                    - $Slot{inner}
                     - uesio/core.view:
                         view: uesio/web.footer
 title: Main Web Layout

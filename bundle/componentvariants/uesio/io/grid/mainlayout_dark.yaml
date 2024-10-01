@@ -4,4 +4,4 @@ extends: uesio/web.mainlayout
 definition:
   uesio.styleTokens:
     root:
-      - bg-[$Theme{color.dark}]
+      - bg-[$Theme{color:dark}]

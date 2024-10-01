@@ -17,7 +17,7 @@ definition:
         root:
           - w-full
           - h-fit
-          - bg-[$Theme{color.white}]
+          - bg-[$Theme{color:white}]
           - text-left
       components:
         - uesio/io.box:
@@ -44,13 +44,11 @@ definition:
                     - uesio/io.box:
                         uesio.variant: uesio/web.text_block
                         components:
-                          - uesio/core.slot:
-                              name: left
+                          - $Slot{left}
                     - uesio/io.box:
                         uesio.variant: uesio/web.text_block
                         components:
-                          - uesio/core.slot:
-                              name: right
+                          - $Slot{right}
 title: Arrow Content
 discoverable: true
 description: Arrow with left and right content
