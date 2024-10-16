@@ -32,13 +32,9 @@ definition:
                             root: []
                       - uesio/io.box:
                           components:
-                            - uesio/io.markdown:
-                                markdown: "# [CIO Review Magazine Award 2024](https://www.cioreview.com/ues-io) "
-                                uesio.styleTokens:
-                                  root:
-                                    - text-white
-                                  a:
-                                    - text-sm
+                            - uesio/io.link:
+                                text: CIO Review Magazine 2024 Award
+                                link: https://www.cioreview.com/ues-io
                           uesio.styleTokens:
                             root:
                               - mt-4
